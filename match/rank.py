@@ -1,4 +1,9 @@
+import gensim
+import numpy as np
 import pandas as pd
+
+from match.big_data import word2vec, avg_of_word2vec, avg_mitre_word2vec
+from tools.config import Config
 
 
 def get_id_list(keywords: set[str], mitre_list: pd.DataFrame) -> list[str]:
@@ -18,7 +23,7 @@ def get_id_list(keywords: set[str], mitre_list: pd.DataFrame) -> list[str]:
     return result_list
 
 
-def result(keywords: set[str], mitre_list: pd.DataFrame):
+def result(keywords: set[str], mitre_list: pd.DataFrame) -> list[tuple]:
     """
     Rank depends on result list.
 
@@ -34,4 +39,18 @@ def result(keywords: set[str], mitre_list: pd.DataFrame):
     for item in rank_item:
         rank_list[item]: int = result_list.count(item)
 
-    return sorted(rank_list.items(), key=lambda res: res[1], reverse=True)
+    return sorted(rank_list.items(), key=lambda k: k[1], reverse=True)
+
+
+def calc_distance(update_flag: bool, keywords: set[str]) -> list[tuple]:
+    word2vec(update_flag)
+
+    model = gensim.models.Word2Vec.load(Config.OUTPUT_WORD2VEC_MODULE)
+
+    security_rule_list: np.ndarray = avg_of_word2vec(model, keywords)
+    mitre_list: dict[str, np.ndarray] = avg_mitre_word2vec(model)
+
+    for mitre_id in mitre_list.keys():
+        mitre_list[mitre_id] = np.sqrt(np.sum(np.square(mitre_list[mitre_id] - security_rule_list)))
+
+    return sorted(mitre_list.items(), key=lambda k: float(k[1]), reverse=True)

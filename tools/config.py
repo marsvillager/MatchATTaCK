@@ -8,6 +8,8 @@ class Config:
 
     MITRE_ATTACK_DATA_PATH: str = BASE_DIR + "/data/mitre_attack/cti/"
 
+    VECTOR_SIZE = 10
+
     OUTPUT_CLASSIFICATION_CSV: str = BASE_DIR + "/data/mitre_attack/processed_data/classification_data/"
 
     OUTPUT_TRANSFORM_TXT: str = BASE_DIR + "/data/mitre_attack/processed_data/transform_data/"
@@ -15,6 +17,8 @@ class Config:
     OUTPUT_WORD_FREQ: str = BASE_DIR + "/data/mitre_attack/processed_data/others/word_freq.txt"
 
     OUTPUT_WORD_CLOUD_PIC = BASE_DIR + "/data/mitre_attack/processed_data/others/word_cloud.png"
+
+    OUTPUT_WORD2VEC_MODULE: str = BASE_DIR + "/data/mitre_attack/processed_data/others/word2vec.w2v"
 
     URL: str = "https://github.com/mitre/cti.git"
 
