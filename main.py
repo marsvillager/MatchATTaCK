@@ -1,3 +1,5 @@
+import nltk
+
 import stix2
 import pandas as pd
 
@@ -19,6 +21,11 @@ if __name__ == '__main__':
     if input() == 'yes':
         update_flag = True
 
+        nltk.download('punkt')
+        nltk.download('stopwords')
+        nltk.download('wordnet')
+        nltk.download('omw-1.4')
+
         # 1.1 Download or update.
         update()
 
@@ -31,7 +38,6 @@ if __name__ == '__main__':
         mitre_datasets: list[dict] = get_src(Config.SCENE["enterprise"], filter_list)
         format_list: pd.DataFrame = classification.format_technique(mitre_datasets)
         output_format(format_list)
-
 
     """
     2. security rules(lemma)
