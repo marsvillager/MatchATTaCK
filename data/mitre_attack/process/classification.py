@@ -12,11 +12,19 @@ def format_technique(mitre_datasets: list[dict]) -> pd.DataFrame:
     """
     format_list: list[dict] = []
     for mitre_data in mitre_datasets:
-        format_dict = {"id": mitre_data["external_references"][0]["external_id"],
-                       "scene": mitre_data["x_mitre_domains"][0],
-                       "type": Config.COMPARISON_TABLE[mitre_data["type"]],
-                       "name": mitre_data["name"],
-                       "description": mitre_data["description"]}
+        if 'description' in mitre_data:
+            format_dict: dict[str, str] = {"id": mitre_data["external_references"][0]["external_id"],
+                                           "scene": mitre_data["x_mitre_domains"][0],
+                                           "type": Config.COMPARISON_TABLE[mitre_data["type"]],
+                                           "name": mitre_data["name"],
+                                           "description": mitre_data["description"]}
+        else:
+            format_dict: dict[str, str] = {"id": mitre_data["external_references"][0]["external_id"],
+                                           "scene": mitre_data["x_mitre_domains"][0],
+                                           "type": Config.COMPARISON_TABLE[mitre_data["type"]],
+                                           "name": mitre_data["name"],
+                                           "description": ''}
+
         format_list.append(format_dict)
 
     # show all columns

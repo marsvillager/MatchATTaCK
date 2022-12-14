@@ -18,8 +18,9 @@ def restore_from_csv(csv_name: str) -> pd.DataFrame:
 
     for i in range(format_list.shape[0]):
         name: list[str] = stemmer(lemmatize(rm_stop_words(rm_punctuation(tokenize(format_list.loc[i, "name"])))))
-        description: list[str] = stemmer(
-            lemmatize(rm_stop_words(rm_punctuation(tokenize(format_list.loc[i, "description"])))))
+        if pd.notnull(format_list.loc[i, "description"]):
+            description: list[str] = stemmer(
+                lemmatize(rm_stop_words(rm_punctuation(tokenize(format_list.loc[i, "description"])))))
         format_list.loc[i, "name"]: str = " ".join(name)
         format_list.loc[i, "description"]: str = " ".join(description)
 

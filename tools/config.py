@@ -8,7 +8,7 @@ class Config:
 
     MITRE_ATTACK_DATA_PATH: str = BASE_DIR + "/data/mitre_attack/cti/"
 
-    VECTOR_SIZE = 10
+    VECTOR_SIZE = 100
 
     OUTPUT_CLASSIFICATION_CSV: str = BASE_DIR + "/data/mitre_attack/processed_data/classification_data/"
 
@@ -39,5 +39,6 @@ class Config:
 
     SECURITY_RULES_PROP: list[str] = ['category', 'name', 'remarks', 'description']
 
-    FILTER_PUNCTUATIONS: list[str] = [',', '.', ':', ';', '?', '(', ')', '[', ']', '!', '*', '@', '#', '$', '%',
-                                      '&', '``', "''", '{', '}']
+    FILTER_PUNCTUATIONS: list[str] = [',', '.', ':', ';', '?', '(', ')', '[', ']', '!', '*', '@', '#', '$', '%', '`',
+                                      '&', '``', "''", '{', '}', '“', '”', '-', '’', '‘', "'", '/', '<', '>', '--',
+                                      '~/', '|', '_', '..', '\\', '\\\\', '=', '+', '-']

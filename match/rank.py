@@ -12,7 +12,7 @@ def get_id_list(keywords: set[str], mitre_list: pd.DataFrame) -> list[str]:
 
     :param keywords: keywords of security rules
     :param mitre_list: processed data of mitre att&ck data
-    :return:
+    :return: list of mitre att&ck id
     """
     result_list: list[str] = []
     for keyword in keywords:
@@ -27,9 +27,9 @@ def result(keywords: set[str], mitre_list: pd.DataFrame) -> list[tuple]:
     """
     Rank depends on result list.
 
-    :param keywords:
-    :param mitre_list:
-    :return:
+    :param keywords: keywords of security rules
+    :param mitre_list: processed data of mitre att&ck data
+    :return: sort result of mitre att&ck id according to its frequency
     """
     result_list: list[str] = get_id_list(keywords, mitre_list)
     rank_item: set[str] = set(result_list)
@@ -43,6 +43,13 @@ def result(keywords: set[str], mitre_list: pd.DataFrame) -> list[tuple]:
 
 
 def calc_distance(update_flag: bool, keywords: set[str]) -> list[tuple]:
+    """
+    Calculate distance of two vector(L2-norm, Euclidean Distance).
+
+    :param update_flag: update data if true
+    :param keywords: convert keywords to word vector based on word2vec
+    :return: sort result of mitre att&ck id according to calculated distance
+    """
     word2vec(update_flag)
 
     model = gensim.models.Word2Vec.load(Config.OUTPUT_WORD2VEC_MODULE)
@@ -53,4 +60,4 @@ def calc_distance(update_flag: bool, keywords: set[str]) -> list[tuple]:
     for mitre_id in mitre_list.keys():
         mitre_list[mitre_id] = np.sqrt(np.sum(np.square(mitre_list[mitre_id] - security_rule_list)))
 
-    return sorted(mitre_list.items(), key=lambda k: float(k[1]), reverse=True)
+    return sorted(mitre_list.items(), key=lambda k: float(k[1]), reverse=False)

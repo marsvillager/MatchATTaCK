@@ -1,14 +1,15 @@
 import nltk
-
 import stix2
 import pandas as pd
 
+from typing import IO
 from stix2 import Filter
 from data.mitre_attack.process import classification
 from data.mitre_attack.process.classification import output_format
 from data.mitre_attack.process.get_data import get_src, update
+from data.mitre_attack.process.process_data import restore_from_csv
 from match.keyword import get_keyword
-from match.knowledge import get_synset
+from match.knowledge import get_synset, match_synset
 from match.rank import result, calc_distance
 from tools.config import Config
 
@@ -31,8 +32,8 @@ if __name__ == '__main__':
 
         # 1.2 Classify data.
         filter_list: list[stix2.Filter] = [
-            # Filter("type", "=", "attack-pattern")  # technique
-            Filter("type", "=", "course-of-action")  # mitigation
+            Filter("type", "=", "attack-pattern")  # technique
+            # Filter("type", "=", "course-of-action")  # mitigation
         ]
         # enterprise or ics or mobile
         mitre_datasets: list[dict] = get_src(Config.SCENE["enterprise"], filter_list)
