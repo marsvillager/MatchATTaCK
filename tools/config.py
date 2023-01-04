@@ -35,7 +35,7 @@ class Config:
                               "x-mitre-tactic": "tactic",
                               "x-mitre-data-source": "data_source"}
 
-    EXTEND_STOP_WORD: list[str] = ["citation", "may", "e.g.", "'s", "att", "ck"]
+    EXTEND_STOP_WORD: list[str] = ["citation", "may", "e.g.", "'s", "att", "ck", 'like']
 
     SECURITY_RULES_PROP: list[str] = ['category', 'name', 'remarks', 'description']
 

@@ -45,21 +45,24 @@ if __name__ == '__main__':
     """
     # 2.1 Word representation depends on keywords.
     # keywords: set[str] = get_keyword("00927_Account_Disabled_on_Windows.yml")
-    # keywords: set[str] = get_keyword("15022_LoginLogoutAtUnusualTime.yml")
+    keywords: set[str] = get_keyword("15022_LoginLogoutAtUnusualTime.yml")
 
     # 2.2 Word representation depends on knowledge.
     # keywords: set[str] = get_synset("00927_Account_Disabled_on_Windows.yml")
     # keywords: set[str] = get_synset("15022_LoginLogoutAtUnusualTime.yml")
 
     # 2.3 Word representation depends on big data.
-    keywords: set[str] = get_keyword("15022_LoginLogoutAtUnusualTime.yml")
+    # keywords: set[str] = get_keyword("15022_LoginLogoutAtUnusualTime.yml")
 
     """
     3. rank
     """
     # Word representation depends on keywords or knowledge.
-    # mitre_list: pd.DataFrame = restore_from_csv("enterprise" + "_" + "technique" + "_data.csv")
-    # print(result(keywords, mitre_list))
+    mitre_list: pd.DataFrame = restore_from_csv("enterprise" + "_" + "technique" + "_data.csv")
+    print(result(keywords, mitre_list))
 
     # Word representation depends on big data.
-    print(calc_distance(update_flag, keywords))
+    # print(calc_distance(update_flag, keywords))
+
+    # data = get_src(Config.SCENE["enterprise"], [Filter("external_references.external_id", "=", "T1499")])
+    # print(data)
