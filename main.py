@@ -10,7 +10,7 @@ from data.mitre_attack.process.get_data import get_src, update
 from data.mitre_attack.process.process_data import restore_from_csv
 from match.keyword import get_keyword
 from match.knowledge import get_synset, match_synset
-from match.rank import result, calc_distance
+from match.rank import result, calc_distance, tf_idf, tf_idf_digest
 from tools.config import Config
 
 if __name__ == '__main__':
@@ -45,7 +45,7 @@ if __name__ == '__main__':
     """
     # 2.1 Word representation depends on keywords.
     # keywords: set[str] = get_keyword("00927_Account_Disabled_on_Windows.yml")
-    keywords: set[str] = get_keyword("15022_LoginLogoutAtUnusualTime.yml")
+    # keywords: set[str] = get_keyword("15022_LoginLogoutAtUnusualTime.yml")
 
     # 2.2 Word representation depends on knowledge.
     # keywords: set[str] = get_synset("00927_Account_Disabled_on_Windows.yml")
@@ -59,10 +59,13 @@ if __name__ == '__main__':
     """
     # Word representation depends on keywords or knowledge.
     mitre_list: pd.DataFrame = restore_from_csv("enterprise" + "_" + "technique" + "_data.csv")
-    print(result(keywords, mitre_list))
+    # print(result(keywords, mitre_list))
+    # print(tf_idf(keywords, mitre_list))
 
     # Word representation depends on big data.
     # print(calc_distance(update_flag, keywords))
 
     # data = get_src(Config.SCENE["enterprise"], [Filter("external_references.external_id", "=", "T1499")])
     # print(data)
+
+    print(tf_idf_digest('T1531', mitre_list))
