@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/mitre_attack/data/cti" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cti" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cti(ori)" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dict/eudic-dictionary-making" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mitre_attack_data/cti" vcs="Git" />
   </component>
 </project>

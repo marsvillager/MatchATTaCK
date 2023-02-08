@@ -1,0 +1,1705 @@
+Adversaries block command message reaching intended target prevent command execution
+ OT networks
+ command messages provide instructions control devices
+ blocked command message inhibit response functions correcting disruption unsafe condition
+  Bonnie Zhu
+ Anthony Joseph
+ Shankar Sastry 2011
+   Electricity Sharing Analysis Center
+ SANS Industrial Control Systems March 2016
+ 
+Adversaries disable services render services unavailable legitimate users
+ Stopping critical services inhibit response incident aid adversary objectives damage environment
+  Enterprise ATT&CK
+  Services modification data stores running
+ Adversaries services conduct Data Destruction
+  Enterprise ATT&CK
+ 
+Adversaries modify parameters instruct industrial control devices
+ devices operate programs dictate perform actions based parameters
+ parameters determine extent action performed additional options
+ example
+ program control device dictating motor processes parameter defining total motor
+        adversary modify parameters produce outcome intended operators
+ modifying process critical parameters
+ adversary [Impact]
+https   attack
+mitre.org tactics TA0105
+ equipment control processes
+ Modified parameters dangerous
+ out-of-bounds
+ unexpected values typical operations
+ example
+ process time should
+ dictating unusually high
+ low
+ invalid parameter
+  Maroochy Shire attack
+ adversary gained remote access control altered data function occurred pumping stations occur occurred way
+ software program installed laptop developed changing configurations PDS computers
+ ultimately led 800
+000 liters raw sewage spilled community
+
+Citation  Marshall Abrams July 2008
+ 
+Adversaries modify tasking controller execution programs
+ adversary manipulate execution flow behavior controller
+   61131-3
+ association Task Program Organization Unit 
+POU
+ defines task association
+  IEC February 2013
+ adversary modify associations create manipulate execution flow controller
+ Modification controller tasking accomplished Program Download addition types program modification online edit program append
+  Tasks properties
+ interval
+ frequency priority meet requirements program execution
+ controller vendors implement tasks implicit
+ pre-defined properties properties formulated explicitly
+ adversary associate program tasks priority execute programs frequently
+ instance
+ ensure cyclic execution program Siemens controller
+ adversary add program task
+ Organization Block 1 
+OB1
+
+ 
+Adversaries seek capture radio frequency 
+RF
+ communication remote control reporting distributed environments
+ RF communication frequencies vary 3 kHz 300 GHz
+ commonly 300 MHz 6 GHz
+  Candell
+ R
+
+ Hany
+ M
+
+ Lee
+ K
+ B
+
+ Liu
+Y
+, Quimby
+ J
+
+ Remley
+ K
+ April 2018
+  wavelength frequency signal affect signal propagates air
+ obstacles 
+e
+g. walls trees
+ type radio required capture them
+ characteristics standardized protocol hardware signal captured
+ examples wireless protocols cyber-physical environments  WirelessHART
+ Zigbee
+ WIA-FA
+ 700 MHz Public Safety Spectrum
+   Adversaries capture RF communications specialized hardware
+ software defined radio 
+SDR
+
+ handheld radio
+ radio demodulator tuned communication frequency
+  Bastille April 2017
+ transmitted wireless medium captured in-transit sniffing device intended destination not
+ technique adversary communications encrypted
+  Gallagher
+ S
+ April 2017
+   2017 Dallas Siren incident
+ suspected adversaries captured wireless command message broadcasts 700 MHz frequency regular system
+ messages replayed trigger alarm systems
+  Gallagher
+ S
+ April 2017
+ 
+Adversaries sustained permanent loss view ICS equipment require local
+ hands-on operator intervention
+ instance
+ restart manual operation
+ causing sustained reporting visibility loss
+ adversary effectively hide operations
+ loss view occur physical processes themselves
+  Corero
+  Michael J
+ Assante Robert M
+ Lee
+  Tyson Macaulay
+ 
+Adversaries activate firmware update mode devices prevent expected response functions engaging reaction emergency process malfunction
+ example
+ devices protection relays operation mode designed firmware installation
+ mode halt process monitoring functions firmware loaded
+ device left update mode inactive holding firmware it
+ entering leaving device mode
+ adversary deny usual functionalities
+ 
+Adversaries manipulate physical process control industrial environment
+ Methods manipulating control include set values
+ tags
+ parameters
+ Adversaries manipulate control systems devices leverage own
+ communicate command physical control processes
+ duration manipulation temporary sustained
+ depending operator detection
+     Methods Manipulation Control include    Man-in-the-middle   Spoof command message  Changing setpoints    Polish student remote controller device interface Lodz city tram Poland
+  John 2017
+  Shelley Smith February 2008
+  Bruce Schneier January 2008
+ remote
+ student capture replay legitimate tram signals
+ consequence
+ trams derailed people injured emergency stops
+  Shelley Smith February 2008
+ track controlling commands issued tram collisions
+ risk board nearby impact
+  Bruce Schneier January 2008
+ 
+Adversaries perform Denial-of-Service 
+DoS
+ attacks disrupt expected device functionality
+ Examples DoS attacks include overwhelming target device volume requests short time period sending target device request handle
+ Disrupting device temporarily render unresponsive
+ lasting reboot occur
+ state
+ devices unable send receive requests
+ perform expected response functions reaction events environment
+   ICS devices sensitive DoS events
+ unresponsive reaction simple ping sweep
+ Adversaries attempt execute Permanent Denial-of-Service 
+PDoS
+ devices
+ BrickerBot malware
+  ICS-CERT April 2017
+   Adversaries exploit software vulnerability denial service advantage programming error program
+ service
+ operating software kernel execute adversary-controlled code
+ Vulnerabilities exist software denial service condition
+   Adversaries prior knowledge industrial protocols control devices environment [Remote Discovery]
+https   attack
+mitre.org techniques T0888
+
+ examples adversaries remotely causing [Device Restart Shutdown]
+https   attack
+mitre.org techniques T0816
+ exploiting vulnerability induces uncontrolled resource consumption
+  ICS-CERT August 2018
+  Common Weakness Enumeration January 2019
+  MITRE March 2018
+   Maroochy Shire attack
+ adversary shut investigator network
+
+Citation  Marshall Abrams July 2008
+ 
+Adversaries block access serial prevent instructions configurations reaching target devices
+ Serial Communication ports 
+COM
+ communication control devices
+ Devices receive command configuration messages serial COM
+ Devices serial send command reporting messages
+ Blocking device serial block command messages block reporting messages
+   serial Ethernet converter connected serial facilitate communication serial Ethernet devices
+ approach blocking serial create hold TCP session Ethernet converter
+ serial Ethernet converter ports facilitate multiple communications
+ example
+ serial -- 1
+ 2 3 --
+ converter listening ports 20001
+ 20002
+ 20003
+ TCP IP connection ports held open
+ port unavailable party
+ adversary achieve initiate TCP session serial Ethernet converter 10
+0.0.1 Telnet serial port 1 command  telnet 10
+0.0.1 20001
+ 
+Adversaries perform role identification devices involved physical processes target control system
+ Control systems devices concert control physical process
+ device roles performs control process
+ collecting role-based data
+ adversary construct targeted attack
+  example
+ power generation plant unique devices monitors power output generator controls speed turbine
+ Examining devices roles adversary observe devices monitor control physical process
+ Understanding role target device inform adversary decision action take
+ Impact influence disrupt integrity operations
+ Furthermore
+ adversary capture control protocol traffic
+ studying traffic
+ adversary determine devices outstations
+ masters
+ Understanding master devices role control processes enable Rogue Master Device 
+Adversaries utilize command-line interfaces 
+CLIs
+ interact systems execute commands
+ CLIs provide interacting systems common feature types platforms devices control systems environments
+  Enterprise ATT&CK January 2018
+ Adversaries CLIs install software
+ including malicious tools installed operation
+  CLIs typically accessed locally
+ exposed services
+ SSH
+ Telnet
+ RDP
+  Commands executed CLI execute current permissions level process running terminal emulator
+ command specifies change permissions context
+ controllers CLI interfaces management purposes
+ 
+Adversaries collect tag values gain comprehensive understanding process environment
+ values inputs
+ memory locations
+ outputs process specific variables
+  Dennis L
+ Sloatman September 2016
+ Tags identifiers operator convenience
+   Collecting tags valuable context environmental enables adversary map inputs
+ outputs
+ values control processes
+ Understanding collected inform adversary processes values track operation
+ 
+Adversaries forcibly restart shutdown device ICS environment disrupt negatively impact physical processes
+ Methods device restart shutdown exist devices built-in
+ standard functionalities
+ functionalities executed interactive device interfaces
+ CLIs
+ network protocol commands
+  Unexpected restart shutdown control devices prevent expected response functions happening critical states
+  device restart sign malicious device modifications
+ updates require shutdown effect
+ 
+Adversaries rely targeted organizations user interaction execution malicious code
+ User interaction consist installing applications
+ email attachments
+ granting permissions documents
+   Adversaries embed malicious code visual basic code files Word Excel documents software installers
+  Booz Allen Hamilton
+ Execution code requires user enable scripting write access document
+ Embedded code noticeable user trojanized software
+  Daavid Hentunen
+ Antti Tikkanen June 2014
+   Chinese spearphishing campaign running December 9
+ 2011 February 29
+ 2012 delivered malware spearphishing attachments required user action achieve execution
+  CISA AA21-201A Pipeline Intrusion July 2021
+ 
+Adversaries perform wireless compromise method gaining communications unauthorized access wireless network
+ Access wireless network gained compromise wireless device
+  Alexander Bolshev
+ Gleb Cherbov July 2014
+  Alexander Bolshev March 2014
+ Adversaries utilize radios wireless communication devices frequency wireless network
+ Wireless compromise initial access vector remote distance
+   Maroochy Shire attack
+ adversary two-way radio communicate set frequencies Maroochy Shire repeater stations
+
+Citation  Marshall Abrams July 2008
+  Polish student modified remote controller gain access control Lodz city tram Poland
+  John 2017
+  Shelley Smith February 2008
+ remote controller device allowed student interface trams network modify track settings override operator control
+ adversary accomplished aligning controller frequency amplitude control protocol signals
+  Bruce Schneier January 2008
+ controller enabled initial access network
+ allowing capture replay tram signals
+  John 2017
+ 
+Adversaries change operating mode controller gain additional access engineering functions Program Download
+   Programmable controllers typically modes operation control user program control access controllers API
+ Operating modes physically selected key switch controller selected calls controllers API
+ Operating modes mechanisms selected vary vendor product line
+ commonly implemented operating modes     Program mode enabled devices program
+ program uploads downloads device engineering workstation
+ PLCs logic halted
+ outputs forced off
+  N
+A. October 2017
+   Execution devices program occurs mode
+ Input output 
+values
+ points
+ tags
+ elements
+ etc
+
+ monitored programs logic
+ [Program Upload]
+https   attack
+mitre.org techniques T0845
+ [Program Download]
+https   attack
+mitre.org techniques T0843
+ disabled mode
+  Omron
+  Machine Systems 2007
+   N
+A. October 2017
+  PLCgurus 2021
+    Remote remote PLCs operation mode
+  PLCgurus 2021
+     PLC program stopped
+ mode
+ outputs forced off
+  Machine Systems 2007
+    Reset Conditions PLC reset original states
+ Warm resets retain memory cold resets reset data registers
+  Machine Systems 2007
+      Monitor mode mode
+ processed
+ mode monitoring
+ force set
+ resets
+ tuning debugging system
+ monitor mode trial initialization
+  Omron
+ 
+Adversaries target protection function alarms prevent notifying operators critical conditions
+ Alarm messages reporting adversaries
+ Disruption alarm imply disruption reporting whole
+  Secura presentation targeting OT notes dual fold goal adversaries attempting alarm suppression  prevent outgoing alarms raised prevent incoming alarms responded to
+  Jos Wetzels
+ Marina Krotofil 2019
+ method suppression greatly depend type alarm question     alarm raised protocol message  alarm signaled  alarm bit set flag 
+and read
+   ICS environments
+ adversary suppress contend multiple alarms alarm propagation achieve specific goal evade detection prevent intended responses occurring
+  Jos Wetzels
+ Marina Krotofil 2019
+  Methods suppression involve tampering altering device displays logs
+ modifying memory code fixed values
+ tampering assembly level instruction code
+  Maroochy Shire attack
+ adversary suppressed alarm reporting central computer
+
+Citation  Marshall Abrams July 2008
+ 
+Adversaries gather PLCs controllers current operating mode
+ Operating modes dictate change maintenance functions manipulated controlled key switch PLC  run
+ prog [program]
+ remote
+
+ Knowledge valuable adversary determine reprogram PLC
+ Operating modes mechanisms selected vary vendor product line
+ commonly implemented operating modes     Program mode enabled devices program
+ program uploads downloads device engineering workstation
+ PLCs logic halted
+ outputs forced off
+  N
+A. October 2017
+   Execution devices program occurs mode
+ Input output 
+values
+ points
+ tags
+ elements
+ etc
+
+ monitored programs logic
+ [Program Upload]
+https   attack
+mitre.org techniques T0845
+ [Program Download]
+https   attack
+mitre.org techniques T0843
+ disabled mode
+  Omron
+  Machine Systems 2007
+   N
+A. October 2017
+  PLCgurus 2021
+    Remote remote PLCs operation mode
+  PLCgurus 2021
+     PLC program stopped
+ mode
+ outputs forced off
+  Machine Systems 2007
+    Reset Conditions PLC reset original states
+ Warm resets retain memory cold resets reset data registers
+  Machine Systems 2007
+      Monitor mode mode
+ processed
+ mode monitoring
+ force set
+ resets
+ tuning debugging system
+ monitor mode trial initialization
+  Omron
+ 
+Adversaries compromise protective functions designed prevent effects faults abnormal conditions
+ result equipment damage
+ prolonged process disruptions hazards personnel
+   faults abnormal conditions process control happen human operator react to
+ Speed critical correcting conditions limit impacts Loss Control Property Damage
+   Adversaries target disable protective functions prerequisite subsequent attack execution future faults abnormal conditions unchecked
+ Detection Loss Protection operators result shutdown process strict policies protection systems
+ Loss Productivity Revenue meet technical goals adversaries seeking process disruptions
+ 
+Adversaries gather physical process state
+ gain process trigger malicious actions
+ sources process vary as
+ OPC tags
+ historian data
+ specific PLC block information
+ network traffic
+ 
+Adversaries scripting languages execute arbitrary code form pre-written script form user-supplied code interpreter
+ Scripting languages programming languages compiled languages
+ scripting languages interpreter
+ compiler
+ interpreters read compile source code executed
+ opposed compilers
+ compile code executable file
+ Scripting software developers code interpreter exists
+ way
+ distribute package
+ precompiling executables systems
+ Scripting languages
+ Python
+ interpreters shipped default Linux distributions
+   addition tool developers administrators
+ scripting language interpreters abused adversary execute code target environment
+ nature scripting languages
+ weaponized code deployed target easily
+ leaves possibility on-the-fly scripting perform task
+ 
+adversary attempt detailed remote systems peripherals
+ model
+ role
+ configuration
+ Adversaries Remote Discovery aid targeting shaping follow-on behaviors
+ example
+ systems operational role model dictate relevant target adversary operational objectives
+ addition
+ systems configuration scope subsequent technique usage
+   Requests typically implemented automation management protocols automatically requested vendor software normal operation
+ tailor management actions
+ program download module firmware
+ adversary leverage issuing calls systems API
+ 
+Adversaries attempt upload program PLC gather industrial process
+ Uploading program acquire study underlying logic
+ Methods program upload include vendor software
+ enables user upload read program running PLC
+ software upload target program workstation
+ jump box
+ interfacing device
+ 
+Adversaries leverage weaknesses exploit internet-facing software initial access industrial network
+ Internet-facing software user applications
+ underlying networking implementations
+ assets operating system
+ weak defenses
+ etc
+ Targets technique intentionally exposed purpose remote management visibility
+  adversary seek target public-facing applications provide direct access ICS environment ability ICS network
+ Publicly exposed applications online tools scan internet ports services
+ Version exposed application provide adversaries ability target specific vulnerabilities
+ Exposed control protocol remote access ports Commonly Port adversaries
+ 
+Adversaries target collect data repositories
+ include sensitive data specifications
+ schematics
+ diagrams control layouts
+ devices
+ processes
+ Examples repositories include reference databases local machines process environment
+ workstations databases corporate network ICS
+
+Citation  Cybersecurity & Infrastructure Security Agency March 2018
+  collected systems provide adversary understanding operational environment
+ vendors used
+ processes
+ procedures ICS
+  campaign 2011 2013 ONG organizations
+ Chinese state-sponsored actors searched document repositories specific as
+ manuals
+ remote terminal unit 
+RTU
+ sites
+ personnel lists
+ documents included string SCAD*
+ user credentials
+ remote dial-up access information
+  CISA AA21-201A Pipeline Intrusion July 2021
+ 
+Adversaries target devices transient ICS networks external networks
+ Normally
+ transient assets brought environment authorized personnel remain environment permanent basis
+  North American Electric Reliability Corporation June 2021
+ Transient assets commonly support management functions common systems remotely managed asset feasible
+ external connections remote access exist
+ 3rd party contractor vendor access required
+   Adversaries advantage transient assets ways
+ instance
+ adversaries target transient asset connected external network leverage trusted access environment launch attack
+ advantage installed applications libraries legitimate end-users interact control devices
+   Transient assets
+ cases
+ deployed secure configuration leading weaknesses adversary propagate malicious executable code
+ e
+g.
+ transient asset infected malware connected ICS environment malware propagates systems
+   Maroochy Shire attack
+ adversary utilized computer
+ stolen
+ proprietary engineering software communicate wastewater system
+
+Citation  Marshall Abrams July 2008
+ 
+Adversaries manipulate image PLCs prevent functioning expected
+ Methods image manipulation include overriding table direct memory manipulation override function testing PLC programs
+  Dr
+ Kelvin T
+ Erickson December 2010
+ scan cycle
+ PLC reads status inputs stores image table
+  Nanjundaiah
+ Vaidyanath
+ image table PLCs internal storage location values inputs outputs scan stored executes user program
+ PLC solved entire logic program
+ updates output image table
+ contents output image table written output Modules
+   unique characteristics PLCs ability override status physical discrete input override logic driving physical output coil force output desired status
+ 
+Network sniffing practice network interface monitor capture  Enterprise ATT&CK January 2018
+ destination information
+   adversary attempt sniff traffic gain target
+ vary level importance
+ unimportant communications machines
+  login information
+ User credentials unencrypted protocol
+ Telnet
+ captured network packet analysis
+   addition
+ ARP Domain Service 
+DNS
+ poisoning capture credentials websites
+ proxies
+ internal systems redirecting traffic adversary
+ 
+Adversaries deploy rootkits hide presence programs
+ files
+ network connections
+ services
+ drivers
+ components
+ Rootkits programs hide existence malware intercepting modifying operating-system API calls supply information
+ Rootkits rootkit-enabling functionality reside user kernel level operating system
+ lower
+  Enterprise ATT&CK January 2018
+     Firmware rootkits affect operating yield control system
+ firmware rootkits developed main processing board
+ developed attached asset
+ Compromise firmware modification process variables functions module engages in
+ result commands disregarded false fed main device
+ tampering device processes
+ adversary inhibit expected response functions enable [Impact]
+https   attack
+mitre.org tactics TA0105
+
+ 
+Adversaries automate collection industrial environment tools scripts
+ automated collection leverage native control protocols tools control systems environment
+ example
+ OPC protocol enumerate gather information
+ Access interface native protocols collection enumeration attached
+ communicating servers devices
+ 
+Adversaries block prevent reporting message reaching intended target
+ control systems
+ reporting messages telemetry data values
+ pertaining current equipment industrial process
+ blocking reporting messages
+ adversary hide actions operator
+  Blocking reporting messages control systems manage physical processes contribute impact
+ causing inhibition response function
+ control respond proper timely manner event
+ dangerous fault
+ reporting message blocked
+  Bonnie Zhu
+ Anthony Joseph
+ Shankar Sastry 2011
+   Electricity Sharing Analysis Center
+ SANS Industrial Control Systems March 2016
+ 
+Adversaries send unauthorized command messages instruct control assets perform actions intended functionality
+ logical preconditions trigger expected function
+ Command messages ICS networks direct instructions control systems devices
+ adversary send unauthorized command message control system
+ instruct control systems device perform action normal bounds device actions
+ adversary instruct control systems device perform action [Impact]
+https   attack
+mitre.org tactics TA0105
+
+  Bonnie Zhu
+ Anthony Joseph
+ Shankar Sastry 2011
+  Maroochy Shire attack
+ adversary dedicated analog two-way radio send false data instructions pumping stations central computer
+
+Citation  Marshall Abrams July 2008
+  Dallas Siren incident
+ adversaries send command messages activate tornado alarm systems city impending tornado disaster
+  Zack Whittaker April 2017
+  Benjamin Freed March 2019
+ 
+Adversaries perform data destruction operation
+ adversary drop create malware
+ tools
+ non-native files target accomplish this
+ leaving traces malicious activities
+ non-native files data removed intrusion maintain footprint standard post-intrusion cleanup process
+  Enterprise ATT&CK January 2018
+  Data destruction render operator interfaces unable respond disrupt response functions occurring expected
+ adversary destroy data backups vital recovery incident
+  Standard file deletion commands operating device interfaces perform cleanup
+ adversaries tools well
+ examples Windows Sysinternals SDelete Active@ Killdisk
+ 
+Adversaries attempt manipulate reported operators controllers
+ manipulation short term sustained
+ time process reported
+  Corero
+  Michael J
+ Assante Robert M
+ Lee
+  Tyson Macaulay
+   Operators fooled harmful loss view situation
+ manipulated view systems
+ operators issue inappropriate control sequences introduce faults catastrophic failures system
+ Business analysis systems inaccurate data leading bad management decisions
+ 
+Adversaries compromise gain control data historian gain foothold control environment
+ Access data historian learn stored database archival analysis control system
+ dual-homed data historian provide adversaries interface environment OT environment
+   Dragos released updated analysis CrashOverride outlines attack ICS network breach payload delivery execution
+   Industroyer Dragos 201810
+ report summarized CrashOverride represents application malware
+ relied standard intrusion techniques
+ particular
+ artifacts include references Windows Server 2003 host
+ SQL Server
+ ICS environment
+ database server data historian
+ Dragos device role  expected extensive connections  ICS environment
+ Adversary activity leveraged database capabilities perform reconnaissance
+ including directory queries network connectivity checks
+  Permissions Required  Administrator  Contributors  Joe Slowik Dragos 
+Network Service Scanning process discovering services networked systems
+  achieved technique called port scanning probing
+  Port scanning interacts TCP IP ports target determine ports open
+ closed
+ filtered firewall
+  reveal service running port
+ common services [https   www
+iana.org assignments service-names-port-numbers service-names-port-numbers
+xhtml specific port numbers]
+ type service assumed
+  in-depth testing includes interaction actual service determine service type specific version
+  most-popular tools Network Service Scanning [https   nmap
+org  Nmap]
+  adversary attempt gain target device role network Network Service Scanning techniques
+ port scanning
+  Network Service Scanning determining potential vulnerabilities services target devices
+  Network Service Scanning closely tied 
+  Scanning ports noisy network
+ attacks
+ adversaries probe specific ports custom tools
+ Triton PLC-Blaster attacks
+ 
+Adversaries attempt remove indicators presence effort cover tracks
+ adversary feel detection imminent
+ overwrite
+ delete
+ cover device
+ 
+Adversaries seek capture process values inputs outputs PLC
+ scan cycle
+ PLC reads status inputs stores image table
+  Nanjundaiah
+ Vaidyanath
+ image table PLCs internal storage location values inputs outputs scan stored executes user program
+ PLC solved entire logic program
+ updates output image table
+ contents output image table written output Modules
+  Input Output Image tables Image PLC
+ image user program interacting physical O
+  Spenneberg
+ Ralf 2016
+   Adversaries collect Image PLC utilizing devices [Native API]
+https   attack
+mitre.org techniques T0834
+ access memory regions directly
+ collection PLCs replace values inform future stages attack
+ 
+Adversaries denial view attempt disrupt prevent operator oversight status ICS environment
+ manifest temporary communication failure device control source
+ interface recovers interference ceases
+  Corero
+  Michael J
+ Assante Robert M
+ Lee
+  Tyson Macaulay
+   adversary attempt deny operator visibility preventing receiving status reporting messages
+ Denying view temporarily block prevent operators noticing change anomalous behavior
+ environment data processes operational
+ functioning unintended adversarial manner
+   Maroochy Shire attack
+ adversary temporarily shut investigator network
+ preventing viewing system
+
+Citation  Marshall Abrams July 2008
+ 
+Adversaries attempt leverage Application Program Interfaces 
+APIs
+ communication control software hardware
+ Specific functionality coded APIs called software engage specific functions device software
+ 
+Adversaries perform supply chain compromise gain control systems environment access infected products
+ software
+ workflows
+ Supply chain compromise manipulation products
+ devices software
+ delivery mechanisms receipt consumer
+ Adversary compromise products mechanisms goal data compromise
+ infected products introduced target environment
+   Supply chain compromise occur stages supply chain
+ manipulation development tools environments manipulation developed products tools distribution mechanisms
+ involve compromise replacement legitimate software patches
+ party vendor websites
+ Targeting supply chain compromise attempts infiltrate environments specific audience
+ control systems environments assets OT networks
+ supply chain compromise environment enable access OT environment
+     Counterfeit devices introduced global supply chain posing safety cyber risks asset owners operators
+ devices meet safety
+ engineering manufacturing requirements regulatory bodies feature tagging indicating conformance industry standards
+ lack adherence standards lesser quality
+ counterfeit products pose safety operational risk
+  Control Global 2019
+   Yokogawa identified instances customers received counterfeit differential pressure transmitters Yokogawa logo
+ counterfeit transmitters indistinguishable semblance functionality interface mimics genuine product
+  Control Global 2019
+   F-Secure Labs analyzed approach adversary compromise victim systems Havex
+  Daavid Hentunen
+ Antti Tikkanen June 2014
+ adversary planted trojanized software installers legitimate ICS SCADA vendor websites
+ downloaded
+ software infected host Remote Access Trojan 
+RAT
+
+ 
+Adversaries perform serial connection enumeration gather situational awareness gaining access devices OT network
+ Control systems devices communicate types serial communication mediums
+ serial communications facilitate informational communication
+ commands
+  Serial Connection Enumeration differs Module Discovery
+ modules auxiliary systems main system
+ devices connected serial connection discrete systems
+  OT networks tandem
+ exact structure OT network discernible network alone
+ gaining access device OT network
+ adversary enumerate serial connections
+ perspective
+ adversary specific physical devices compromised device connected to
+ adversary situational awareness influence actions adversary attack
+ 
+Adversaries compromise safety functions designed maintain safe operation process unacceptable dangerous conditions occur
+ Safety systems composed elements control systems sole purpose ensuring process fails predetermined safe manner
+   unsafe conditions process control happen human operator react to
+ Speed critical correcting conditions limit impacts Loss Control Property Damage
+   Adversaries target disable safety functions prerequisite subsequent attack execution future unsafe conditionals unchecked
+ Detection Loss Safety operators result shutdown process strict policies safety systems
+ Loss Productivity Revenue meet technical goals adversaries seeking process disruptions
+ 
+Adversaries loss productivity revenue disruption damage availability integrity control operations
+ devices
+ processes
+ technique manifest direct ICS-targeting attack tangentially
+ IT-targeting attack non-segregated environments
+   operations services brought halt
+ loss productivity eventually impact end-users consumers products services
+ disrupted supply-chain result supply shortages increased prices
+ consequences
+   ransomware attack Australian beverage company shutdown manufacturing sites
+ including precautionary halts protect key systems
+  Paganini
+ Pierluigi June 2020
+ company announced potential temporary shortages products attack
+  Paganini
+ Pierluigi June 2020
+  Lion Corporation June 2020
+   2021 Colonial Pipeline ransomware incident
+ pipeline unable transport 2
+5 barrels fuel day East Coast
+   Colonial Pipeline Company 2021
+ 
+Adversaries spearphishing attachment
+ variant spearphishing
+ form social engineering attack specific targets
+ Spearphishing attachments forms spearphishing employ malware attached email
+ forms spearphishing electronically delivered target specific individual
+ company
+ industry
+ scenario
+ adversaries attach file spearphishing email rely [User Execution]
+https   attack
+mitre.org techniques T0863
+ gain execution access
+  Enterprise ATT&CK October 2019
+   Chinese spearphishing campaign running December 9
+ 2011 February 29
+ 2012
+ targeted ONG organizations employees
+ emails constructed level sophistication convince employees malicious file attachments
+  CISA AA21-201A Pipeline Intrusion July 2021
+ 
+Adversaries perform location identification device data inform operations targeted impact attacks
+ Location identification data forms
+ including geographic location
+ location relative control devices
+ time zone
+ current time
+ adversary embedded global positioning 
+GPS
+ module device figure physical coordinates device
+ NIST SP800-82 recommends devices utilize GPS location determining mechanism attach timestamps log entries  Guidance NIST SP800-82
+
+ assists logging event tracking
+ adversary underlying positioning mechanism determine location device
+ adversary infer physical location serially connected devices serial connection enumeration
+   adversary attempt attack Impact affect control devices close proximity
+ Device local-time time-zone settings provide adversaries rough indicator device location
+ specific geographic identifiers determined system
+ 
+Adversaries gain access drive-by compromise
+ user visits regular browsing session
+ technique
+ user browser targeted exploited simply visiting compromised website
+   adversary target specific community
+ trusted party suppliers industry specific groups
+ visit target website
+ targeted attack relies common interest
+ strategic compromise watering hole attack
+   National Cyber Awareness 
+NCAS
+ issued Technical Alert 
+TA
+ Russian government cyber activity targeting critical infrastructure sectors
+  Cybersecurity & Infrastructure Security Agency March 2018
+ Analysis DHS FBI distinct categories victims Dragonfly campaign Western energy sector  staging intended targets
+ adversary targeted secure networks staging targets
+ including trusted third-party suppliers peripheral organizations
+ Initial access intended targets watering hole attacks target process control
+ ICS
+ critical infrastructure trade publications informational websites
+ 
+Adversaries damage destruction property infrastructure
+ equipment
+ surrounding environment attacking control systems
+ technique result device operational equipment breakdown
+ represent tangential damage techniques attack
+ Depending severity physical damage disruption caused control processes systems
+ technique result [Loss Safety]
+https   attack
+mitre.org techniques T0880
+
+ Operations result [Loss Control]
+https   attack
+mitre.org techniques T0827
+ damage property
+ indirectly motivated adversary seeking impact form [Loss Productivity Revenue]
+https   attack
+mitre.org techniques T0828
+
+   Maroochy Shire attack
+ adversary gained remote access control altered data function occurred pumping stations occur occurred way
+ ultimately led 800
+000 liters raw sewage spilled community
+ raw sewage local parks
+ rivers
+ local hotel
+ harm marine life produced sickening stench community blackened rivers
+
+Citation  Marshall Abrams July 2008
+  German Federal Office Security 
+BSI
+ reported targeted attack steel incidents business 2014 Security Report
+  BSI Security 2014
+  targeted attacks industrial operations breakdowns control components entire installations
+ result breakdowns
+ massive impact damage uncontrolled shutdown blast furnace
+   Polish student remote controller device interface Lodz city tram Poland
+  John 2017
+  Shelley Smith February 2008
+  Bruce Schneier January 2008
+ remote
+ student capture replay legitimate tram signals
+ damage impacted trams
+ people
+ surrounding property
+ Reportedly
+ trams derailed forced emergency stops
+  Shelley Smith February 2008
+ Commands issued student tram collisions
+ causing harm board environment outside
+  Bruce Schneier January 2008
+ 
+Adversaries spoof reporting messages control environments evasion impair process control
+ control systems
+ reporting messages telemetry data values
+ pertaining current equipment industrial process
+ Reporting messages monitoring normal operation identifying events deviations expected values
+   adversary ability Spoof Reporting Messages
+ impact control ways
+ adversary Spoof Reporting Messages process operating normally
+ form evasion
+ adversary Spoof Reporting Messages defenders operators errors occurring distract actual source problem
+  Bonnie Zhu
+ Anthony Joseph
+ Shankar Sastry 2011
+   Maroochy Shire attack
+ adversary dedicated analog two-way radio send false data instructions pumping stations central computer
+
+Citation  Marshall Abrams July 2008
+ 
+Adversaries exploit software vulnerability advantage programming error program
+ service
+ operating software kernel enable remote service abuse
+ common goal post-compromise exploitation remote services initial access lateral movement ICS environment enable access targeted systems
+  Enterprise ATT&CK
+  ICS asset owners operators ransomware 
+or disruptive malware masquerading ransomware
+ migrating enterprise ICS environments  WannaCry
+ NotPetya
+ BadRabbit
+ cases
+ self-propagating 
+wormable
+ malware initially infected networks
+ exploit 
+particularly SMBv1-targeting MS17-010 vulnerability
+ spread industrial networks
+ producing impacts
+  Joe Slowik April 2019
+ 
+Adversaries leverage manufacturer supplier set default credentials control devices
+ default credentials administrative permissions initial configuration device
+ practice change passwords accounts possible
+ manufacturers devices passwords usernames changed
+  Keith Stouffer 2015
+  Default credentials documented instruction manual packaged device
+ published online official means
+ published online unofficial means
+ Adversaries leverage default credentials properly modified disabled
+ 
+Adversaries leverage external remote services initial access network
+ services users connect internal network resources external locations
+ Examples VPNs
+ Citrix
+ access mechanisms
+ Remote service gateways manage connections credential authentication services
+  Daniel Oakley
+ Travis Smith
+ Tripwire
+  External remote services administration control system
+ Often
+ vendors internal engineering access external remote services control networks corporate network
+ cases
+ access enabled internet
+ remote access enables ease maintenance control remote area
+ compromise remote access solutions liability
+ adversary services gain access execute attacks control network
+ Access valid accounts requirement
+   entry control network
+ adversaries searching existing point-to-point VPN implementations trusted party networks remote support employee connections split tunneling enabled
+  Electricity Sharing Analysis Center
+ SANS Industrial Control Systems March 2016
+  Maroochy Shire attack
+ adversary gained remote access radio
+
+Citation  Marshall Abrams July 2008
+ 
+Adversaries repetitively successively change values perform action
+ Brute Force achieved changing range values single repeatedly manipulate process function
+ adversarys goal target environment influence options choose
+ brute forcing range values
+ adversary achieve impact targeting specific point
+ single targeted
+ adversary generate instability process function point
+   Adversaries Brute Force failures industrial processes
+ failures result wear equipment damage downstream equipment
+ 
+Adversaries seek gather current program PLC
+ reveals program
+ including running
+ halted
+ stopped
+ generated exception
+ leveraged verification malicious program execution determine PLC ready download program
+ 
+Adversaries privileged network access seek modify network traffic real time adversary-in-the-middle 
+AiTM
+ attacks
+  Gabriel Sanchez October 2017
+ type attack adversary intercept traffic device network
+ AiTM attack established
+ adversary ability block
+ log
+ modify
+ inject traffic communication stream
+ accomplish attack
+ most-common Address Resolution Protocol 
+ARP
+ poisoning proxy
+  Bonnie Zhu
+ Anthony Joseph
+ Shankar Sastry 2011
+    AiTM attack adversary perform attacks    [Block Reporting Message]
+https   attack
+mitre.org techniques T0804
+
+ [Spoof Reporting Message]
+https   attack
+mitre.org techniques T0856
+
+ [Modify Parameter]
+https   attack
+mitre.org techniques T0836
+
+ [Unauthorized Command Message]
+https   attack
+mitre.org techniques T0855
+ 
+Adversaries exploit software vulnerability advantage programming error program
+ service
+ operating software kernel evade detection
+ Vulnerabilities exist software disable circumvent security features
+    Adversaries prior knowledge [Remote Discovery]
+https   attack
+mitre.org techniques T0888
+ security features implemented control devices
+ device security features targeted exploitation
+ examples firmware RAM ROM consistency checks control devices targeted adversaries enable installation malicious [System Firmware]
+https   attack
+mitre.org techniques T0857
+
+ 
+Adversaries seek achieve sustained loss control runaway condition operators issue commands malicious interference subsided
+  Corero
+  Michael J
+ Assante Robert M
+ Lee
+  Tyson Macaulay
+  German Federal Office Security 
+BSI
+ reported targeted attack steel 2014 Security Report
+
+Citation  BSI Security 2014
+ targeted attacks industrial operations breakdowns control components entire installations
+ result breakdowns
+ massive impact damage unsafe conditions uncontrolled shutdown blast furnace
+ 
+Adversaries attempt change current program control device
+ Program program control loaded device
+ 
+Adversaries hook application programming interface 
+API
+ functions processes redirect calls execution privilege escalation means
+ Windows processes leverage API functions perform tasks require reusable resources
+ Windows API functions typically stored dynamic-link libraries 
+DLLs
+ exported functions
+  Enterprise ATT&CK
+  type hooking ICS involves redirecting calls functions import address table 
+IAT
+ hooking
+ IAT hooking modifications processs IAT
+ pointers imported API functions stored
+  Nicolas Falliere
+ Liam Murchu
+ Eric Chien February 2011
+ 
+Adversaries perform control device identification determine model target device
+ Management software device APIs utilized adversary gain information
+ identifying obtaining device specifics
+ adversary determine device vulnerabilities
+ device understand device functionality inform decision target environment
+ 
+Program Organizational Units 
+POUs
+ block structures PLC programming create programs projects
+  Guidance IEC61131
+ POUs hold user programs written IEC 61131-3 languages  Structured text
+ Instruction list
+ Function block
+ Ladder logic
+  Guidance IEC61131
+ Application 201203 provide additional functionality
+ establishing connections PLC devices TCON
+  PLCBlaster Spenneberg
+    Stuxnet simple code-prepending infection technique infect Organization Blocks 
+OB
+
+ example
+ sequence actions performed OB1 infected   Stuxnet Symantec 201102
+  *Increase size original block
+ *Write malicious code block
+ *Insert original OB1 code malicious code
+ 
+Adversaries attempt gain access machine Graphical User Interface 
+GUI
+ enhance execution capabilities
+ Access GUI user interact visual manner CLI
+ GUI users cursor interface objects
+ mouse keyboard main input devices
+ opposed keyboard
+  physical access option
+ access protocols VNC Linux-based Unix-based operating systems
+ RDP Windows operating systems
+ adversary access execute programs applications target machine
+ 
+Adversaries setup rogue master leverage control server functions communicate outstations
+ rogue master send legitimate control messages control devices
+ processes unintended ways
+ disrupt network communications capturing receiving network traffic meant actual master
+ Impersonating master adversary avoid detection
+   Maroochy Shire attack
+ adversary falsified network addresses send false data instructions pumping stations
+
+Citation  Marshall Abrams July 2008
+  2017 Dallas Siren incident
+ adversaries rogue master send command messages 156 distributed sirens city
+ single rogue transmitter strong signal
+ distributed repeaters
+  Bastille April 2017
+  Zack Whittaker April 2017
+ 
+Adversaries interact native OS application programming interface 
+API
+ access functions
+ Native APIs provide controlled calling low-level OS services kernel
+ involving hardware devices
+ memory
+ processes
+  MITRE Corporation 2017
+ native APIs leveraged OS boot 
+when components initialized
+ carrying tasks requests routine operations
+   Functionality native APIs exposed user-mode applications interfaces libraries
+ example
+ functions memcpy direct operations memory registers modify user memory space
+ 
+Adversaries attempt disrupt essential components systems prevent owner operator delivering products services
+  Corero
+  Michael J
+ Assante Robert M
+ Lee
+  Tyson Macaulay
+   Adversaries leverage malware delete encrypt critical data HMIs
+ workstations
+ databases
+  2021 Colonial Pipeline ransomware incident
+ pipeline operations temporally halted 7th restarted 12th
+  Colonial Pipeline Company 2021
+ 
+Adversaries steal operational production environment direct mission outcome personal gain inform future operations
+ include design documents
+ schedules
+ rotational data
+ artifacts provide insight operations
+    Bowman Dam incident
+ adversaries probed systems operational data
+  Mark Thompson March 2016
+  Danny Yadron December 2015
+ 
+firmware modern assets designed update feature
+ device firmware factory installed require special reprograming equipment
+ available
+ firmware update feature enables vendors remotely patch bugs perform upgrades
+ Device firmware updates delegated user software update package
+ perform task network
+   adversary exploit firmware update feature accessible devices upload malicious out-of-date firmware
+ Malicious modification device firmware provide adversary root access device
+ firmware lowest programming abstraction layers
+  Basnight
+ Zachry
+ al
+
+ 
+Adversaries masquerading disguise malicious application executable file
+ avoid operator engineer suspicion
+ disguises masquerading files include commonly programs
+ expected vendor executables configuration files
+ commonplace application naming conventions
+ impersonating expected vendor-relevant files applications
+ operators engineers notice presence underlying malicious content running masquerading legitimate functions
+   Applications files commonly Windows systems engineering workstations impersonated before
+ simple renaming file effectively disguise ICS environment
+ 
+Adversaries perform program download transfer user program controller
+   Variations program download
+ online edit program append
+ controller continue running transfer reconfiguration process interruption process control
+ However
+ starting program download 
+i
+e.
+ download all
+ controller state
+ negative consequences physical process
+ controller fulfill time-sensitive action
+ Adversaries choose avoid download favor online edit program append avoid disrupting physical process
+ adversary technique Detect Operating Mode Change Operating Mode controller proper mode accept program download
+  granularity control transfer user program dictated management protocol S7CommPlus
+ TriStation
+ underlying controller API
+ Thus
+ program download high-level term suite vendor-specific API calls configure controllers user program memory space
+    [Modify Controller Tasking]
+https   attack
+mitre.org techniques T0821
+ [Modify Program]
+https   attack
+mitre.org techniques T0889
+ represent configuration transferred controller program download
+ 
+Adversaries systems
+ separated enterprise network
+ copying malware removable media inserted control systems environment
+ adversary rely unknowing trusted parties
+ suppliers contractors access privileges
+ introduce removable media
+ technique enables initial access target devices connect untrusted networks
+ physically accessible
+       Operators German nuclear power plant
+ Gundremmingen
+ discovered malware facility connected internet
+  Kernkraftwerk Gundremmingen April 2016
+  Trend Micro April 2016
+ malware included Conficker W32
+Ramnit
+ eighteen removable disk drives facility
+  Christoph Steitz
+ Eric Auchard April 2016
+  Catalin Cimpanu April 2016
+  Peter Dockrill April 2016
+  Lee Mathews April 2016
+  Sean Gallagher April 2016
+  Dark Reading Staff April 2016
+ plant checked infection cleaned 1
+000 computers
+  BBC April 2016
+ ESET researcher commented internet disconnection guarantee safety infection payload execution
+  ESET April 2016
+ 
+Adversaries attempt perform screen capture devices control environment
+ Screenshots workstations
+ HMIs
+ devices display environment-relevant process
+ device
+ reporting
+ alarm
+ data
+ device displays reveal ICS process
+ layout
+ control
+ schematics
+ particular
+ HMI provide lot industrial process information
+  ICS-CERT October 2017
+ Analysis screen captures provide adversary understanding intended operations interactions critical devices
+ 
+Adversaries leverage credentials hardcoded software firmware gain unauthorized interactive user session asset
+ Examples credentials hardcoded asset include   Username Passwords Cryptographic Certificates API tokens  [Default Credentials]
+https   attack
+mitre.org techniques T0812
+
+ credentials built changed asset owner
+ infeasible change impact control operation
+ credentials reused product lines device models published owner operators asset
+   Adversaries utilize hardcoded credentials control environment provide reliable access tools interact industrial assets
+   
+Adversaries steal credentials specific user service account credential access techniques
+ cases
+ default credentials control devices publicly available
+ Compromised credentials bypass access controls resources hosts network
+ persistent access remote systems
+ Compromised default credentials grant adversary increased privilege specific systems devices access restricted network
+ Adversaries choose malware tools
+ conjunction legitimate access credentials provide
+ harder detect presence control devices send legitimate commands unintended way
+   Adversaries create accounts
+ predefined account names passwords
+ provide backup access persistence
+  Booz Allen Hamilton
+   overlap credentials permissions network systems concern adversary pivot accounts systems reach level access 
+i
+e.
+ domain enterprise administrator
+  enterprise operational technology environments
+ Adversaries leverage valid credentials gain access system
+ 
+Adversaries exploit software vulnerabilities attempt elevate privileges
+ Exploitation software vulnerability occurs adversary takes advantage programming error program
+ service
+ operating software kernel execute adversary-controlled code
+ Security constructs permission levels hinder access techniques
+ adversaries perform privilege escalation include software exploitation circumvent restrictions
+  MITRE Corporation
+   initially gaining access system
+ adversary operating privileged process prevent accessing resources system
+ Vulnerabilities exist
+ operating components software commonly running permissions
+ exploited gain levels access system
+ enable unprivileged user level permissions root permissions depending component vulnerable
+ step adversary compromising endpoint properly configured limits privilege escalation methods
+  MITRE Corporation
+ 
+Adversaries attempt listing systems IP address
+ hostname
+ logical identifier network subsequent Lateral Movement Discovery techniques
+ Functionality exist adversary tools enable this
+ utilities operating vendor software used
+  Enterprise ATT&CK January 2018
+ 
+Adversaries compromise gain control engineering workstation Initial Access control environment
+ Access engineering workstation occur physical means
+ Valid Accounts privileged access infection removable media
+ dual-homed engineering workstation adversary access multiple networks
+ example
+ unsegregated process control
+ safety system
+ networks
+ Engineering Workstation designed reliable computing platform configures
+ maintains
+ diagnoses control equipment applications
+ Compromise engineering workstation provide access to
+ control of
+ control applications equipment
+ Maroochy attack
+ adversary utilized computer
+ stolen
+ proprietary engineering software communicate wastewater system
+ 
+Adversaries connection proxy direct network traffic systems intermediary network communications
+  definition proxy expanded encompass trust relationships networks peer-to-peer
+ mesh
+ trusted connections networks consisting hosts systems regularly communicate other
+  network single organization multiple organizations trust relationships
+ Adversaries types relationships manage command control communications
+ reduce simultaneous outbound network connections
+ provide resiliency connection loss
+ ride existing trusted communications paths victims avoid suspicion
+  Enterprise ATT&CK January 2018
+ 
+Adversaries establish command control capabilities commonly application layer protocols HTTP
+S
+
+ OPC
+ RDP
+ telnet
+ DNP3
+ modbus
+ protocols disguise adversary actions benign network traffic
+ Standard protocols port non-standard port
+  Adversaries protocols reach network command control
+ infected devices network
+ 
+Adversaries malicious code system
+ malfunction modifying control logic
+ Control devices programming languages 
+e
+g. relay ladder logic
+ control physical processes actuators
+ machines operate
+ based environment sensor readings
+ devices include ability perform remote control logic updates
+   Program code edited vendor-specific Integrated Development Environment 
+IDE
+ relies proprietary tools features
+ IDEs engineer perform host target development ability code machine programmed for
+ IDE transmit control logic testing device
+ perform required device-specific functions apply active
+  adversary attempt host target IDE modify device control logic
+ proprietary tools edit update control logic
+ process reverse-engineered reproduced open-source tools
+  adversary de-calibrate sensor removing functions control logic account sensor error
+ change control process spoofing command messages controller device
+   believed process happened lesser over-pressurizer attacks build Stuxnet
+ Pressure sensors perfect translating pressure analog output signal
+ errors corrected calibration
+ pressure controller told  real  pressure analog signals automatically linearize measurement  real  pressure
+ linearization overwritten malicious code S7-417 controller
+ analog pressure readings  corrected  attack pressure controller
+ interprets analog pressure readings perfectly normal pressure matter analog values are
+ pressure controller acts stage exhaust valves
+ meantime
+ actual pressure rising
+  Stuxnet Langner 201311
+  Maroochy Attack
+ Vitek Boden gained remote access control altered data function occurred pumping stations occur occurred way
+ software program installed laptop developed Hunter Watertech changing configurations PDS computers
+ ultimately led 800
+000 liters raw sewage spilled community
+  Maroochy MITRE 200808
+ 
+Adversaries leverage remote services assets network segments
+ services operators interact systems remotely network
+ examples RDP
+ SMB
+ SSH
+ mechanisms
+  Blake Johnson
+ Dan Caban
+ Marina Krotofil
+ Dan Scali
+ Nathan Brubaker
+ Christopher Glyer December 2017
+  Dragos December 2017
+  Joe Slowik April 2019
+   Remote services support remote access
+ data transmission
+ authentication
+ resolution
+ remote functions
+ Further
+ remote services operators administrators configure systems network engineering management workstations
+ adversary technique access devices dual-homed  Blake Johnson
+ Dan Caban
+ Marina Krotofil
+ Dan Scali
+ Nathan Brubaker
+ Christopher Glyer December 2017
+ multiple network segments
+ [Program Download]
+https   attack
+mitre.org techniques T0843
+ execute attacks control devices [Valid Accounts]
+https   attack
+mitre.org techniques T0859
+
+  Specific remote services 
+RDP & VNC
+ precursor enable [Graphical User Interface]
+https   attack
+mitre.org techniques T0823
+ execution devices HMIs engineering workstation software
+  Based incident data
+ CISA FBI assessed Chinese state-sponsored actors compromised authorized remote access channels
+ including systems designed transfer data access corporate ICS networks
+   CISA AA21-201A Pipeline Intrusion July 2021
+ 
+Adversaries input output 
+I O
+ module discovery gather key control device
+ module device control device receive send signals devices
+ signals analog digital
+ support protocols
+ Devices attachable modules increase inputs outputs utilize
+ adversary access device native device functions enumerate modules connected device
+ modules aid adversary understanding control processes
+ 
+Adversaries denial control temporarily prevent operators engineers interacting process controls
+ adversary attempt deny process control access temporary loss communication control device prevent operator adjustment process controls
+ process operating period control loss
+ desired state
+  Corero
+  Michael J
+ Assante Robert M
+ Lee
+  Tyson Macaulay
+  Maroochy Shire attack
+ adversary temporarily shut investigator network preventing issuing controls
+
+Citation  Marshall Abrams July 2008
+  2017 Dallas Siren incident operators unable disable false alarms Office Emergency Management headquarters
+  Mark Loveless April 2017
+ 
+Adversaries modify alarm settings prevent alerts inform operators presence prevent responses dangerous unintended scenarios
+ Reporting messages standard data acquisition control systems
+ Reporting messages transmit acknowledgements specific actions occurred
+ messages provide vital management physical process
+ operators
+ engineers
+ administrators aware devices physical processes
+   adversary change reporting settings
+ events prevented reported
+ type modification prevent operators devices performing actions safe state
+ critical reporting messages trigger actions [Impact]
+http   attacksite
+mitre.org tactics TA0105 
+ occur
+   ICS environments
+ adversary [Alarm Suppression]
+https   attack
+mitre.org techniques T0878
+ contend multiple alarms alarm propagation achieve specific goal evade detection prevent intended responses occurring
+  Jos Wetzels
+ Marina Krotofil 2019
+  Methods suppression rely modification alarm settings
+ modifying memory code fixed values tampering assembly level instruction code
+   Maroochy Shire attack
+ adversary disabled alarms pumping stations
+ caused alarms reported central computer
+
+Citation  Marshall Abrams July 2008
+ 
+Adversaries communicate commonly port bypass firewalls network detection systems blend normal network activity
+ avoid detailed inspection
+ protocol port
+ completely protocol
+ commonly ports
+ examples below
+     TCP 80 
+HTTP
+   TCP 443 
+HTTPS
+   TCP UDP 53 
+DNS
+   TCP 1024-4999 
+OPC XP Win2k3
+   TCP 49152-65535 
+OPC Vista later
+   TCP 23 
+TELNET
+   UDP 161 
+SNMP
+   TCP 502 
+MODBUS
+   TCP 102 
+S7comm ISO-TSAP
+   TCP 20000 
+DNP3
+   TCP 44818 
+Ethernet IP
+ 
+Adversaries attempt infect project files malicious code
+ project files consist objects
+ program organization units
+ variables tags
+ documentation
+ configurations PLC programs function
+  Beckhoff
+ built functions engineering software
+ adversaries download infected program PLC operating environment enabling [execution]
+http   attacksite
+mitre.org tactics TA0104 
+ [persistence]
+http   attacksite
+mitre.org tactics TA0110 
+ techniques
+  PLCdev
+   Adversaries export code project files conditions execute specific intervals
+  Nicolas Falliere
+ Liam Murchu
+ Eric Chien February 2011
+ Malicious programs adversaries control aspects process enabled PLC
+ project file downloaded PLC workstation device disconnected infected project file executing
+  PLCdev
+ 
+Adversaries perform network connection enumeration discover device communication patterns
+ adversary inspect network connection tools
+ Netstat
+Citation  Netstat
+
+ conjunction [System Firmware]
+https   attack
+mitre.org techniques T0857
+
+ determine role devices network   MITRE
+
+ adversary [Network Sniffing]
+https   attack
+mitre.org techniques T0842
+ watch network traffic details source
+ destination
+ protocol
+ content
+ 
+Adversaries transfer tools files stage adversary tools files operation
+  Enterprise ATT&CK
+ Copying files performed laterally internal victim systems support Lateral Movement remote Execution inherent file sharing protocols file sharing SMB connected network shares
+  Enterprise ATT&CK
+  control systems environments
+ malware SMB file sharing protocols laterally industrial networks
+ 
+Adversaries install malicious vulnerable firmware modular hardware devices
+ Control devices modular hardware devices
+ devices set firmware separate firmware main control equipment
+     technique [System Firmware]
+https   attack
+mitre.org techniques T0857
+
+ conducted components capabilities level integrity checking
+ device re-image
+ malicious device firmware provide persistent access remaining devices
+  Daniel Peck
+  Dale Peterson January 2009
+    easy access adversary Ethernet card
+ CPU
+ RAM
+ operating system
+ adversary attack exploit Ethernet card
+ Exploitation Ethernet card enable adversary accomplish additional attacks
+   Daniel Peck
+  Dale Peterson January 2009
+    Delayed Attack adversary stage attack advance choose launch it
+ damaging time
+   Brick Ethernet Card Malicious firmware programmed result Ethernet card failure
+ requiring factory return
+   Random Attack Failure adversary load malicious firmware multiple field devices
+ Execution attack time occurs generated pseudo-random generator
+    Field Device Worm adversary choose identify field devices model
+ goal performing device-wide compromise
+   Attack Cards Field Device module field device
+ Ethernet card accessible adversary malware
+ Compromise Ethernet card provide direct route compromising modules
+ CPU module
+ 
+Adversaries gain access industrial environments systems exposed internet remote access [External Remote Services]
+https   attack
+mitre.org techniques T0822
+
+ Internet Accessible Devices exposed internet unintentionally intentionally adequate protections
+ adversaries control network
+ Access devices accomplished exploits
+ represented [Exploit Public-Facing Application]
+https   attack
+mitre.org techniques T0819
+ technique
+  Adversaries leverage built functions remote access protected utilize minimal legacy protections targeted
+  NCCIC January 2014
+ services discoverable online scanning tools
+   Bowman dam incident
+ adversaries leveraged access dam control network cellular modem
+ Access device protected password authentication
+ application vulnerable brute forcing
+  NCCIC January 2014
+  Danny Yadron December 2015
+  Mark Thompson March 2016
+  Trend Micros manufacturing deception operations adversaries detected leveraging direct internet access ICS environment exposure operational protocols Siemens S7
+ Omron FINS
+ EtherNet IP
+ addition misconfigured VNC access
+  Stephen Hilt
+ Federico Maggi
+ Charles Perine
+ Lord Remorin
+ Martin Rsler
+ Rainer Vosseler
+ 
+Adversaries modify add program controller affect interacts physical process
+ peripheral devices hosts network
+ Modification controller programs accomplished Program Download addition types program modification online edit program append
+   Program modification encompasses addition modification instructions logic contained Program Organization Units 
+POU
+   IEC February 2013
+ programming elements controllers
+ include
+ example
+ adding functions controller
+ modifying logic existing functions calls function another
+   programs adversary interact native API controller advantage obscure features vulnerabilities
+ 

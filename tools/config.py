@@ -1,22 +1,33 @@
+# Args for modules to use if needed
 import os
 
+proxy = "http://127.0.0.1:1080"
 
-class Config:
-    BASE_DIR: str = os.path.dirname(os.path.dirname(__file__))
+# Workbench credentials to use if pulling STIX from ATT&CK Workbench version 1.2.0 or later
+WORKBENCH_USER = os.getenv("WORKBENCH_USER")
+WORKBENCH_API_KEY = os.getenv("WORKBENCH_API_KEY")
 
-    URL: str = "https://github.com/mitre/cti.git"
 
-    MITRE_ATTACK_DATA_PATH: str = BASE_DIR + "/mitre_attack/data/cti/"
+# Domains for stix objects
+STIX_LOCATION_ENTERPRISE = os.getenv(
+    "STIX_LOCATION_ENTERPRISE",
+    "https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json",
+)
+STIX_LOCATION_MOBILE = os.getenv(
+    "STIX_LOCATION_MOBILE", "https://raw.githubusercontent.com/mitre/cti/master/mobile-attack/mobile-attack.json"
+)
+STIX_LOCATION_ICS = os.getenv(
+    "STIX_LOCATION_ICS", "https://raw.githubusercontent.com/mitre/cti/master/ics-attack/ics-attack.json"
+)
+STIX_LOCATION_PRE = os.getenv(
+    "STIX_LOCATION_PRE", "https://raw.githubusercontent.com/mitre/cti/master/pre-attack/pre-attack.json"
+)
+domains = [
+    {"name": "enterprise-attack", "location": STIX_LOCATION_ENTERPRISE, "alias": "Enterprise", "deprecated": False},
+    {"name": "mobile-attack", "location": STIX_LOCATION_MOBILE, "alias": "Mobile", "deprecated": False},
+    {"name": "ics-attack", "location": STIX_LOCATION_ICS, "alias": "ICS", "deprecated": False},
+    {"name": "pre-attack", "location": STIX_LOCATION_PRE, "alias": "PRE-ATT&CK", "deprecated": True},
+]
 
-    SECURITY_RULES_PATH: str = BASE_DIR + "/security_rules/data/"
-
-    EXTEND_STOP_WORD: list[str] = ["citation", "may", "e.g", "e.g.", "'s", "att", "ck", 'like', 'particular']
-
-    # SECURITY_RULES_PROP: list[str] = ['category', 'name', 'remarks']
-    SECURITY_RULES_PROP: list[str] = ['category', 'name', 'remarks', 'description']
-
-    FILTER_PUNCTUATIONS: list[str] = [',', '.', ':', ';', '?', '(', ')', '[', ']', '!', '*', '@', '#', '$', '%', '`',
-                                      '&', '``', "''", '{', '}', '“', '”', '-', '’', '‘', "'", '/', '<', '>', '--',
-                                      '~/', '|', '_', '..', '\\', '\\\\', '=', '+', '-']
-
-    OUTPUT_CSV: str = BASE_DIR + "/mitre_attack/data/"
+# Declare file location
+directory = "mitre_attack_data"
