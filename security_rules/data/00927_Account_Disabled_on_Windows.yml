@@ -1,0 +1,20 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '927'
+eventType: event
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Account Disabled on Windows
+nameCN: Windows：账户禁用
+parseEsResultKeys: ''
+redisEventKey: event-ts-account-disabled
+remarkCN: 账号在Windows主机 {dataSrcIP} 上被禁用
+remarks: A user account was disabled on Windows Windows host {dataSrcIP}
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"4725"}},{"match":{"cat": "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: attack.enterprise.T1531
+threshold: 1
+timeWindow: 30000

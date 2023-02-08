@@ -1,0 +1,20 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '930'
+eventType: event
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Privilege Removed on Windows
+nameCN: Windows：特权移除
+parseEsResultKeys: ''
+redisEventKey: event-ts-privilege-removed
+remarkCN: 账号在Windows主机 {dataSrcIP} 上被删除权限
+remarks: A user right was removed on Windows host {dataSrcIP}
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"4705"}},{"match":{"cat": "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: attack.enterprise.T1531
+threshold: 1
+timeWindow: 30000
