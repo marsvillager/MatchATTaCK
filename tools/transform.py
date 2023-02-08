@@ -1,8 +1,6 @@
-from typing import TextIO
-from matplotlib import pyplot as plt
 from nltk import pos_tag, WordNetLemmatizer, PorterStemmer, FreqDist, LancasterStemmer, SnowballStemmer
-from wordcloud import WordCloud
-from tools.config import Config
+
+from tools.clean_data import tokenize, rm_punctuation, rm_stop_words
 
 
 def word_pos_tag(words: list[str]) -> list[str]:
@@ -50,44 +48,8 @@ def stemmer(words: list[str]) -> list[str]:
     return cut_word
 
 
-def freq_count(words: list[str]) -> FreqDist:
-    """
-    Count frequency of words.
-
-    :param words: list[str]
-    :return: FreqDist.items() --> (word, count_num)
-    """
-    freq: FreqDist = FreqDist(words)
-
-    return freq
-
-
-def freq_count_out(freq: FreqDist) -> None:
-    """
-    Output to .txt file.
-
-    :param freq: FreqDist.items() --> (word, count_num)
-    :return: None
-    """
-    word_freq_file: TextIO = open(Config.OUTPUT_WORD_FREQ, mode="w", encoding="utf-8")
-
-    for key, val in freq.items():
-        word_freq_file.write(str(key) + ": " + str(val) + "\n")
-
-    word_freq_file.close()
-
-
-def word_cloud(words: list[str]) -> None:
-    """
-    词云制作（词频统计可视化）.
-
-    :param words: list[str]
-    :return: None
-    """
-    wc = WordCloud(collocations=False, background_color='white', width=1600, height=1200)
-    wwc = wc.generate(words)
-    wwc.to_file(Config.OUTPUT_WORD_CLOUD_PIC)
-    plt.figure(figsize=(20, 20))
-    plt.imshow(wwc)
-    plt.axis("off")
-    plt.show()
+def is_lemma(words: str, lemma: bool):
+    if lemma:
+        return set(stemmer(lemmatize(rm_stop_words(rm_punctuation(tokenize(words))))))
+    else:
+        return set(lemmatize(rm_stop_words(rm_punctuation(tokenize(words)))))

@@ -2,6 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/data/mitre_attack/cti" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mitre_attack/data/cti" vcs="Git" />
   </component>
 </project>
