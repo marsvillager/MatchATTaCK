@@ -1,5 +1,4 @@
 import json
-
 import pandas as pd
 import stix2
 
@@ -49,22 +48,6 @@ def format_data(lemma: bool) -> pd.DataFrame:
             for item in detect_list:
                 detects = detects + ' ' + item['relationship']['description']
             detects: set[str] = is_lemma(detects, lemma)
-
-        # if 'x_mitre_data_sources' in technique:
-        #     source_names: list[str] = technique["x_mitre_data_sources"]
-        #     for source_name in source_names:
-        #         sources: list = get_data([
-        #             Filter("type", "=", "x-mitre-data-component"),
-        #             # attack-pattern: x-mitre-data-source: x-mitre-data-component
-        #             Filter('name', '=', source_name.split(': ')[1])
-        #         ])
-        #         relationships: list = get_data([
-        #             Filter("type", "=", "relationship"),
-        #             Filter('source_ref', '=', sources[0]['id']),
-        #             Filter('target_ref', '=', technique['id'])
-        #         ])
-        #         detects = detects + ' ' + relationships[0]['description']
-        #     detects: set[str] = is_lemma(detects, lemma)
 
         format_dict: dict[str, str] = {"id": technique["external_references"][0]["external_id"],
                                        "name": ' '.join(name),

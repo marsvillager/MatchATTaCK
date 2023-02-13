@@ -17,6 +17,9 @@ class Config:
 
     FILTER_PUNCTUATIONS: list[str] = [',', '.', ':', ';', '?', '(', ')', '[', ']', '!', '*', '@', '#', '$', '%', '`',
                                       '&', '``', "''", '{', '}', '“', '”', '-', '’', '‘', "'", '/', '<', '>', '--',
-                                      '~/', '|', '_', '..', '\\', '\\\\', '=', '+', '-']
+                                      '~/', '|', '_', '..', '\\', '\\\\', '=', '+', '-', '.,', ').']
 
     OUTPUT_CSV: str = BASE_DIR + "/mitre_attack/data/"
+
+    POS_TAGGER_PATH: str = \
+        BASE_DIR + "/tools/stanford-postagger-full-2020-11-17/models/english-bidirectional-distsim.tagger"

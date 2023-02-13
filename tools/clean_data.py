@@ -1,4 +1,4 @@
-from nltk import word_tokenize
+from nltk import WordPunctTokenizer
 from nltk.corpus import stopwords
 from tools.config import Config
 
@@ -10,7 +10,9 @@ def tokenize(words: str) -> list[str]:
     :param words: raw text
     :return: tokenized text
     """
-    return word_tokenize(words.lower())
+    word_tokenizer = WordPunctTokenizer()
+
+    return word_tokenizer.tokenize(words.lower())
 
 
 def rm_punctuation(words: list[str]) -> list[str]:
@@ -27,7 +29,7 @@ def rm_stop_words(words: list[str]) -> list[str]:
     """
     Remove specified stop words.
 
-    :param words:
+    :param words: tokenized text
     :return: text without stop words
     """
     stop_words: set = set(stopwords.words("english"))
@@ -35,3 +37,13 @@ def rm_stop_words(words: list[str]) -> list[str]:
         stop_words.add(word)
 
     return [word for word in words if word not in stop_words]
+
+
+def rm_single_word(words: list[str]) -> list[str]:
+    """
+    Remove single words.
+
+    :param words: tokenized text
+    :return: text without single word
+    """
+    return [word for word in words if len(word) > 1]

@@ -1,16 +1,19 @@
-from nltk import pos_tag, WordNetLemmatizer, PorterStemmer, FreqDist, LancasterStemmer, SnowballStemmer
+from nltk import pos_tag, WordNetLemmatizer, PorterStemmer, LancasterStemmer, SnowballStemmer
+from nltk.tag import StanfordPOSTagger
+from tools.clean_data import tokenize, rm_punctuation, rm_stop_words, rm_single_word
+from tools.config import Config
 
-from tools.clean_data import tokenize, rm_punctuation, rm_stop_words
 
-
-def word_pos_tag(words: list[str]) -> list[str]:
+def word_pos_tag(words: list[str]) -> list[tuple]:
     """
     词性标注.
 
     :param words: list[str]
     :return: list[(word, pos)]
     """
-    return pos_tag(words)
+    # return pos_tag(words)
+    st = StanfordPOSTagger(Config.POS_TAGGER_PATH)
+    return st.tag(words)
 
 
 def lemmatize(words: list[str]) -> list[str]:
@@ -48,8 +51,18 @@ def stemmer(words: list[str]) -> list[str]:
     return cut_word
 
 
+def extract_nouns(words: list[str]) -> list[str]:
+    """
+    根据标注的词性，仅取其中的名词
+
+    :param words: list[str]
+    :return:
+    """
+    return [word[0] for word in word_pos_tag(words) if 'NN' in word[1]]  # NN, NNS, NNP, NNPS
+
+
 def is_lemma(words: str, lemma: bool):
     if lemma:
-        return set(stemmer(lemmatize(rm_stop_words(rm_punctuation(tokenize(words))))))
+        return set(rm_single_word(stemmer(extract_nouns(lemmatize(rm_stop_words(rm_punctuation(tokenize(words))))))))
     else:
-        return set(lemmatize(rm_stop_words(rm_punctuation(tokenize(words)))))
+        return set(rm_single_word(extract_nouns(lemmatize(rm_stop_words(rm_punctuation(tokenize(words)))))))

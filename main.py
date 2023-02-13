@@ -1,7 +1,7 @@
 import nltk
 import pandas as pd
 
-from mitre_attack.process.package import format_data, get_data
+from mitre_attack.process.package import format_data
 from mitre_attack.process.prepare import update
 from security_rules.process.extend import get_synset
 from security_rules.process.process_data import process
@@ -13,6 +13,8 @@ if __name__ == '__main__':
     if input() == 'yes':
         nltk.download('punkt')
         nltk.download('stopwords')
+        nltk.download('wordnet')
+        nltk.download('averaged_perceptron_tagger')
 
         # mitre att&ck
         update()
@@ -20,8 +22,9 @@ if __name__ == '__main__':
         format_list.to_csv(Config.OUTPUT_CSV + "mitre_data.csv", sep=',', index=False, header=True)
 
     # security rules, lemma if True
-    # keywords: set[str] = process(Config.SECURITY_RULES_PATH + "15022_LoginLogoutAtUnusualTime.yml", True)
-    keywords: set[str] = get_synset(Config.SECURITY_RULES_PATH + "15022_LoginLogoutAtUnusualTime.yml", True)
+    keywords: set[str] = process(Config.SECURITY_RULES_PATH + "15022_LoginLogoutAtUnusualTime.yml", True)
+    print(keywords)
+    # keywords: set[str] = get_synset(Config.SECURITY_RULES_PATH + "15022_LoginLogoutAtUnusualTime.yml", True)
 
     # mitre att&ck
     format_list: pd.DataFrame = pd.read_csv(Config.OUTPUT_CSV + "mitre_data.csv")
