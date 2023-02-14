@@ -11,9 +11,11 @@ def word_pos_tag(words: list[str]) -> list[tuple]:
     :param words: list[str]
     :return: list[(word, pos)]
     """
-    # return pos_tag(words)
-    st = StanfordPOSTagger(Config.POS_TAGGER_PATH, path_to_jar=Config.STANFORD_POSTAGGER_JAR_PATH)
-    return st.tag(words)
+    return pos_tag(words)
+    # st = StanfordPOSTagger(Config.POS_TAGGER_PATH,
+    #                        path_to_jar=Config.STANFORD_POSTAGGER_JAR_PATH,
+    #                        java_options="-Xmx8G")
+    # return st.tag(words)
 
 
 def lemmatize(words: list[str]) -> list[str]:

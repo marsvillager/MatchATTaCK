@@ -15,9 +15,7 @@ class Config:
     # SECURITY_RULES_PROP: list[str] = ['category', 'name', 'remarks']
     SECURITY_RULES_PROP: list[str] = ['category', 'name', 'remarks', 'description']
 
-    FILTER_PUNCTUATIONS: list[str] = [',', '.', ':', ';', '?', '(', ')', '[', ']', '!', '*', '@', '#', '$', '%', '`',
-                                      '&', '``', "''", '{', '}', '“', '”', '-', '’', '‘', "'", '/', '<', '>', '--',
-                                      '~/', '|', '_', '..', '\\', '\\\\', '=', '+', '-', '.,', ').']
+    FILTER_PUNCTUATIONS: list[str] = [r"\\", r"//", r"~/", r"\~/", r"/\/", r"\\\\.\\", r"\\\\"]
 
     OUTPUT_CSV: str = BASE_DIR + "/mitre_attack/data/"
 

@@ -1,18 +1,18 @@
-from nltk import WordPunctTokenizer
+from nltk import WordPunctTokenizer, word_tokenize
 from nltk.corpus import stopwords
 from tools.config import Config
 
 
 def tokenize(words: str) -> list[str]:
     """
-    Tokenize words.
+    Tokenize words.(two kinds)
 
     :param words: raw text
     :return: tokenized text
     """
     word_tokenizer = WordPunctTokenizer()
 
-    return word_tokenizer.tokenize(words.lower())
+    return word_tokenize(' '.join(word_tokenizer.tokenize(words.lower())))
 
 
 def rm_punctuation(words: list[str]) -> list[str]:
@@ -22,7 +22,7 @@ def rm_punctuation(words: list[str]) -> list[str]:
     :param words: tokenized text
     :return: text without specified punctuations and '//website'
     """
-    return [word for word in words if word not in Config.FILTER_PUNCTUATIONS and "//" not in word]
+    return [word for word in words if word not in Config.FILTER_PUNCTUATIONS]
 
 
 def rm_stop_words(words: list[str]) -> list[str]:

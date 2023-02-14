@@ -18,11 +18,11 @@ if __name__ == '__main__':
 
         # mitre att&ck
         update()
-        format_list: pd.DataFrame = format_data(True)  # lemma if True
+        format_list: pd.DataFrame = format_data(False)  # lemma if True
         format_list.to_csv(Config.OUTPUT_CSV + "mitre_data.csv", sep=',', index=False, header=True)
 
     # security rules, lemma if True
-    keywords: set[str] = process(Config.SECURITY_RULES_PATH + "15022_LoginLogoutAtUnusualTime.yml", True)
+    keywords: set[str] = process(Config.SECURITY_RULES_PATH + "15022_LoginLogoutAtUnusualTime.yml", False)
     print(keywords)
     # keywords: set[str] = get_synset(Config.SECURITY_RULES_PATH + "15022_LoginLogoutAtUnusualTime.yml", True)
 
