@@ -12,7 +12,7 @@ def word_pos_tag(words: list[str]) -> list[tuple]:
     :return: list[(word, pos)]
     """
     # return pos_tag(words)
-    st = StanfordPOSTagger(Config.POS_TAGGER_PATH)
+    st = StanfordPOSTagger(Config.POS_TAGGER_PATH, path_to_jar=Config.STANFORD_POSTAGGER_JAR_PATH)
     return st.tag(words)
 
 
