@@ -22,12 +22,13 @@ if __name__ == '__main__':
         format_list.to_csv(Config.OUTPUT_CSV + "mitre_data.csv", sep=',', index=False, header=True)
 
     # security rules, lemma if True
-    keywords: set[str] = process(Config.SECURITY_RULES_PATH + "15022_LoginLogoutAtUnusualTime.yml", False)
+    # keywords: set[str] = process(Config.SECURITY_RULES_PATH + "15022_LoginLogoutAtUnusualTime.yml", False)
+    keywords: set[str] = process(Config.SECURITY_RULES_PATH + "00927_Account_Disabled_on_Windows.yml", False)
     print(keywords)
     # keywords: set[str] = get_synset(Config.SECURITY_RULES_PATH + "15022_LoginLogoutAtUnusualTime.yml", True)
 
     # mitre att&ck
-    format_list: pd.DataFrame = pd.read_csv(Config.OUTPUT_CSV + "mitre_data.csv")
+    format_list: pd.DataFrame = pd.read_csv(Config.OUTPUT_CSV + "mitre_data(完整).csv")
 
     # match
     print(result(keywords, format_list))
