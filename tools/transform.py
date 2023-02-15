@@ -68,3 +68,7 @@ def is_lemma(words: str, lemma: bool):
         return set(rm_single_word(stemmer(extract_nouns(lemmatize(rm_stop_words(rm_punctuation(tokenize(words))))))))
     else:
         return set(rm_single_word(extract_nouns(lemmatize(rm_stop_words(rm_punctuation(tokenize(words)))))))
+    # if lemma:
+    #     return set(rm_single_word(stemmer(lemmatize(rm_stop_words(rm_punctuation(tokenize(words)))))))
+    # else:
+    #     return set(rm_single_word(lemmatize(rm_stop_words(rm_punctuation(tokenize(words))))))
