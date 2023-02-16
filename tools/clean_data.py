@@ -12,7 +12,7 @@ def tokenize(words: str) -> list[str]:
     """
     word_tokenizer = WordPunctTokenizer()
 
-    return word_tokenize(' '.join(word_tokenizer.tokenize(words.lower())))
+    return word_tokenize(' '.join(word_tokenizer.tokenize(str(words).lower())))
 
 
 def rm_punctuation(words: list[str]) -> list[str]:

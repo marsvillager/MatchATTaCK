@@ -6,7 +6,7 @@ from mitre_attack.process.prepare import update
 from security_rules.process.extend import get_synset
 from security_rules.process.process_data import process
 from tools.config import Config
-from tools.rank import result
+from tools.rank import result, tf_idf
 
 if __name__ == '__main__':
     print("Download/Update data or not? Please input yes or no:")
@@ -31,4 +31,5 @@ if __name__ == '__main__':
     format_list: pd.DataFrame = pd.read_csv(Config.OUTPUT_CSV + "mitre_data(完整).csv")
 
     # match
-    print(result(keywords, format_list))
+    # print(result(keywords, format_list))
+    print(tf_idf(keywords, format_list))
