@@ -1,0 +1,20 @@
+category: account
+ciaLevel: integrity
+component: EDA
+eventId: '2002'
+eventType: event
+impact: ''
+keys: '{"account":{"en":"Account", "zh":"账户"}}'
+name: Account Lifecycle Correlation
+nameCN: 账号生命周期关联
+parseEsResultKeys: ''
+redisEventKey: event-ts-eda-account-lifecycle-correlation
+remarkCN: '账号生命周期关联 (账户名: {account})'
+remarks: 'Account Lifecycle Correlation (Account Name: {account})'
+ruleType: '5'
+script: ''
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 10000

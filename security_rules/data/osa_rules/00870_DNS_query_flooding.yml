@@ -1,0 +1,25 @@
+category: attack,network
+ciaLevel: confidentiality
+component: SI
+description: A DNS query flood uses a network of clients to target a single server
+  with floods of valid requests. Because this type of attack involves flooding a single
+  DNS server with valid requests, it is difficult for a DNS server to distinguish
+  between a DNS query flood and normal, heavy traffic.
+eventId: '870'
+eventType: alert
+impact: ''
+keys: '{"dst":{"en":"Destination Address", "zh":"目标地址"}}'
+name: DNS query flooding
+nameCN: DNS请求洪水
+parseEsResultKeys: aggregations:sensor_ids:buckets:dst:buckets
+redisEventKey: event-ts-dns-query-flooding-attacking
+remarkCN: 主机 {src} 进行DNS请求洪泛攻击
+remarks: Host {src} launchs DNS query flooding
+requirements: No requirements.
+ruleType: '3'
+script: '{"query": {"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"dns"}},{"exists":{"field":"dst"}}]}},"aggs":{"sensor_ids":{"terms":{"field":"fields.gl2_source_collector.keyword"},"aggs":{"dst":{"terms":{"field":"dst"}}}}},"size":1}'
+source: network
+status: 0
+tags: [attack.enterprise.T1499, attack.enterprise.T1498.001, attack.ics.T0814]
+threshold: 50000
+timeWindow: 60000

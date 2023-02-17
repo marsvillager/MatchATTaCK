@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1575'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Data Compressed - Powershell
+nameCN: Powershell数据压缩
+parseEsResultKeys: ''
+redisEventKey: event-ts-data-compressed-powershell
+remarkCN: 主机 {src} 检测到攻击者可能压缩渗漏前收集的数据(例如敏感文档)，使其可移植且最大程度减少使用网络发送的数据量
+remarks: An adversary may compress data (e.g., sensitive documents) that is collected
+  prior to exfiltration in order to make it portable and minimize the amount of data
+  sent over the network on host {src}
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase":
+  {"eventId": "4104"}}, {"wildcard": {"keywords.keyword": "*-Recurse*"}}, {"wildcard":
+  {"keywords.keyword": "*|*"}}, {"wildcard": {"keywords.keyword": "*Compress-Archive*"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,22 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '957'
+eventType: warning
+impact: ''
+keys: '{"shost":{"en":"Source Host", "zh":"源主机"}}'
+name: USB Device connected
+nameCN: ''
+parseEsResultKeys: ''
+redisEventKey: event-ts-usb-plug-in
+remarkCN: ''
+remarks: USB device was plugged in on host {shost}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"cat": "winEvent"}},{"match":{"eventId":
+  "2101"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: [operation.usb]
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,22 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '915'
+eventType: event
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Change User on Windows
+nameCN: Windows：账户变更
+parseEsResultKeys: ''
+redisEventKey: event-ts-user-change
+remarkCN: Windows主机 {dataSrcIP} 上的账号权限变更
+remarks: A user account was changed on Windows host {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"4738"}},{"match":{"eventId":"642"}}]}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1098]
+threshold: 1
+timeWindow: 30000

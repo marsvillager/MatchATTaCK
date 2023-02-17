@@ -1,0 +1,28 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1591'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: CACTUSTORCH Remote Thread Creation
+nameCN: CACTUSTORCH远程线程创建
+parseEsResultKeys: ''
+redisEventKey: event-ts-cactustorch-remote-thread-creation
+remarkCN: 主机 {src} 检测到从CACTUSTORCH创建远程线程
+remarks: Host {src} detects remote thread creation from CACTUSTORCH
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase":
+  {"EventLog": "Microsoft-Windows-Sysmon"}}, {"match_phrase": {"eventId": "8"}}, {"bool":
+  {"should": [{"wildcard": {"event_data.SourceImage.keyword": "*\\\\System32\\\\cscript.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\System32\\\\wscript.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\System32\\\\mshta.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\winword.exe"}}, {"wildcard":
+  {"event_data.SourceImage.keyword": "*\\\\excel.exe"}}]}}, {"bool": {"must_not":
+  {"exists": {"field": "event_data.StartModule"}}}}, {"wildcard": {"event_data.TargetImage.keyword":
+  "*\\\\SysWOW64\\\\*"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,27 @@
+category: account
+ciaLevel: integrity
+component: SI
+description: This rule identifies situations in which a non-allowlisted user account successfully operated a Windows login. The rule takes advantage of Windows AppLocker, a Windows utility (introduced with Microsoft Windows 7 operating systems) built to allow an administrator to restrict which programs users can execute based on several features (e.g., programs` paths, publishers, hashes, etc.) or with a custom Group Policy. Situations such as this one might indicate a discrepancy between the known accounts (the one allowlisted) and the actual accounts capable of logging in. In some cases, new accounts can be artificiously created (e.g., not through the available interface but directly added to the list of available users) to maintain access to the operating system.
+eventId: 15021
+eventType: alert
+impact: ''
+keys: ''
+name: Login Attempt of Non Registered Account
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+ usernameX: An allowlisted username 
+parseEsResultKeys: ''
+product: generic, vicosoc100, vicoss&d
+redisEventKey: event-login-of-non-registered-account
+remarkCN: ''
+remarks: A non-registered account logged in
+requirements: Windows Applocker needs to be installed and running.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"4624"}},{"match":{"eventId":"528"}}]}},{"bool":{"must_not":[{"terms":{"objectUserName":["username1","username2","..."]}}]}},{"match":{"cat":"winEvent"}},{"range":{"@timestamp":{"gt":"<bt>", "lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 1
+tags: [attack.enterprise.T1078.003]
+threshold: 1
+timeWindow: 60000

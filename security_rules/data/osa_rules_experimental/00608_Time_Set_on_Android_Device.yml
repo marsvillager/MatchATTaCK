@@ -1,0 +1,23 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '608'
+eventType: warning
+impact: ''
+keys: '{"devName":{"en":"Device Name", "zh":"设备名称"}, "shost":{"en":"Source Host",
+  "zh":"源主机"}}'
+name: Time Set on Android Device
+nameCN: 在安卓设备上重新设置时间
+parseEsResultKeys: ''
+redisEventKey: event-ts-time-set-on-android-device
+remarkCN: '在安卓设备(Name: {devName}, Id: {shost})上重新设置时间'
+remarks: 'Time Set on Android Device(Name: {devName}, Id: {shost})'
+ruleType: '1'
+script: '{"query": {"bool": {"filter": [{"range": {"@timestamp": {"gte": "<bt>", "lt":
+  "<et>"}}}, {"match_phrase": {"msgBody": "Received Broadcast, Action: android.intent.action.TIME_SET"}}]}},
+  "size": 1000}'
+source: android
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

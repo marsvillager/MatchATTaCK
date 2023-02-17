@@ -1,0 +1,23 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '878'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'S7Comm: Get PLC status - STOP'
+nameCN: S7Comm：查询PLC状态 - 停机
+parseEsResultKeys: ''
+redisEventKey: event-ts-get-plc-status-stop
+remarkCN: PLC {src} 返回停止状态
+remarks: 'PLC {src} return status: STOP'
+requirements: 'In: data->szl-data-tree->bzu-id, the PLC status is shown as stop, 0x03.'
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "notice"}},{"match_phrase": {"msg": "get plc status
+  stop"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0868]
+threshold: 1
+timeWindow: 60000

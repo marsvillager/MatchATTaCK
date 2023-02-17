@@ -1,0 +1,187 @@
+% !TEX root = ../AdditionalOsaRules.tex
+
+%%%
+%
+% Version 0.1
+%
+%%%
+
+\section{Vicos Operation Performed At Anomalous Time}
+\label{15206}
+%\addcontentsline{toc}{section}{\protect\numberline{}(Tool)}%
+
+\openup 1em
+
+\textbf{Full name:} Vicos operation performed at anomalous time\hrulefill \\
+%\textbf{Vendor/Provider:} (Vendor name)\hrulefill \\
+%\textbf{URL: } \url{http://www.google.de} \hrulefill \\
+{\bf Categorization:} \\
+
+\openup -1em
+\vspace{-3em}
+
+% Please, write either Multi-OS, Linux, Windows, Mac
+\begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+
+\begin{todolist}
+  	\item Multi-OS
+	\item Linux
+\end{todolist}
+&
+\begin{todolist}
+	\item[\done] Windows
+	\item macOS
+\end{todolist}
+
+\end{tabular}
+
+\openup 1em
+
+{\bf SMO products in scope:} \\
+
+\openup -1em
+\vspace{-3em}
+
+\begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+
+\begin{todolist}
+  \item Generic
+  \item[\done] VICOS OC 100
+  \item VICOS S\&D
+\end{todolist}
+&
+\begin{todolist}
+  \item Rail9000
+  \item DCS
+  \item Others: \hrulefill
+\end{todolist}
+
+\end{tabular}
+
+\openup 1em
+
+{\bf Description:} \\
+
+\openup -1em
+\vspace{-2em}
+
+%\begin{itemize}
+%	\item (What does the rule do?)
+%	\item (Why was the situation targeted (e.g., in a workshop)?)
+%\end{itemize}
+
+This rule identifies situations in which a an operation is performed in a VICOS system outside working hours. As for rule 15022 (``Login Logout At Unusual Time'), this rule might be helpful in cases where normal working hours are well defined or operators work in shifts. As attackers can try to take advantage of the absence of personnel to exploit the target systems, rules like these one work on restricting the categories of security-related events happening at unexpected time.
+
+\openup 1em
+
+{\bf Rule query:} \\
+
+\openup -1em
+\vspace{-2em}
+
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+  "runtime_mappings": {
+    "daytime": {
+      "type": "long",
+      "script": {
+        "source": "emit(doc['@timestamp'].value.toEpochSecond()%86400)"
+      }
+    }
+  },
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "terms": {
+            "eventId": [
+              "Event1",
+              "Event2",
+              "..."
+            ]
+          }
+        },
+        {
+          "match": {
+            "cat": "winEvent"
+          }
+        },
+        {
+          "match": {
+            "channel": "Vicos OC 100 channel"
+          }
+        },
+        {
+          "bool": {
+            "should": [
+              {
+                "range": {
+                  "daytime": {
+                    "lte": 28800
+                  }
+                }
+              },
+              {
+                "range": {
+                  "daytime": {
+                    "gte": 64800
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gt": "<bt>",
+              "lt": "<et>"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "fields": [
+    "daytime"
+  ]
+}
+\end{lstlisting}
+
+\openup 1em
+
+{\bf Rule requirements:} \\
+
+\openup -1em
+\vspace{-2em}
+
+This rule requires VICOS software to log security events in the custom Windows event channel (the newest Vicos logging concept)
+
+\openup 1em
+
+{\bf Rule parameters:} \\
+
+\openup -1em
+\vspace{-2em}
+
+\begin{itemize}
+	\item A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+	\item \emph{EventX}: The ID of the operation of interest (taken from the ``Vicos Security Log Manifest'')
+\end{itemize}
+
+\openup 1em
+
+{\bf Further information/categorization:} \\
+
+\openup -1em
+\vspace{-2em}
+
+%\begin{itemize}
+%	\item <Does the rule have an ATT\&CK label?>
+%	\item <Might the rule create many false positives?>
+%\end{itemize}
+
+None.
+
+\pagebreak
+

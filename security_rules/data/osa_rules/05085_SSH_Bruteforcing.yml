@@ -1,0 +1,21 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5085'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: SSH Bruteforcing
+nameCN: SSH 密码暴力破解
+parseEsResultKeys: ''
+redisEventKey: event-ts-ssh-bruteforcing
+remarkCN: 攻击机 {src} 发起SSH暴力破解
+remarks: The attacker {src} launches SSH bruteforcing.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match":{"duid.keyword":"SSH::Bruteforcing"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

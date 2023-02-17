@@ -1,0 +1,22 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '5042'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'S7Comm: PLC Program Command - VarTab'
+nameCN: 'S7Comm: 变量表操作'
+parseEsResultKeys: ''
+redisEventKey: event-ts-plc-program-command-vartab
+remarkCN: 主机 {src} 进行变量表操作
+remarks: Host {src} command var table
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match_phrase":{"msg":"plc
+  program command vartab"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [query-unclear]
+threshold: 1
+timeWindow: 60000

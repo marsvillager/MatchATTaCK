@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '971'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'Windows: rare_service_installs'
+nameCN: 'Windows: 罕见服务安装'
+parseEsResultKeys: ''
+redisEventKey: event-ts-rare-service-installs
+remarkCN: 主机 {src} 检测到罕见的服务安装或其他类型的恶意服务
+remarks: Host {src} detects the rare service installation or malware.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "winEvent"}},{"match": {"eventId": "7045"}}],"should":
+  [{"match": {"msg": "wce.exe"}},{"match": {"msg": "mimidrv.sys"}}],"minimum_should_match":
+  1}},"size": 1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

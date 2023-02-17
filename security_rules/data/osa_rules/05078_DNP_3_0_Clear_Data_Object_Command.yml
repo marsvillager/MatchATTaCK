@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5078'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'DNP 3.0: Clear Data Object Command'
+nameCN: 'DNP 3.0: 清除数据对象命令'
+parseEsResultKeys: ''
+redisEventKey: event-ts-dnp-clear-data-object-command
+remarkCN: 攻击机 {src} 发送CLEAR功能码造成设备数据清除，导致设备 {dst} 运行异常甚至崩溃
+remarks: The attacker {src} sends the CLEAR function code, causing the device data
+  to be cleared, resulting in abnormal operation or even crash of the device {dst}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"bool":{"should":[{"match":{"duid.keyword":"DNP3_APPL::DNP3_CLEAR_OBJECT"}},{"match":{"duid.keyword":"DNP3_MITM::DNP3_MAN_IN_MID_MODIFY_CLEAR_OBJ"}}]}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

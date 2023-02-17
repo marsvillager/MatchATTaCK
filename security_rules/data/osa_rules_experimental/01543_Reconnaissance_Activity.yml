@@ -1,0 +1,27 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1543'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Reconnaissance Activity
+nameCN: 侦察行为
+parseEsResultKeys: ''
+redisEventKey: event-ts-reconnaissance-activity
+remarkCN: 主机 {src} 检测到使用命令例如"net user administrator /domain"和"net group domain admins
+  /domain"的侦查行为
+remarks: Host {src} detects activity as "net user administrator /domain" and "net
+  group domain admins /domain"
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4661"}}, {"match_phrase":
+  {"event_data.AccessMask": "0x2d"}}, {"bool": {"should": [{"bool": {"must": [{"wildcard":
+  {"event_data.ObjectName.keyword": "S-1-5-21-*-500"}}, {"match_phrase": {"event_data.ObjectType":
+  "SAM_USER"}}]}}, {"bool": {"must": [{"wildcard": {"event_data.ObjectName.keyword":
+  "S-1-5-21-*-512"}}, {"match_phrase": {"event_data.ObjectType": "SAM_GROUP"}}]}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,25 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '12006'
+eventType: alert
+impact: ''
+keys: ''
+name: Brute force attack on FTP
+nameCN: ''
+parseEsResultKeys: aggregations:logsource:buckets
+redisEventKey: event-ts-linux-vsftpd-brute-force
+remarkCN: ''
+remarks: A brute force attack on the FTP service (vsftpd) was detected.
+requirements: No requirements.
+ruleType: '3'
+script: '{ "query": { "bool": { "must": [ { "match": { "tags": "deviceSyslog" } },
+  { "match": { "program": "vsftpd" } }, { "query_string": { "default_field": "msg",
+  "query": "\"authentication failure\"" } }, { "range": { "@timestamp": { "gt":"<bt>",
+  "lt":"<et>" } } } ] } }, "aggs": { "logsource": { "terms": { "field": "logsource.keyword"
+  } } }, "size": 1000 }'
+source: ''
+status: 0
+tags: [operation.local]
+threshold: 10
+timeWindow: 60000

@@ -1,0 +1,22 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '945'
+eventType: warning
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Application Log Cleared on Windows
+nameCN: Windows：应用日志被清除
+parseEsResultKeys: ''
+redisEventKey: event-ts-application-log-cleared
+remarkCN: Windows主机 {dataSrcIP} 应用日志被清除
+remarks: The application log was cleared on Windows host {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"104"}},{"match_phrase":{"channel":"Application"}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1070.001, attack.ics.T0872]
+threshold: 1
+timeWindow: 30000

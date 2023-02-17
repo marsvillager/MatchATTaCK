@@ -1,0 +1,21 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '993'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Off-hours Events to a Local Host
+nameCN: 非工作时间访问
+parseEsResultKeys: ''
+redisEventKey: event-ts-off-hours-logon
+remarkCN: 主机 {src} 出现非工作时间活动
+remarks: Off-hours activities on local host {src}
+ruleType: '4'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"range":{"rt":{"lt":"<earliestTime>"}}},{"range":{"rt":{"gt":"<latestTime>"}}}]}},{"match":{"eventId":"4624"}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}],"must_not":[{"terms":{"systemAccount":["value1","value2"]}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 120000

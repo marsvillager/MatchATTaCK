@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: 'This rule identifies situation in which a digital signature needed by the DCU is not valid. Such situations might arise when the DCU tries to validate digital certificates included in specific files (e.g., XML configuration files)'
+eventId: 15301
+eventType: warning
+impact: ''
+keys: ''
+name: DCU Invalid Signature
+nameCN: ''
+os: linux
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: dcu
+redisEventKey: event-dcu-invalid-signature
+remarkCN: ''
+remarks: An invalid signature has been used for the DCU.
+requirements: None.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"invalid signature"}},{"bool":{"must_not":[{"match_phrase":{"msg":"no new event"}}]}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

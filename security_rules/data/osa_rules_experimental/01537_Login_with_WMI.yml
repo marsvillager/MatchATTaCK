@@ -1,0 +1,22 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1537'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Login with WMI
+nameCN: 通过WMI登录
+parseEsResultKeys: ''
+redisEventKey: event-ts-login-with-wmi
+remarkCN: 主机 {src} 检测到通过WMI登录的操作
+remarks: Host {src} detects logins performed with WMI
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4624"}}, {"wildcard": {"event_data.ProcessName.keyword":
+  "*\\\\WmiPrvSE.exe"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

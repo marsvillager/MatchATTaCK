@@ -1,0 +1,26 @@
+category: attack,network
+ciaLevel: integrity
+component: SI
+description: Monitor Malformed COTP/S7comm packet on traffic, If detected, an event
+  will be prompted.
+eventId: '892'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: COTP/S7Comm illegal field value
+nameCN: COTP/S7Comm：非法属性值
+parseEsResultKeys: ''
+redisEventKey: event-ts-illegal-field-value
+remarkCN: 源主机 {src} 向目标主机{dst}发送畸形COTP/S7comm数据报文
+remarks: Src host {src} sends Malformed COTP/S7comm packet to dst host {dst}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "TASP_Notice::TASP_Illegal_Value"}}]}},"size":
+  1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0814, attack.ics.T0855]
+threshold: 1
+timeWindow: 60000

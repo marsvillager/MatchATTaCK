@@ -1,0 +1,22 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '5040'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'S7Comm: PLC Read Var'
+nameCN: 'S7Comm: 读模块信息'
+parseEsResultKeys: ''
+redisEventKey: event-ts-read-var
+remarkCN: 主机 {src} 读取模块信息
+remarks: Host {src} read var
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match_phrase":{"msg":"read
+  var"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0888]
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,21 @@
+category: network
+ciaLevel: confidentiality
+component: SI
+eventId: '5015'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: IP Scan (ARP)
+nameCN: IP地址扫描(ARP)
+parseEsResultKeys: ''
+redisEventKey: event-ts-dos-ipscan-arp
+remarkCN: 主机 {src} 进行IP地址扫描
+remarks: Host {src} performs IP scan
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match_phrase":{"duid":"Arp_scan::arp_scan"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1595, attack.ics.T0846]
+threshold: 1
+timeWindow: 60000

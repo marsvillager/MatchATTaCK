@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '8014'
+eventType: warning
+impact: ''
+keys: '{"msg":{"en":"Message", "zh":"信息"}}'
+name: Decode of an RPC Query
+nameCN: Decode of an RPC Query
+parseEsResultKeys: ''
+redisEventKey: event-ts-decode-of-an-rpc-query
+remarkCN: '{msg}'
+remarks: '{msg}'
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"suricata_event"}},{"match":{"event_type":"alert"}},{"match_phrase":{"alert_category.keyword":"Decode
+  of an RPC Query"}}]}},"size":1000}'
+source: suricata
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

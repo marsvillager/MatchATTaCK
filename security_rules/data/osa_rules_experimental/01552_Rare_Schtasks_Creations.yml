@@ -1,0 +1,27 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1552'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Rare Schtasks Creations
+nameCN: 罕见Schtasks创建
+parseEsResultKeys: ''
+redisEventKey: event-ts-rare-schtasks-creations
+remarkCN: 主机 {src} 检测到每个时间范围内仅出现几次的罕见计划任务的创建，可能导致密码转储程序、后门安装或其他类型的恶意代码
+remarks: Host {src} detects rare scheduled tasks creations that only appear a few
+  times per time frame and could reveal password dumpers, backdoor installs or other
+  types of malicious code
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4698"}}, {"range": {"date":
+  {"gte": "now-7d"}}}]}}}}, "aggs": {"WorkstationName_count": {"terms": {"field":
+  "WorkstationName"},"aggs": {"TaskName_count": {"terms": {"field": "TaskName"}},"limit":
+  {"bucket_selector": {"buckets_path": {"count": "TaskName_count"},"script": "params.count
+  < 5"}}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

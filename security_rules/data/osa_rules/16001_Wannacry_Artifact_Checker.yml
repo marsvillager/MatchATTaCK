@@ -1,0 +1,26 @@
+category: attack,malware
+ciaLevel: integrity
+component: SI
+description: This rule searches for a specific artifact named "tasksche.exe". The
+  deployment and execution of this artifact has been commonly identified as part of
+  a Wannacry infection.
+eventId: '16001'
+eventType: alert
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Wannacry Artifact Checker
+nameCN: Wannacry-工件检查器
+os: windows
+parseEsResultKeys: ''
+redisEventKey: event-ts-wannacry-artifact
+remarkCN: 主机 {dataSrcIP} 上存在疑似 WannaCry 恶意软件工件
+remarks: WannaCry artifact was detected on host {dataSrcIP}
+ruleType: '3'
+script: '{ "query":{ "bool":{ "must":[ { "match":{ "eventId":"7045" } }, { "match":{
+  "objectImagePath":"tasksche.exe" } }, { "match":{ "cat":"winEvent" } }, { "range":{
+  "@timestamp":{ "gt":"<bt>", "lt":"<et>" } } } ] } }, "size":1000}'
+source: ''
+status: 0
+tags: [malware.host, attack.ics.T1569]
+threshold: 1
+timeWindow: 30000

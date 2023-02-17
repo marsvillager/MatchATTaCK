@@ -1,0 +1,21 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '938'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Log Truncated on Windows
+nameCN: Windows：日志被截断
+parseEsResultKeys: ''
+redisEventKey: event-ts-log-truncated
+remarkCN: Windows主机 {src} 日志被截断
+remarks: Log have been dropped on Windows host {src}
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"111111"}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 1
+tags: ''
+threshold: 1
+timeWindow: 30000

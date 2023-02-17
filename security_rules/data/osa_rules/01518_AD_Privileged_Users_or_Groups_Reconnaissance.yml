@@ -1,0 +1,32 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1518'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: AD Privileged Users or Groups Reconnaissance
+nameCN: 检测到AD特权用户和组
+parseEsResultKeys: ''
+redisEventKey: event-ts-ad-privileged-users-or-groups-reconnaissance
+remarkCN: 主机 {src} 在已知的特权用户或组SID检测到priv用户或recon组
+remarks: Host {src} detect priv users or groups recon based on 4661 eventid and known
+  privileged users or groups SIDs
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4661"}}, {"bool": {"should":
+  [{"wildcard": {"event_data.ObjectName.keyword": "*-512"}}, {"wildcard": {"event_data.ObjectName.keyword":
+  "*-502"}}, {"wildcard": {"event_data.ObjectName.keyword": "*-500"}}, {"wildcard":
+  {"event_data.ObjectName.keyword": "*-505"}}, {"wildcard": {"event_data.ObjectName.keyword":
+  "*-519"}}, {"wildcard": {"event_data.ObjectName.keyword": "*-520"}}, {"wildcard":
+  {"event_data.ObjectName.keyword": "*-544"}}, {"wildcard": {"event_data.ObjectName.keyword":
+  "*-551"}}, {"wildcard": {"event_data.ObjectName.keyword": "*-555"}}, {"wildcard":
+  {"event_data.ObjectName.keyword": "*admin*"}}]}}, {"bool": {"should": [{"match_phrase":
+  {"event_data.ObjectType": "SAM_USER"}}, {"match_phrase": {"event_data.ObjectType":
+  "SAM_GROUP"}}]}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1087.002]
+threshold: 1
+timeWindow: 60000

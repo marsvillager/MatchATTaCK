@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5062'
+eventType: alert
+impact: ''
+keys: '{"orig_l2_addr":{"en":"Source MAC", "zh":"源MAC"}, "resp_l2_addr":{"en":"Destination
+  MAC", "zh":"目标MAC"}}'
+name: IEC 61850 Goose:Replay Attack
+nameCN: 'IEC 61850 Goose: 重放攻击'
+parseEsResultKeys: ''
+redisEventKey: event-ts-goose-replay-attack
+remarkCN: 攻击机 {orig_l2_addr} 回放抓取的报文，让目标主机 {resp_l2_addr} 在错误的时间执行指令
+remarks: The attacker {orig_l2_addr} replays the captured message and causes the target
+  host {resp_l2_addr} to execute the instruction at the wrong time
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match":{"duid.keyword":"GOOSE::GOOSE_REPLAY"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

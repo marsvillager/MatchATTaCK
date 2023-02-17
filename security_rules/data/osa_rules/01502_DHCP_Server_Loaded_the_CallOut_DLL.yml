@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1502'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: DHCP Server Loaded the CallOut DLL
+nameCN: DHCP服务加载CallOut DLL
+parseEsResultKeys: ''
+redisEventKey: event-ts-dhcp-server-loaded-the-callout-dll
+remarkCN: 主机 {src} 的注册表中检测到特殊的加载CallOut的DHCP服务
+remarks: Host {src} rule detects a DHCP server in which a specified Callout DLL (in
+  registry) was loaded.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"eventId": "1033"}}, {"match_phrase": {"source_name": "Microsoft-Windows-DHCP-Server"}}]}}}}}'
+source: T0851
+status: 0
+tags: [attack.enterprise.T1112, attack.enterprise.T1574.002]
+threshold: 1
+timeWindow: 60000

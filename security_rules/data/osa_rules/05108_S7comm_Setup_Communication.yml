@@ -1,0 +1,22 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '5108'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'S7comm: Setup Communication'
+nameCN: 'S7comm: 初始化通信'
+parseEsResultKeys: ''
+redisEventKey: event-ts-setup-communication
+remarkCN: 主机{src}与PLC{dst}尝试建立通信
+remarks: Host {src} setup communication with PLC {dst}.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"s7_plc_func"}},{"bool":{"should":[{"match_phrase":{"rosctr.keyword":"Job"}},{"match_phrase":{"rosctr.keyword":"AckData"}}]}},{"exists":{"field":"max_amq_calling"}},{"exists":{"field":"max_amq_caller"}},{"exists":{"field":"pdu_length"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,157 @@
+% !TEX root = ../AdditionalOsaRules.tex
+
+%%%
+%
+% Version 0.1
+%
+%%%
+
+\section{Windows Applocker Security Event}
+\label{15071}
+%\addcontentsline{toc}{section}{\protect\numberline{}(Tool)}%
+
+\openup 1em
+
+\textbf{Full name:} Applocker security event\hrulefill \\
+%\textbf{Vendor/Provider:} (Vendor name)\hrulefill \\
+%\textbf{URL: } \url{http://www.google.de} \hrulefill \\
+{\bf Categorization:} \\
+
+\openup -1em
+\vspace{-3em}
+
+% Please, write either Multi-OS, Linux, Windows, Mac
+\begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+
+\begin{todolist}
+  	\item Multi-OS
+	\item Linux
+\end{todolist}
+&
+\begin{todolist}
+	\item[\done] Windows
+	\item macOS
+\end{todolist}
+
+\end{tabular}
+
+\openup 1em
+
+{\bf SMO products in scope:} \\
+
+\openup -1em
+\vspace{-3em}
+
+\begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+
+\begin{todolist}
+  \item[\done] Generic
+  \item[\done] VICOS OC 100
+  \item[\done] VICOS S\&D
+\end{todolist}
+&
+\begin{todolist}
+  \item Rail9000
+  \item DCS
+  \item Others: \hrulefill
+\end{todolist}
+
+\end{tabular}
+
+\openup 1em
+
+{\bf Description:} \\
+
+\openup -1em
+\vspace{-2em}
+
+%\begin{itemize}
+%	\item (What does the rule do?)
+%	\item (Why was the situation targeted (e.g., in a workshop)?)
+%\end{itemize}
+
+This rule report on security-relevant event triggered by the Windows AppLocker utility (introduced in Microsoft Windows 7 operating systems). AppLocker is an application that allows an administrator to restrict which programs users can execute based on several features (e.g., programs` paths, publishers, hashes, etc.) or with a custom Group Policy. The rule alerts on any error event notified by Applocker (see https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/using-event-viewer-with-applocker for more information).
+
+\openup 1em
+
+{\bf Rule query:} \\
+
+\openup -1em
+\vspace{-2em}
+
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "terms": {
+            "eventId": [
+              "8000",
+              "8004",
+              "8007",
+              "8008",
+              "8029",
+              "8032",
+              "8035",
+              "8036",
+              "8040"
+            ]
+          }
+        },
+        {
+          "match": {
+            "cat": "winEvent"
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gt": "<bt>",
+              "lt": "<et>"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "size": 1000
+}
+\end{lstlisting}
+
+\openup 1em
+
+{\bf Rule requirements:} \\
+
+\openup -1em
+\vspace{-2em}
+
+Windows Applocker needs to be installed and running.
+
+\openup 1em
+
+{\bf Rule parameters:} \\
+
+\openup -1em
+\vspace{-2em}
+
+\begin{itemize}
+	\item A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+\end{itemize}
+
+\openup 1em
+
+{\bf Further information/categorization:} \\
+
+\openup -1em
+\vspace{-2em}
+
+%\begin{itemize}
+%	\item <Does the rule have an ATT\&CK label?>
+%	\item <Might the rule create many false positives?>
+%\end{itemize}
+
+None.
+
+\pagebreak
+

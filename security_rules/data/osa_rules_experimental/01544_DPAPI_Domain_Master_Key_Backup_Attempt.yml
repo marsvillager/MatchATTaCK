@@ -1,0 +1,22 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1544'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: DPAPI Domain Master Key Backup Attempt
+nameCN: DPAPI域主密钥备份尝试
+parseEsResultKeys: ''
+redisEventKey: event-ts-dpapi-domain-master-key-backup-attempt
+remarkCN: 主机 {src} 检测到尝试备份DPAPI主密钥的行为。此事件来自源而不是域控制器
+remarks: Host {src} detects anyone attempting a backup for the DPAPI Master Key. This
+  events gets generated at the source and not the Domain Controller.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4692"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

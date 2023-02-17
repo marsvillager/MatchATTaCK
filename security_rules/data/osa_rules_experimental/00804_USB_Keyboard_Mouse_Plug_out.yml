@@ -1,0 +1,21 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '804'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: USB Keyboard/Mouse Plug-out
+nameCN: USB键盘设备拔出
+parseEsResultKeys: ''
+redisEventKey: event-ts-usb-keyboard-plug-out
+remarkCN: USB键盘设备拔出（发生于：{shost}）
+remarks: USB keyboard plug out{shost}
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg": "USB keyboard device was
+  plugged out"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 1
+tags: [operation.usb]
+threshold: 1
+timeWindow: 60000

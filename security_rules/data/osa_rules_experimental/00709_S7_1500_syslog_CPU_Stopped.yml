@@ -1,0 +1,21 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '709'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'S7-1500 syslog: CPU Stopped'
+nameCN: 'S7-1500 syslog: CPU 停止'
+parseEsResultKeys: ''
+redisEventKey: event-ts-cpu-stopped
+remarkCN: S71500 PLC设备 {src} CPU停机
+remarks: S7-1500 {src} CPU STOP
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"CPU status message: CPU
+  not in RUN Current CPU operating mode: STOP"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '602'
+eventType: event
+impact: ''
+keys: '{"devName":{"en":"Device Name", "zh":"设备名称"}, "shost":{"en":"Source Host",
+  "zh":"源主机"}}'
+name: Application Started on Android Device
+nameCN: 在安卓设备上启动应用
+parseEsResultKeys: ''
+redisEventKey: event-ts-application-started-on-android-device
+remarkCN: '在安卓设备(Name: {devName}, Id: {shost})上启动应用'
+remarks: 'Application Started on Android Device(Name: {devName}, Id: {shost})'
+ruleType: '1'
+script: '{"query": {"bool": {"filter": [{"range": {"@timestamp": {"gte": "<bt>", "lt":
+  "<et>"}}},{"bool": {"should": [{"bool": {"must": [{"match": {"module": "ActivityManager"}},
+  {"match_phrase": {"message": "Start proc"}}, {"match_phrase": {"message": "for activity"}}]}},
+  {"bool": {"must": [{"match": {"module": "ActivityTaskManager"}}, {"match_phrase":
+  {"message": "The Process"}}, {"match_phrase": {"message": "Already Exists in BG.
+  So sending its PID:"}}]}}]}}]}},"size": 1000}'
+source: android
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

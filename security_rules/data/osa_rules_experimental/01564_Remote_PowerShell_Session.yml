@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1564'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Remote PowerShell Session
+nameCN: 远程PowerShell会话
+parseEsResultKeys: ''
+redisEventKey: event-ts-remote-powershell-session
+remarkCN: 通过从非网络服务帐户监测网络出站连接端口5985或5986，主机 {src} 检测到远程PowerShell连接
+remarks: Host {src} detects remote PowerShell connections by monitoring network outbount
+  connections to ports 5985 or 5986 from not network service account
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"bool": {"should":
+  [{"match_phrase": {"event_data.DestinationPort": "5985"}}, {"match_phrase": {"event_data.DestinationPort":
+  "5986"}}]}}, {"bool": {"must_not": [{"bool": {"must": [{"match_phrase": {"event_data.User":
+  "NT AUTHORITY\\NETWORK SERVICE"}}]}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5076'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'DNP 3.0: Transport Sequence Modification'
+nameCN: 'DNP 3.0: 传输序列修改'
+parseEsResultKeys: ''
+redisEventKey: event-ts-dnp-transport-sequence-modification
+remarkCN: 攻击机 {src} 在分片传输的报文中插入序列号异常的欺骗报文，导致目标主机 {dst} 的分片报文无法正确重组
+remarks: The attacker {src} inserts a spoofing message with abnormal serial number
+  into the message transmitted in fragments, resulting in the fragment message of
+  the target host {dst} unable to be reorganized correctly
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match":{"duid.keyword":"DNP3_TRANSPORT::DNP3_TRANSPORT_FAKE_SEQ"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

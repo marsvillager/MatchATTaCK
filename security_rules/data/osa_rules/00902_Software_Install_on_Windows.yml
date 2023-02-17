@@ -1,0 +1,23 @@
+category: application
+ciaLevel: integrity
+component: SI
+eventId: '902'
+eventType: event
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Software Install on Windows
+nameCN: Windows：软件安装
+parseEsResultKeys: ''
+redisEventKey: event-ts-software-install
+remarkCN: 软件安装至目标Windows主机 {dataSrcIP}
+remarks: Windows installer installed a product on Windows host {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"1033"}},{"match":{"eventId":"11707"}}]}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}],"must_not": [{"match_phrase_prefix":
+  {"msg": "*sql server*"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1543, attack.enterprise.T1176]
+threshold: 1
+timeWindow: 30000

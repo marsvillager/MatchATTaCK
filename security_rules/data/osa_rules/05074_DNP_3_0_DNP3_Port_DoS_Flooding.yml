@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5074'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'DNP 3.0: DNP3 Port DoS Flooding'
+nameCN: 'DNP 3.0: DNP3端口DOS洪水攻击'
+parseEsResultKeys: ''
+redisEventKey: event-ts-dnp-dnp3-port-dos-flooding
+remarkCN: 攻击机 {src} 通过发送大量DNP请求报文，造成设备 {dst} 无法正常执行相应指令
+remarks: The attacker {src} sends a large number of DNP request messages, which makes
+  the device {dst} unable to execute the corresponding instructions normally
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match":{"duid.keyword":"DNP3_DOS::DNP3_DOS_FLOODING"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

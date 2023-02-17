@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: 'This rule report on security-relevant event triggered by the Windows AppLocker utility (introduced in Microsoft Windows 7 operating systems). AppLocker is an application that allows an administrator to restrict which programs users can execute based on several features (e.g., programs` paths, publishers, hashes, etc.) or with a custom Group Policy. The rule alerts on any error event notified by Applocker (see https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/using-event-viewer-with-applocker for more information).'  
+eventId: 15071
+eventType: warning
+impact: ''
+keys: ''
+name: Windows AppLocker alert
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, vicosoc100, vicoss&d
+requirements: Windows Applocker needs to be installed and running.
+redisEventKey: event-applocker-security-event
+remarkCN: ''
+remarks: Windows AppLocker triggered a security-related event.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"terms":{"eventId":["8000","8004","8007", "8008", "8029", "8032", "8035", "8036", "8040"]}},{"match":{"cat":"winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

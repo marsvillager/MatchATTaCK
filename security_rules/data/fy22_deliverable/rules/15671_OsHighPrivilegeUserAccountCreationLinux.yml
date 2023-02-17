@@ -1,0 +1,26 @@
+category: account
+ciaLevel: integrity
+component: SI
+description: 'This rules triggers every time a new account is created within a Linux operating system. This rule further specifies rule 15670 (``OS User Account Creation Linux''). As for that rule, attackers can create high-privilege accounts for several reasons (e.g., ensuring persistence).'
+eventId: 15671
+eventType: alert
+impact: ''
+keys: ''
+name: OS High Privilege User Account Creation (Linux)
+nameCN: ''
+os: linux
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, rail9000
+requirements: None.
+redisEventKey: event-os-high-privilege-user-account-creation-linux
+remarkCN: ''
+remarks: A new high-privilege user account was created
+ruleType: '1'
+script: '{ "query": { "bool": { "must": [ { "bool": { "should": [ { "bool": { "must": [ { "match": { "program": "adduser" } }, { "match": { "msg": "sudo" } } ] } }, { "bool": { "must": [ { "match": { "program": "usermod" } }, { "match": { "msg": "sudo" } } ] } } ] } }, {"bool":{"must_not":[{"match_phrase":{"msg":"no new event"}}]}}, {"bool":{"must_not":[{"match_phrase":{"msg":"no new event"}}]}}, { "range": { "@timestamp": { "gt": "<bt>", "lt": "<et>" } } } ] } }, "size": 1000 }'
+source: ''
+status: 0
+tags: [attack.enterprise.T1136.001, attack.enterprise.T1136.002]
+threshold: 1
+timeWindow: 60000

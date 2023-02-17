@@ -1,0 +1,22 @@
+category: attack,network
+ciaLevel: integrity
+component: SI
+eventId: '865'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Ping of Death
+nameCN: 死亡之Ping
+parseEsResultKeys: ''
+redisEventKey: event-ts-ping-of-death
+remarkCN: 主机 {src} 进行Ping of Death攻击
+remarks: Host {src} launchs Ping of Death
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "Ping_of_Death"}}]}},"size": 1000}'
+source: network
+status: 0
+tags: [attack.enterprise.T1499, attack.ics.T0814]
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '5006'
+eventType: event
+impact: ''
+keys: '{"smac":{"en":"Source MAC", "zh":"源MAC"}}'
+name: 'PN-DCP: get function detected'
+nameCN: PN-DCP：Get功能使用
+parseEsResultKeys: ''
+redisEventKey: event-ts-get-function
+remarkCN: 主机 {smac} 使用Get功能获取主机信息
+remarks: Src host {smac} performs Profinet DCP Get function on host.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":{"duid":"PN_DCP_Get"}},{"match":
+  {"cat": "notice"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0888]
+threshold: 1
+timeWindow: 60000

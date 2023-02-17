@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: 'This rules triggers every time a new external usb device is connected to and recognized by a Windows operating system. This rule generalize rule 15031 ("New Usb Storage Device Plugged-in") and, as of that rule, it can be specified by defining the kind of devices that are allowed (or not allowed) by looking at properties such as ``Device ID'', ``Device Name'', ``Vendor ID'', etc as well as ensuring that the ``Subject\\textbackslash Security ID'' is set to ``SYSTEM''.'
+eventId: 15032
+eventType: warning
+impact: ''
+keys: ''
+name: New Usb Device Plugged-in
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, vicosoc100, vicoss&d
+requirements: None.
+redisEventKey: event-usb-device-plugin
+remarkCN: ''
+remarks: A USB device was plugged in
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"cat":"winEvent"}},{"bool":{"should":[{"match":{"eventId":"2100"}},{"match":{"eventId":"2101"}}]}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1200]
+threshold: 1
+timeWindow: 60000

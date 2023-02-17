@@ -1,0 +1,28 @@
+category: account
+ciaLevel: integrity
+component: SI
+description: This rule identifies situations in which login and logout operations to either the VICOS OC 100 workstation, server or TTP module, are performed or attempted outside the normal working hours (e.g., whenever operators work in shifts, this rule can ensure that such login and logout operations happen in the supposed timeframe). As attackers can try to take advantage of the absence of personnel to exploit the target systems, rules like these one work on restricting the categories of security-related events happening at unexpected time.
+eventId: 15204
+eventType: event
+impact: ''
+keys: ''
+name: Vicos Login Logout At Unusual Time
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+ shitfStartingTime: The number of seconds from midnights indicating the normal shift starting time (e.g., 28800 would indicate ``8:00'')
+ shitfFinishingTime: The number of seconds from midnights indicating the normal shift ending time (e.g., 64800 would indicate ``18:00'')
+parseEsResultKeys: ''
+product: vicosoc100
+redisEventKey: event-vicos-login-logout-at-unusual-time
+remarkCN: ''
+remarks: A VICOS login/logout was attempted at unusual time.
+requirements: This rule requires VICOS software to log security events in the custom Windows event channel (the newest Vicos logging concept). Furthermore, this rule assumes the definition of a working shift.
+ruleType: '1'
+script: '{"runtime_mappings":{"daytime":{"type":"long","script":{"source":"emit(doc['@timestamp'].value.toEpochSecond()%86400)"}}},"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"150"}},{"match":{"eventId":"550"}},{"match":{"eventId":"1550"}},{"match":{"eventId":"152"}},{"match":{"eventId":"552"}},{"match":{"eventId":"1552"}}]}},{"match":{"cat":"winEvent"}},{"bool":{"should":[{"range":{"daytime":{"lte":"shitfStartingTime"}}},{"range":{"daytime":{"gte":"shitfFinishingTime"}}},{"range":{"@timestamp":{"gt":"<bt>", "lt":"<et>"}}}]}}]}},"fields":["daytime"]}'
+source: ''
+status: 1
+tags: [attack.enterprise.T1078.003]
+threshold: 1
+timeWindow: 60000

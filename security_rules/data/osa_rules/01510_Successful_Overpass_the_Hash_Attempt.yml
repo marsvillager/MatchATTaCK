@@ -1,0 +1,25 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1510'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Successful Overpass the Hash Attempt
+nameCN: 成功通过Hash尝试
+parseEsResultKeys: ''
+redisEventKey: event-ts-successful-overpass-the-hash-attempt
+remarkCN: 主机 {src} 检测到以登录类型9(新证书)成功登录的哈希行为，例如Mimikatz"s sekurlsa::pth模块
+remarks: Host {src} detects successful logon with logon type 9 (NewCredentials) which
+  matches the Overpass the Hash behavior of e.g Mimikatz"s sekurlsa::pth module.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4624"}}, {"match_phrase":
+  {"event_data.AuthenticationPackageName": "Negotiate"}}, {"match_phrase": {"event_data.LogonProcessName":
+  "seclogo"}}, {"match_phrase": {"logonType": "9"}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1550.002, attack.enterprise.T1550.003]
+threshold: 1
+timeWindow: 60000

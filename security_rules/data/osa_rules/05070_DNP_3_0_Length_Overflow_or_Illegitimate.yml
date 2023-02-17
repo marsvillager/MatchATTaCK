@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5070'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'DNP 3.0: Length Overflow or Illegitimate'
+nameCN: 'DNP 3.0: 长度溢出或不合法'
+parseEsResultKeys: ''
+redisEventKey: event-ts-dnp-length-overflow-or-illegitimate
+remarkCN: 攻击机 {src} 篡改报文中的长度字段，导致设备 {dst} 运行异常
+remarks: The attacker {src} tampered with the length field in the message, resulting
+  in abnormal operation of the device {dst}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"bool":{"should":[{"match":{"duid.keyword":"DNP3_LINK::DNP3_FAKE_LENGTH"}},{"match":{"duid.keyword":"DNP3_MITM::DNP3_MAN_IN_MID_MODIFY_LEN"}}]}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

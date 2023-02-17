@@ -1,0 +1,24 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '12004'
+eventType: warning
+impact: ''
+keys: '{"clientAddress":{"en":"Source Host", "zh":""}}'
+name: Connection to Telnet detected
+nameCN: ''
+parseEsResultKeys: ''
+redisEventKey: event-ts-linux-telnetd-connection
+remarkCN: ''
+remarks: A connection to the Telnet service from {clientAddress} was detected.
+requirements: No requirements.
+ruleType: '1'
+script: '{ "query": { "bool": { "filter": [ { "match": { "tags": "deviceSyslog" }
+  }, { "match": { "program": "in.telnetd" } }, { "query_string": { "default_field":
+  "msg", "query": "\"connect from\"" } }, { "range": { "@timestamp": { "gt":"<bt>",
+  "lt":"<et>" } } } ] } } }'
+source: ''
+status: 0
+tags: [operation.local]
+threshold: 1
+timeWindow: 60000

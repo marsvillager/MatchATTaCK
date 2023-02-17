@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1519'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: QuarksPwDump Clearing Access History
+nameCN: QuarksPwDump清除访问历史记录
+parseEsResultKeys: ''
+redisEventKey: event-ts-quarkspwdump-clearing-access-history
+remarkCN: 主机 {src} 检测到QuarksPwDump清除访问历史记录
+remarks: Host {src} detects QuarksPwDump clearing access history in hive
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"eventId": "16"}}, {"wildcard": {"event_data.HiveName.keyword": "*\\\\AppData\\\\Local\\\\Temp\\\\SAM*"}},
+  {"wildcard": {"event_data.HiveName.keyword": "*.dmp"}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.ics.T1003.002]
+threshold: 1
+timeWindow: 60000

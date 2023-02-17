@@ -1,0 +1,26 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+description: Monitor PROFINET change device ip behavior on the network, If detected,
+  an event will be prompted.
+eventId: '880'
+eventType: warning
+impact: ''
+keys: ''
+name: 'PN-DCP: device IP changed'
+nameCN: PN-DCP：设备IP变更
+parseEsResultKeys: ''
+redisEventKey: event-ts-change-device-ip
+remarkCN: PN-DCP：资产IP发生变化
+remarks: 'PN-DCP: Asset IP changed'
+requirements: Use PN-DCP command get device IP address and check whether there is
+  any change.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "notice"}},{"match_phrase": {"duid": "PN_DCP_Change_IP"}}]}},"size":
+  1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0826]
+threshold: 1
+timeWindow: 180000

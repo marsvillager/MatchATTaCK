@@ -1,0 +1,22 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '5032'
+eventType: warning
+impact: ''
+keys: ''
+name: 'OMS+: Firmware Upgrade'
+nameCN: '固件升级: 通过OMS协议'
+parseEsResultKeys: ''
+redisEventKey: event-ts-oms-firmware-upgrade
+remarkCN: 通过OMS协议传输的 PLC 固件版本发生变化
+remarks: PLC firmware upgraded/downgraded by OMS+.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "notice"}},{"match_phrase": {"duid": "S7CommPlusAll::firmwareUpgrade_OMS"}}]}},"size":
+  1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

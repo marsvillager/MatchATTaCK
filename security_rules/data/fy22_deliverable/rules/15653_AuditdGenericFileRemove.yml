@@ -1,0 +1,29 @@
+category: operation 
+ciaLevel: integrity
+component: SI 
+description: This rule detects the removing action on a given file or directory. 
+eventId: 15653
+eventType: alert 
+impact: '' 
+keys: '' 
+name: Auditd Generic File Removed
+nameCN:  
+os: linux 
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+product: generic, rail9000 
+parseEsResultKeys: ''
+redisEventKey: event-auditd-generic-file-remove
+remarkCN: ''
+remarks: File or directory X was removed.
+requirements: Auditd should be configured (an example of a suitable configuration has been provided in the repository). Furthermore, Logstash should be configured to ingest the related data (also in this case, an example of a suitable configuration has been provided in the repository). A specific path should be included in the auditd rule identified by key ``file\_x\_write''.
+ruleType: '1' 
+script: '{ "query": { "bool": { "must": [ { "match": { "auditdType": "SYSCALL" } }, { "match": { "auditdKey": "file_x_write" } }, { "match_phrase": { "msg": "syscall=263" } }, { "range": { "@timestamp": { "gte": "<bt>", "lt": "<et>" } } } ] } }, "size": 1000 }' 
+source: '' 
+status: 1 
+tags: [attack.enterprise.T1485, attack.enterprise.T1565]
+threshold: 1 
+timeWindow: 60000
+
+
+

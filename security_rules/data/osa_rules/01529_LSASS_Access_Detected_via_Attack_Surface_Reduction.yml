@@ -1,0 +1,22 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1529'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: LSASS Access Detected via Attack Surface Reduction
+nameCN: 通过攻击面最小化检测到LSASS访问
+parseEsResultKeys: ''
+redisEventKey: event-ts-lsass-access-detected-via-attack-surface-reduction
+remarkCN: 主机 {src} 检测到访问LSASS进程行为
+remarks: Host {src} detects Access to LSASS Process
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"eventId": "1121"}}, {"wildcard": {"path.keyword": "*\\\\lsass.exe"}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1003.001]
+threshold: 1
+timeWindow: 60000

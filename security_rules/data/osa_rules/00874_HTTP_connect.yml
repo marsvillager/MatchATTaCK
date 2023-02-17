@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '874'
+eventType: alert
+impact: ''
+keys: '{"dst":{"en":"Destination Address", "zh":"目标地址"}}'
+name: HTTP connect
+nameCN: HTTP连接DoS
+parseEsResultKeys: aggregations:sensor_ids:buckets:dst:buckets
+redisEventKey: event-ts-http-flooding
+remarkCN: 主机 {src} 进行HTTP连接DoS
+remarks: Host {src} launchs HTTP connect DoS
+requirements: No requirements.
+ruleType: '3'
+script: '{"query": {"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"conn"}},{"match":{"app":
+  "http"}},{"exists":{"field":"dst"}}]}},"aggs":{"sensor_ids":{"terms":{"field":"fields.gl2_source_collector.keyword"},"aggs":{"dst":{"terms":{"field":"dst"}}}}},"size":1}'
+source: network
+status: 0
+tags: [attack.enterprise.T1499, attack.enterprise.T1498.001, attack.ics.T0814]
+threshold: 50000
+timeWindow: 60000

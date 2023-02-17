@@ -1,0 +1,22 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '920'
+eventType: warning
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Failed Logon Attempt on Windows
+nameCN: Windows：登录失败尝试
+parseEsResultKeys: ''
+redisEventKey: event-ts-failed-logon-attempt
+remarkCN: 账号登录Windows主机 {dataSrcIP} 失败
+remarks: An account failed to log on Windows host {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"bool":{"must":[{"match":{"eventId":"4625"}},{"match_phrase":{"subStatus":"0xc000006a"}}]}},{"match":{"eventId":"529"}}]}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ~
+threshold: 1
+timeWindow: 30000

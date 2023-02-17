@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1586'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: WMI Event Subscription
+nameCN: WMI事件订阅
+parseEsResultKeys: ''
+redisEventKey: event-ts-wmi-event-subscription
+remarkCN: 主机 {src} 检测到创建WMI事件订阅持久方法
+remarks: Host {src} detects creation of WMI event subscription persistence method
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase":
+  {"EventLog": "Microsoft-Windows-Sysmon"}}, {"bool": {"should": [{"match_phrase":
+  {"eventId": "19"}}, {"match_phrase": {"eventId": "20"}}, {"match_phrase": {"eventId":
+  "21"}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

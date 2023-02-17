@@ -1,0 +1,28 @@
+category: account
+ciaLevel: integrity
+component: SI
+description: This rule identifies situations in which Windows login and logout operations are performed or attempted outside the normal working hours (e.g., whenever operators work in shifts, this rule can ensure that such login and logout operations happen in the supposed timeframe). As attackers can try to take advantage of the absence of personnel to exploit the target systems, rules like these one work on restricting the categories of security-related events happening at unexpected time.
+eventId: 15698
+eventType: event
+impact: ''
+keys: ''
+name: Login Logout At Unusual Time (Linux)
+nameCN: ''
+os: linux
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+ shitfStartingTime: The number of seconds from midnights indicating the normal shift starting time (e.g., 28800 would indicate ``8:00'')
+ shitfFinishingTime: The number of seconds from midnights indicating the normal shift ending time (e.g., 64800 would indicate ``18:00'')
+parseEsResultKeys: ''
+product: generic, rail9000
+redisEventKey: event-login-logout-at-unusual-time-linux
+remarkCN: ''
+remarks: A login/logout operation happened at unusual time
+requirements: None.
+ruleType: '1'
+source: ''
+script: '{"runtime_mappings":{"daytime":{"type":"long","script":{"source":"emit(doc['@timestamp'].value.toEpochSecond()%86400)"}}},"query":{"bool":{"must":[{"bool":{"should":[{"match_phrase":{"msg":"session opened for user"}},{"match_phrase":{"eventId":"session closed for user"}}]}},{"bool":{"must_not":[{"match_phrase":{"msg":"no new event"}}]}},{"bool":{"should":[{"range":{"daytime":{"lte":"shitfStartingTime"}}},{"range":{"daytime":{"gte":"shitfFinishingTime"}}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}}]}},"fields":["daytime"]}'
+status: 1
+tags: [attack.enterprise.T1078.003]
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,22 @@
+category: operation,network,attack
+ciaLevel: integrity
+component: SI
+eventId: '807'
+eventType: alert
+impact: ''
+keys: '{"rxHosts":{"en":"Source Address", "zh":"源地址"}, "txHosts":{"en":"Destination
+  Address", "zh":"目标地址"}}'
+name: Download executable
+nameCN: 下载可执行程序
+parseEsResultKeys: ''
+redisEventKey: event-ts-download-exe
+remarkCN: 源主机 {rxHosts} 从目标主机 {txHosts} 下载可执行程序
+remarks: Src host {rxHosts} downloads Executable from dst host {txHosts}.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"files"}},{"match_phrase":{"fileType":"application/x-dosexec"}}]}},"size":1000}'
+source: network
+status: 0
+tags: [operation.local, attack.enterprise.T1204.002]
+threshold: 1
+timeWindow: 30000

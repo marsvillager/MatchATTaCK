@@ -1,0 +1,23 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '8100'
+eventType: warning
+impact: ''
+keys: '{"msg":{"en":"Message", "zh":"信息"}, "src":{"en":"Source Address", "zh":"源地址"},
+  "dst":{"en":"Destination Address", "zh":"目标地址"}}'
+name: CDC Threat Intelligence Detected
+nameCN: CDC Threat Intelligence Detected
+parseEsResultKeys: ''
+redisEventKey: event-ts-cdc-threat-intelligence-detected
+remarkCN: '{msg}. The conversation comes from {src} to {dst}'
+remarks: '{msg}. The conversation comes from {src} to {dst}'
+requirements: No requirements.
+ruleType: '4'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"suricata_event"}},{"match":{"event_type":"alert"}},{"match_phrase":{"alert_category.keyword":"CDC
+  Threat Intelligence Detected"}}]}},"size":1000}'
+source: suricata
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

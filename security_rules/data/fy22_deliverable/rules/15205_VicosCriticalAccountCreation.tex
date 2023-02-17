@@ -1,0 +1,156 @@
+% !TEX root = ../AdditionalOsaRules.tex
+
+%%%
+%
+% Version 0.1
+%
+%%%
+
+\section{Vicos Critical Account Creation}
+\label{15205}
+%\addcontentsline{toc}{section}{\protect\numberline{}(Tool)}%
+
+\openup 1em
+
+\textbf{Full name:} Vicos critical account creation\hrulefill \\
+%\textbf{Vendor/Provider:} (Vendor name)\hrulefill \\
+%\textbf{URL: } \url{http://www.google.de} \hrulefill \\
+{\bf Categorization:} \\
+
+\openup -1em
+\vspace{-3em}
+
+% Please, write either Multi-OS, Linux, Windows, Mac
+\begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+
+\begin{todolist}
+  	\item Multi-OS
+	\item Linux
+\end{todolist}
+&
+\begin{todolist}
+	\item[\done] Windows
+	\item macOS
+\end{todolist}
+
+\end{tabular}
+
+\openup 1em
+
+{\bf SMO products in scope:} \\
+
+\openup -1em
+\vspace{-3em}
+
+\begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+
+\begin{todolist}
+  \item Generic
+  \item[\done] VICOS OC 100
+  \item VICOS S\&D
+\end{todolist}
+&
+\begin{todolist}
+  \item Rail9000
+  \item DCS
+  \item Others: \hrulefill
+\end{todolist}
+
+\end{tabular}
+
+\openup 1em
+
+{\bf Description:} \\
+
+\openup -1em
+\vspace{-2em}
+
+%\begin{itemize}
+%	\item (What does the rule do?)
+%	\item (Why was the situation targeted (e.g., in a workshop)?)
+%\end{itemize}
+
+This rule identifies situations in which a user account is created in a VICOS OC 100 server (such an account misbehaving might be more impactful than the ones created in a workstation or in a TTP)
+
+\openup 1em
+
+{\bf Rule query:} \\
+
+\openup -1em
+\vspace{-2em}
+
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "eventId": "1553"
+          }
+        },
+        {
+          "match": {
+            "cat": "winEvent"
+          }
+        },
+        {
+          "match": {
+            "channel": "Vicos OC 100 channel"
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gt": "<bt>",
+              "lt": "<et>"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "size": 1000
+}
+\end{lstlisting}
+
+\openup 1em
+
+{\bf Rule requirements:} \\
+
+\openup -1em
+\vspace{-2em}
+
+This rule requires VICOS software to log security events in the custom Windows event channel (the newest Vicos logging concept)
+
+\openup 1em
+
+{\bf Rule parameters:} \\
+
+\openup -1em
+\vspace{-2em}
+
+\begin{itemize}
+	\item A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+\end{itemize}
+
+\openup 1em
+
+{\bf Further information/categorization:} \\
+
+\openup -1em
+\vspace{-2em}
+
+%\begin{itemize}
+%	\item <Does the rule have an ATT\&CK label?>
+%	\item <Might the rule create many false positives?>
+%\end{itemize}
+
+The rule can be labeled with the following MITRE ATT\&CK's tactics and techniques:
+\begin{itemize}
+	\item T1136 - ``Create Account''
+		\subitem{.001 - `` Local Account''}
+\end{itemize}
+
+\pagebreak
+

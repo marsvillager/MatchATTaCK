@@ -1,0 +1,26 @@
+category: account 
+ciaLevel: integrity 
+component: SI 
+description: This rule detects the modification of the /etc/group and /etc/gshadow files which contain the group account information and the secure group account information, respectively. These files are changed when a group is modified, added or deleted or the password of a group is changed.
+eventId: '15605' 
+eventType: alert 
+impact: '' 
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}' 
+name: Auditd etc group modification 
+nameCN: '' 
+os: linux 
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+product: generic, dcs, rail9000 
+threshold: 1 
+timeWindow: 60000 
+parseEsResultKeys: '' 
+redisEventKey: event-auditd-etc-group-modification 
+remarkCN: '' 
+remarks: The /etc/group or /etc/gshadow file was modified on Linux host {dataSrcIP}   
+requirements: Auditd should be configured (an example of a suitable configuration has been provided in the repository). Furthermore, Logstash should be configured to ingest the related data (also in this case, an example of a suitable configuration has been provided in the repository).
+ruleType: '1' 
+script: '{ "query": { "bool": { "must": [ { "match": { "auditdType": "SYSCALL" } }, { "match": { "auditdKey": "etcgroup" } }, { "range": { "@timestamp": { "gte": "<bt>", "lt": "<et>" } } } ] } }, "size": 1000 }' 
+source: '' 
+status: 0 
+tags: [attack.enterprise.T1098, attack.enterprise.T1136.001, attack.enterprise.T1531] 

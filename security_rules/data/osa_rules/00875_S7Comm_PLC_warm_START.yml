@@ -1,0 +1,27 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+description: Monitor PLC warm START operation on the network, If detected, an event
+  will be prompted.
+eventId: '875'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'S7Comm: PLC warm START'
+nameCN: S7Comm：PLC热启动
+parseEsResultKeys: ''
+redisEventKey: event-ts-plc-warm-start
+remarkCN: 主机 {src} 热启动了PLC {dst}
+remarks: Host {src} warm START PLC {dst}
+requirements: Test if S7comm parameter function is 0x028, Parameter block is empty,
+  PI service is P_PROGRAM. (PI service is called PLC_control in older version.)
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "notice"}},{"match_phrase": {"msg": "plc warm start"}}]}},"size":
+  1000}'
+source: syslog
+status: 0
+tags: [attack.ics.T0858, attack.ics.T0816]
+threshold: 1
+timeWindow: 180000

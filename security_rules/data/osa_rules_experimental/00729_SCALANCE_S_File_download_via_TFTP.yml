@@ -1,0 +1,20 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '729'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'SCALANCE S: File download via TFTP'
+nameCN: SCALANCE S：TFTP文件下载
+parseEsResultKeys: ''
+redisEventKey: event-ts-file-download-via-tftp
+remarkCN: SCALANCE S防火墙 {src} TFTP文件下载
+remarks: SCALANCE S {src} File download via TFTP
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"File download via TFTP"}},{"match_phrase":{"cat":"ScalanceS"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

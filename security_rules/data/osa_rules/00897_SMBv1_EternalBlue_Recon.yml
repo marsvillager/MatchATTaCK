@@ -1,0 +1,26 @@
+category: attack,vulnerability,network
+ciaLevel: integrity
+component: SI
+description: Monitor EternalBlue vulnerability scan behavior on Windows host, If detected,
+  an event will be prompted.
+eventId: '897'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'SMBv1: EternalBlue Recon'
+nameCN: SMBv1：探测EternalBlue漏洞
+parseEsResultKeys: ''
+redisEventKey: event-ts-eternalblue-recon
+remarkCN: 源主机 {src} 对目标主机 {dst} 进行EternalBlue漏洞探测
+remarks: Src host {src} recons EternalBlue related vulnerability on dst host {dst}
+requirements: Identify if the SMB datagram probing of the attacker is checking if
+  target host has EternalBlue vulnerability.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match_phrase":
+  {"duid": "EternalBlueRecon"}}]}},"size": 1000}'
+source: T0866
+status: 0
+tags: [attack.enterprise.T1588.006]
+threshold: 1
+timeWindow: 60000

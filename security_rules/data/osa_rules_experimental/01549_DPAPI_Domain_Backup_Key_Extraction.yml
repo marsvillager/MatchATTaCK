@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1549'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: DPAPI Domain Backup Key Extraction
+nameCN: DPAPI域备份密钥提取
+parseEsResultKeys: ''
+redisEventKey: event-ts-dpapi-domain-backup-key-extraction
+remarkCN: 主机 {src} 检测到使用工具从域控制器中提取LSA秘密DPAPI域备份密钥
+remarks: Host {src} detects tools extracting LSA secret DPAPI domain backup key from
+  Domain Controllers
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4662"}}, {"match_phrase":
+  {"event_data.AccessMask": "0x2"}}, {"match_phrase": {"event_data.ObjectName": "BCKUPKEY"}},
+  {"match_phrase": {"event_data.ObjectType": "SecretObject"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

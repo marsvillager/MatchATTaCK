@@ -1,0 +1,25 @@
+category: vulnerability,network
+ciaLevel: integrity
+component: SI
+description: Monitor DoublePlusar vulnerability on Windows host, If detected, an event
+  will be prompted.
+eventId: '890'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'SMBv1: DoublePulsar Exists'
+nameCN: SMBv1：DoublePlusar漏洞存在
+parseEsResultKeys: ''
+redisEventKey: event-ts-doublepulsar-exists
+remarkCN: Windows主机 {src} 存在DoublePlusar漏洞
+remarks: Windows host {src} has DoublePulsar realted vulnerability
+requirements: Identify if the target host responses to the SMB datagram and shows
+  the DoublePolar vulnerability exists.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "DoublePulsarExists"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0866, attack.enterprise.T1210]
+threshold: 1
+timeWindow: 60000

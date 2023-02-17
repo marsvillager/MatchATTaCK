@@ -1,0 +1,151 @@
+% !TEX root = ../AdditionalOsaRules.tex
+
+%%%
+%
+% Version 0.1
+%
+%%%
+
+\section{Process Termination}
+\label{15063}
+%\addcontentsline{toc}{section}{\protect\numberline{}(Tool)}%
+
+\openup 1em
+
+\textbf{Full name:} Process termination\hrulefill \\
+%\textbf{Vendor/Provider:} (Vendor name)\hrulefill \\
+%\textbf{URL: } \url{http://www.google.de} \hrulefill \\
+{\bf Categorization:} \\
+
+\openup -1em
+\vspace{-3em}
+
+% Please, write either Multi-OS, Linux, Windows, Mac
+\begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+
+\begin{todolist}
+  	\item Multi-OS
+	\item Linux
+\end{todolist}
+&
+\begin{todolist}
+	\item[\done] Windows
+	\item macOS
+\end{todolist}
+
+\end{tabular}
+
+\openup 1em
+
+{\bf SMO products in scope:} \\
+
+\openup -1em
+\vspace{-3em}
+
+\begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+
+\begin{todolist}
+  \item[\done] Generic
+  \item[\done] VICOS OC 100
+  \item[\done] VICOS S\&D
+\end{todolist}
+&
+\begin{todolist}
+  \item Rail9000
+  \item DCS
+  \item Others: \hrulefill
+\end{todolist}
+
+\end{tabular}
+
+\openup 1em
+
+{\bf Description:} \\
+
+\openup -1em
+\vspace{-2em}
+
+%\begin{itemize}
+%	\item (What does the rule do?)
+%	\item (Why was the situation targeted (e.g., in a workshop)?)
+%\end{itemize}
+
+This rule identifies situations in which a known process running in a Windows system terminates. This event might occur if an attacker tries to subvert the correct functioning of the system or attempts to impair defenses (e.g., interrupting security tools running in the system). As for other rules concerning process executions (e.g., 15061 "Anomalous Process Execution"), this rule can be further specified by including information about the process name or folder (e.g., specifing a list of critical processes that should be running all the time) narrowing its scope.
+
+\openup 1em
+
+{\bf Rule query:} \\
+
+\openup -1em
+\vspace{-2em}
+
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "eventId": "4689"
+          }
+        },
+        {
+          "match": {
+            "cat": "winEvent"
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gt": "<bt>",
+              "lt": "<et>"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "size": 1000
+}
+\end{lstlisting}
+
+\openup 1em
+
+{\bf Rule requirements:} \\
+
+\openup -1em
+\vspace{-2em}
+
+None.
+
+\openup 1em
+
+{\bf Rule parameters:} \\
+
+\openup -1em
+\vspace{-2em}
+
+\begin{itemize}
+	\item A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+	\item \emph{executableX}: A allowlisted process name
+\end{itemize}
+
+\openup 1em
+
+{\bf Further information/categorization:} \\
+
+\openup -1em
+\vspace{-2em}
+
+%\begin{itemize}
+%	\item <Does the rule have an ATT\&CK label?>
+%	\item <Might the rule create many false positives?>
+%\end{itemize}
+
+The rule can be labeled with the following MITRE ATT\&CK's tactics and techniques:
+\begin{itemize}
+	\item T1489 - ``Service Stop''
+\end{itemize}
+
+\pagebreak
+

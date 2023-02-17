@@ -1,0 +1,21 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '900'
+eventType: event
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Successful Windows login
+nameCN: Windows：账户登录
+parseEsResultKeys: ''
+redisEventKey: event-ts-login
+remarkCN: 用户账户成功登录目标Windows主机 {dataSrcIP}
+remarks: An account was successfully logged on Windows host {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"4624"}},{"match":{"eventId":"528"}}]}},{"match":{"cat":"winEvent"}},{"bool":{"should":[{"match":{"logonType":"2"}},{"match":{"logonType":"3"}},{"match":{"logonType":"10"}}]}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: [attack.ics.T0859, attack.enterprise.T1078]
+threshold: 1
+timeWindow: 30000

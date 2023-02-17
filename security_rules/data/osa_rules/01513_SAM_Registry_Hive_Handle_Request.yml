@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1513'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: SAM Registry Hive Handle Request
+nameCN: SAM注册表配置单元句柄请求
+parseEsResultKeys: ''
+redisEventKey: event-ts-sam-registry-hive-handle-request
+remarkCN: 主机 {src} 检测到SAM注册表配置单元的句柄请求
+remarks: Host {src} detects handles requested to SAM registry hive
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4656"}}, {"wildcard": {"event_data.ObjectName.keyword":
+  "*\\\\SAM"}}, {"match_phrase": {"event_data.ObjectType": "Key"}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1003.002, attack.enterprise.T1552.002]
+threshold: 1
+timeWindow: 60000

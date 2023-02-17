@@ -1,0 +1,21 @@
+category: attack
+ciaLevel: confidentiality
+component: SI
+eventId: '212'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: CCTV Record Deleted
+nameCN: 闭路电视记录删除
+parseEsResultKeys: ''
+redisEventKey: event-ts-cctv-record-deleted
+remarkCN: 主机 {src} 上的CCTV记录被删除
+remarks: CCTV records has been deleted on host {src}.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":{"CommandLine":"/c
+  rd /q /s"}}]}},"size":1000}'
+source: network
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 120000

@@ -1,0 +1,20 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '757'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'SCALANCE X: System restarted'
+nameCN: SCALANCE X：系统重启
+parseEsResultKeys: ''
+redisEventKey: event-ts-system-restarted
+remarkCN: SCALANCE X交换机 {src} 系统重启
+remarks: SCALANCE X {src} System restarted
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"Restart requested"}},{"match_phrase":{"cat":"ScalanceX"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

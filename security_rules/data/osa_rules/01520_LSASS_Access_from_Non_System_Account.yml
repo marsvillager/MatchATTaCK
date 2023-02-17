@@ -1,0 +1,27 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1520'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: LSASS Access from Non System Account
+nameCN: 非系统账户进行LSASS访问
+parseEsResultKeys: ''
+redisEventKey: event-ts-lsass-access-from-non-system-account
+remarkCN: 主机 {src} 检测到从非系统账户进行LSASS访问的类似mimikatz的工具
+remarks: Host {src} detects potential mimikatz-like tools accessing LSASS from non
+  system account
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"bool": {"must": [{"bool": {"should": [{"match_phrase":
+  {"eventId": "4663"}}, {"match_phrase": {"eventId": "4656"}}]}}, {"wildcard": {"event_data.ObjectName.keyword":
+  "*\\\\lsass.exe"}}, {"match_phrase": {"event_data.ObjectType": "Process"}}]}}, {"bool":
+  {"must_not": [{"bool": {"must": [{"wildcard": {"event_data.SubjectUserName.keyword":
+  "*$"}}]}}]}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1003.001]
+threshold: 1
+timeWindow: 60000

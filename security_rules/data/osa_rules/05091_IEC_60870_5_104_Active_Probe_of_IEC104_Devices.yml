@@ -1,0 +1,21 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5091'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'IEC 60870-5-104: Active Probe of IEC104 Devices'
+nameCN: 'IEC 60870-5-104: IEC104设备活跃探查'
+parseEsResultKeys: ''
+redisEventKey: event-ts-iec-active-probe-of-iec104-devices
+remarkCN: 攻击机 {src} 主动探测IEC104设备
+remarks: Attacker {src} actively detects IEC104 equipment
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match":{"duid.keyword":"IEC104::IEC104_PROBE_DEVICES"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

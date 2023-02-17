@@ -1,0 +1,26 @@
+category: account
+ciaLevel: integrity
+component: SI
+description: 'This rule identifies situation in which access to ESXi hypervisor was unsuccessful due to authentication failure. The unsuccessful login is not an alert ``per se'' as no intrusion has actually happened. Nonetheless such attempts, if repeated, might indicate the early presence of a brute-force attack and are, for this reason, reported as warnings.'
+eventId: 15401
+eventType: warning
+impact: ''
+keys: ''
+name: Esxi Authentication Failure
+nameCN: ''
+os: linux
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: esxi
+redisEventKey: event-esxi-authentication-failure
+remarkCN: ''
+remarks: An unsuccessful authentication attempt has been observed in ESXi
+requirements: None.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"Authentication failure"}},{"match":{"msg":"PAM"}},{"bool":{"must_not":[{"match_phrase":{"msg":"no new event"}}]}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

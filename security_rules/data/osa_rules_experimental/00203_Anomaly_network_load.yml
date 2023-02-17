@@ -1,0 +1,23 @@
+category: network
+ciaLevel: confidentiality
+component: SI
+eventId: '203'
+eventType: warning
+impact: ''
+keys: '{"highest":{"en":"Traffic Highest", "zh":"流量最高值"}, "average":{"en":"Traffic
+  Average", "zh":"流量均值"}, "begin":{"en":"Begin Time", "zh":"起始时间"}, "end":{"en":"End
+  Time", "zh":"结束时间 "}}'
+name: Anomaly network load
+nameCN: 异常网络负载
+parseEsResultKeys: ''
+redisEventKey: event-ts-exception-traffic
+remarkCN: 网络负载 ({highest}) 超出正常均值 ({average}) 范围从 {begin} 到 {end}
+remarks: Network load ({highest}) deviated the normal range averaged load ({average})
+  from {begin} to {end}.
+ruleType: '0'
+script: ''
+source: network
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

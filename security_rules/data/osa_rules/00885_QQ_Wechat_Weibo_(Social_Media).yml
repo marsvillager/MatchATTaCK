@@ -1,0 +1,26 @@
+category: network
+ciaLevel: confidentiality
+component: SI
+description: Monitor social media communication on the network, If social media communication
+  was detected, an event will be prompted.
+eventId: '885'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: QQ/Wechat/Weibo (Social Media)
+nameCN: 社交媒体访问
+parseEsResultKeys: ''
+redisEventKey: event-ts-social-media
+remarkCN: 主机 {src} 使用社交媒体软件
+remarks: Social media communication from host {src} detected
+requirements: Detecting abnormal network traffic, including DNS and communication
+  traffic accordingly, e.g. visiting social meida such as  QQ, Wechat, Weibo.  This
+  can be seen as evidence connecting to external network.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "SocialMedia"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T585.001, attack.ics.T0883]
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,38 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1560'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Antivirus Relevant File Paths Alerts
+nameCN: 防病毒相关文件路径警报
+parseEsResultKeys: ''
+redisEventKey: event-ts-antivirus-relevant-file-paths-alerts
+remarkCN: 主机 {src} 在高相关文件路径或相关文件名中检测到防病毒警报
+remarks: Host {src} detects an Antivirus alert in a highly relevant file path or with
+  a relevant file name
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"should": [{"wildcard":
+  {"event_data.FileName.keyword": "C:\\\\Windows\\\\Temp\\\\*"}}, {"wildcard": {"event_data.FileName.keyword":
+  "C:\\\\Temp\\\\*"}}, {"wildcard": {"event_data.FileName.keyword": "*\\\\\\\\Client\\\\*"}},
+  {"wildcard": {"event_data.FileName.keyword": "C:\\\\PerfLogs\\\\*"}}, {"wildcard":
+  {"event_data.FileName.keyword": "C:\\\\Users\\\\Public\\\\*"}}, {"wildcard": {"event_data.FileName.keyword":
+  "C:\\\\Users\\\\Default\\\\*"}}, {"wildcard": {"event_data.FileName.keyword": "*.ps1"}},
+  {"wildcard": {"event_data.FileName.keyword": "*.vbs"}}, {"wildcard": {"event_data.FileName.keyword":
+  "*.bat"}}, {"wildcard": {"event_data.FileName.keyword": "*.chm"}}, {"wildcard":
+  {"event_data.FileName.keyword": "*.xml"}}, {"wildcard": {"event_data.FileName.keyword":
+  "*.txt"}}, {"wildcard": {"event_data.FileName.keyword": "*.jsp"}}, {"wildcard":
+  {"event_data.FileName.keyword": "*.jspx"}}, {"wildcard": {"event_data.FileName.keyword":
+  "*.asp"}}, {"wildcard": {"event_data.FileName.keyword": "*.aspx"}}, {"wildcard":
+  {"event_data.FileName.keyword": "*.php"}}, {"wildcard": {"event_data.FileName.keyword":
+  "*.war"}}, {"wildcard": {"event_data.FileName.keyword": "*.hta"}}, {"wildcard":
+  {"event_data.FileName.keyword": "*.lnk"}}, {"wildcard": {"event_data.FileName.keyword":
+  "*.scf"}}, {"wildcard": {"event_data.FileName.keyword": "*.sct"}}, {"wildcard":
+  {"event_data.FileName.keyword": "*.vbe"}}, {"wildcard": {"event_data.FileName.keyword":
+  "*.wsf"}}, {"wildcard": {"event_data.FileName.keyword": "*.wsh"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5084'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'DNP 3.0: Breaker Repeated Operation'
+nameCN: 'DNP 3.0: 断路器重复操作'
+parseEsResultKeys: ''
+redisEventKey: event-ts-dnp-breaker-repeated-operation
+remarkCN: 攻击机 {src} 劫持主机并连续发送断路器断开/闭合指令，造成断路器反复开闭
+remarks: The attacker {src} hijacked the host and continuously sent the opening /
+  closing command of the circuit breaker, causing the circuit breaker to open and
+  close repeatedly
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match":{"duid.keyword":"DNP3_APPL::DNP3_BREAKER_REPEAT_OPERATE"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

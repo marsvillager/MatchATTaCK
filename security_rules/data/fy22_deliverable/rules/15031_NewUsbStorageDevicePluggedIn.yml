@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: confidentiality
+component: SI
+description: "This rules triggers every time a new external usb storage device is connected to and recognized by a Windows operating system. Attackers can normally use this kind of devices to access a system (e.g., by delivering a malware) or extract information from the system. The rule can be further specified by defining the kind of devices that are allowed (or not allowed) by looking at properties such as ``Device ID'', ``Device Name'', ``Vendor ID'', etc as well as ensuring that the ``Subject\\textbackslash Security ID'' is set to ``SYSTEM''."
+eventId: 15031
+eventType: warning
+impact: ''
+keys: ''
+name: New Usb Storage Device Plugged-in
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, vicosoc100, vicoss&d
+requirements: None.
+redisEventKey: event-usb-storage-device-plugin
+remarkCN: ''
+remarks: A USB storage device was plugged in
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"cat":"winEvent"}},{"bool":{"should":[{"match":{"eventId":"2100"}},{"match":{"eventId":"2101"}}]}},{"match_phrase_prefix":{"msg":"*_USBSTOR*"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1200, attack.enterprise.T1025]
+threshold: 1
+timeWindow: 60000

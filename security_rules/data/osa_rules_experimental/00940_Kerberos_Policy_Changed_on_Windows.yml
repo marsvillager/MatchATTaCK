@@ -1,0 +1,21 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '940'
+eventType: event
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Kerberos Policy Changed on Windows
+nameCN: Windows： Kerberos策略变更
+parseEsResultKeys: ''
+redisEventKey: event-ts-kerberos-policy-changed
+remarkCN: Windows主机 {dataSrcIP} Kerberos策略被修改
+remarks: Kerberos policy was changed on Windows host {dataSrcIP}
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"111111"}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 1
+tags: [operation.local]
+threshold: 1
+timeWindow: 30000

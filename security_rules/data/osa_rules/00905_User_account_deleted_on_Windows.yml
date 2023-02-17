@@ -1,0 +1,22 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '905'
+eventType: event
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: User account deleted on Windows
+nameCN: Windows：账户删除
+parseEsResultKeys: ''
+redisEventKey: event-ts-user-delete
+remarkCN: 账号在Windows主机 {dataSrcIP} 上被删除
+remarks: A user account was deleted on Windows host {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"4726"}},{"match":{"eventId":"630"}}]}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1531]
+threshold: 1
+timeWindow: 30000

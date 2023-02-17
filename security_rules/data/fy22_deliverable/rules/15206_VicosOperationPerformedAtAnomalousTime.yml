@@ -1,0 +1,27 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: 'This rule identifies situations in which a an operation is performed in a VICOS system outside working hours. As for rule 15022 (``Login Logout At Unusual Time''), this rule might be helpful in cases where normal working hours are well defined or operators work in shifts. As attackers can try to take advantage of the absence of personnel to exploit the target systems, rules like these one work on restricting the categories of security-related events happening at unexpected time.'
+eventId: 15206
+eventType: warning
+impact: ''
+keys: ''
+name: Vicos Operation Performed At Anomalous Time
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+ EventX: The ID of the operation of interest (taken from the ``Vicos Security Log Manifest'')
+parseEsResultKeys: ''
+product: vicosoc100
+redisEventKey: event-vicos-operation-performed-at-unusual-time
+remarkCN: ''
+remarks: A VICOS specific operation was performed at anomalous time.
+requirements: This rule requires VICOS software to log security events in the custom Windows event channel (the newest Vicos logging concept)
+ruleType: '1'
+script: '{"runtime_mappings":{"daytime":{"type":"long","script":{"source":"emit(doc['@timestamp'].value.toEpochSecond()%86400)"}}},"query":{"bool":{"must":[{"terms":{"eventId":["Event1","Event2","..."]}},{"match":{"cat":"winEvent"}},{"match":{"channel":"Vicos OC 100 channel"}},{"bool":{"should":[{"range":{"daytime":{"lte":28800}}},{"range":{"daytime":{"gte":64800}}}]}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"fields":["daytime"]}'
+source: ''
+status: 1
+tags: ''
+threshold: 1
+timeWindow: 60000

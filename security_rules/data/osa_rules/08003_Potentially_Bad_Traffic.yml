@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '8003'
+eventType: warning
+impact: ''
+keys: '{"msg":{"en":"Message", "zh":"信息"}}'
+name: Potentially Bad Traffic
+nameCN: Potentially Bad Traffic
+parseEsResultKeys: ''
+redisEventKey: event-ts-potentially-bad-traffic
+remarkCN: '{msg}'
+remarks: '{msg}'
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"suricata_event"}},{"match":{"event_type":"alert"}},{"match_phrase":{"alert_category.keyword":"Potentially
+  Bad Traffic"}}]}},"size":1000}'
+source: suricata
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

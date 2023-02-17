@@ -1,0 +1,21 @@
+category: network,attack
+ciaLevel: integrity
+component: SI
+eventId: '217'
+eventType: alert
+impact: ''
+keys: ''
+name: High network load
+nameCN: 流量超出阈值
+parseEsResultKeys: ''
+redisEventKey: event-ts-traffic-exception
+remarkCN: 流量超出阈值
+remarks: Network traffic load exceeds configured threshold.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lte":"<et>"}}},{"match_phrase":{"cat":"smb_files"}},{"exists":{"field":"in"}},{"range":{"in":{"gte":1310720}}}]}},"size":1}'
+source: network
+status: 0
+tags: [attack.enterprise.T1020]
+threshold: 1
+timeWindow: 60000

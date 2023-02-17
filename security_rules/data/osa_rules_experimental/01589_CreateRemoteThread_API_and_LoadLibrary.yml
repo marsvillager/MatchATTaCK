@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1589'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: CreateRemoteThread API and LoadLibrary
+nameCN: CreateRemoteThread API和LoadLibrary
+parseEsResultKeys: ''
+redisEventKey: event-ts-createremote-thread-api-and-loadlibrary
+remarkCN: 主机 {src} 检测到潜在的使用CreateRemoteThread api和LoadLibrary进行DLL进程注入
+remarks: Host {src} detects potential use of CreateRemoteThread api and LoadLibrary
+  function to inject DLL into a process
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase":
+  {"EventLog": "Microsoft-Windows-Sysmon"}}, {"match_phrase": {"eventId": "8"}}, {"match_phrase":
+  {"event_data.StartFunction": "LoadLibraryA"}}, {"wildcard": {"event_data.StartModule.keyword":
+  "*\\\\kernel32.dll"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

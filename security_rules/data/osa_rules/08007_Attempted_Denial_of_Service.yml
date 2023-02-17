@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '8007'
+eventType: warning
+impact: ''
+keys: '{"msg":{"en":"Message", "zh":"信息"}}'
+name: Attempted Denial of Service
+nameCN: Attempted Denial of Service
+parseEsResultKeys: ''
+redisEventKey: event-ts-attempted-denial-of-service
+remarkCN: '{msg}'
+remarks: '{msg}'
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"suricata_event"}},{"match":{"event_type":"alert"}},{"match_phrase":{"alert_category.keyword":"Attempted
+  Denial of Service"}}]}},"size":1000}'
+source: suricata
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

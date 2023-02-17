@@ -1,0 +1,26 @@
+category: network
+ciaLevel: confidentiality
+component: SI
+description: Monitor Search Engine communication on the network, If Search Engine
+  communication was detected, an event will be prompted.
+eventId: '886'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Baidu/Bing/Google (Search Engine)
+nameCN: 搜索引擎访问
+parseEsResultKeys: ''
+redisEventKey: event-ts-search-engine
+remarkCN: 主机 {src} 使用搜索引擎
+remarks: Host {src} accessed public search engine
+requirements: Detecting abnormal network traffic, including DNS and communication
+  traffic accordingly, e.g. searching on Baidu, Bing or google. This can be seen as
+  evidence connecting to external network.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "SearchEngine"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0883]
+threshold: 1
+timeWindow: 60000

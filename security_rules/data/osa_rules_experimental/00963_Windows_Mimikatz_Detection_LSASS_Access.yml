@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '963'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'Windows: Mimikatz Detection LSASS Access'
+nameCN: 'Windows: Mimikatz LSASS信息访问'
+parseEsResultKeys: ''
+redisEventKey: event-ts-mimikatz-detection-lsass-access
+remarkCN: 主机 {src} 出现Mimikatz对LSASS信息访问
+remarks: LSASS credential access happened on host {src} via Mimikatz
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "winEvent"}},{"match": {"eventId": "10"}},{"match":
+  {"event_data.TargetImage": "lsass.exe"}},{"match": {"event_data.GrantedAccess":
+  "0x1010"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

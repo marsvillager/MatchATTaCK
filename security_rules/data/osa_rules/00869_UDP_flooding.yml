@@ -1,0 +1,26 @@
+category: attack,network
+ciaLevel: confidentiality
+component: SI
+description: A UDP flood is a type of denial-of-service attack in which a large number
+  of User Datagram Protocol (UDP) packets are sent to a targeted server with the aim
+  of overwhelming that device’s ability to process and respond. The firewall protecting
+  the targeted server can also become exhausted as a result of UDP flooding, resulting
+  in a denial-of-service to legitimate traffic.
+eventId: '869'
+eventType: alert
+impact: ''
+keys: '{"dst":{"en":"Destination Address", "zh":"目标地址"}}'
+name: UDP flooding
+nameCN: UDP洪水
+parseEsResultKeys: aggregations:sensor_ids:buckets:dst:buckets
+redisEventKey: event-ts-udp-flooding-attacking
+remarkCN: 主机 {src} 触发UDP洪泛攻击
+remarks: Host {src} launchs UDP flooding
+requirements: No requirements.
+ruleType: '3'
+script: '{"query": {"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"conn"}},{"exists":{"field":"dst"}},{"match":{"proto":"udp"}}]}},"aggs":{"sensor_ids":{"terms":{"field":"fields.gl2_source_collector.keyword"},"aggs":{"dst":{"terms":{"field":"dst"}}}}},"size":1}'
+source: network
+status: 0
+tags: [attack.enterprise.T1499, attack.enterprise.T1498.001, attack.ics.T0814]
+threshold: 50000
+timeWindow: 60000

@@ -1,0 +1,25 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '11010'
+eventType: warning
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Host", "zh":"源主机"}}'
+name: Firewall blocked network packets (customized rule)
+nameCN: ''
+parseEsResultKeys: ''
+redisEventKey: event-ts-linux-firewall-block
+remarkCN: ''
+remarks: The Linux-based firewall reported to have blocked a network packet on {dataSrcIP}
+  (Netfilter/IPFire).
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"filter":[{"match":{"deviceCat":"syslog_514"}},{"match":{"msg":"DROP_INPUT
+  DROP_NEWNOTSYN DROP_TCP"}},{"query_string":{"default_field":"msg","query":"NOT (\"DST=10.105.5.255\"
+  OR \"DST=255.255.255.255\" OR \"DST=224.0.0.1\" OR \"DST=172.16.120.255\" OR \"DST=172.16.177.255\"
+  OR \"DST=172.16.121.255\")"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}}}'
+source: ''
+status: 0
+tags: [operation.local]
+threshold: 1
+timeWindow: 60000

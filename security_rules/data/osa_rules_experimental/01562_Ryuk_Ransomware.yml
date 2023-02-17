@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1562'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Ryuk Ransomware
+nameCN: Ryuk勒索软件
+parseEsResultKeys: ''
+redisEventKey: event-ts-ryuk-ransomware
+remarkCN: 主机 {src} 检测到Ryuk勒索软件命令行
+remarks: Host {src} detects Ryuk Ransomware command lines
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"should": [{"wildcard":
+  {"event_data.CommandLine.keyword": "*\\\\net.exe stop ''samss'' *"}}, {"wildcard":
+  {"event_data.CommandLine.keyword": "*\\\\net.exe stop ''audioendpointbuilder'' *"}},
+  {"wildcard": {"event_data.CommandLine.keyword": "*\\\\net.exe stop ''unistoresvc_?????''
+  *"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

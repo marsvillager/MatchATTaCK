@@ -1,0 +1,29 @@
+category: operation 
+ciaLevel: confidentiality
+component: SI 
+description: This rule detects the reading action on a given file or directory. 
+eventId: 15650
+eventType: event 
+impact: '' 
+keys: '' 
+name: Auditd Generic File Read
+nameCN:  
+os: linux 
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+product: generic, rail9000 
+parseEsResultKeys: ''
+redisEventKey: event-auditd-generic-file-read
+remarkCN: ''
+remarks: File or directory X was read.
+requirements: Auditd should be configured (an example of a suitable configuration has been provided in the repository). Furthermore, Logstash should be configured to ingest the related data (also in this case, an example of a suitable configuration has been provided in the repository). A specific path should be included in the auditd rule identified by key ``file\_x\_read''.
+ruleType: '1' 
+script: '{ "query": { "bool": { "must": [ { "match": { "auditdType": "SYSCALL" } }, { "match": { "auditdKey": "file_x_read" } }, { "range": { "@timestamp": { "gte": "<bt>", "lt": "<et>" } } } ] } }, "size": 1000 }' 
+source: '' 
+status: 1 
+tags: [attack.enterprise.T1083]
+threshold: 1 
+timeWindow: 60000
+
+
+

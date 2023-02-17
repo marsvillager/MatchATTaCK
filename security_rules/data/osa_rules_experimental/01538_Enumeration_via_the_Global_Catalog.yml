@@ -1,0 +1,28 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1538'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Enumeration via the Global Catalog
+nameCN: 通过全局目录枚举
+parseEsResultKeys: ''
+redisEventKey: event-ts-enumeration-via-the-global-catalog
+remarkCN: 主机 {src} 检测到全局目录枚举(可以通过BloodHound或其他AD侦察工具实现)，根据域宽度调整阈值
+remarks: Host {src} detects enumeration of the global catalog (that can be performed
+  using BloodHound or others AD reconnaissance tools). Adjust Threshold according
+  to domain width
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"eventId": "5156"}}, {"bool": {"should": [{"match_phrase": {"event_data.DestinationPort":
+  "3268"}}, {"match_phrase": {"event_data.DestinationPort": "3269"}}]}}, {"range":
+  {"date": {"gte": "now-1h"}}}]}}}}, "aggs": {"WorkstationName_count": {"terms": {"field":
+  "WorkstationName"},"aggs": {"SourceAddress_count": {"terms": {"field": "SourceAddress"}},"limit":
+  {"bucket_selector": {"buckets_path": {"count": "SourceAddress_count"},"script":
+  "params.count > 2000"}}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

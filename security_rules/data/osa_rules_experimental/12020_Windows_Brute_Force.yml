@@ -1,0 +1,22 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '12020'
+eventType: alert
+impact: ''
+keys: '{"shost":{"en":"Source Host", "zh":"源主机"}}'
+name: Brute Force Attack on Windows
+nameCN: ''
+parseEsResultKeys: aggregations:shost:buckets
+redisEventKey: event-ts-windows-brute-force
+remarkCN: ''
+remarks: Multiple failed logon attempts on Windows host {shost} indicating a brute
+  force attack. Covers logins to multiple services (e.g. RDP).
+requirements: No requirements.
+ruleType: '3'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"4625"}},{"match":{"eventId":"529"}}]}},{"match":{"cat":"winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"aggs":{"shost":{"terms":{"field":"shost.keyword"}}},"size":1000}'
+source: ''
+status: 0
+tags: ~
+threshold: 5
+timeWindow: 60000

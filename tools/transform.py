@@ -11,11 +11,14 @@ def word_pos_tag(words: list[str]) -> list[tuple]:
     :param words: list[str]
     :return: list[(word, pos)]
     """
-    return pos_tag(words)
-    # st = StanfordPOSTagger(Config.POS_TAGGER_PATH,
-    #                        path_to_jar=Config.STANFORD_POSTAGGER_JAR_PATH,
-    #                        java_options="-Xmx8G")
-    # return st.tag(words)
+    # method 1: fast but less accurate
+    # return pos_tag(words)
+
+    # method 2: slow but more accurate
+    st = StanfordPOSTagger(Config.POS_TAGGER_PATH,
+                           path_to_jar=Config.STANFORD_POSTAGGER_JAR_PATH,
+                           java_options="-Xmx8G")
+    return st.tag(words)
 
 
 def lemmatize(words: list[str]) -> list[str]:
@@ -37,10 +40,12 @@ def lemmatize(words: list[str]) -> list[str]:
 
 def extract_nouns(words: list[str]) -> list[str]:
     """
-    根据标注的词性，仅取其中的名词
+    根据标注的词性，仅取其中的名词.
+    (1) 名词是最有信息量的
+    (2) 像 login/logout 之类的动词往往也会有其名词含义，而标注工具会选择将其标为名词
 
     :param words: list[str]
-    :return:
+    :return: nouns(accuracy depends on pos(part of speech) tagger)
     """
     return [word[0] for word in word_pos_tag(words) if 'NN' in word[1]]  # NN, NNS, NNP, NNPS
 
@@ -63,7 +68,14 @@ def stemmer(words: list[str]) -> list[str]:
     return cut_word
 
 
-def is_lemma(words: str, lemma: bool):
+def is_lemma(words: str, lemma: bool) -> set[str]:
+    """
+    根据变量 lemma 决定是否词元化.
+
+    :param words: str
+    :param lemma: lemma if true
+    :return: set[str] after a series of processions
+    """
     if lemma:
         return set(rm_single_word(stemmer(extract_nouns(lemmatize(rm_stop_words(rm_punctuation(tokenize(words))))))))
     else:
@@ -77,6 +89,7 @@ def is_lemma(words: str, lemma: bool):
 def freq_count(words: list[str]) -> FreqDist:
     """
     Count frequency of words.
+
     :param words: list[str]
     :return: FreqDist.items() --> (word, count_num)
     """

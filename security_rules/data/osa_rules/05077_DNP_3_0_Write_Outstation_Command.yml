@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5077'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'DNP 3.0: Write Outstation Command'
+nameCN: 'DNP 3.0: 写入外站命令'
+parseEsResultKeys: ''
+redisEventKey: event-ts-dnp-write-outstation-command
+remarkCN: 攻击机 {src} 发送WRITE功能码写入异常的数据对象，造成目标主机 {dst} 运行异常或者系统崩溃
+remarks: The attacker {src} sends a write function code to WRITE an abnormal data
+  object, resulting in abnormal operation of the target host {dst} or system crash
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"bool":{"should":[{"match":{"duid.keyword":"DNP3_APPL::DNP3_ABNORMAL_WRIE"}},{"match":{"duid.keyword":"DNP3_MITM::DNP3_MAN_IN_MID_WRITE_ABNORMAL_OBJS"}}]}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

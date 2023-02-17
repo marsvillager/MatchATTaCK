@@ -1,0 +1,22 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '904'
+eventType: warning
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: User account created on Windows
+nameCN: Windows：账户创建
+parseEsResultKeys: ''
+redisEventKey: event-ts-user-create
+remarkCN: 新账户在Windows主机 {dataSrcIP} 上创建成功
+remarks: A user account was created on Windows host {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"4720"}},{"match":{"eventId":"624"}}]}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1136.001]
+threshold: 1
+timeWindow: 30000

@@ -1,0 +1,52 @@
+% !TEX root = ./AdditionalOsaRules.tex
+
+%%%
+%
+% Version 0.1
+%
+%%%
+
+\section*{Auditd Configuration}
+\addcontentsline{toc}{section}{\protect\numberline{}Auditd Configuration}%
+\label{appendix:auditdconfiguration}
+
+\begin{lstlisting}[language=json,firstnumber=1]
+
+## First rule - delete all
+-D
+
+## Increase the buffers to survive stress events.
+## Make this bigger for busy systems
+-b 8192
+
+## This determine how long to wait in burst of events
+--backlog_wait_time 60000
+
+## Set failure mode to syslog
+-f 1
+
+## customized auditd rules
+-w /usr/bin/passwd -p x -k binpasswd
+-w /usr/sbin/useradd -p x -k usermodification
+-w /usr/sbin/userdel -p x -k usermodification
+-w /usr/sbin/usermod -p x -k usermodification
+-w /usr/sbin/adduser -p x -k usermodification
+-w /usr/sbin/groupadd -p x -k groupmodification
+-w /usr/sbin/groupdel -p x -k groupmodiciation
+-w /usr/sbin/groupmod -p x -k groupmodification
+-w /usr/sbin/addgroup -p x -k groupmodification
+-w /etc/group -p wa -k etcgroup
+-w /etc/passwd -p wa -k etcpasswd
+-w /etc/gshadow -k etcgroup
+-w /etc/shadow -p wa -k etcshadow
+-a exit,always -F arch=b64 -S adjtimex -S settimeofday -S clock_settime -k timechange
+
+## generic auditd rules
+# -w PATH_TO_FILE_X -p r -k file_x_read
+# -w PATH_TO_FILE_X -p w -k file_x_write
+# -w PATH_TO_FILE_X -p x -k file_x_execute
+
+\end{lstlisting}
+
+\pagebreak
+

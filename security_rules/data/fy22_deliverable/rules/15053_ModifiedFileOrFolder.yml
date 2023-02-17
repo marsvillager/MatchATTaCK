@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: This rule identifies situations in which a known file or folder is modified in a Windows system. The unexpected modification of files or folders might be due to attackers' activities on the system and can have different meanings (e.g., data tampering, etc.). Such a rule is very generic and shall be normally used in quite static environments and always used with care no to raise false positives. Alternatively, the rule can be further specified (e.g., restricted) by using field "s\_targetFilename" to identify a given section of the file system.
+eventId: 15053
+eventType: event
+impact: ''
+keys: ''
+name: Modified File or Folder
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, vicosoc100, vicoss&d
+requirements: This rule requires the directory/file to be configured so that the event is generated (for more information, please, visit the following link https://www.manageengine.com/products/active-directory-audit/how-to/monitor-file-and-folder-access-on-windows-file-server.html)
+redisEventKey: event-file-modified
+remarkCN: ''
+remarks: A file/folder was modified
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"4663"}},{"terms":{"event_data.AccessList":["%%4417","%%4418","%%4420","%%4424","%%1539","%%1540"]}},{"match":{"cat":"winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

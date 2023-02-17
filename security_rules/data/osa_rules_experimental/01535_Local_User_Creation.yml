@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1535'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Local User Creation
+nameCN: 创建本地用户
+parseEsResultKeys: ''
+redisEventKey: event-ts-local-user-creation
+remarkCN: 主机 {src} 检测到在Windows服务器上创建本地用户行为，然而在Active Directory环境中不应该发生。此Sigma用例应用于Windows服务器日志而不是DC日志
+remarks: Host {src} detects local user creation on windows servers, which shouldn't
+  happen in an Active Directory environment. Apply this Sigma Use Case on your windows
+  server logs and not on your DC logs
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4720"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

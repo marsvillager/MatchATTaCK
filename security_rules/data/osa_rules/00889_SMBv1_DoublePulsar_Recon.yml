@@ -1,0 +1,26 @@
+category: attack,vulnerability,network
+ciaLevel: integrity
+component: SI
+description: Monitor DoublePlusar vulnerability scan on Windows host, If detected,
+  an event will be prompted.
+eventId: '889'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'SMBv1: DoublePulsar Recon'
+nameCN: SMBv1：探测DoublePlusar漏洞
+parseEsResultKeys: ''
+redisEventKey: event-ts-doublepulsar-recon
+remarkCN: 源主机 {src} 对目标主机{dst}进行DoublePlusar漏洞扫描
+remarks: Src host {src} recons DoublePulsar related vulnerability on dst host {dst}
+requirements: Identify if the SMB datagram probing of the attacker is checking if
+  target host has DoublePolar vulnerability.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "DoublePulsarRecon"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1588.006]
+threshold: 1
+timeWindow: 60000

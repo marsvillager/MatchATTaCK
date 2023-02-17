@@ -1,0 +1,22 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '861'
+eventType: alert
+impact: ''
+keys: ''
+name: 'PN-DCP: scan specified device'
+nameCN: 'PN-DCP: 指定设备扫描检测'
+parseEsResultKeys: ''
+redisEventKey: event-ts-pn-dcp-identify
+remarkCN: 检测到PN-DCP识别扫描
+remarks: PROFINET DCP (identify) scan is detected.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "PN_DCP_Identify"}}]}},"size": 1000}'
+source: network
+status: 0
+tags: [attack.ics.T0846, attack.ics.T0888]
+threshold: 1
+timeWindow: 60000

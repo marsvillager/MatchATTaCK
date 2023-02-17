@@ -1,0 +1,52 @@
+% !TEX root = ./AdditionalOsaRules.tex
+
+%%%
+%
+% Version 0.1
+%
+%%%
+
+\section*{VICOS Products Family}
+\addcontentsline{toc}{section}{\protect\numberline{}VICOS Products Family}%
+
+The following table lists the detection use cases selected during the VICOS workshops (for more information, please, refer to the related Excel file). Every use case is associated with the corresponding OSA correlation rules.
+
+\begin{center}
+	\begin{longtable}{P{.3\textwidth}P{.6\textwidth}}
+		\hline
+		\textbf{Use Case} & \textbf{Rules} \\
+		\hline
+		Repeated Failed Login & \makecell[tl]{12020-Windows-Brute-Force \\ 15201-Repeated-Failed-Login~[\ref{15201}]} \\
+		Account Lockout & \makecell[tl]{15017-Account-Locked-Out~[\ref{15017}] \\ 15202-Vicos-Account-Deletion*~[\ref{15202}]} \\
+		Login of Non-Registered Accounts & \makecell[tl]{15021-Login-Of-Non-Registered-Account~[\ref{15021}] \\ 15203-Vicos-Login-Attempt-Of-Non-Authorized-Username~[\ref{15203}]} \\
+		Login at Unusual Time & \makecell[tl]{15022-Login-Logout-At-Unusual-Time~[\ref{15022}] \\ 15204-Vicos-Login-Logout-At-Unusual-Time~[\ref{15204}]} \\
+		File Share Client-Side Access & \makecell[tl]{00943-Network-Share-Access-on-Windows} \\
+		File Share Server-Side Access & \makecell[tl]{00943-Network-Share-Access-on-Windows} \\
+		Application Installation/Removal & \makecell[tl]{15023-Application-Installation~[\ref{15023}] \\ 15024-Application-Removal~[\ref{15024}] \\ 15025-Application-Installation-Applocker~[\ref{15025}]} \\
+		New File Share & \makecell[tl]{15041-New-File-Share~[\ref{15041}]} \\
+		New Directory/File & \makecell[tl]{15050-New-File-Or-Folder~[\ref{15050}]} \\
+		Removed Directory/File & \makecell[tl]{15051-Deleted-File-Or-Folder~[\ref{15051}]} \\
+		Access to Directory/File & \makecell[tl]{15052-Accessed-File-Or-Folder~[\ref{15052}]} \\
+		Modification to Directory/File & \makecell[tl]{15053-Modified-File-Or-Folder~[\ref{15053}]} \\
+		Malicious Process Execution & \makecell[tl]{15060-Malicious-Process-Execution~[\ref{15060}]} \\
+		Anomalous Process Execution & \makecell[tl]{15061-Anomalous-Process-Execution~[\ref{15061}]} \\
+		Anomalous Process Execution with High Privileges & \makecell[tl]{15062-Anomalous-Process-Execution-with-High-Privileges~[\ref{15062}]} \\
+		Process Termination & \makecell[tl]{15063-Process-Termination~[\ref{15063}]} \\
+		New Service & \makecell[tl]{15064-New-Service-Execution~[\ref{15064}]} \\
+		New Hardware Plugged-in & \makecell[tl]{15030-New-Hardware-Plugged-In~[\ref{15030}]} \\
+		New USB Storage Plugged-in & \makecell[tl]{15031-New-USB-Storage-Plugged-In~[\ref{15031}]} \\
+		New USB Device Plugged-in & \makecell[tl]{15032-New-USB-Device-Plugged-In~[\ref{15032}]} \\
+		OS User Account Creation & \makecell[tl]{00904-User-account-created-on-Windows} \\
+		OS High-Privileged User Account Creatoin & \makecell[tl]{15026-Os-High-Privileged-Account-Creation~[\ref{15026}} \\
+		Application High-Privileged Account Creation & \makecell[tl]{15205-Vicos-Critical-Account-Creation~[\ref{15205}]} \\
+		Application Configuration Changed & \makecell[tl]{15027-Application-Configuration-Change~[\ref{15027}]} \\
+		Operation Performed At Anomalous Time & \makecell[tl]{15206-Vicos-Operation-Performed-At-Anomalous-Time~[\ref{15206}]} \\
+		Application Log Cleared & \makecell[tl]{15207-Vicos-Application-Log-Cleared~[\ref{15207}] \\ 15028-Window-Object-Deletion~[\ref{15028}]} \\
+		Ineffective Security Produt & \makecell[tl]{15070-Windows-Applocker-Disabled~[\ref{15070}]} \\
+		Security Product Alert & \makecell[tl]{15071-Windows-Applocker-Security-Event~[\ref{15071}]} \\
+		System Log Space Full & \makecell[tl]{15080-Disk-Space-Exhaustion~[\ref{15080}]} \\
+    		\hline
+	\end{longtable}
+\end{center}
+
+

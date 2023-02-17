@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1566'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: PSExec and WMI Process Creations Block
+nameCN: PSExec和WMI进程创建阻塞
+parseEsResultKeys: ''
+redisEventKey: event-ts-psexec-and-wmi-process-creations-block
+remarkCN: 主机 {src} 检测到源自PSExec 和WMI 命令的进程创建阻塞
+remarks: Host {src} detects blocking of process creations originating from PSExec
+  and WMI commands
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase":
+  {"eventId": "1121"}}, {"bool": {"should": [{"wildcard": {"event_data.ProcessName.keyword":
+  "*\\\\wmiprvse.exe"}}, {"wildcard": {"event_data.ProcessName.keyword": "*\\\\psexesvc.exe"}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

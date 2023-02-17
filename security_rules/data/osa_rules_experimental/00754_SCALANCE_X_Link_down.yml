@@ -1,0 +1,20 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '754'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'SCALANCE X: Link down'
+nameCN: SCALANCE X：网线拔出
+parseEsResultKeys: ''
+redisEventKey: event-ts-link-down
+remarkCN: SCALANCE X交换机 {src} 网线拔出
+remarks: SCALANCE X {src} Link down
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"Link down on"}},{"match_phrase":{"cat":"ScalanceX"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

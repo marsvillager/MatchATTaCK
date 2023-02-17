@@ -1,0 +1,31 @@
+category: attack,network
+ciaLevel: integrity
+component: SI
+description: A normal ARP communication begins when a computer sends a packet to a
+  specific IP address. It broadcasts an ARP request, known as Who is, packet that
+  requests the MAC address of the computer with the specific IP address. The said
+  computer then sends a reply containing its MAC address. The original request coming
+  from a computer then keeps a record of the MAC address in its ARP cache. In ARP
+  flooding, the affected system sends ARP replies to all systems connected in a network,
+  causing incorrect entries in the ARP cache. The result is that the affected system
+  is unable to resolve IP and MAC addresses because of the wrong entries in the ARP
+  cache. The affected system is unable to connect to any other system in the network.
+eventId: '864'
+eventType: alert
+impact: ''
+keys: '{"smac":{"en":"Source MAC", "zh":"源MAC"}}'
+name: ARP flooding
+nameCN: ARP洪水
+parseEsResultKeys: ''
+redisEventKey: event-ts-arp-flooding-attacking
+remarkCN: 主机 {smac} 进行ARP洪泛攻击
+remarks: Host {smac} launchs ARP flooding
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "ARP_Flooding"}}]}},"size": 1000}'
+source: network
+status: 0
+tags: [attack.enterprise.T1498.001, attack.ics.T0814]
+threshold: 1
+timeWindow: 60000

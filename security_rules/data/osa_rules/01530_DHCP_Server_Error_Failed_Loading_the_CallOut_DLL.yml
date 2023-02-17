@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1530'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: DHCP Server Error Failed Loading the CallOut DLL
+nameCN: DHCP服务器加载CallOut DLL失败
+parseEsResultKeys: ''
+redisEventKey: event-ts-dhcp-server-error-failed-loading-the-callout-dll
+remarkCN: 主机 {src} 检测到DHCP服务器无法加载注册表中的指定的Callout DLL
+remarks: Host {src} detects a DHCP server error in which a specified Callout DLL (in
+  registry) could not be loaded
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"bool": {"should":
+  [{"match_phrase": {"eventId": "1031"}}, {"match_phrase": {"eventId": "1032"}}, {"match_phrase":
+  {"eventId": "1034"}}]}}, {"match_phrase": {"source_name": "Microsoft-Windows-DHCP-Server"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1574.002]
+threshold: 1
+timeWindow: 60000

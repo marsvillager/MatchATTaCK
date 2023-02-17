@@ -1,0 +1,21 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1565'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Windows Defender Threat Detected
+nameCN: 检测到Windows Defender威胁
+parseEsResultKeys: ''
+redisEventKey: event-ts-windows-defender-threat-detected
+remarkCN: 主机 {src} 检测到Windows Defender恶意软件检测引擎采取的所有操作
+remarks: Host {src} detects all actions taken by Windows Defender malware detection
+  engines
+ruleType: '1'
+script: '{"query":{"constant_score":{"filter":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}],"should":[{"match_phrase":{"eventId":"1006"}},{"match_phrase":{"eventId":"1116"}},{"match_phrase":{"eventId":"1015"}},{"match_phrase":{"eventId":"1117"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

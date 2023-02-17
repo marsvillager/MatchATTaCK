@@ -1,0 +1,26 @@
+category: attack
+ciaLevel: integrity
+component: SI
+description: Monitor Windows Defender Real-time status on Windows host, If detected,
+  an event will be prompted.
+eventId: '1005'
+eventType: alert
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Windows Defender Real-time Protection Disabled
+nameCN: Windows Defender Real-time Protection被禁用
+parseEsResultKeys: ''
+redisEventKey: event-ts-windows-defender-real-time-protection-disabled
+remarkCN: Windows主机 {dataSrcIP} 的Defender Real-time Protection功能被禁用
+remarks: Windows Defender Real-time Protection has been disabled on host {dataSrcIP}
+requirements: Check windows defender access if there is any activity shutting down
+  protection feature.  (Based on sysmon)
+ruleType: '4'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":{"s_details":"DWORD
+  (0x00000001)"}},{"match_phrase":{"s_eventType":"SetValue"}},{"exists": {"field":
+  "s_targetObject"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1562.001, query-unclear]
+threshold: 1
+timeWindow: 30000

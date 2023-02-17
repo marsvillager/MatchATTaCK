@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1532'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Potential Remote Desktop Connection to Non-Domain Host
+nameCN: 与非域主机的潜在远程桌面连接
+parseEsResultKeys: ''
+redisEventKey: event-ts-potential-remote-desktop-connection-to-non-domain-host
+remarkCN: 主机 {src} 检测到使用 NTLM 对可能不属于域的主机的登录
+remarks: Host {src} detects logons using NTLM to hosts that are potentially not part
+  of the domain
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Microsoft-Windows-NTLM/Operational"}}, {"match_phrase": {"eventId":
+  "8001"}}, {"wildcard": {"event_data.TargetName.keyword": "TERMSRV*"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

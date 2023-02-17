@@ -1,0 +1,22 @@
+category: vulnerability
+ciaLevel: confidentiality
+component: SI
+eventId: '849'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Self-Signed Certificate
+nameCN: 自签名证书
+parseEsResultKeys: ''
+redisEventKey: event-ts-self-signed-certificate-use
+remarkCN: 主机 {src} 使用自签名证书
+remarks: Self-signed certificate is used by host {src}.
+requirements: Extract HTTP/TLS certificate from network traffic and identify whether
+  there is self-signed certificte used.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match_phrase":{"duid":"SSL::Invalid_Server_Cert"}}]}},"size":1000}'
+source: network
+status: 0
+tags: [attack.enterprise.T1587.002, attack.enterprise.T1587.003]
+threshold: 1
+timeWindow: 120000

@@ -1,0 +1,28 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '12007'
+eventType: warning
+impact: ''
+keys: '{"clientAddress":{"en":"Source Host", "zh":"源主机"}}'
+name: Invalid user login on SSH
+nameCN: ''
+parseEsResultKeys: ''
+redisEventKey: event-ts-linux-sshd-invalid-user
+remarkCN: ''
+remarks: An invalid user was used for login on the SSH service from {clientAddress}.
+requirements: No requirements.
+ruleType: '1'
+script: '{ "query": { "bool": { "filter": [ { "match": { "tags": "deviceSyslog" }
+  }, { "match": { "program": "sshd" } }, { "query_string": { "default_field": "msg",
+  "query": "\"Invalid user\"" } }, { "range": { "@timestamp": { "gt":"<bt>", "lt":"<et>"
+  } } } ] } } }'
+source: ''
+status: 0
+tags: [operation.local]
+test:
+  expectedResultCount: 7
+  inputFiles: [log_examples/login/sshd.debian.login.failed.publickey.user.unknown.log,
+    log_examples/login/sshd.debian.login.failed.password.user.unknown.log]
+threshold: 1
+timeWindow: 60000

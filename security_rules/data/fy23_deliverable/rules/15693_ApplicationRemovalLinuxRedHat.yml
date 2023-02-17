@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: This rule identifies situations in which a known application is removed from Linux (via dpkg). Attackers can uninstall applications to compromise the correct functioning of a given system or impair its defense (e.g., uninstalling security tools).
+eventId: 15693
+eventType: warning
+impact: ''
+keys: ''
+name: Application Removal (Linux Red Hat)
+nameCN: ''
+os: linux
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic
+requirements: Syslog should be reading and forwarding the ``/var/log/yum.log'' file.
+redisEventKey: event-application-removal-linux-red-hat
+remarkCN: ''
+remarks: An application was removed.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"Erased"}},{"match":{"facility_label":"user-level"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

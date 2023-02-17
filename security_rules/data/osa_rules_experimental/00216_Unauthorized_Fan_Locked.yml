@@ -1,0 +1,22 @@
+category: attack
+ciaLevel: availability
+component: SI
+eventId: '216'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Unauthorized Fan Locked
+nameCN: 非授权风机锁定
+parseEsResultKeys: ''
+redisEventKey: event-ts-unauthorized-fan-locked
+remarkCN: 未授权主机 {src} 控制风机设备
+remarks: Fan locked from unauthorized host {src}.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":{"CommandLine":"netsh
+  advfirewall firewall add rule name=demofan dir=out protocol=UDP remoteport=47808
+  action=block"}}]}},"size":1000}'
+source: network
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 120000

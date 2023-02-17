@@ -1,0 +1,26 @@
+category: account
+ciaLevel: confidentiality
+component: SI
+description: This rule identifies situations in which a given user's password is deleted (by making it empty). Passwordless accounts are in great danger of being abused by attackers who can quickly access systems and data without effort.
+eventId: 15699
+eventType: alert
+impact: ''
+keys: ''
+name: Access Unlocked (Linux)
+nameCN: ''
+os: linux
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, rail9000
+requirements: None.
+redisEventKey: event-access-unlocked-linux
+remarkCN: ''
+remarks: The account has been unlocked.
+ruleType: '1'
+script: '{ "query":{ "bool":{ "must":[ { "match_phrase": { "msg": "passwd -d" } }, {"bool":{"must_not":[{"match_phrase":{"msg":"no new event"}}]}}, { "range":{ "@timestamp":{ "gt":"<bt>", "lt":"<et>" } } } ] } }, "size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1562]
+threshold: 1
+timeWindow: 60000

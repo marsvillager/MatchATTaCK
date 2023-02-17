@@ -1,0 +1,22 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '901'
+eventType: event
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Windows Logout
+nameCN: Windows：账户登出
+parseEsResultKeys: ''
+redisEventKey: event-ts-logout
+remarkCN: 用户账户登出目标Windows主机 {dataSrcIP}
+remarks: An account was logged off on Windows host {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"4634"}},{"match":{"eventId":"538"}}]}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: [attack.ics.T0859, attack.enterprise.T1078]
+threshold: 1
+timeWindow: 30000

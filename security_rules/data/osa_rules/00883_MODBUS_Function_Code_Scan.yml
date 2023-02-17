@@ -1,0 +1,25 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '883'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: MODBUS Function Code Scan
+nameCN: MODBUS：功能码扫描
+parseEsResultKeys: ''
+redisEventKey: event-ts-modbus-function-code-scan
+remarkCN: 源主机 {src} 对目标主机 {dst} 进行MODBUS功能码扫描
+remarks: Src host {src} scan Modbus function code on dst host{dst}
+requirements: Check in the network traffic if there is any ModBus  reconnaissance
+  command to query devices supporting Modbus protocol in the network
+ruleType: '4'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "notice"}},{"match_phrase": {"msg": "modbus function
+  code scan"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0888]
+threshold: 3
+timeWindow: 60000

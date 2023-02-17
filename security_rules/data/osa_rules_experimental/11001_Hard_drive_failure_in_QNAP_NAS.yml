@@ -1,0 +1,22 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '11001'
+eventType: alert
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Host", "zh":"源主机"}}'
+name: Hard drive failure in QNAP NAS
+nameCN: ''
+parseEsResultKeys: ''
+redisEventKey: event-ts-qnap-drive-disconnected
+remarkCN: ''
+remarks: Failure of a hard drive in a QNAP NAS at {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"deviceCat":"syslog_514"}},{"match":{"program":"qulogd"}},{"match":{"msg":{"query":"''Hardware
+  Status'' Disk Disconnected","operator":"AND"}}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [operation.local]
+threshold: 1
+timeWindow: 60000

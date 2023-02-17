@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1528'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Backup Catalog Deleted
+nameCN: 删除备份目录
+parseEsResultKeys: ''
+redisEventKey: event-ts-backup-catalog-deleted
+remarkCN: 主机 {src} 检测到删除备份目录行为
+remarks: Host {src} detects backup catalog deletions
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Application"}}, {"match_phrase": {"eventId": "524"}}, {"match_phrase":
+  {"source_name": "Microsoft-Windows-Backup"}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1070.004, attack.ics.T0872]
+threshold: 1
+timeWindow: 60000

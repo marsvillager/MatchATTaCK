@@ -1,0 +1,27 @@
+category: account 
+ciaLevel: integrity 
+component: SI 
+description: This rule detects the modification of the /etc/passwd file which contains information for all user accounts, i.e. when a user account is modified, added or deleted.  
+eventId: '15603' 
+eventType: alert 
+impact: '' 
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}' 
+name: Auditd /etc/passwd modification 
+nameCN: '' 
+os: linux 
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+product: generic, dcs, rail9000 
+threshold: 1 
+timeWindow: 60000 
+parseEsResultKeys: '' 
+redisEventKey: event-auditd-etcpasswd-modification 
+remarkCN: '' 
+remarks: The /etc/passwd file was modified on Linux host {dataSrcIP}   
+requirements: Auditd should be configured (an example of a suitable configuration has been provided in the repository). Furthermore, Logstash should be configured to ingest the related data (also in this case, an example of a suitable configuration has been provided in the repository).
+ruleType: '1' 
+script: '{ "query": { "bool": { "must": [ { "match": { "auditdType": "SYSCALL" } }, { "match": { "auditdKey": "etcpasswd" } }, { "range": { "@timestamp": { "gte": "<bt>", "lt": "<et>" } } } ] } }, "size": 1000 }' 
+source: '' 
+status: 0 
+tags: [attack.enterprise.T1098, attack.enterprise.T1136.001, attack.enterprise.T1531] 
+

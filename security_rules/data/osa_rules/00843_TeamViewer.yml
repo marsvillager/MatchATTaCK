@@ -1,0 +1,25 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '843'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: TeamViewer
+nameCN: TeamViewer通信
+parseEsResultKeys: ''
+redisEventKey: event-ts-teamviewer-connect
+remarkCN: 源主机 {src} 使用TeamViewer远程连接目标主机{dst}
+remarks: Src host {src} uses TeamViewer remotely access dst host {dst}
+requirements: 'Check if there is any network traffic with TeamViewer, PCAnywhere (including
+  DNS and VPN) '
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "conn"}},{"match": {"app": "teamviewer"}}]}},"size": 1000}'
+source: network
+status: 0
+tags: [attack.enterprise.T1078, attack.enterprise.T1219, attack.ics.T0859, attack.ics.T0886,
+  attack.ics.T0823]
+threshold: 1
+timeWindow: 60000

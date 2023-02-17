@@ -1,0 +1,25 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1571'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Clear PowerShell History
+nameCN: 清除PowerShell历史记录
+parseEsResultKeys: ''
+redisEventKey: event-ts-clear-powershell-history
+remarkCN: 主机 {src} 检测到可能表面PowerShell历史记录被清除的关键字
+remarks: Host {src} detects keywords that could indicate clearing PowerShell history
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"should": [{"multi_match":
+  {"query": "del (Get-PSReadlineOption).HistorySavePath", "fields": [], "type": "phrase"}},
+  {"multi_match": {"query": "Set-PSReadlineOption –HistorySaveStyle SaveNothing",
+  "fields": [], "type": "phrase"}}, {"multi_match": {"query": "Remove-Item (Get-PSReadlineOption).HistorySavePath",
+  "fields": [], "type": "phrase"}}, {"multi_match": {"query": "rm (Get-PSReadlineOption).HistorySavePath",
+  "fields": [], "type": "phrase"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

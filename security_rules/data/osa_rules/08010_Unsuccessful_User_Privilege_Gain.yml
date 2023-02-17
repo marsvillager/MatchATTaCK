@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '8010'
+eventType: alert
+impact: ''
+keys: '{"msg":{"en":"Message", "zh":"信息"}}'
+name: Unsuccessful User Privilege Gain
+nameCN: Unsuccessful User Privilege Gain
+parseEsResultKeys: ''
+redisEventKey: event-ts-unsuccessful-user-privilege-gain
+remarkCN: '{msg}'
+remarks: '{msg}'
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"suricata_event"}},{"match":{"event_type":"alert"}},{"match_phrase":{"alert_category.keyword":"Unsuccessful
+  User Privilege Gain"}}]}},"size":1000}'
+source: suricata
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

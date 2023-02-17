@@ -1,0 +1,25 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+description: Monitor PROFINET change device name behavior on the network, If detected,
+  an event will be prompted.
+eventId: '881'
+eventType: warning
+impact: ''
+keys: ''
+name: 'PN-DCP: device name changed'
+nameCN: PN-DCP：设备名称变更
+parseEsResultKeys: ''
+redisEventKey: event-ts-change-device-name
+remarkCN: 'PN-DCP : 资产名称发生变化'
+remarks: PN-DCP:Asset name changed
+requirements: Use PN-DCP command get device name and check whether there is any change.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "notice"}},{"match_phrase": {"duid": "PN_DCP_Change_Name"}}]}},"size":
+  1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0849]
+threshold: 1
+timeWindow: 180000

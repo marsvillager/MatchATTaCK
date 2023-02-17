@@ -1,0 +1,20 @@
+category: attack
+ciaLevel: confidentiality
+component: SI
+eventId: '213'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Unauthorized Lighting Control
+nameCN: 非授权照明控制
+parseEsResultKeys: ''
+redisEventKey: event-ts-unauthorized-lighting-control
+remarkCN: 未授权主机 {src} 对照明设备进行控制
+remarks: Light controlled from unauthorized host {src}.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"src":"192.168.1.20"}},{"match":{"dst":"192.168.1.12"}}]}},"size":1000}'
+source: network
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 120000

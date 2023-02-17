@@ -1,0 +1,25 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '972'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'Windows: susp_time_modification'
+nameCN: 'Windows: 用户修改系统时间的方案'
+parseEsResultKeys: ''
+redisEventKey: event-ts-susp-time-modification
+remarkCN: 主机 {src} 检测用户修改系统时间的方案
+remarks: Host {src} detects the user modified system time.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "winEvent"}},{"match": {"eventId": "4616"}}],"must_not":
+  [{"bool": {"should": [{"match": {"event_data.ProcessName": "vmtoolsd.exe"}},{"match":
+  {"event_data.ProcessName": "VBoxService.exe"}}],"must": [{"match": {"event_data.ProcessName":
+  "svchost.exe"}},{"match": {"event_data.SubjectUserSid": "S-1-5-19"}}],"minimum_should_match":
+  1}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,25 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+description: Monitor PLC configuration download operation on the network, If detected,
+  an event will be prompted.
+eventId: '5002'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'OMS+: Download PLC hardware configuration'
+nameCN: OMS+：下载PLC硬件组态
+parseEsResultKeys: ''
+redisEventKey: event-ts-download-plc-hardware-configuration
+remarkCN: 主机 {src} 下载硬件组态至目标PLC设备{dst}
+remarks: Host {src} DOWNLOAD hardware configuration to PLC {dst}.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":{"msg":"download_hardware_configure"}},{"match":
+  {"cat": "notice"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0843]
+threshold: 1
+timeWindow: 60000

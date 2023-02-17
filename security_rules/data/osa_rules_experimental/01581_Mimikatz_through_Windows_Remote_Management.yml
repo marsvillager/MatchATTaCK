@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1581'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Mimikatz through Windows Remote Management
+nameCN: 通过Windows远程管理使用Mimikatz
+parseEsResultKeys: ''
+redisEventKey: event-ts-mimikatz-through-windows-remote-management
+remarkCN: 通过监控wsmprovhost.exe对LSASS进程的访问，主机 {src} 检测到通过Windows远程管理协议使用Mimikatz
+remarks: Host {src} detects usage of mimikatz through WinRM protocol by monitoring
+  access to lsass process by wsmprovhost.exe
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase":
+  {"event_data.SourceImage": "C:\\Windows\\system32\\wsmprovhost.exe"}}, {"match_phrase":
+  {"event_data.TargetImage": "C:\\windows\\system32\\lsass.exe"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

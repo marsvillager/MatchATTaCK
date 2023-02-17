@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '8013'
+eventType: event
+impact: ''
+keys: '{"msg":{"en":"Message", "zh":"信息"}}'
+name: Successful Administrator Privilege Gain
+nameCN: Successful Administrator Privilege Gain
+parseEsResultKeys: ''
+redisEventKey: event-ts-successful-administrator-privilege-gain
+remarkCN: '{msg}'
+remarks: '{msg}'
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"suricata_event"}},{"match":{"event_type":"alert"}},{"match_phrase":{"alert_category.keyword":"Successful
+  Administrator Privilege Gain"}}]}},"size":1000}'
+source: suricata
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

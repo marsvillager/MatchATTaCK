@@ -1,0 +1,22 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1572'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: PowerShell PSAttack
+nameCN: PowerShell PSAttack
+parseEsResultKeys: ''
+redisEventKey: event-ts-powershell-psattack
+remarkCN: 主机 {src} 检测到使用PSAttack PowerShell攻击工具
+remarks: Host {src} detects the use of PSAttack PowerShell hack tool
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"multi_match":
+  {"query": "PS ATTACK!!!", "fields": [], "type": "phrase"}}, {"match_phrase": {"eventId":
+  "4103"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

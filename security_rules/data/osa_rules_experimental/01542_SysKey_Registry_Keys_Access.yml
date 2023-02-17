@@ -1,0 +1,26 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1542'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: SysKey Registry Keys Access
+nameCN: SysKey注册表访问
+parseEsResultKeys: ''
+redisEventKey: event-ts-syskey-registry-keys-access
+remarkCN: 主机 {src} 检测到对特定注册表的处理请求和访问操作来计算SysKey
+remarks: Host {src} detects handle requests and access operations to specific registry
+  keys to calculate the SysKey
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"bool": {"should": [{"match_phrase": {"eventId": "4656"}},
+  {"match_phrase": {"eventId": "4663"}}]}}, {"bool": {"should": [{"wildcard": {"event_data.ObjectName.keyword":
+  "*lsa\\\\JD"}}, {"wildcard": {"event_data.ObjectName.keyword": "*lsa\\\\GBG"}},
+  {"wildcard": {"event_data.ObjectName.keyword": "*lsa\\\\Skew1"}}, {"wildcard": {"event_data.ObjectName.keyword":
+  "*lsa\\\\Data"}}]}}, {"match_phrase": {"event_data.ObjectType": "key"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

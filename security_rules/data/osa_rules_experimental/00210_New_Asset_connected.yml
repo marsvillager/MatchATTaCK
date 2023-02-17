@@ -1,0 +1,22 @@
+category: asset
+ciaLevel: confidentiality
+component: SI
+eventId: '210'
+eventType: warning
+impact: ''
+keys: '{"vendor":{"en":"Vendor", "zh":"供应商"}, "type":{"en":"Type", "zh":"类型"}, "mac":{"en":"MAC
+  Address", "zh":"MAC地址"}, "ip":{"en":"IP Address", "zh":"IP地址"}}'
+name: New Asset connected
+nameCN: 新资产上线
+parseEsResultKeys: ''
+redisEventKey: event-ts-new-asset-connected
+remarkCN: '发现新资产 (供应商: {vendor}, 类型: {type}, MAC地址: {mac}, IP地址: {ip}) 上线'
+remarks: 'A new Asset (Vendor: {vendor}, Type: {type}, MAC: {mac}, IP: {ip}) connected
+  found.'
+ruleType: '0'
+script: ''
+source: network
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

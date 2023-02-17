@@ -1,0 +1,25 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1574'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Suspicious XOR Encoded PowerShell Command Line
+nameCN: 可疑的异或编码PowerShell命令
+parseEsResultKeys: ''
+redisEventKey: event-ts-suspicious-xor-encoded-powershell-command-line
+remarkCN: 主机 {src} 检测到可疑的powershell进程，其中包括位异或命令和b64编码命令的替代混淆方法
+remarks: Host {src} detects suspicious powershell process which includes bxor command,
+  alternative obfuscation method to b64 encoded commands
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase":
+  {"eventId": "400"}}, {"match_phrase": {"event_data.HostName": "ConsoleHost"}}, {"bool":
+  {"should": [{"wildcard": {"event_data.CommandLine.keyword": "*bxor*"}}, {"wildcard":
+  {"event_data.CommandLine.keyword": "*join*"}}, {"wildcard": {"event_data.CommandLine.keyword":
+  "*char*"}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

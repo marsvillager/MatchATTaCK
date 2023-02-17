@@ -1,0 +1,26 @@
+category: operation  
+ciaLevel: integrity  
+component: SI  
+description: This rule reports all security events from the unified threat management of the FortiGate firewall.    
+eventId: '15810'  
+eventType: alert  
+impact: ''  
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'    
+name: FortiGate firewall unified threat management (UTM) security event  
+nameCN:   
+os:   
+product:   
+parameters:  
+threshold: 1  
+timeWindow: 60000  
+parseEsResultKeys: ''  
+redisEventKey: event-fortigate-firewall-utm-security-event  
+remarkCN:   
+remarks: A security event from the FortiGate firewall was detected from {dataSrcIP} of subtype {fortigateSubtype} and eventtype {fortigateEventType} 
+requirements: The FortiGate firewall sends syslogs to OSA and Logstash is configured appropriately.    
+ruleType: '1'  
+script: '{ "query": { "bool": { "must": [ { "bool": { "should": [ { "match": { "fortigateLevel": "emergency" } }, { "match": { "fortigateLevel": "alert" } }, { "match": { "fortigateLevel": "critical" } }, { "match": { "fortigateLevel": "error" } } ] } }, { "match": { "fortigateType": "utm" } }, { "range": { "@timestamp": { "gte": "<bt>", "lt": "<et>" } } } ] } }, "size": 1000 }'  
+source:   
+status: 1  
+tags: ~  
+

@@ -1,0 +1,27 @@
+category: attack,network
+ciaLevel: integrity
+component: SI
+description: SNMP is mainly used on network devices. SNMP amplification attack is
+  carried out by sending small packets carrying a spoofed IP of the target to the
+  internet enabled devices running SNMP. These spoofed requests to such devices are
+  then used to send UDP floods as responses from these devices to the target.
+eventId: '871'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: SNMP query flooding
+nameCN: SNMP请求洪水
+parseEsResultKeys: ''
+redisEventKey: event-ts-snmp-amplification-dos
+remarkCN: 主机 {src} 进行SNMP请求洪泛攻击
+remarks: Host {src} launchs SNMP query flooding
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "SNMP_Amplification_Attacking"}}]}},"size":
+  1000}'
+source: network
+status: 0
+tags: [attack.enterprise.T1499, attack.enterprise.T1498.001, attack.ics.T0814]
+threshold: 1
+timeWindow: 60000

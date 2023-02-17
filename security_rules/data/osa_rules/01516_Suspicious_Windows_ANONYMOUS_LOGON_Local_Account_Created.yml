@@ -1,0 +1,25 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1516'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Suspicious Windows ANONYMOUS LOGON Local Account Created
+nameCN: 创建了可疑的Windows ANONYMOUS LOGON本地账户
+parseEsResultKeys: ''
+redisEventKey: event-ts-suspicious-windows-anonymous-logon-local-account-created
+remarkCN: 主机 {src} 检测到匿名登录的可疑账号
+remarks: Host {src} detects the creation of suspicious accounts similar to ANONYMOUS
+  LOGON, such as using additional spaces. Created as an covering detection for exclusion
+  of Logon Type 3 from ANONYMOUS LOGON accounts.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4720"}}, {"wildcard": {"event_data.SamAccountName.keyword":
+  "*ANONYMOUS*LOGON*"}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1136]
+threshold: 1
+timeWindow: 60000

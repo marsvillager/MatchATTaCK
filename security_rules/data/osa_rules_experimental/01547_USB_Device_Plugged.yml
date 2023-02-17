@@ -1,0 +1,20 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1547'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: USB Device Plugged
+nameCN: USB设备插入
+parseEsResultKeys: ''
+redisEventKey: event-ts-usb-device-plugged
+remarkCN: 主机 {src} 检测到USB设备的插入
+remarks: Host {src} detects plugged USB devices
+ruleType: '1'
+script: '{"query":{"constant_score":{"filter":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":{"logfile":"Microsoft-Windows-DriverFrameworks-UserMode/Operational"}},{"bool":{"should":[{"match_phrase":{"eventId":"2003"}},{"match_phrase":{"eventId":"2100"}},{"match_phrase":{"eventId":"2102"}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

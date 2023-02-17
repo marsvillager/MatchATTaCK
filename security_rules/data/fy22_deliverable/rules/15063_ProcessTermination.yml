@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: This rule identifies situations in which a known process running in a Windows system terminates. This event might occur if an attacker tries to subvert the correct functioning of the system or attempts to impair defenses (e.g., interrupting security tools running in the system). As for other rules concerning process executions (e.g., 15061 "Anomalous Process Execution"), this rule can be further specified by including information about the process name or folder (e.g., specifing a list of critical processes that should be running all the time) narrowing its scope.
+eventId: 15063
+eventType: event
+impact: ''
+keys: ''
+name: Process Termination
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, vicosoc100, vicoss&d
+requirements: None.
+redisEventKey: event-process-terminated
+remarkCN: ''
+remarks: A process was terminated.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"4689"}},{"match":{"cat":"winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 1
+tags: [attack.enterprise.T1489]
+threshold: 1
+timeWindow: 60000

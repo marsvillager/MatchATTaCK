@@ -1,0 +1,26 @@
+category: account
+ciaLevel: integrity
+component: SI
+description: "This rule identifies a possible follow-up of the ``User creation'' event. In this scenario, an attacker might try to add a newly created group to a local, a global or a universal group."
+eventId: 15016
+eventType: warning
+impact: ''
+keys: ''
+name: User Added To Group
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic
+requirements: None.
+redisEventKey: event-user-added-to-group
+remarkCN: ''
+remarks: A user was added to a group
+ruleType: '1'
+script: '{ "query":{ "bool":{ "must":[ { "bool":{ "should":[ { "match":{ "eventId":"4756" } }, { "match":{ "eventId":"4728" } }, { "match":{ "eventId":"4732" } } ] } }, { "match":{ "cat":"winEvent" } }, { "range":{ "@timestamp":{ "gt":"<bt>", "lt":"<et>" } } } ] } }, "size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

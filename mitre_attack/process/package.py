@@ -29,7 +29,7 @@ def format_data(lemma: bool) -> pd.DataFrame:
     """
     Extract technique data which is key to process then match.
 
-    :return: key data
+    :return: formatted data
     """
     techniques: list = get_data(Filter("type", "=", "attack-pattern"))
     techniques_map_datacomponent_dict: dict = datacomponents_detecting_technique()
@@ -71,6 +71,7 @@ def get_related(src_type: str, rel_type: str, target_type: str, reverse=False) -
     :param rel_type: relationship type for the relationships, e.g "uses"
     :param target_type: target type for the relationship, e.g "intrusion-set"
     :param reverse: build reverse mapping of target to source
+    :return: relationship between src_type and target_type
     """
 
     relationships = get_data([
@@ -108,6 +109,7 @@ def get_related(src_type: str, rel_type: str, target_type: str, reverse=False) -
                     id_to_related[relationship.target_ref] = [
                         {"relationship": relationship, "id": relationship.source_ref}
                     ]
+
     # all objects of target type
     if not reverse:
         if target_type.startswith("x-mitre"):
@@ -129,6 +131,7 @@ def get_related(src_type: str, rel_type: str, target_type: str, reverse=False) -
     output: dict = {}
     for stix_id in id_to_related:
         value: list = []
+
         for related in id_to_related[stix_id]:
             if not related["id"] in id_to_target:
                 continue  # targetting a revoked object
@@ -148,6 +151,7 @@ def get_related(src_type: str, rel_type: str, target_type: str, reverse=False) -
                     }
                 )
         output[stix_id] = value
+
     return output
 
 

@@ -1,0 +1,26 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1568'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Windows Defender Exclusion Set
+nameCN: Windows Defender白名单
+parseEsResultKeys: ''
+redisEventKey: event-ts-windows-defender-exclusion-set
+remarkCN: 主机 {src} 检测到注册表中添加了Windows Defender白名单，希望绕过来自Windows Defender的防病毒扫描
+remarks: Host {src} detects scenarios where an windows defender exclusion was added
+  in registry where an entity would want to bypass antivirus scanning from windows
+  defender
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase":
+  {"EventLog": "Security"}}, {"bool": {"should": [{"match_phrase": {"eventId": "4657"}},
+  {"match_phrase": {"eventId": "4656"}}, {"match_phrase": {"eventId": "4660"}}, {"match_phrase":
+  {"eventId": "4663"}}]}}, {"wildcard": {"event_data.ObjectName.keyword": "*\\\\Microsoft\\\\Windows
+  Defender\\\\Exclusions\\\\*"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

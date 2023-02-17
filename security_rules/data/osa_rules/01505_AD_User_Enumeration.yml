@@ -1,0 +1,26 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1505'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: AD User Enumeration
+nameCN: AD用户枚举
+parseEsResultKeys: ''
+redisEventKey: event-ts-ad-user-enumeration
+remarkCN: 主机 {src} 检测到非计算机账户对域账户的访问
+remarks: Host {src} detects access to a domain user from a non-machine account.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"bool": {"must": [{"match_phrase": {"eventId": "4662"}},
+  {"bool": {"should": [{"wildcard": {"event_data.ObjectType.keyword": "*bf967aba-0de6-11d0-a285-00aa003049e2*"}}]}}]}},
+  {"bool": {"must_not": [{"bool": {"should": [{"bool": {"must": [{"match_phrase":
+  {"event_data.SubjectUserName": "$"}}]}}, {"bool": {"must": [{"match_phrase": {"event_data.SubjectUserName":
+  "MSOL_"}}]}}]}}]}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1087.002]
+threshold: 1
+timeWindow: 60000

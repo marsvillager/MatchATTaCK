@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '841'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: WAN Traffic -- PPTP
+nameCN: WAN：PPTP流量
+parseEsResultKeys: ''
+redisEventKey: event-ts-pptp-connect
+remarkCN: 源主机 {src} 使用PPTP远程连接目标主机
+remarks: Src host {src} uses WAN PPTP remotely access dst host
+requirements: 'WAN Protocol traffic: PPTP and PPPOE'
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "conn"}},{"match": {"app": "pptp"}}]}},"size": 1000}'
+source: network
+status: 0
+tags: [attack.ics.T0883]
+threshold: 1
+timeWindow: 60000

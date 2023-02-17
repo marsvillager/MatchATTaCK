@@ -1,0 +1,26 @@
+category: account
+ciaLevel: integrity
+component: SI
+description: 'This rule is used to identify situations in which an attacker creates a new Windows account with high privileges. Actions such as this one might indicate that a successful privilege escalation has occurred and the attacker can ensure persistence on the machine by creating new resources. Rules related to new accounts being created can be enhanced in a number of ways. Among the most common: ensuring that the ``SAM Account Name'' and the ``User Account Name'' are not empty, ensuring that ``Home Directory'' abnd ``Home Drive'' are empty (typical for new user accounts), and checking that the ``Primary Group ID'' is equal to 513 (typical for domain and local users).'
+eventId: 15026
+eventType: alert
+impact: ''
+keys: ''
+name: New OS High-privilege Account Creation
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, vicosoc100, vicoss&d
+requirements: None.
+redisEventKey: event-new-privileged-account-created
+remarkCN: ''
+remarks: A new privileged account was created.
+ruleType: '1'
+script: '{ "query": { "bool": { "must": [ { "bool": { "should": [ { "match": { "eventId": "4720" } }, { "match": { "eventId": "624" } } ] } }, { "bool": { "must_not": [ { "match_phrase": { "event_data.UserAccountControl": "%%2080 %%2082 %%2084" } } ] } }, { "match": { "cat": "winEvent" } }, { "range":{ "@timestamp":{ "gt":"<bt>", "lt":"<et>" } } } ] } }, "size": 1000 }'
+source: ''
+status: 0
+tags: [attack.enterprise.T1136.001, attack.enterprise.T1136.002]
+threshold: 1
+timeWindow: 60000

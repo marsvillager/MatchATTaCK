@@ -1,0 +1,26 @@
+category: account
+ciaLevel: confidentiality
+component: SI
+description: " This rule focuses on situations in which an attacker, oncer gained access to an account, tries to check how valuable such account is. The monitoring of the ``membership enumeration''-like events can be refined by further checking the ``Process Name'' field as, for example, this not being included in the standard folder (e.g., ``system32'') or specifically matching a denylist of widely-used malicious program (e.g., ``mimikatz'', ``cain.exe'', etc.). In this implemention, folders ``System32'' and ``ImmersiveControlPanel'' have been whitelisted together with process ``explorer.exe''"
+eventId: 15019
+eventType: alert
+impact: ''
+keys: ''
+name: Membership Enumerated
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic
+requirements: None.
+redisEventKey: event-membership-enumerated
+remarkCN: ''
+remarks: A membership was enumerated
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"4798"}},{"match":{"eventId":"4799"}}]}},{"bool":{"must_not":[{"match_phrase":{"event_data.CallerProcessName":"C:\\Windows\\System32\\"}},{"match_phrase":{"event_data.CallerProcessName":"C:\\Windows\\ImmersiveControlPanel\\"}},{"match_phrase":{"event_data.CallerProcessName":"C:\\Windows\\explorer.exe"}}]}},{"match":{"cat":"winEvent"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1087.001, attack.enterprise.T1087.002]
+threshold: 1
+timeWindow: 60000

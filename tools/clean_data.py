@@ -5,7 +5,7 @@ from tools.config import Config
 
 def tokenize(words: str) -> list[str]:
     """
-    Tokenize words.(two kinds)
+    Tokenize words.(two kinds plus)
 
     :param words: raw text
     :return: tokenized text

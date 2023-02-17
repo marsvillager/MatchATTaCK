@@ -1,0 +1,25 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '12000'
+eventType: warning
+impact: ''
+keys: '{"clientAddress":{"en":"Source Host", "zh":"源主机"}}'
+name: Failed login on SSH
+nameCN: ''
+parseEsResultKeys: ''
+redisEventKey: event-ts-linux-sshd-failed-login
+remarkCN: ''
+remarks: A failed login was performed on the SSH service from {clientAddress} (either
+  invalid user, password or public key).
+requirements: No requirements.
+ruleType: '1'
+script: '{ "query": { "bool": { "filter": [ { "match": { "tags": "deviceSyslog" }
+  }, { "match": { "program": "sshd" } }, { "query_string": { "default_field": "msg",
+  "query": "\"Connection by authenticating user\"" } }, { "range": { "@timestamp":
+  { "gt":"<bt>", "lt":"<et>" } } } ] } } }'
+source: ''
+status: 0
+tags: [operation.local]
+threshold: 1
+timeWindow: 60000

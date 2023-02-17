@@ -1,0 +1,29 @@
+category: application
+ciaLevel: integrity
+component: SI
+description: Monitor installed application on target host machine, If application
+  not in Allowlist, an event will be prompted.
+eventId: '954'
+eventType: warning
+impact: ''
+keys: '{"name":{"en":"Application Name", "zh":"应用程序的名称"}, "version":{"en":"Application
+  Version", "zh":"应用程序的版本号"}, "vendor":{"en":"Application Vendor", "zh":"应用程序的供应商"},
+  "ip":{"en":"Host IP of the Application", "zh":"应用程序所在的主机IP地址"}, "src":{"en":"Source
+  Address", "zh":"源地址"}}'
+name: Unexpected Application
+nameCN: 预期之外应用
+parseEsResultKeys: ''
+redisEventKey: event-ts-unexpected-application
+remarkCN: 主机 {ip} 上存在预期之外的应用 ({name}, {version}, {vendor}, {ip})
+remarks: Unexpected application ({name}, {version}, {vendor}, {ip}) exists on host
+  {ip}.
+requirements: No service application allowlist
+ruleType: '4'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"exists": {"field": "msg"}},{"match_phrase": {"cat": "Win32_SoftwareFeature"}}]}},"size":
+  1000}'
+source: ''
+status: 0
+tags: [query-unclear]
+threshold: 1
+timeWindow: 60000

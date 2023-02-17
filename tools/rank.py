@@ -45,9 +45,10 @@ def result(keywords: set[str], mitre_list: pd.DataFrame) -> list[tuple]:
     return sorted(rank_list.items(), key=lambda k: k[1], reverse=True)
 
 
-def tf_idf(keywords: set[str], mitre_list: pd.DataFrame):
+def tf_idf(keywords: set[str], mitre_list: pd.DataFrame) -> list[tuple]:
     """
     Calculate entropy of every word depends on tf_idf.
+
     :param keywords:  keywords of security rules
     :param mitre_list: processed data of mitre att&ck data
     :return: sort result of mitre att&ck id according to its tf_idf

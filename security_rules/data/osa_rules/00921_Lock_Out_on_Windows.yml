@@ -1,0 +1,22 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '921'
+eventType: event
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Lock Out on Windows
+nameCN: Windows：账户锁定
+parseEsResultKeys: ''
+redisEventKey: event-ts-lock-out
+remarkCN: 账号在Windows主机 {dataSrcIP} 上被锁定
+remarks: A session was disconnected from a Window Station on Windows Windows host
+  {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"4779"}},{"match":{"cat": "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ~
+threshold: 1
+timeWindow: 30000

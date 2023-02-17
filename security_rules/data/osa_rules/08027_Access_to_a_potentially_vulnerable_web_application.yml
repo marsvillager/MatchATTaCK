@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '8027'
+eventType: warning
+impact: ''
+keys: '{"msg":{"en":"Message", "zh":"信息"}}'
+name: Access to a potentially vulnerable web application
+nameCN: access to a potentially vulnerable web application
+parseEsResultKeys: ''
+redisEventKey: event-ts-access-to-a-potentially-vulnerable-web-application
+remarkCN: '{msg}'
+remarks: '{msg}'
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"suricata_event"}},{"match":{"event_type":"alert"}},{"match_phrase":{"alert_category.keyword":"access
+  to a potentially vulnerable web application"}}]}},"size":1000}'
+source: suricata
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

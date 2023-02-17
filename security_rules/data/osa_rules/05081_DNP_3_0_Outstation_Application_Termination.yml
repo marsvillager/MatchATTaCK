@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5081'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'DNP 3.0: Outstation Application Termination'
+nameCN: 'DNP 3.0: 外站申请终止'
+parseEsResultKeys: ''
+redisEventKey: event-ts-dnp-outstation-application-termination
+remarkCN: 攻击机 {src} 发送 STOP APP功能码，造成设备 {dst} 停机不能执行指令
+remarks: The attacker {src} sends the STOP APP function code, causing the equipment
+  {dst} to stop and cannot execute the command
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"bool":{"should":[{"match":{"duid.keyword":"DNP3_APPL::DNP3_STOP_APPLICATION"}},{"match":{"duid.keyword":"DNP3_MITM::DNP3_MAN_IN_MID_MODIFY_STOP_APPL"}}]}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

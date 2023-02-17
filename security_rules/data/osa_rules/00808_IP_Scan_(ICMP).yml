@@ -1,0 +1,21 @@
+category: attack,network
+ciaLevel: confidentiality
+component: SI
+eventId: '808'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: IP Scan (ICMP)
+nameCN: IP地址扫描 (ICMP)
+parseEsResultKeys: aggregations:sensor_ids:buckets:src:buckets:dsts:buckets
+redisEventKey: event-ts-dos-ipscan
+remarkCN: 主机 {src} 进行IP地址扫描
+remarks: Host {src} performs IP scan
+requirements: No requirements.
+ruleType: '2'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"conn"}},{"match":{"proto":"icmp"}},{"exists":{"field":"dst"}}],"should":[{"match":{"duser":"OTH"}},{"match":{"duser":"S0"}}],"minimum_should_match":1}},"aggs":{"sensor_ids":{"terms":{"field":"fields.gl2_source_collector.keyword"},"aggs":{"src":{"terms":{"field":"src"},"aggs":{"dsts":{"terms":{"field":"dst"}}}}}}},"size":1}'
+source: network
+status: 0
+tags: [attack.discovery, attack.ics.T0846, attack.enterprise.T1595]
+threshold: 50
+timeWindow: 60000

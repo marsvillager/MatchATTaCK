@@ -1,0 +1,27 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1556'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Mimikatz Detection LSASS Access
+nameCN: Mimikatz检测到LSASS 访问
+parseEsResultKeys: ''
+redisEventKey: event-ts-mimikatz-detection-lsass-access
+remarkCN: 主机 {src} 检测到典型的利用Mimikatz访问LSASS的进程(例如：0x1000 PROCESS_QUERY_ LIMITED_INFORMATION,
+  0x0400 PROCESS_QUERY_ INFORMATION "only old versions", 0x0010 PROCESS_VM_READ)
+remarks: Host {src} detects process access to LSASS which is typical for Mimikatz
+  (0x1000 PROCESS_QUERY_ LIMITED_INFORMATION, 0x0400 PROCESS_QUERY_ INFORMATION "only
+  old versions", 0x0010 PROCESS_VM_READ)
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Microsoft-Windows-Sysmon"}}, {"match_phrase": {"eventId": "10"}},
+  {"bool": {"should": [{"match_phrase": {"event_data.GrantedAccess": "0x1410"}}, {"match_phrase":
+  {"event_data.GrantedAccess": "0x1010"}}]}}, {"match_phrase": {"event_data.TargetImage":
+  "C:\\windows\\system32\\lsass.exe"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

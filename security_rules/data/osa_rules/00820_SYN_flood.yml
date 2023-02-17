@@ -1,0 +1,30 @@
+category: attack,network
+ciaLevel: integrity
+component: SI
+description: A SYN flood (half-open attack) is a type of denial-of-service (DDoS)
+  attack which aims to make a server unavailable to legitimate traffic by consuming
+  all available server resources. By repeatedly sending initial connection request
+  (SYN) packets, the attacker is able to overwhelm all available ports on a targeted
+  server machine, causing the targeted device to respond to legitimate traffic sluggishly
+  or not at all.
+eventId: '820'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: SYN flood
+nameCN: TCP SYN洪水
+parseEsResultKeys: aggregations:sensor_ids:buckets:dst:buckets
+redisEventKey: event-ts-dos-attacking
+remarkCN: 主机 {src} 进行TCP SYN洪泛攻击
+remarks: Host {src} launchs SYN flood
+requirements: No requirements.
+ruleType: '3'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "conn"}},{"match": {"proto": "tcp"}},{"exists": {"field": "dst"}},{"exists":
+  {"field": "dpt"}}]}},"aggs":{"sensor_ids":{"terms":{"field":"fields.gl2_source_collector.keyword"},"aggs":{"dst":{"terms":{"field":"dst"}}}}},"size":
+  1}'
+source: network
+status: 0
+tags: [attack.impact, attack.enterprise.T1499, attack.ics.T0814]
+threshold: 50000
+timeWindow: 60000

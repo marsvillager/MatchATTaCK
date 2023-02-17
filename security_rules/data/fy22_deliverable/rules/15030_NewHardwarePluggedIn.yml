@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: "This rules triggers every time a new external device is connected to and recognized by a Windows operating system. Attackers can normally use this approach to gain access to a system through a variety of hardware accessories (e.g., from USB sticks to networking devices). The rule can be further specified by defining the kind of devices that are allowed (or not allowed) by looking at properties such as ``Device ID'', ``Device Name'', ``Vendor ID'', etc as well as ensuring that the ``Subject\\textbackslash Security ID'' is set to ``SYSTEM''."
+eventId: 15030
+eventType: warning
+impact: ''
+keys: ''
+name: New Hardware Plugged-in
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, vicosoc100, vicoss&d
+requirements: None.
+redisEventKey: event-new-hardware-plugin
+remarkCN: ''
+remarks: A new hardware was plugged in
+ruleType: '1'
+script: '{ "query":{ "bool":{ "must":[ { "match":{ "eventId":"6416" } }, { "match":{ "cat":"winEvent" } }, { "range":{ "@timestamp":{ "gt":"<bt>", "lt":"<et>" } } } ] } }, "size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1200]
+threshold: 1
+timeWindow: 60000

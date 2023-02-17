@@ -1,0 +1,23 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '601'
+eventType: warning
+impact: ''
+keys: '{"devName":{"en":"Device Name", "zh":"设备名称"}, "shost":{"en":"Source Host",
+  "zh":"源主机"}}'
+name: Android Device ShutDown
+nameCN: 安卓设备关机
+parseEsResultKeys: ''
+redisEventKey: event-ts-android-device-shutdown
+remarkCN: '安卓设备(Name: {devName}, Id: {shost})关机'
+remarks: 'Android Device(Name: {devName}, Id: {shost}) ShutDown'
+ruleType: '1'
+script: '{"query": {"bool": {"filter": [{"range": {"@timestamp": {"gte": "<bt>", "lt":
+  "<et>"}}}, {"match_phrase": {"msgBody": "Received Broadcast, Action: android.intent.action.ACTION_SHUTDOWN"}}]}},
+  "size": 1000}'
+source: android
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,21 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1548'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Security Eventlog Cleared
+nameCN: 安全事件日志已清除
+parseEsResultKeys: ''
+redisEventKey: event-ts-security-eventlog-cleared
+remarkCN: 主机 {src} 检测到一些威胁组织可能使用某些实用程序删除本地安全事件日志
+remarks: Some threat groups tend to delete the local "Security" Eventlog using certain
+  utilities on host {src}
+ruleType: '1'
+script: '{"query":{"constant_score":{"filter":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":{"logfile":"Security"}},{"bool":{"should":[{"match_phrase":{"eventId":"517"}},{"match_phrase":{"eventId":"1102"}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,23 @@
+category: vulnerability
+ciaLevel: confidentiality
+component: SI
+description: 'Monitor certificates used on target network, If expired certificate has been used on network, and event will be prompted.'
+eventId: '851'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Expired Certificate
+nameCN: 过期证书
+parseEsResultKeys: ''
+redisEventKey: event-ts-expired-certificate-use
+remarkCN: 主机 {src} 使用过期证书
+remarks: Expired certificate is used by host {src}.
+requirements: Extract HTTP/TLS certificate from network traffic and identify whether
+  there is expired certificte used.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match_phrase":{"duid":"SSL::Certificate_Expired"}}]}},"size":1000}'
+source: network
+status: 0
+tags: ~
+threshold: 1
+timeWindow: 120000

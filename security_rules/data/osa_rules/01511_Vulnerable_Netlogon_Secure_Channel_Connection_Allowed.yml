@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1511'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Vulnerable Netlogon Secure Channel Connection Allowed
+nameCN: 允许有漏洞的Netlogon安全通道连接
+parseEsResultKeys: ''
+redisEventKey: event-ts-vulnerable-netlogon-secure-channel-connection-allowed
+remarkCN: 主机 {src} 检测到允许有漏洞的Netlogon安全通道连接，例如CVE-2020-1472
+remarks: Host {src} detects that a vulnerable Netlogon secure channel connection was
+  allowed, which could be an indicator of CVE-2020-1472.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"eventId": "5829"}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1210, attack.ics.T0866]
+threshold: 1
+timeWindow: 60000

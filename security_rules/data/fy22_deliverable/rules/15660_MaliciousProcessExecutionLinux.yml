@@ -1,0 +1,30 @@
+category: operation 
+ciaLevel: integrity
+component: SI 
+description: This rule identifies situations in which a Linux system executes a known malicious process. This event might occur especially in the initial phases of an attack (e.g., attacker running a given malware toolkits to acquire privileges) but it can generally happen in any phase of a cyber intrusion. In most cases, denylists can include folder names from where no files are supposed to be executed. 
+eventId: 15660
+eventType: alert 
+impact: '' 
+keys: '' 
+name: Malicious Process Execution (Linux)
+nameCN:  
+os: linux 
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+ executableX: A denylisted process name
+product: generic, rail9000  
+parseEsResultKeys: ''
+redisEventKey: event-malicious-process-execution-linux
+remarkCN: ''
+remarks: A known malicious process was executed.
+requirements: Auditd should be configured (an example of a suitable configuration has been provided in the repository). Furthermore, Logstash should be configured to ingest the related data (also in this case, an example of a suitable configuration has been provided in the repository).
+ruleType: '1' 
+script: '{"query":{"bool":{"must":[{ "match": { "auditdType": "EXECVE" } },{"terms":{"msg":["executable1","executable2","..."]}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: '' 
+status: 1 
+tags: [attack.enterprise.T1204.002]
+threshold: 1
+timeWindow: 60000
+
+
+

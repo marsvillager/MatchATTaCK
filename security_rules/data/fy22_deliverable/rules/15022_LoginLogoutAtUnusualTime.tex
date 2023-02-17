@@ -1,0 +1,204 @@
+% !TEX root = ../AdditionalOsaRules.tex
+
+%%%
+%
+% Version 0.1
+%
+%%%
+
+\section{Login Logout At Unusual Time}
+\label{15022}
+%\addcontentsline{toc}{section}{\protect\numberline{}(Tool)}%
+
+\openup 1em
+
+\textbf{Full name:} Login logout at unusual time\hrulefill \\
+%\textbf{Vendor/Provider:} (Vendor name)\hrulefill \\
+%\textbf{URL: } \url{http://www.google.de} \hrulefill \\
+{\bf Categorization:} \\
+
+\openup -1em
+\vspace{-3em}
+
+% Please, write either Multi-OS, Linux, Windows, Mac
+\begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+
+\begin{todolist}
+  	\item Multi-OS
+	\item Linux
+\end{todolist}
+&
+\begin{todolist}
+	\item[\done] Windows
+	\item macOS
+\end{todolist}
+
+\end{tabular}
+
+\openup 1em
+
+{\bf SMO products in scope:} \\
+
+\openup -1em
+\vspace{-3em}
+
+\begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+
+\begin{todolist}
+  \item[\done] Generic
+  \item[\done] VICOS OC 100
+  \item[\done] VICOS S\&D
+\end{todolist}
+&
+\begin{todolist}
+  \item Rail9000
+  \item DCS
+  \item Others: \hrulefill
+\end{todolist}
+
+\end{tabular}
+
+\openup 1em
+
+{\bf Description:} \\
+
+\openup -1em
+\vspace{-2em}
+
+%\begin{itemize}
+%	\item (What does the rule do?)
+%	\item (Why was the situation targeted (e.g., in a workshop)?)
+%\end{itemize}
+
+This rule identifies situations in which Windows login and logout operations are performed or attempted outside the normal working hours (e.g., whenever operators work in shifts, this rule can ensure that such login and logout operations happen in the supposed timeframe). As attackers can try to take advantage of the absence of personnel to exploit the target systems, rules like these one work on restricting the categories of security-related events happening at unexpected time.
+
+\openup 1em
+
+{\bf Rule query:} \\
+
+\openup -1em
+\vspace{-2em}
+
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+  "runtime_mappings": {
+    "daytime": {
+      "type": "long",
+      "script": {
+        "source": "emit(doc['@timestamp'].value.toEpochSecond()%86400)"
+      }
+    }
+  },
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "bool": {
+            "should": [
+              {
+                "match": {
+                  "eventId": "4624"
+                }
+              },
+              {
+                "match": {
+                  "eventId": "4634"
+                }
+              },
+              {
+                "match": {
+                  "eventId": "528"
+                }
+              },
+              {
+                "match": {
+                  "eventId": "538"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "match": {
+            "cat": "winEvent"
+          }
+        },
+        {
+          "bool": {
+            "should": [
+              {
+                "range": {
+                  "daytime": {
+                    "lte": "shitfStartingTime"
+                  }
+                }
+              },
+              {
+                "range": {
+                  "daytime": {
+                    "gte": "shitfFinishingTime"
+                  }
+                }
+              },
+              {
+                "range": {
+                  "@timestamp": {
+                    "gt": "<bt>",
+                    "lt": "<et>"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "fields": [
+    "daytime"
+  ]
+}
+\end{lstlisting}
+
+\openup 1em
+
+{\bf Rule requirements:} \\
+
+\openup -1em
+\vspace{-2em}
+
+None.
+
+\openup 1em
+
+{\bf Rule parameters:} \\
+
+\openup -1em
+\vspace{-2em}
+
+\begin{itemize}
+	\item A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+	\item \emph{shitfStartingTime}: The number of seconds from midnights indicating the normal shift starting time (e.g., 28800 would indicate ``8:00'')
+	\item \emph{shitfFinishingTime}: The number of seconds from midnights indicating the normal shift ending time (e.g., 64800 would indicate ``18:00'')
+\end{itemize}
+
+\openup 1em
+
+{\bf Further information/categorization:} \\
+
+\openup -1em
+\vspace{-2em}
+
+%\begin{itemize}
+%	\item <Does the rule have an ATT\&CK label?>
+%	\item <Might the rule create many false positives?>
+%\end{itemize}
+
+The rule can be labeled with the following MITRE ATT\&CK's tactics and techniques:
+\begin{itemize}
+	\item T1078 - ``Valid Accounts''
+		\subitem{.003 - `` Local Accounts''}
+\end{itemize}
+
+\pagebreak
+

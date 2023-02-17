@@ -1,0 +1,21 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '943'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Network Share Access on Windows
+nameCN: Windows：网络共享访问
+parseEsResultKeys: ''
+redisEventKey: event-ts-network-share-access
+remarkCN: Windows主机 {src} 发生网络共享访问
+remarks: A network share object was accessed on Windows host {src}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"5140"}},{"match":{"cat": "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1039]
+threshold: 1
+timeWindow: 30000

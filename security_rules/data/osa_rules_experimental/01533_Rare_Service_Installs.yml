@@ -1,0 +1,26 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1533'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Rare Service Installs
+nameCN: 罕见服务安装
+parseEsResultKeys: ''
+redisEventKey: event-ts-rare-service-installs
+remarkCN: 主机 {src} 检测到每个时间范围内仅出现几次的罕见服务安装，可能导致泄露密码转储程序、后门安装或其他类型的恶意服务
+remarks: Host {src} detects rare service installs that only appear a few times per
+  time frame and could reveal password dumpers, backdoor installs or other types of
+  malicious services
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"eventId": "7045"}}, {"range": {"date": {"gte": "now-7d"}}}]}}}}, "aggs": {"WorkstationName_count":
+  {"terms": {"field": "WorkstationName"},"aggs": {"ServiceFileName_count": {"terms":
+  {"field": "ServiceFileName"}},"limit": {"bucket_selector": {"buckets_path": {"count":
+  "ServiceFileName_count"},"script": "params.count < 5"}}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

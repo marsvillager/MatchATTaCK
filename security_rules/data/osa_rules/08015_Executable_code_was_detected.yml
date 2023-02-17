@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '8015'
+eventType: warning
+impact: ''
+keys: '{"msg":{"en":"Message", "zh":"信息"}}'
+name: Executable code was detected
+nameCN: Executable code was detected
+parseEsResultKeys: ''
+redisEventKey: event-ts-executable-code-was-detected
+remarkCN: '{msg}'
+remarks: '{msg}'
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"suricata_event"}},{"match":{"event_type":"alert"}},{"match_phrase":{"alert_category.keyword":"Executable
+  code was detected"}}]}},"size":1000}'
+source: suricata
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

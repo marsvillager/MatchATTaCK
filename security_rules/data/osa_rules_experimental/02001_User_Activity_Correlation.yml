@@ -1,0 +1,20 @@
+category: account
+ciaLevel: integrity
+component: EDA
+eventId: '2001'
+eventType: event
+impact: ''
+keys: '{"user":{"en":"User", "zh":"用户"}}'
+name: User Activity Correlation
+nameCN: 用户行为关联
+parseEsResultKeys: ''
+redisEventKey: event-ts-eda-user-activity-correlation
+remarkCN: '用户行为关联 (发生于: {user})'
+remarks: User Activity Correlation ({user})
+ruleType: '5'
+script: ''
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 10000

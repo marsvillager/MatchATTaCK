@@ -1,0 +1,23 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '5033'
+eventType: warning
+impact: ''
+keys: ''
+name: 'S7Comm: Firmware Upgrade'
+nameCN: '固件升级: 通过S7Comm协议'
+parseEsResultKeys: ''
+redisEventKey: event-ts-s7comm-firmware-upgrade
+remarkCN: 通过S7Comm协议传输的 PLC 固件版本发生变化
+remarks: PLC firmware upgraded/downgraded by S7Comm.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match_phrase": {"cat": "s7_plc_func"}},{"match_phrase": {"fileName":
+  "P_BESY_BG"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0857]
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1583'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Suspect Svchost Memory Access
+nameCN: 可疑的Svchost内存访问
+parseEsResultKeys: ''
+redisEventKey: event-ts-suspect-svchost-memory-asccess
+remarkCN: 主机 {src} 检测到对svchost进程内存的可疑访问，例如被Invoke-Phantom用于杀掉windows远程管理的windows事件日志服务
+remarks: Host {src} detects suspect access to svchost process memory such as that
+  used by Invoke-Phantom to kill the winRM windows event logging service
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"bool": {"should":
+  [{"wildcard": {"event_data.CallTrace.keyword": "*unknown*"}}]}}, {"match_phrase":
+  {"event_data.GrantedAccess": "0x1f3fff"}}, {"wildcard": {"event_data.TargetImage.keyword":
+  "*\\\\windows\\\\system32\\\\svchost.exe"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

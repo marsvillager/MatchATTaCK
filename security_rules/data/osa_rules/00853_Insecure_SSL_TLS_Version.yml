@@ -1,0 +1,23 @@
+category: vulnerability
+ciaLevel: confidentiality
+component: SI
+description: Monitor insecure SSL/TLS version has been used on network, and event
+  will be prompted.
+eventId: '853'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Insecure SSL/TLS Version
+nameCN: SSL/TLS版本过低
+parseEsResultKeys: ''
+redisEventKey: event-ts-unsafe-SSL-version-use
+remarkCN: 主机 {src} 使用低版本SSL/TLS
+remarks: Insecure SSL/TLS version is used by host {src}.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match_phrase":{"duid":"SSL::Old_Version"}}]}},"size":1000}'
+source: network
+status: 0
+tags: [attack.enterprise.T1573]
+threshold: 1
+timeWindow: 120000

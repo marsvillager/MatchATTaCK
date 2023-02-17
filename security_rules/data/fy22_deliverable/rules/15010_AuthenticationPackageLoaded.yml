@@ -1,0 +1,27 @@
+category: account
+ciaLevel: integrity
+component: SI
+description: This rule identifies all situations where Windows ``Local Security Authority'' (LSA) loads authentication packages from dynamic-link libraries. An attacker might exploit this mechanism to inject malicious code into the given machine forcing privilege escalation or ensuring persistence. .
+eventId: 15010
+eventType: warning
+impact: ''
+keys: ''
+name: Authentication Package Loaded
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+ allowlisted authentication package: "the name of the authentication package used by the given Windows version (e.g., ``C:\\textbackslash Windows\\textbackslash system32\\textbackslash msv1\\_0.DLL : MICROSOFT\\_AUTHENTICATION\\_PACKAGE\\_V1\\_0'' for Windows 10)"
+parseEsResultKeys: ''
+product: generic
+requirements: None.
+redisEventKey: event-authentication-package-loaded
+remarkCN: ''
+remarks: Windows LSA has loaded an authentication package.
+ruleType: '1'
+script: '{ "query":{ "bool":{ "must":[ { "match":{ "eventId":"1108" } }, { "bool":{ "must_not":[ { "match_phrase":{ "msg":"<allowlisted authentication package>" } } ] } }, { "match":{ "cat":"winEvent" } }, { "range":{ "@timestamp":{ "gt":"<bt>", "lt":"<et>" } } } ] } }, "size":1000}'
+source: ''
+status: 1
+tags: [attack.enterprise.T1547]
+threshold: 1
+timeWindow: 60000

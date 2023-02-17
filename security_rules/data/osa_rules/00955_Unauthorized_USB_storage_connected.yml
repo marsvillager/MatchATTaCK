@@ -1,0 +1,25 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '955'
+eventType: warning
+impact: ''
+keys: '{"deviceId":{"en":"USB Device ID", "zh":"USB设备ID"}, "alias":{"en":"USB Alias",
+  "zh":"USB别名"}, "dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Unauthorized USB storage connected
+nameCN: 非授权USB插入
+parseEsResultKeys: ''
+redisEventKey: event-ts-unauthorized-usb-plugin
+remarkCN: '主机{dataSrcIP}上检测到非授权USB插入(USB设备ID: {deviceId}, USB别名: {alias})'
+remarks: 'Unauthorized USB storage device was plugged in (DeviceID: {deviceId}, SerialNumber:
+  {serialNumber}, Alias: {alias}) on host {dataSrcIP}.'
+requirements: No requirements.
+ruleType: '4'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "winEvent"}},{"match_phrase_prefix": {"msg": "*_USBSTOR*"}},{"match":
+  {"eventId": "2101"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0847, attack.enterprise.T1091]
+threshold: 1
+timeWindow: 60000

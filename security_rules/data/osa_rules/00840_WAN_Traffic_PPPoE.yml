@@ -1,0 +1,23 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '840'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: WAN Traffic -- PPPoE
+nameCN: WAN：PPPoE流量
+parseEsResultKeys: ''
+redisEventKey: event-ts-pppoe-connect
+remarkCN: 源主机 {src} 使用PPPoE远程连接目标主机
+remarks: Src host {src} uses WAN PPPoE remotely access dst host
+requirements: 'WAN Protocol traffic: PPTP and PPPOE'
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "weird"}},{"match": {"name": "non_ip_packet_in_pppoe_encapsulation"}}]}},"size":
+  1000}'
+source: network
+status: 0
+tags: [attack.ics.T0883, query-unclear]
+threshold: 1
+timeWindow: 180000

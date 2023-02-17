@@ -1,0 +1,25 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1512'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: WCE wceaux.dll Access
+nameCN: WCE wceaux.dll访问
+parseEsResultKeys: ''
+redisEventKey: event-ts-wce-wceaux.dll-access
+remarkCN: 主机 {src} 检测到WCE wceaux.dll访问当，例如在源主机上执行WCE pass-the-hash远程命令
+remarks: Host {src} detects wceaux.dll access while WCE pass-the-hash remote command
+  execution on source host
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"bool": {"should": [{"match_phrase": {"eventId": "4656"}},
+  {"match_phrase": {"eventId": "4658"}}, {"match_phrase": {"eventId": "4660"}}, {"match_phrase":
+  {"eventId": "4663"}}]}}, {"wildcard": {"event_data.ObjectName.keyword": "*\\\\wceaux.dll"}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1003]
+threshold: 1
+timeWindow: 60000

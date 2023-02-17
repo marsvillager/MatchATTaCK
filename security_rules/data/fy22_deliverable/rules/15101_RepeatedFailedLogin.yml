@@ -1,0 +1,26 @@
+category: account
+ciaLevel: integrity
+component: SI
+description: "This rule identifies a situation in which several login attempts (happening within a specific time frame) are performed unsuccessfully.\nAccording to the feedback collected during the Rail9000 workshop: ``as no feature exists on the application to notify (or even block) an account attempting to login repeatedly, this use case should be implement.''"
+eventId: 15101
+eventType: warning
+impact: ''
+keys: ''
+name: Repeated Failed Login
+nameCN: ''
+os: linux
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, rail9000
+requirements: This rule requires a Linux OS to log ``system'' and ``internal'' data.
+redisEventKey: event-linux-repeated-failed-login
+remarkCN: ''
+remarks: A repeated failed login was logged.
+ruleType: '3'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"incorrect password attempts" }},{"bool":{"must_not":[{"match_phrase":{"msg":"no new event"}}]}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"aggs":{"shost":{"terms":{"field":"shost.keyword"}}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1110.001]
+threshold: 1
+timeWindow: 60000

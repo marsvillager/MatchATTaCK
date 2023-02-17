@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: 'This rule identifies situations in which a new Windows service is executed. As for rule 15061 ("Anomalous Process Execution"), this event might occur especially in the initial phases of an attack (e.g., attacker running a given malware toolkits to acquire privileges) but it can generally happen in any phase of a cyber intrusion. Also for the rule related to anomalous processes, this rule should be used only in stable system where the list of running services can be described with resonable certainty (not to rise too many false positives).'
+eventId: 15064
+eventType: warning
+impact: ''
+keys: ''
+name: New Service Execution
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, vicosoc100, vicoss&d
+requirements: None.
+redisEventKey: event-service-execution
+remarkCN: ''
+remarks: A new service started.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"4697"}},{"match":{"eventId":"4698"}}]}},{"match":{"cat":"winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1569.002]
+threshold: 1
+timeWindow: 60000

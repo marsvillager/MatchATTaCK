@@ -1,0 +1,25 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1551'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: SCM Database Privileged Operation
+nameCN: SCM数据库特权操作
+parseEsResultKeys: ''
+redisEventKey: event-ts-scm-database-privileged-operation
+remarkCN: 主机 {src} 检测到非系统用户在SCM数据库中执行特权操作
+remarks: Host {src} detects non-system users performing privileged operation os the
+  SCM database
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4674"}}, {"match_phrase":
+  {"event_data.ObjectName": "servicesactive"}}, {"match_phrase": {"event_data.ObjectType":
+  "SC_MANAGER OBJECT"}}, {"match_phrase": {"event_data.PrivilegeList": "SeTakeOwnershipPrivilege"}},
+  {"match_phrase": {"event_data.SubjectLogonId": "0x3e4"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

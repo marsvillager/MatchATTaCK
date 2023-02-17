@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: availaibility
+component: SI
+description: "This rules identifies situations in which a Windows system has exhausted its space on disk. Such exhaustion can cause several problems to the system among which the impossibility to store security logs. This condition might be exploited by attackers to further hide their activities on the system."
+eventId: 15080
+eventType: alert
+impact: ''
+keys: ''
+name: Disk Space Exhaustion
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, vicosoc100, vicoss&d
+requirements: None.
+redisEventKey: event-space-exhaustion
+remarkCN: ''
+remarks: Disk space is exhausted.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"2013"}},{"match":{"cat":"winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

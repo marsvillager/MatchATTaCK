@@ -1,0 +1,26 @@
+category: account
+ciaLevel: availability
+component: SI
+description: "This rule identifies the likely result of a continuous misuse of the Windows login interface. This event might follow the ``Attempted Login'' one and can be usually further investigated to assess its criticality (e.g., whenever ``Subject\\textbackslash Security ID'' information is not ``SYSTEM'' as it normally is, the `` Additional Information\\textbackslash Caller Computer Name'' being not from the correct domain, etc.)."
+eventId: 15017
+eventType: warning
+impact: ''
+keys: ''
+name: Account Locked Out
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic
+requirements: None.
+redisEventKey: event-account-locked-out
+remarkCN: ''
+remarks: An account was locked out
+ruleType: '1'
+script: '{ "query":{ "bool":{ "must":[ { "match":{ "eventId":"4740" } }, { "match":{ "cat":"winEvent" } }, { "range":{ "@timestamp":{ "gt":"<bt>", "lt":"<et>" } } } ] } }, "size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

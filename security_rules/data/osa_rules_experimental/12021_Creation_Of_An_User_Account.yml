@@ -1,0 +1,20 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '12021'
+eventType: warning
+impact: ''
+keys: ''
+name: Creation Of An User Account
+nameCN: 新账户创建
+parseEsResultKeys: ''
+redisEventKey: event-ts-creation-of-an-user-account
+remarkCN: 在主机 {src} 上检测到新用户创建
+remarks: Detects the creation of a new user account on host {src}.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase_prefix":{"msg":"*type=SYSCALL*"}},{"match_phrase_prefix":{"msg":"*useradd*"}}]}},"size":1000}'
+source: ''
+status: 1
+tags: [operation.local]
+threshold: 1
+timeWindow: 60000

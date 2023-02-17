@@ -1,0 +1,167 @@
+% !TEX root = ../AdditionalOsaRules.tex
+
+%%%
+%
+% Version 0.1
+%
+%%%
+
+\section{Anomalous Process Execution}
+\label{15061}
+%\addcontentsline{toc}{section}{\protect\numberline{}(Tool)}%
+
+\openup 1em
+
+\textbf{Full name:} Anomalous process execution\hrulefill \\
+%\textbf{Vendor/Provider:} (Vendor name)\hrulefill \\
+%\textbf{URL: } \url{http://www.google.de} \hrulefill \\
+{\bf Categorization:} \\
+
+\openup -1em
+\vspace{-3em}
+
+% Please, write either Multi-OS, Linux, Windows, Mac
+\begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+
+\begin{todolist}
+  	\item Multi-OS
+	\item Linux
+\end{todolist}
+&
+\begin{todolist}
+	\item[\done] Windows
+	\item macOS
+\end{todolist}
+
+\end{tabular}
+
+\openup 1em
+
+{\bf SMO products in scope:} \\
+
+\openup -1em
+\vspace{-3em}
+
+\begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+
+\begin{todolist}
+  \item[\done] Generic
+  \item[\done] VICOS OC 100
+  \item[\done] VICOS S\&D
+\end{todolist}
+&
+\begin{todolist}
+  \item Rail9000
+  \item DCS
+  \item Others: \hrulefill
+\end{todolist}
+
+\end{tabular}
+
+\openup 1em
+
+{\bf Description:} \\
+
+\openup -1em
+\vspace{-2em}
+
+%\begin{itemize}
+%	\item (What does the rule do?)
+%	\item (Why was the situation targeted (e.g., in a workshop)?)
+%\end{itemize}
+
+This rule identifies situations in which a Windows system executes an unknown process. This event might occur especially in the initial phases of an attack (e.g., attacker running a given malware toolkits to acquire privileges) but it can generally happen in any phase of a cyber intrusion. Differently from rule 15060 ("Malicious Process Execution"), this rule should be used only in stable system where the list of running processes can be described with reasonable certainty (not to rise too many false positives).
+
+\openup 1em
+
+{\bf Rule query:} \\
+
+\openup -1em
+\vspace{-2em}
+
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "eventId": "1"
+          }
+        },
+        {
+          "bool": {
+            "must_not": [
+              {
+                "terms": {
+                  "event_data.NewProcessName": [
+                    "executable1",
+                    "executable2",
+                    "..."
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "match": {
+            "cat": "winEvent"
+          }
+        },
+       {
+          "range": {
+            "@timestamp": {
+              "gt": "<bt>",
+              "lt": "<et>"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "size": 1000
+}
+\end{lstlisting}
+
+\openup 1em
+
+{\bf Rule requirements:} \\
+
+\openup -1em
+\vspace{-2em}
+
+None.
+
+\openup 1em
+
+{\bf Rule parameters:} \\
+
+\openup -1em
+\vspace{-2em}
+
+\begin{itemize}
+	\item A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+	\item \emph{executableX}: A allowlisted process name
+\end{itemize}
+
+\openup 1em
+
+{\bf Further information/categorization:} \\
+
+\openup -1em
+\vspace{-2em}
+
+%\begin{itemize}
+%	\item <Does the rule have an ATT\&CK label?>
+%	\item <Might the rule create many false positives?>
+%\end{itemize}
+
+The rule can be labeled with the following MITRE ATT\&CK's tactics and techniques:
+\begin{itemize}
+	\item T1204 - ``User Execution''
+		\subitem{.002 - `` Malicious File''}
+\end{itemize}
+
+\pagebreak
+

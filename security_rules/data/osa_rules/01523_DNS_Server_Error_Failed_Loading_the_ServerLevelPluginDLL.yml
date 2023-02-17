@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1523'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: DNS Server Error Failed Loading the ServerLevelPluginDLL
+nameCN: DNS服务器加载ServerLevelPluginDLL插件失败
+parseEsResultKeys: ''
+redisEventKey: event-ts-dns-server-error-failed-loading-the-serverlevelplugindll
+remarkCN: 主机 {src} 检测到DNS服务器无法加载注册表中指定的DLL插件
+remarks: Host {src} detects a DNS server error in which a specified plugin DLL (in
+  registry) could not be loaded
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "DNS Server"}}, {"bool": {"should": [{"match_phrase": {"eventId": "150"}},
+  {"match_phrase": {"eventId": "770"}}]}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1574.002]
+threshold: 1
+timeWindow: 60000

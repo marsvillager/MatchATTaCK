@@ -1,0 +1,28 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1514'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Suspicious LDAP-Attributes Used
+nameCN: 使用了可疑的LDAP属性
+parseEsResultKeys: ''
+redisEventKey: event-ts-suspicious-ldap-attributes-used
+remarkCN: 主机 {src} 检测待定AttributeLDAPDisplayNames的使用情况，且用于数据交换
+remarks: Host {src} detects the usage of particular AttributeLDAPDisplayNames, which
+  are known for data exchange via LDAP by the tool LDAPFragger and are additionally
+  not commonly used in companies.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "5136"}}, {"bool": {"should":
+  [{"match_phrase": {"event_data.AttributeLDAPDisplayName": "primaryInternationalISDNNumber"}},
+  {"match_phrase": {"event_data.AttributeLDAPDisplayName": "otherFacsimileTelephoneNumber"}},
+  {"match_phrase": {"event_data.AttributeLDAPDisplayName": "primaryTelexNumber"}}]}},
+  {"wildcard": {"event_data.AttributeValue.keyword": "*"}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1041]
+threshold: 1
+timeWindow: 60000

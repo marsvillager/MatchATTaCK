@@ -1,0 +1,22 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5064'
+eventType: alert
+impact: ''
+keys: '{"orig_l2_addr":{"en":"Source MAC", "zh":"源MAC"}}'
+name: IEC 61850 Goose:DoS Attack – Flooding
+nameCN: 'IEC 61850 Goose: DoS攻击（洪水攻击）'
+parseEsResultKeys: ''
+redisEventKey: event-ts-goose-dos-attack-flooding
+remarkCN: 攻击机 {orig_l2_addr} 发送大量消息，导致消息无法正常发送或接收
+remarks: The attacker {orig_l2_addr} sends a large number of messages, which makes
+  the messages unable to be sent or received normally
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match":{"duid.keyword":"GOOSE::GOOSE_DOS_FLOODING"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

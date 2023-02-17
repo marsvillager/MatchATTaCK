@@ -1,0 +1,27 @@
+category: account 
+ciaLevel: integrity 
+component: SI 
+description:  This rule detects system time changes (by the system calls adjtimex and settimeofday) 
+eventId: '15606' 
+eventType: alert 
+impact: '' 
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}' 
+name: Auditd system time change 
+nameCN: '' 
+os: linux 
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+product: generic, dcs, rail9000 
+threshold: 1 
+timeWindow: 60000 
+parseEsResultKeys: '' 
+redisEventKey: event-auditd-system-time-change 
+remarkCN: '' 
+remarks: The system time was changed on Linux host {dataSrcIP}  
+requirements: Auditd should be configured (an example of a suitable configuration has been provided in the repository). Furthermore, Logstash should be configured to ingest the related data (also in this case, an example of a suitable configuration has been provided in the repository).
+ruleType: '1' 
+script: '{ "query": { "bool": { "must": [ { "match": { "auditdType": "SYSCALL" } }, { "match": { "auditdKey": "timechange" } }, { "range": { "@timestamp": { "gte": "<bt>", "lt": "<et>" } } } ] } }, "size": 1000 }' 
+source: '' 
+status: 1 
+tags: '' 
+

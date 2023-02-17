@@ -1,0 +1,23 @@
+category: asset
+ciaLevel: confidentiality
+component: SI
+eventId: '209'
+eventType: event
+impact: Operation Risk
+keys: '{"vendor":{"en":"Vendor", "zh":"供应商"}, "type":{"en":"Type", "zh":"类型"}, "mac":{"en":"MAC
+  Address", "zh":"MAC地址"}, "ip":{"en":"IP Address", "zh":"IP地址"}}'
+name: Asset disconnected
+nameCN: 资产下线
+parseEsResultKeys: ''
+redisEventKey: event-ts-asset-disconnected
+remarkCN: '资产 (供应商: {vendor}, 类型: {type}, MAC地址: {mac}, IP地址: {ip}) 下线'
+remarks: 'Asset (Vendor: {vendor}, Type: {type}, MAC: {mac}, IP: {ip}) has been disconnected
+  from network.'
+requirements: No requirements.
+ruleType: '0'
+script: ''
+source: network
+status: 0
+tags: [attack.ics.T0816, query-unclear]
+threshold: 1
+timeWindow: 60000

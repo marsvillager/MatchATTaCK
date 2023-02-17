@@ -1,0 +1,28 @@
+category: network
+ciaLevel: integrity
+component: SI
+description: Help user to detect enumerates Siemens S7 PLC devices and collects their
+  device information behavior on target network.
+eventId: '882'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: Enumerate Redpoint NSE Request CPU Function Read SZL attempt
+nameCN: Redpoint扫描PLC CPU功能
+parseEsResultKeys: ''
+redisEventKey: event-ts-nse-request-cpu-function-read-szl-attempt
+remarkCN: 源主机 {src} 使用Redpoint NSE扫描目标机 {dst} PLC获取CPU功能信息
+remarks: Src host {src} utilizes Enumerate Redpoint NSE Request CPU Function Read
+  SZL attempt for scanning dst host {dst}
+requirements: 'Check in the network whether there is Redpoint plugin used to scan
+  the system status of S7 device. '
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "notice"}},{"match_phrase": {"msg": "S7 enumerate redpoint
+  NSE request CPU function read SZL attempt"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0846, attack.ics.T0888]
+threshold: 1
+timeWindow: 60000

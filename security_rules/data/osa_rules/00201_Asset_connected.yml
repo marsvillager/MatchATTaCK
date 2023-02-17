@@ -1,0 +1,23 @@
+category: asset
+ciaLevel: confidentiality
+component: SI
+eventId: '201'
+eventType: event
+impact: Operation Risk
+keys: '{"vendor":{"en":"Vendor", "zh":"供应商"}, "type":{"en":"Type", "zh":"类型"}, "mac":{"en":"MAC
+  Address", "zh":"MAC地址"}, "ip":{"en":"IP Address", "zh":"IP地址"}}'
+name: Asset connected
+nameCN: 资产上线
+parseEsResultKeys: ''
+redisEventKey: event-ts-asset-connected
+remarkCN: '资产 (供应商: {vendor}, 类型: {type}, MAC地址: {mac}, IP地址: {ip}) 上线'
+remarks: 'Asset (Vendor: {vendor}, Type: {type}, MAC: {mac}, IP: {ip}) has been connected
+  to network.'
+requirements: Asset information can be acquired by IT/OT protocol analysis and probing.
+ruleType: '0'
+script: ''
+source: network
+status: 0
+tags: [attack.ics.T0848, attack.ics.T0864, attack.enterprise.T1200, query-unclear]
+threshold: 1
+timeWindow: 60000

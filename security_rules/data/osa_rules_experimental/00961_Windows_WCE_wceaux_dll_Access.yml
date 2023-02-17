@@ -1,0 +1,30 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '961'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'Windows: WCE wceaux.dll Access'
+nameCN: 'Windows: WCE敏感信息访问'
+parseEsResultKeys: ''
+redisEventKey: event-ts-wce-tool-used
+remarkCN: 源主机 {src} 对目标主机访问wceaux.dll信息
+remarks: Src host {src} access WCE wceaux.dll on dst host.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "winEvent"}}],"should": [{"bool": {"must": [{"match":
+  {"eventId": "4656"}},{"match": {"event_data.ProcessName": "wce.exe"}}]}},{"bool":
+  {"must": [{"match": {"eventId": "4656"}},{"match": {"event_data.ProcessName": "mmc.exe"}}]}},{"bool":
+  {"must": [{"match": {"eventId": "4658"}},{"match": {"event_data.ProcessName": "wce.exe"}}]}},{"bool":
+  {"must": [{"match": {"eventId": "4658"}},{"match": {"event_data.ProcessName": "mmc.exe"}}]}},{"bool":
+  {"must": [{"match": {"eventId": "4660"}},{"match": {"event_data.ProcessName": "wce.exe"}}]}},{"bool":
+  {"must": [{"match": {"eventId": "4660"}},{"match": {"event_data.ProcessName": "mmc.exe"}}]}},{"bool":
+  {"must": [{"match": {"eventId": "4663"}},{"match": {"event_data.ProcessName": "wce.exe"}}]}},{"bool":
+  {"must": [{"match": {"eventId": "4663"}},{"match": {"event_data.ProcessName": "mmc.exe"}}]}}],"minimum_should_match":
+  1}},"size": 1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

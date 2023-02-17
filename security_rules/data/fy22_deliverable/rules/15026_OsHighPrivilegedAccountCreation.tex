@@ -1,0 +1,175 @@
+% !TEX root = ../AdditionalOsaRules.tex
+
+%%%
+%
+% Version 0.1
+%
+%%%
+
+\section{Os High Privileged Account Creation}
+\label{15026}
+%\addcontentsline{toc}{section}{\protect\numberline{}(Tool)}%
+
+\openup 1em
+
+\textbf{Full name:} Os high privileged account creation\hrulefill \\
+%\textbf{Vendor/Provider:} (Vendor name)\hrulefill \\
+%\textbf{URL: } \url{http://www.google.de} \hrulefill \\
+{\bf Categorization:} \\
+
+\openup -1em
+\vspace{-3em}
+
+% Please, write either Multi-OS, Linux, Windows, Mac
+\begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+
+\begin{todolist}
+  	\item Multi-OS
+	\item Linux
+\end{todolist}
+&
+\begin{todolist}
+	\item[\done] Windows
+	\item macOS
+\end{todolist}
+
+\end{tabular}
+
+\openup 1em
+
+{\bf SMO products in scope:} \\
+
+\openup -1em
+\vspace{-3em}
+
+\begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+
+\begin{todolist}
+  \item[\done] Generic
+  \item[\done] VICOS OC 100
+  \item[\done] VICOS S\&D
+\end{todolist}
+&
+\begin{todolist}
+  \item Rail9000
+  \item DCS
+  \item Others: \hrulefill
+\end{todolist}
+
+\end{tabular}
+
+\openup 1em
+
+{\bf Description:} \\
+
+\openup -1em
+\vspace{-2em}
+
+%\begin{itemize}
+%	\item (What does the rule do?)
+%	\item (Why was the situation targeted (e.g., in a workshop)?)
+%\end{itemize}
+
+This rule is used to identify situations in which an attacker creates a new Windows account with high privileges. Actions such as this one might indicate that a successful privilege escalation has occurred and the attacker can ensure persistence on the machine by creating new resources. Rules related to new accounts being created can be enhanced in a number of ways. Among the most common: ensuring that the ``SAM Account Name' and the ``User Account Name' are not empty, ensuring that ``Home Directory' abnd ``Home Drive' are empty (typical for new user accounts), and checking that the ``Primary Group ID' is equal to 513 (typical for domain and local users).
+
+\openup 1em
+
+{\bf Rule query:} \\
+
+\openup -1em
+\vspace{-2em}
+
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "bool": {
+            "should": [
+              {
+                "match": {
+                  "eventId": "4720"
+                }
+              },
+              {
+                "match": {
+                  "eventId": "624"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "bool": {
+            "must_not": [
+              {
+                "match_phrase": {
+                  "event_data.UserAccountControl": "%%2080 %%2082 %%2084"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "match": {
+            "cat": "winEvent"
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gt": "<bt>",
+              "lt": "<et>"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "size": 1000
+}
+\end{lstlisting}
+
+\openup 1em
+
+{\bf Rule requirements:} \\
+
+\openup -1em
+\vspace{-2em}
+
+None.
+
+\openup 1em
+
+{\bf Rule parameters:} \\
+
+\openup -1em
+\vspace{-2em}
+
+\begin{itemize}
+	\item A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+\end{itemize}
+
+\openup 1em
+
+{\bf Further information/categorization:} \\
+
+\openup -1em
+\vspace{-2em}
+
+%\begin{itemize}
+%	\item <Does the rule have an ATT\&CK label?>
+%	\item <Might the rule create many false positives?>
+%\end{itemize}
+
+The rule can be labeled with the following MITRE ATT\&CK's tactics and techniques:
+\begin{itemize}
+	\item T1136 - ``Create Account''
+		\subitem{.001 - `` Local Account''}
+	\item T1136 - ``Create Account''
+		\subitem{.002 - `` Domain Account''}
+\end{itemize}
+
+\pagebreak
+

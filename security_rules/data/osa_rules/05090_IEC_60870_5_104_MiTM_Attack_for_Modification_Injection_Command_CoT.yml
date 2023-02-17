@@ -1,0 +1,21 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5090'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'IEC 60870-5-104: MiTM Attack for Modification Injection Command CoT'
+nameCN: 'IEC 60870-5-104: 修改或注入命令的MiTM攻击'
+parseEsResultKeys: ''
+redisEventKey: event-ts-iec-mitm-attack-for-modification-injection-command-cot
+remarkCN: 攻击机 {src} 修改或者注入错误的CoT字段
+remarks: The attacker {src} modifies or injects the wrong COT field
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"bool":{"should":[{"match":{"duid.keyword":"IEC104::IEC104_CMD_OUT_RANGE"}},{"match":{"duid.keyword":"IEC104::IEC104_MAN_IN_MID_INJECT_COT"}}]}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

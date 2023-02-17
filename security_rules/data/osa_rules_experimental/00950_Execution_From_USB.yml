@@ -1,0 +1,20 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '950'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Execution From USB
+nameCN: U盘启动可执行程序
+parseEsResultKeys: ''
+redisEventKey: exec-from-usb-storage
+remarkCN: 程序直接从接入到主机 {src} 的U盘上启动
+remarks: Program directly executed from USB on host {src}
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg": "id=950"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [operation.usb]
+threshold: 1
+timeWindow: 120000

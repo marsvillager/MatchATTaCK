@@ -1,0 +1,32 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1501'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Active Directory User Backdoors
+nameCN: AD用户后门
+parseEsResultKeys: ''
+redisEventKey: event-ts-active-directory-user-backdoors
+remarkCN: 主机 {src} 检测到不使用证书控制其他用户的场景
+remarks: Host {src} detects scenarios where one can control another users or computers
+  account without having to use their credentials.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"bool": {"should": [{"bool": {"should": [{"bool": {"should":
+  [{"bool": {"must": [{"match_phrase": {"EventLog": "Security"}}, {"bool": {"must":
+  [{"match_phrase": {"eventId": "4738"}}, {"bool": {"must_not": [{"bool": {"must":
+  [{"match_phrase": {"event_data.AllowedToDelegateTo": "-"}}]}}]}}]}}, {"bool": {"must_not":
+  [{"bool": {"must": [{"bool": {"must_not": {"exists": {"field": "event_data.AllowedToDelegateTo"}}}}]}}]}}]}},
+  {"bool": {"must": [{"match_phrase": {"eventId": "5136"}}, {"match_phrase": {"event_data.AttributeLDAPDisplayName":
+  "msDS-AllowedToDelegateTo"}}]}}]}}, {"bool": {"must": [{"match_phrase": {"eventId":
+  "5136"}}, {"match_phrase": {"event_data.AttributeLDAPDisplayName": "servicePrincipalName"}},
+  {"match_phrase": {"event_data.ObjectClass": "user"}}]}}]}}, {"bool": {"must": [{"match_phrase":
+  {"eventId": "5136"}}, {"match_phrase": {"event_data.AttributeLDAPDisplayName": "msDS-AllowedToActOnBehalfOfOtherIdentity"}}]}}]}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1098]
+threshold: 1
+timeWindow: 60000

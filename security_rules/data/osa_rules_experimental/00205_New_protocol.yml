@@ -1,0 +1,20 @@
+category: application,network
+ciaLevel: confidentiality
+component: SI
+eventId: '205'
+eventType: warning
+impact: ''
+keys: ''
+name: New protocol
+nameCN: 新协议
+parseEsResultKeys: ''
+redisEventKey: event-ts-new-protocol
+remarkCN: 发现新协议
+remarks: A new protocol found.
+ruleType: '0'
+script: ''
+source: network
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

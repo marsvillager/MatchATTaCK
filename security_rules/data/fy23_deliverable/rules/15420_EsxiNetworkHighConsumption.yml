@@ -1,0 +1,26 @@
+category: system
+ciaLevel: availability
+component: SI
+description: 'This rule identifies situation in which the ESXi hypervisor shows high network utilization and, therefore, starts dropping packets. Such situations might indicate malicious activities to tamper network communications (e.g., denial of service attacks).'
+eventId: 15420
+eventType: event
+impact: ''
+keys: ''
+name: Esxi High Network Utilization
+nameCN: ''
+os: linux
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: esxi
+redisEventKey: event-esxi-high-network-utilization
+remarkCN: ''
+remarks: A high network utilization has been observed
+requirements: None.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"msg":"Dropped"}},{"match":{"msg":"packets"}},{"match_phrase":{"msg":"due to an overflow condition in the receive ring"}},{"bool":{"must_not":[{"match_phrase":{"msg":"no new event"}}]}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

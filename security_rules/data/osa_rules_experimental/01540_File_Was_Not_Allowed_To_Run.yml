@@ -1,0 +1,28 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1540'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: File Was Not Allowed To Run
+nameCN: 运行不被允许文件
+parseEsResultKeys: ''
+redisEventKey: event-ts-file-was-not-allowed-to-run
+remarkCN: 主机 {src} 检测到运行不被允许的文件，可以通过配置applocker和日志收集器来接收这类事件(Applocker是一个非常有用的工具尤其是在非特权用户可以访问的服务器上，例如终端服务器)
+remarks: Host {src} detects run not allowed files. Applocker is a very useful tool,
+  especially on servers where unprivileged users have access. For example terminal
+  servers. You need configure applocker and log collect to receive these events.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"bool":
+  {"should": [{"match_phrase": {"EventLog": "Microsoft-Windows-AppLocker/MSI and Script"}},
+  {"match_phrase": {"EventLog": "Microsoft-Windows-AppLocker/EXE and DLL"}}, {"match_phrase":
+  {"EventLog": "Microsoft-Windows-AppLocker/Packaged app-Deployment"}}, {"match_phrase":
+  {"EventLog": "Microsoft-Windows-AppLocker/Packaged app-Execution"}}]}}, {"bool":
+  {"should": [{"match_phrase": {"eventId": "8004"}}, {"match_phrase": {"eventId":
+  "8007"}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

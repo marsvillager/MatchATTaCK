@@ -1,0 +1,23 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '11006'
+eventType: alert
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Host", "zh":"源主机"}}'
+name: Failed administrative login on QNAP NAS
+nameCN: ''
+parseEsResultKeys: ''
+redisEventKey: event-ts-qnap-mgmt-login-failed
+remarkCN: ''
+remarks: Failed administrative login into the management interface of QNAP NAS at
+  {dataSrcIP}.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"deviceCat":"syslog_514"}},{"match":{"program":"qulogd"}},{"match":{"msg":{"query":"''Accessed
+  resources: Administration'' ''Login Fail''","operator":"AND"}}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [operation.local]
+threshold: 1
+timeWindow: 60000

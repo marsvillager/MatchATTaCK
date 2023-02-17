@@ -1,0 +1,22 @@
+category: network
+ciaLevel: confidentiality
+component: SI
+eventId: '859'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: HTTP
+nameCN: HTTP信标
+parseEsResultKeys: ''
+redisEventKey: event-ts-http-beaconing
+remarkCN: 主机 {src} 发送可疑HTTP信标
+remarks: Host {src} beacons HTTP
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "HTTP_Beacon"}}]}},"size": 1000}'
+source: network
+status: 0
+tags: [attack.enterprise.T1071.001, attack.ics.T0885]
+threshold: 1
+timeWindow: 180000

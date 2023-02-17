@@ -1,0 +1,28 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1525'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Unauthorized System Time Modification
+nameCN: 修改系统时间未授权
+parseEsResultKeys: ''
+redisEventKey: event-ts-unauthorized-system-time-modification
+remarkCN: 主机 {src} 检测到潜在的未授权应用或用户修改系统时间的情况
+remarks: Host {src} detect scenarios where a potentially unauthorized application
+  or user is modifying the system time.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4616"}}, {"bool": {"must_not":
+  [{"bool": {"must": [{"match_phrase": {"EventLog": "Security"}}, {"bool": {"should":
+  [{"bool": {"should": [{"match_phrase": {"event_data.ProcessName": "C:\\Program Files\\VMware\\VMware
+  Tools\\vmtoolsd.exe"}}, {"match_phrase": {"event_data.ProcessName": "C:\\Windows\\System32\\VBoxService.exe"}}]}},
+  {"bool": {"must": [{"match_phrase": {"event_data.ProcessName": "C:\\Windows\\System32\\svchost.exe"}},
+  {"match_phrase": {"event_data.SubjectUserSid": "S-1-5-19"}}]}}]}}]}}]}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1070.006, attack.ics.T0872]
+threshold: 1
+timeWindow: 60000

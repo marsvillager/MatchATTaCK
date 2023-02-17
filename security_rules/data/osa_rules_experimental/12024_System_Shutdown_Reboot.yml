@@ -1,0 +1,20 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '12024'
+eventType: warning
+impact: ''
+keys: ''
+name: System Shutdown/Reboot
+nameCN: 系统关闭或重启
+parseEsResultKeys: ''
+redisEventKey: event-ts-system-shutdown-reboot
+remarkCN: 在主机 {src} 上检测到关机或重启的命令
+remarks: Detects shutdown/reboot commands on {src}.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase_prefix":{"msg":"*type=EXECVE*"}},{"bool":{"should":[{"match_phrase_prefix":{"msg":"*shutdown*"}},{"match_phrase_prefix":{"msg":"*reboot*"}},{"match_phrase_prefix":{"msg":"*half*"}},{"match_phrase_prefix":{"msg":"*poweroff*"}}],"minimum_should_match":1}}]}},"size":1000}'
+source: ''
+status: 1
+tags: [operation.local]
+threshold: 1
+timeWindow: 60000

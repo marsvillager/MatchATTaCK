@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5060'
+eventType: alert
+impact: ''
+keys: '{"orig_l2_addr":{"en":"Source MAC", "zh":"源MAC"}, "resp_l2_addr":{"en":"Destination
+  MAC", "zh":"目标MAC"}}'
+name: IEC 61850 Goose:Message Suppression Attack – high status
+nameCN: 'IEC 61850 Goose: 消息抑制攻击（高状态攻击）'
+parseEsResultKeys: ''
+redisEventKey: event-ts-goose-message-suppression-attack-high-status
+remarkCN: 攻击机 {orig_l2_addr} 通过修改GOOSE协议头部的stNum值来阻止目标主机 {resp_l2_addr} 正常接收消息
+remarks: The attacker {orig_l2_addr} prevents the target host {resp_l2_addr} from
+  receiving messages normally by modifying the stnum value of the goose protocol header
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match":{"duid.keyword":"GOOSE::GOOSE_SUPPRESSION_STNUM"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

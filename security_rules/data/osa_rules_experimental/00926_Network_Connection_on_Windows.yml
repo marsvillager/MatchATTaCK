@@ -1,0 +1,21 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '926'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Network Connection on Windows
+nameCN: Windows：建立网络连接
+parseEsResultKeys: ''
+redisEventKey: event-ts-network-connection
+remarkCN: Windows主机 {src} 上建立了网络连接
+remarks: network connection on Windows Windows host {src}
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"111111"}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 1
+tags: ''
+threshold: 1
+timeWindow: 30000

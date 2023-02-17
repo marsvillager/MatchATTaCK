@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1531'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: AD Object WriteDAC Access
+nameCN: AD对象的WriteDAC访问
+parseEsResultKeys: ''
+redisEventKey: event-ts-ad-object-writedac-access
+remarkCN: 主机 {src} 检测到对域对象的WriteDAC访问
+remarks: Host {src} detects WRITE_DAC access to a domain object
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4662"}}, {"match_phrase":
+  {"event_data.AccessMask": "0x40000"}}, {"match_phrase": {"event_data.ObjectServer":
+  "DS"}}, {"bool": {"should": [{"match_phrase": {"event_data.ObjectType": "19195a5b-6da0-11d0-afd3-00c04fd930c9"}},
+  {"match_phrase": {"event_data.ObjectType": "domainDNS"}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,31 @@
+category: attack,network
+ciaLevel: confidentiality
+component: SI
+description: A port scan is a method for determining which ports on a network are
+  open. As ports on a computer are the place where information is sent and received,
+  port scanning is analogous to knocking on doors to see if someone is home. Running
+  a port scan on a network or server reveals which ports are open and listening (receiving
+  information), as well as revealing the presence of security devices such as firewalls
+  that are present between the sender and the target. This technique is known as fingerprinting.
+  It is also valuable for testing network security and the strength of the system’s
+  firewall. Due to this functionality, it is also a popular reconnaissance tool for
+  attackers seeking a weak point of access to break into a computer.
+eventId: '815'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: Port Scan (Fast)
+nameCN: 端口扫描（快速）
+parseEsResultKeys: aggregations:sensor_ids:buckets:src:buckets:dst:buckets:dpts:buckets
+redisEventKey: event-ts-dos-portscan
+remarkCN: 源主机 {src} 对目标主机 {dst} 进行快速端口扫描
+remarks: Source host {src} performs port scan on destination host {dst}
+requirements: No requirements.
+ruleType: '2'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"conn"}},{"exists":{"field":"dst"}},{"exists":{"field":"dpt"}}]}},"aggs":{"sensor_ids":{"terms":{"field":"fields.gl2_source_collector.keyword"},"aggs":{"src":{"terms":{"field":"src"},"aggs":{"dst":{"terms":{"field":"dst"},"aggs":{"dpts":{"terms":{"field":"dpt"}}}}}}}}},"size":1}'
+source: network
+status: 0
+tags: [attack.discovery, attack.enterprise.T1046, attack.ics.T0846]
+threshold: 50
+timeWindow: 60000

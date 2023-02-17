@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: This rule identifies situations in which a new Windows application is installed in Windows. Windows AppLocker (introduced with Microsoft Windows 7 operating systems) is an application that allows an administrator to restrict which programs users can execute based on several features (e.g., programs` paths, publishers, hashes, etc.) or with a custom Group Policy. Differently from rule 15023 ("Application Installation"), this rule takes advantage of Windows utility Applocker to monitor which applications are installed in the system. An alert raised by this rule will indicate that the specific application was also previously allowlisted by Applocker. As for rule 15023, attackers can create and consequently run new applications on a system to achieve several objectives (e.g., ensure persistence, damage the system, etc.).
+eventId: 15025
+eventType: alert
+impact: ''
+keys: ''
+name: Application Installation
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic
+requirements: Windows Applocker needs to be installed and running.
+redisEventKey: event-application-installation-applocker
+remarkCN: ''
+remarks: An application was installed.
+ruleType: '1'
+script: '{ "query":{ "bool":{ "must":[ { "match":{ "eventId":"8030" } }, { "match":{ "cat":"winEvent" } }, { "range":{ "@timestamp":{ "gt":"<bt>", "lt":"<et>" } } } ] } }, "size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1543]
+threshold: 1
+timeWindow: 60000

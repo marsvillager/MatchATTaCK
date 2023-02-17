@@ -1,0 +1,21 @@
+category: attack,network
+ciaLevel: integrity
+component: SI
+eventId: '813'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: MITM Attack
+nameCN: 中间人攻击
+parseEsResultKeys: ''
+redisEventKey: event-ts-mitm-attack
+remarkCN: 源主机 {src} 对目的主机 {dst} 发起中间人攻击
+remarks: Src host {src} launches a MITM attack on dst host {dst}.
+ruleType: '4'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"mitm"}},{"exists":{"field":"src"}},{"exists":{"field":"dst"}},{"exists":{"field":"smac"}},{"exists":{"field":"dmac"}}]}},"sort":[{"@timestamp":{"order":"desc"}}],"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

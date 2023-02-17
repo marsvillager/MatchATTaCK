@@ -1,0 +1,22 @@
+category: attack
+ciaLevel: availability
+component: SI
+eventId: '211'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: CCTV Block
+nameCN: 闭路电视流媒体阻塞
+parseEsResultKeys: ''
+redisEventKey: event-ts-cctv-block
+remarkCN: 主机 {src} 对闭路电视流媒体阻塞
+remarks: CCTV stream has been blocked by host {src}
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":{"CommandLine":"netsh
+  advfirewall firewall add rule name=VMS dir=out protocol=TCP remoteport=554 action=block
+  "}}]}},"size":1000}'
+source: network
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 120000

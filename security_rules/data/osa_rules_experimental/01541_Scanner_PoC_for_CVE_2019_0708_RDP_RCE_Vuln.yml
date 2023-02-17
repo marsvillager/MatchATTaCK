@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1541'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Scanner PoC for CVE-2019-0708 RDP RCE Vuln
+nameCN: 针对CVE-2019-0708 RDP RCE漏洞的扫描器PoC
+parseEsResultKeys: ''
+redisEventKey: event-ts-scanner-poc-for-cve-2019-0708-rdp-rce-vuln
+remarkCN: 主机 {src} 检测到使用针对漏洞CVE-2019-0708 RDP RCE(又名BlueKeep)的扫描器
+remarks: Host {src} detects the use of a scanner by zerosum0x0 that discovers targets
+  vulnerable to  CVE-2019-0708 RDP RCE aka BlueKeep
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4625"}}, {"match_phrase":
+  {"event_data.AccountName": "AAAAAAA"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

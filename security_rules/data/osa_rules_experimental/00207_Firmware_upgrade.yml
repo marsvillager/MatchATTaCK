@@ -1,0 +1,24 @@
+category: asset,operation
+ciaLevel: confidentiality
+component: SI
+eventId: '207'
+eventType: warning
+impact: ''
+keys: '{"vendor":{"en":"Vendor", "zh":"供应商"}, "type":{"en":"Type", "zh":"类型"}, "mac":{"en":"MAC
+  Address", "zh":"MAC地址"}, "ip":{"en":"IP Address", "zh":"IP地址"}, "oldValue":{"en":"Field
+  Old Value", "zh":"属性旧值"}, "newValue":{"en":"Field New Value", "zh":"属性新值"}}'
+name: Firmware upgrade
+nameCN: 固件版本升级
+parseEsResultKeys: ''
+redisEventKey: event-ts-plc-firmware-update
+remarkCN: 'PLC (供应商: {vendor}, 类型: {type}, MAC地址: {mac}, IP地址: {ip}) 固件版本从 {oldValue}
+  到 {newValue} 进行升级/降级'
+remarks: 'PLC (Vendor: {vendor}, Type: {type}, MAC: {mac}, IP: {ip}) firmware upgraded/downgraded
+  from version {oldValue} to {newValue}.'
+ruleType: '0'
+script: ''
+source: network
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

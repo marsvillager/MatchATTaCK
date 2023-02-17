@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '812'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: DNS
+nameCN: DNS信标
+parseEsResultKeys: ''
+redisEventKey: event-ts-dns-beaconing
+remarkCN: 主机 {src} 发送可疑DNS信标
+remarks: Host {src} beacons DNS
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match": {"duid": "DNS_Beacon"}}]}},"size": 1000}'
+source: network
+status: 0
+tags: [attack.ics.T0885, attack.enterprise.T1071.004]
+threshold: 1
+timeWindow: 60000

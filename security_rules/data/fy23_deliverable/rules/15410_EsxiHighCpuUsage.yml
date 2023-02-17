@@ -1,0 +1,26 @@
+category: system
+ciaLevel: availability
+component: SI
+description: 'This rule identifies situation in which the ESXi hypervisor shows high CPU utilization. Such situations, whenever unexpected, might indicate the execution of unwanted heavy processes (e.g., cryptomining malware) or configuration errors.'
+eventId: 15410
+eventType: event
+impact: ''
+keys: ''
+name: Esxi High CPU Utilization
+nameCN: ''
+os: linux
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: esxi
+redisEventKey: event-esxi-high-cpu-utilization
+remarkCN: ''
+remarks: A high cpu utilization has been observed
+requirements: None.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"high CPU utilization"}},{"bool":{"must_not":[{"match_phrase":{"msg":"no new event"}}]}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

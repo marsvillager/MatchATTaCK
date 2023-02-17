@@ -1,0 +1,32 @@
+category: attack,malware
+ciaLevel: integrity
+component: SI
+description: The WannaCry ransomware attack was a May 2017 worldwide cyberattack by
+  the WannaCry ransomware cryptoworm, which targeted computers running the Microsoft
+  Windows operating system by encrypting data and demanding ransom payments in the
+  Bitcoin cryptocurrency. It propagated through EternalBlue, an exploit developed
+  by the United States National Security Agency (NSA) for older Windows systems. EternalBlue
+  was stolen and leaked by a group called The Shadow Brokers a few months prior to
+  the attack. While Microsoft had released patches previously to close the exploit,
+  much of WannaCry spread was from organizations that had not applied these or were
+  using older Windows systems that were past their end-of-life. And this indicator
+  can detect wannacry kill switch dns behavior.
+eventId: '893'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: WannaCry Kill Switch DNS
+nameCN: WannaCry Kill Switch DNS流量
+parseEsResultKeys: ''
+redisEventKey: event-ts-wannacry-kill-switch-dns
+remarkCN: 主机 {src} 发送可疑WannaCry恶意程序DNS请求
+remarks: WannaCry Kill Switch DNS is detected from host {src}
+requirements: Detect Kill Switch DNS request.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match_phrase":
+  {"duid": "WannacryDNS"}}]}},"size": 1000}'
+source: network
+status: 0
+tags: [attack.enterprise.T1497]
+threshold: 1
+timeWindow: 60000

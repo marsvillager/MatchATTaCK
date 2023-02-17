@@ -1,0 +1,27 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: This rule identifies situations in which a Linux system executes an unknown process. This event might occur especially in the initial phases of an attack (e.g., attacker running a given malware toolkits to acquire privileges) but it can generally happen in any phase of a cyber intrusion.
+eventId: 15662
+eventType: alert
+impact: ''
+keys: ''
+name: Anomalous Process Execution with High Privileges (Linux)
+nameCN: ''
+os: linux
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+ executableX: An allowlisted process name
+parseEsResultKeys: ''
+product: generic, rail9000
+requirements: Auditd should be configured (an example of a suitable configuration has been provided in the repository).
+redisEventKey: event-anomalous-privileged-process-executed-linux
+remarkCN: ''
+remarks: An anomalous privileged process was executed.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"*syscall=59*"}},{"match_phrase":{"msg":"*uid=0*"}},{"bool":{"must_not":[{"terms":{"msg":["executable1","executable2","..."]}}]}}, {"bool":{"must_not":[{"match_phrase":{"msg":"no new event"}}]}}, {"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 1
+tags: [attack.enterprise.T1204.002]
+threshold: 1
+timeWindow: 60000

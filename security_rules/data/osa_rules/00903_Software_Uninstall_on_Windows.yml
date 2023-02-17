@@ -1,0 +1,22 @@
+category: application
+ciaLevel: integrity
+component: SI
+eventId: '903'
+eventType: event
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Software Uninstall on Windows
+nameCN: Windows：软件卸载
+parseEsResultKeys: ''
+redisEventKey: event-ts-software-uninstall
+remarkCN: 软件从目标Windows主机 {dataSrcIP} 卸载
+remarks: 'Product: removal completed successfully on Windows host {dataSrcIP}'
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"1034"}},{"match":{"eventId":"11724"}}]}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1562.001]
+threshold: 1
+timeWindow: 30000

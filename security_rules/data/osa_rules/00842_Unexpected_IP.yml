@@ -1,0 +1,24 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '842'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: Unexpected IP
+nameCN: 预期之外IP
+parseEsResultKeys: ''
+redisEventKey: event-ts-unexpected-ip-connect
+remarkCN: 检测到安全基线之外的IP从 {src} 到 {dst}
+remarks: Unexpected IP (not in baseline) from {src} to {dst} is detected.
+requirements: No requirements.
+ruleType: '4'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "conn"}},{"range": {"resp_pkts": {"gt": 0}}},{"range": {"orig_pkts": {"gt":
+  0}}}]}},"size": 1000}'
+source: network
+status: 0
+tags: [attack.enterprise.T1200, attack.enterprise.T1595, attack.ics.T0846]
+threshold: 1
+timeWindow: 30000

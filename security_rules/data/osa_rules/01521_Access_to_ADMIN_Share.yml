@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1521'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Access to ADMIN$ Share
+nameCN: 访问ADMIN$共享
+parseEsResultKeys: ''
+redisEventKey: event-ts-access-to-admin-share
+remarkCN: 主机 {src} 检测到访问ADMIN$共享
+remarks: Host {src} detects access to $ADMIN share
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"bool": {"must": [{"match_phrase": {"eventId": "5140"}},
+  {"match_phrase": {"event_data.ShareName": "Admin$"}}]}}, {"bool": {"must_not": [{"bool":
+  {"must": [{"wildcard": {"event_data.SubjectUserName.keyword": "*$"}}]}}]}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1021.002]
+threshold: 1
+timeWindow: 60000

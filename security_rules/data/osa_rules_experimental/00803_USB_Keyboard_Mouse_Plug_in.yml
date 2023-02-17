@@ -1,0 +1,21 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '803'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: USB Keyboard/Mouse Plug-in
+nameCN: USB键盘设备插入
+parseEsResultKeys: ''
+redisEventKey: event-ts-usb-keyboard-plug-in
+remarkCN: USB键盘设备的插入（发生于：{shost}）
+remarks: USB keyboard plug in{shost}
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg": "A known USB keyboard device
+  was plugged in"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 1
+tags: [operation.usb]
+threshold: 1
+timeWindow: 60000

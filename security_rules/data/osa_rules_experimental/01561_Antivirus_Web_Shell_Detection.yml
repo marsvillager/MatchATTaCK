@@ -1,0 +1,25 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1561'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Antivirus Web Shell Detection
+nameCN: 检测到防病毒Web Shell
+parseEsResultKeys: ''
+redisEventKey: event-ts-antivirus-web-shell-detection
+remarkCN: 主机 {src} 检测到关于Web Shell的高相关防病毒警报
+remarks: Host {src} detects a highly relevant Antivirus alert that reports a web shell
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"should": [{"wildcard":
+  {"event_data.Signature.keyword": "PHP/Backdoor*"}}, {"wildcard": {"event_data.Signature.keyword":
+  "JSP/Backdoor*"}}, {"wildcard": {"event_data.Signature.keyword": "ASP/Backdoor*"}},
+  {"wildcard": {"event_data.Signature.keyword": "Backdoor.PHP*"}}, {"wildcard": {"event_data.Signature.keyword":
+  "Backdoor.JSP*"}}, {"wildcard": {"event_data.Signature.keyword": "Backdoor.ASP*"}},
+  {"wildcard": {"event_data.Signature.keyword": "*Webshell*"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

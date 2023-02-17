@@ -1,0 +1,21 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5087'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: TELNET Bruteforcing
+nameCN: TELNET 密码暴力破解
+parseEsResultKeys: ''
+redisEventKey: event-ts-telnet-bruteforcing
+remarkCN: 攻击机 {src} 发起TELNET暴力破解
+remarks: The attacker {src} launches TELNET bruteforcing.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match":{"duid.keyword":"Telnet::Bruteforcing"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

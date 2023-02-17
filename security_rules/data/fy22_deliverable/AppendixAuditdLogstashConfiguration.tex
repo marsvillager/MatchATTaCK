@@ -1,0 +1,36 @@
+% !TEX root = ./AdditionalOsaRules.tex
+
+%%%
+%
+% Version 0.1
+%
+%%%
+
+\section*{Auditd Logstash Configuration}
+\addcontentsline{toc}{section}{\protect\numberline{}Auditd Logstash Configuration}%
+\label{appendix:auditdlogstashconfiguration}
+
+\begin{lstlisting}[language=json,firstnumber=1]
+
+filter {
+    if "deviceSyslog" in [tags] {
+        if [program] == "tag_audit_log" { 
+            mutate {
+                gsub => ["msg","\u001D", " "]
+            }
+            kv {
+                source => "msg"
+                include_keys => ["type","key"]
+            }
+            mutate {
+                rename => { "type" => "auditdType"}
+                rename => { "key" => "auditdKey"}
+            }
+        }
+    }    
+}
+
+\end{lstlisting}
+
+\pagebreak
+

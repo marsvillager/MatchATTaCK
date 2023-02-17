@@ -1,0 +1,26 @@
+category: operation  
+ciaLevel: integrity  
+component: SI  
+description: This rule detects the successful or failed login of an administrator to the FortiGate firewall  
+eventId: '15800'  
+eventType: alert  
+impact: ''  
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'  
+name: FortiGate firewall admin login
+nameCN:   
+os:   
+product:   
+parameters:  
+threshold: 1  
+timeWindow: 60000  
+parseEsResultKeys: ''  
+redisEventKey: event-fortigate-firewall-admin-login
+remarkCN:   
+remarks: A successful or failed login of an administrator to the FortiGate firewall was detected from {dataSrcIP}   
+requirements: The FortiGate firewall sends syslogs to OSA and Logstash is configured appropriately.  
+ruleType: '1'  
+script: '{ "query": { "bool": { "must": [ { "bool": { "should": [ { "wildcard": { "fortigateLogid": "????032001" } }, { "wildcard": { "fortigateLogid": "????032002" } } ] } }, { "range": { "@timestamp": { "gte": "<bt>", "lt": "<et>" } } } ] } }, "size": 1000 }'  
+source:   
+status: 1  
+tags: [attack.enterprise.T1078]  
+

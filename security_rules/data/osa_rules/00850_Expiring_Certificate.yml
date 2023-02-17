@@ -1,0 +1,22 @@
+category: vulnerability
+ciaLevel: confidentiality
+component: SI
+eventId: '850'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Expiring Certificate
+nameCN: 即将过期证书
+parseEsResultKeys: ''
+redisEventKey: event-ts-expiring-certificate-use
+remarkCN: 主机 {src} 使用即将过期证书
+remarks: Expiring certificate is used by host {src}.
+requirements: Extract HTTP/TLS certificate from network traffic and identify whether
+  there is soon-to-expire certificte used.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match_phrase":{"duid":"SSL::Certificate_Expires_Soon"}}]}},"size":1000}'
+source: network
+status: 0
+tags: ~
+threshold: 1
+timeWindow: 120000

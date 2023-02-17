@@ -1,0 +1,61 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1587'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Suspicious Remote Thread Created
+nameCN: 可疑的远程线程创建
+parseEsResultKeys: ''
+redisEventKey: event-ts-suspicious-remote-thread-created
+remarkCN: 虽然攻击技术正在从使用"CreateRemoteThread"之类的API转变，但现在仍然在很大程度上能观察到。主机 {src} 检测到可疑进程(不希望像word.exe或outlook.exe那样运行的进程)在其他进程上创建远程线程。
+remarks: Offensive tradecraft is switching away from using APIs like "CreateRemoteThread",
+  however, this is still largely observed in the wild. Host {src} detects suspicious
+  processes (those we would not expect to behave in this way like word.exe or outlook.exe)
+  creating remote threads on other processes.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase":
+  {"EventLog": "Microsoft-Windows-Sysmon"}}, {"bool": {"must": [{"match_phrase": {"eventId":
+  "8"}}, {"bool": {"should": [{"wildcard": {"event_data.SourceImage.keyword": "*\\\\bash.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\cvtres.exe"}}, {"wildcard":
+  {"event_data.SourceImage.keyword": "*\\\\defrag.exe"}}, {"wildcard": {"event_data.SourceImage.keyword":
+  "*\\\\dnx.exe"}}, {"wildcard": {"event_data.SourceImage.keyword": "*\\\\esentutl.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\excel.exe"}}, {"wildcard":
+  {"event_data.SourceImage.keyword": "*\\\\expand.exe"}}, {"wildcard": {"event_data.SourceImage.keyword":
+  "*\\\\explorer.exe"}}, {"wildcard": {"event_data.SourceImage.keyword": "*\\\\find.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\findstr.exe"}}, {"wildcard":
+  {"event_data.SourceImage.keyword": "*\\\\forfiles.exe"}}, {"wildcard": {"event_data.SourceImage.keyword":
+  "*\\\\git.exe"}}, {"wildcard": {"event_data.SourceImage.keyword": "*\\\\gpupdate.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\hh.exe"}}, {"wildcard": {"event_data.SourceImage.keyword":
+  "*\\\\iexplore.exe"}}, {"wildcard": {"event_data.SourceImage.keyword": "*\\\\installutil.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\lync.exe"}}, {"wildcard":
+  {"event_data.SourceImage.keyword": "*\\\\makecab.exe"}}, {"wildcard": {"event_data.SourceImage.keyword":
+  "*\\\\mDNSResponder.exe"}}, {"wildcard": {"event_data.SourceImage.keyword": "*\\\\monitoringhost.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\msbuild.exe"}}, {"wildcard":
+  {"event_data.SourceImage.keyword": "*\\\\mshta.exe"}}, {"wildcard": {"event_data.SourceImage.keyword":
+  "*\\\\msiexec.exe"}}, {"wildcard": {"event_data.SourceImage.keyword": "*\\\\mspaint.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\outlook.exe"}}, {"wildcard":
+  {"event_data.SourceImage.keyword": "*\\\\ping.exe"}}, {"wildcard": {"event_data.SourceImage.keyword":
+  "*\\\\powerpnt.exe"}}, {"wildcard": {"event_data.SourceImage.keyword": "*\\\\powershell.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\provtool.exe"}}, {"wildcard":
+  {"event_data.SourceImage.keyword": "*\\\\python.exe"}}, {"wildcard": {"event_data.SourceImage.keyword":
+  "*\\\\regsvr32.exe"}}, {"wildcard": {"event_data.SourceImage.keyword": "*\\\\robocopy.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\runonce.exe"}}, {"wildcard":
+  {"event_data.SourceImage.keyword": "*\\\\sapcimc.exe"}}, {"wildcard": {"event_data.SourceImage.keyword":
+  "*\\\\schtasks.exe"}}, {"wildcard": {"event_data.SourceImage.keyword": "*\\\\smartscreen.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\spoolsv.exe"}}, {"wildcard":
+  {"event_data.SourceImage.keyword": "*\\\\tstheme.exe"}}, {"wildcard": {"event_data.SourceImage.keyword":
+  "*\\\\userinit.exe"}}, {"wildcard": {"event_data.SourceImage.keyword": "*\\\\vssadmin.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\vssvc.exe"}}, {"wildcard":
+  {"event_data.SourceImage.keyword": "*\\\\w3wp.exe*"}}, {"wildcard": {"event_data.SourceImage.keyword":
+  "*\\\\winlogon.exe"}}, {"wildcard": {"event_data.SourceImage.keyword": "*\\\\winscp.exe"}},
+  {"wildcard": {"event_data.SourceImage.keyword": "*\\\\wmic.exe"}}, {"wildcard":
+  {"event_data.SourceImage.keyword": "*\\\\word.exe"}}, {"wildcard": {"event_data.SourceImage.keyword":
+  "*\\\\wscript.exe"}}]}}]}}, {"bool": {"must_not": [{"bool": {"must": [{"wildcard":
+  {"event_data.SourceImage.keyword": "*Visual Studio*"}}]}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

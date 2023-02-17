@@ -1,0 +1,23 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '5030'
+eventType: warning
+impact: ''
+keys: ''
+name: 'HTTP: Firmware Upgrade'
+nameCN: '固件升级: 通过HTTP协议传输'
+parseEsResultKeys: ''
+redisEventKey: event-ts-http-firmware-upgrade
+remarkCN: 通过HTTP协议传输的 PLC 固件版本发生变化
+remarks: PLC firmware upgraded/downgraded by HTTP.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "http"}},{"match_phrase": {"requestMethod": "POST"}},{"match_phrase":
+  {"request": "button=EvWbmLoadSaveHttpLoadButton_8_46_69_72_6d_77_61_72_65"}},{"match_phrase":
+  {"request": "isupload=true"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

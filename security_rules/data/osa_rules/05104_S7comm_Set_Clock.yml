@@ -1,0 +1,23 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '5104'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'S7comm: Set Clock'
+nameCN: 'S7comm: 设置时钟'
+parseEsResultKeys: ''
+redisEventKey: event-ts-set-clock
+remarkCN: 主机{src}设置了PLC{dst}时钟
+remarks: Host {src} set clock on PLC {dst}.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"s7_plc_func"}},{"match_phrase":{"rosctr.keyword":"Time
+  functions: Time Set"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

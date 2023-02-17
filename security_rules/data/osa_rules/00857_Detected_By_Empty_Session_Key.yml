@@ -1,0 +1,23 @@
+category: network
+ciaLevel: confidentiality
+component: SI
+eventId: '857'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: Detected By Empty Session Key
+nameCN: 空会话密钥使用
+parseEsResultKeys: ''
+redisEventKey: event-ts-lateral-movement
+remarkCN: 源主机{src}使用空会话凭证访问目标主机 {dst}
+remarks: Host {src} utilize Empty Session Key on host {dst}.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match_phrase":{"msg":"Detected
+  attempt with 2017-0144 or 2017-0146"}}]}},"size":1000}'
+source: network
+status: 1
+tags: [attack.enterprise.T1210, attack.enterprise.T1203]
+threshold: 1
+timeWindow: 180000

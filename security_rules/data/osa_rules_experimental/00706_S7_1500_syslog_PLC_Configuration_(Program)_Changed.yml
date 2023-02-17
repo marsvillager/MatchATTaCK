@@ -1,0 +1,21 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '706'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'S7-1500 syslog: PLC Configuration (Program) Changed'
+nameCN: 'S7-1500 syslog: PLC组态(程序)变更'
+parseEsResultKeys: ''
+redisEventKey: event-ts-configuration-(program)-changed
+remarkCN: S71500 PLC设备 {src} 发生PLC组态(程序)变更
+remarks: Download configuration to S7-1500 {src}.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"Actual (previous) program
+  signature"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

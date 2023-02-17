@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: This rule identifies situations in which Windows was not able to write information related to a given event in the event log. The related issue might have different root causes (e.g., with regard to security, the correct behavior of the Windows logging service might be impaired by an attacker owning the machine). Generally, such root cause might be further investigated by looking at further Windows events preceding the one under analysis.
+eventId: 15002
+eventType: event
+impact: ''
+keys: ''
+name: Event Logging Service Error
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic
+requirements: None.
+redisEventKey: event-logging-service-error
+remarkCN: ''
+remarks: The Windows logging service encountered an error.
+ruleType: '1'
+script: '{ "query":{ "bool":{ "must":[ { "match":{ "eventId":"1108" } }, { "match":{ "cat":"winEvent" } }, { "range":{ "@timestamp":{ "gt":"<bt>", "lt":"<et>" } } } ] } }, "size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1562]
+threshold: 1
+timeWindow: 60000

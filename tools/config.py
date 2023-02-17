@@ -2,6 +2,9 @@ import os
 
 
 class Config:
+    """
+    Variables.
+    """
     BASE_DIR: str = os.path.dirname(os.path.dirname(__file__))
 
     URL: str = "https://github.com/mitre/cti.git"
@@ -12,8 +15,8 @@ class Config:
 
     EXTEND_STOP_WORD: list[str] = ["citation", "may", "e.g", "e.g.", "'s", "att", "ck", 'like', 'particular']
 
-    SECURITY_RULES_PROP: list[str] = ['category', 'name', 'remarks']
-    # SECURITY_RULES_PROP: list[str] = ['category', 'name', 'remarks', 'description']
+    # SECURITY_RULES_PROP: list[str] = ['category', 'name', 'remarks']
+    SECURITY_RULES_PROP: list[str] = ['category', 'name', 'remarks', 'description']
 
     FILTER_PUNCTUATIONS: list[str] = [r"\\", r"//", r"~/", r"\~/", r"/\/", r"\\\\.\\", r"\\\\"]
 

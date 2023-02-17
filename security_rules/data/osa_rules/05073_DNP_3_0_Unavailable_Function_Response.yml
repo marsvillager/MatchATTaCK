@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5073'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'DNP 3.0: Unavailable Function Response'
+nameCN: 'DNP 3.0: 不可用功能响应'
+parseEsResultKeys: ''
+redisEventKey: event-ts-dnp-unavailable-function-response
+remarkCN: 攻击机 {src} 篡改相应报文功能码字段为NOT_SUPPORTED，造成设备 {dst} 无法被调度
+remarks: The attacker {src} tampers with the corresponding message, and the function
+  code field is NOT_SUPPORTED, causing the equipment {dst} to be unable to be scheduled
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"bool":{"should":[{"match":{"duid.keyword":"DNP3_LINK::DNP3_UNAVAILABLE_FUNCTION"}},{"match":{"duid.keyword":"DNP3_MITM::DNP3_MAN_IN_MID_MODIFY_UNAVAILABLE"}}]}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

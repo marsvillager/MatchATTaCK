@@ -1,0 +1,31 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1557'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Activity Related to NTDS.dit Domain Hash Retrieval
+nameCN: NTDS.dit域哈希检索相关的活动
+parseEsResultKeys: ''
+redisEventKey: event-ts-activity-related-to-ntds-dit-domain-hash-retrieval
+remarkCN: 主机 {src} 检测到可能与使用卷影复制从NTDS.dit文件远程窃取和检索哈希值的活动相关的可疑命令
+remarks: Host {src} detects suspicious commands that could be related to activity
+  that uses volume shadow copy to steal and retrieve hashes from the NTDS.dit file
+  remotely
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"should": [{"match_phrase":
+  {"event_data.CommandLine": "vssadmin.exe Delete Shadows"}}, {"match_phrase": {"event_data.CommandLine":
+  "vssadmin create shadow /for=C:"}}, {"wildcard": {"event_data.CommandLine.keyword":
+  "copy \\\\\\\\?\\\\GLOBALROOT\\\\Device\\\\*\\\\windows\\\\ntds\\\\ntds.dit"}},
+  {"wildcard": {"event_data.CommandLine.keyword": "copy \\\\\\\\?\\\\GLOBALROOT\\\\Device\\\\*\\\\config\\\\SAM"}},
+  {"match_phrase": {"event_data.CommandLine": "vssadmin delete shadows /for=C:"}},
+  {"match_phrase": {"event_data.CommandLine": "reg SAVE HKLM\\SYSTEM "}}, {"wildcard":
+  {"event_data.CommandLine.keyword": "esentutl.exe /y /vss *\\\\ntds.dit*"}}, {"wildcard":
+  {"event_data.CommandLine.keyword": "esentutl.exe /y /vss *\\\\SAM"}}, {"wildcard":
+  {"event_data.CommandLine.keyword": "esentutl.exe /y /vss *\\\\SYSTEM"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

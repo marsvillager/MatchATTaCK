@@ -1,0 +1,30 @@
+category: operation,network
+ciaLevel: confidentiality
+component: SI
+description: S7comm (S7 Communication) is a Siemens proprietary protocol that runs
+  between programmable logic controllers (PLCs) of the Siemens S7-300/400 family.
+  It is used for PLC programming, exchanging data between PLCs, accessing PLC data
+  from SCADA (supervisory control and data acquisition) systems and diagnostic purposes.
+  This indicator help user to detect download configuration command on target PLC
+eventId: '863'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'S7Comm: Download PLC configuration'
+nameCN: S7Comm：下载PLC组态
+parseEsResultKeys: ''
+redisEventKey: event-ts-download-configuration
+remarkCN: 主机 {src} 下载组态至目标PLC {dst}
+remarks: Host {src} DOWNLOAD configuration to PLC {dst}
+requirements: Upload activity is identified, MC7 code is recovered and downloaded.
+  The block part of the uploaded code and the previous code will be compared. Difference
+  will be displayed on Asset Detail -> Change (control program)
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"msg": "request download"}}]}},"size": 1000}'
+source: network
+status: 0
+tags: [operation.local, attack.ics.T0843]
+threshold: 1
+timeWindow: 180000

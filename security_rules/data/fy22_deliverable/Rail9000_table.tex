@@ -1,0 +1,48 @@
+% !TEX root = ./AdditionalOsaRules.tex
+
+%%%
+%
+% Version 0.1
+%
+%%%
+
+\section*{Rail9000 Products Family}
+\addcontentsline{toc}{section}{\protect\numberline{}Rail9000 Products Family}%
+
+The following table lists the detection use cases selected during the Rail9000 workshops (for more information, please, refer to the related Excel file). Every use case is associated with the corresponding OSA correlation rules.
+
+\begin{center}
+	\begin{longtable}{P{.3\textwidth}P{.6\textwidth}}
+		\hline
+		\textbf{Use Case} & \textbf{Rules} \\
+		\hline
+		Repeated Failed Login & \makecell[tl]{12020-Windows-Brute-Force \\ 15101-Repeated-Failed-Login~[\ref{15101}]} \\
+		Access Unlocked & \makecell[tl]{15699-Access-Unlocked~[\ref{15699}]} \\
+		Login at Unusual Time & \makecell[tl]{15698-Login-At-Unusual-Time-Linux~[\ref{15698}]} \\
+		Anomalous Protocol & \makecell[tl]{``OSA Built-in Capability''} \\
+		File Share Client-Side Access & \makecell[tl]{00943-Network-Share-Access-on-Windows} \\
+		File Share Server-Side Access & \makecell[tl]{00943-Network-Share-Access-on-Windows} \\ 
+		New Asset & \makecell[tl]{00201-Asset-Connected} \\
+		Removed Asset & \makecell[tl]{00201-Asset-Disconnected} \\
+		Network Topology Modification & \makecell[tl]{``OSA Built-in Capability''} \\
+		Malicious Connection & \makecell[tl]{``OSA Built-in Capability'' \\ 12004-Telnetd-Debian-Connection \\ 08020-A-TCP-connection-was-detected \\ 01511-Vulnerable-Netlogon-Secure-Channel-Connection-Allowed} \\
+		Anomalous Connection & \makecell[tl]{``OSA Built-in Capability''} \\
+		Insecure Communication & \makecell[tl]{00853-Insecure-SSL-TLS-Version \\ 00854-Insecure-SSL-TLS-Cyphers} \\
+		Application Installation/Removal & \makecell[tl]{15697-Application-Installation-Linux~[\ref{15697}] \\ 15696-Application-Removal-Linux~[\ref{15696}]} \\
+		New File Share & \makecell[tl]{15041-New-File-Share~[\ref{15041}]} \\
+		New Directory/File & \makecell[tl]{15651-Generic-File-Write~[\ref{15651}]} \\
+		Removed Directory/File & \makecell[tl]{15653-Generic-File-Remove~[\ref{15653}]} \\
+		Access to Directory/File & \makecell[tl]{15650-Generic-File-Read~[\ref{15650}]} \\
+		Modification to Directory/File & \makecell[tl]{15651-Generic-File-Write~[\ref{15651}]} \\
+		Malicious Process Execution & \makecell[tl]{15660-Malicious-Process-Execution~[\ref{15660}]} \\
+		Anomalous Process Execution with High Privileges & \makecell[tl]{15662-Anomalous-Process-Execution-With-High-Privileges~[\ref{15662}]} \\
+		New USB Input/Output Device Connected & \makecell[tl]{15695-New-Usb-Device-Plugged-In~[\ref{15695}]} \\
+		OS User Account Creation & \makecell[tl]{15670-Os-User-Account-Creation-Linux~[\ref{15670}]} \\
+		OS High-Privilege User Account Creation & \makecell[tl]{15671-Os-High-Privilege-User-Account-Creation-Linux~[\ref{15671}]} \\
+		OS Temporary User Account & \makecell[tl]{15672-Os-Temporary-User-Account-Linux~[\ref{15672}]} \\
+		System Log Cleared & \makecell[tl]{15653-Generic-File-Remove~[\ref{15653}]} \\
+    		\hline
+	\end{longtable}
+\end{center}
+
+

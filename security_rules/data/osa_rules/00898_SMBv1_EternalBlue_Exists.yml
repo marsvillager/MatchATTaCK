@@ -1,0 +1,25 @@
+category: vulnerability,network
+ciaLevel: integrity
+component: SI
+description: Monitor EternalBlue vulnerability on Windows host, If detected, an event
+  will be prompted.
+eventId: '898'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'SMBv1: EternalBlue Exists'
+nameCN: SMBv1：EternalBlue漏洞存在
+parseEsResultKeys: ''
+redisEventKey: event-ts-eternalblue-exists
+remarkCN: Windows 主机 {src} 存在EternalBlue漏洞
+remarks: Windows host {src} has EternalBlue related vulnerability
+requirements: Identify if the target host responses to the SMB datagram and shows
+  the EternalBlue vulnerability exists.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match_phrase":
+  {"duid": "EternalBlueExists"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0866, attack.enterprise.T1210]
+threshold: 1
+timeWindow: 60000

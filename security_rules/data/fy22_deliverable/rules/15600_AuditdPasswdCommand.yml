@@ -1,0 +1,26 @@
+category: account 
+ciaLevel: integrity
+component: SI 
+description: This rule detects the execution of the /usr/bin/passwd binary that is used to change the password of a user account.  
+eventId: '15600' 
+eventType: alert 
+impact: '' 
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}' 
+name: Auditd passwd command 
+nameCN:  
+os: linux 
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+product: generic, dcs, rail9000 
+threshold: 1 
+timeWindow: 60000 
+parseEsResultKeys: ''
+redisEventKey: event-auditd-passwd-command
+remarkCN: ''
+remarks: The passwd command was executed on Linux host {dataSrcIP} 
+requirements: Auditd should be configured (an example of a suitable configuration has been provided in the repository). Furthermore, Logstash should be configured to ingest the related data (also in this case, an example of a suitable configuration has been provided in the repository).
+ruleType: '1' 
+script: '{ "query": { "bool": { "must": [ { "match": { "auditdType": "SYSCALL" } }, { "match": { "auditdKey": "binpasswd" } }, { "range": { "@timestamp": { "gte": "<bt>", "lt": "<et>" } } } ] } }, "size": 1000 }' 
+source: '' 
+status: 0 
+tags: [attack.enterprise.T1098] 

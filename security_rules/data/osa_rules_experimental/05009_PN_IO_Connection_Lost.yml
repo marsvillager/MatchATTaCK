@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '5009'
+eventType: event
+impact: ''
+keys: '{"smac":{"en":"Source MAC", "zh":"源MAC"}, "dmac":{"en":"Destination MAC", "zh":"目标MAC"}}'
+name: 'PN-IO: Connection Lost'
+nameCN: 'PN-IO: IO通信丢失'
+parseEsResultKeys: ''
+redisEventKey: event-ts-connection-lost
+remarkCN: 主机 {smac} 和主机 {dmac} 的PN-IO通信丢失
+remarks: Host {smac} lost PN-IO connection with host {dmac}
+ruleType: '4'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":{"app":"PN_IO"}},{"match":
+  {"cat": "conn"}},{"exists": {"field": "smac"}},{"exists": {"field": "dmac"}}]}},"size":
+  1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

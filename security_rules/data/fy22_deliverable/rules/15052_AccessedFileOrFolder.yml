@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: confidentiality
+component: SI
+description: This rule identifies situations in which a known file or folder is accessed in a Windows system. The unexpected access of files or folders might be due to attackers' activities on the system and can have different meanings (e.g., data stealing, etc.). Such a rule is very generic and shall be normally used in quite static environments and always used with care no to raise false positives. Alternatively, the rule can be further specified (e.g., restricted) by using field "s\_targetFilename" to identify a given section of the file system.
+eventId: 15052
+eventType: event
+impact: ''
+keys: ''
+name: Accessed File or Folder
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, vicosoc100, vicoss&d
+requirements: This rule requires the directory/file to be configured so that the event is generated (for more information, please, visit the following link https://www.manageengine.com/products/active-directory-audit/how-to/monitor-file-and-folder-access-on-windows-file-server.html)
+redisEventKey: event-file-accessed
+remarkCN: ''
+remarks: A file/folder was accessed
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"4663"}},{"match":{"cat":"winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

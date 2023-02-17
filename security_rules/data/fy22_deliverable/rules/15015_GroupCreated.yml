@@ -1,0 +1,26 @@
+category: account
+ciaLevel: integrity
+component: SI
+description: "As for the ``user creation'' rule, this one identifies situations in which a new group (with local, global or universal scopes) is created. Attackers might sometimes create groups to pivot from or to obtain multiple accounts footholds (e.g., in case one of the compromised or newly created account was deleted)."
+eventId: 15015
+eventType: alert
+impact: ''
+keys: ''
+name: Group Created
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic
+requirements: None.
+redisEventKey: event-group-created
+remarkCN: ''
+remarks: A new group was created
+ruleType: '1'
+script: '{ "query":{ "bool":{ "must":[ { "bool":{ "should":[ { "match":{ "eventId":"4754" } }, { "match":{ "eventId":"4727" } }, { "match":{ "eventId":"4731" } } ] } }, { "match":{ "cat":"winEvent" } }, { "range":{ "@timestamp":{ "gt":"<bt>", "lt":"<et>" } } } ] } }, "size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1136]
+threshold: 1
+timeWindow: 60000

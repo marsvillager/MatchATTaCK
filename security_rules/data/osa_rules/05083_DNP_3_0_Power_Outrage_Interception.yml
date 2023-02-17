@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5083'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'DNP 3.0: Power Outrage Interception'
+nameCN: 'DNP 3.0: 停电拦截'
+parseEsResultKeys: ''
+redisEventKey: event-ts-dnp-power-outrage-interception
+remarkCN: 攻击机 {src} 冒充主机，篡改了设备 {dst} 的断路器动作阈值，造成断路器异常断开
+remarks: The attacker {src} pretended to be the host and tampered with the circuit
+  breaker action threshold of the device {dst}, resulting in abnormal disconnection
+  of the circuit breaker
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match":{"duid.keyword":"DNP3_APPL::DNP3_POWER_OUTRAGE"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

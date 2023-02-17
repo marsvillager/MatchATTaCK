@@ -1,0 +1,46 @@
+% !TEX root = ./AdditionalOsaRules.tex
+
+%%%
+%
+% Version 0.1
+%
+%%%
+
+\section*{OSA Correlation Rule Template}
+\addcontentsline{toc}{section}{\protect\numberline{}OSA Correlation Rule Template}%
+\label{appendix:osacorrelationruletemplate}
+
+\begin{lstlisting}[language=json,firstnumber=1]
+
+category: ... # categories of OSA defined diemensions, e.g., Asset, Network, Account, Application, Vulnerbility, Attack
+ciaLevel: ... # The most relevant aspect of CIA model
+component: ... # Internal only, to indicate which Service will execute the rule
+description: ... # Description of security event
+eventId: '...' # Unique identifer of security event
+eventType: ... # security event level
+impact: '...' # reserved
+keys: '...' # used for multiple languages supporting for dynamic parameters within remarks.
+name: ... # name of security event
+nameCN: ... # Chinese name of security event
+os: ... # applicable operating system 
+product: ... # applicable product
+parameters: # parameters of security event
+ a: ...
+ b: ...
+threshold: ... # threshold to trigger the security event
+timeWindow: ... # time window of analysis scope
+parseEsResultKeys: '...' # aggregation/buckets parameters of DSL script
+redisEventKey: ... # Internal use only for memory cache; to create, use the "name" field, put "event" at the beginning, all lower case, with dash in between.
+remarkCN: ... # Chinese description w/ dynamic key factors of security event
+remarks: ... # description w/ dynamic key factors of security event
+requirements: ... # requirement of security event
+ruleType: '...' # Internal use only
+script: '...' # DSL script
+source: ... # reserved to indicate security raw data inputs
+status: ... # enabled or disabled
+tags: ...,...,... # tags based on ATT&CK framework or other categories
+
+\end{lstlisting}
+
+\pagebreak
+

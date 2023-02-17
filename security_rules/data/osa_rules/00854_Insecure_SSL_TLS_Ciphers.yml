@@ -1,0 +1,23 @@
+category: vulnerability
+ciaLevel: confidentiality
+component: SI
+description: Monitor insecure SSL/TLS ciphers has been used on network, and event
+  will be prompted.
+eventId: '854'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Insecure SSL/TLS Ciphers
+nameCN: SSL/TLS加密强度低
+parseEsResultKeys: ''
+redisEventKey: event-ts-unsafe-SSL-ciphers-use
+remarkCN: 主机 {src} 使用强度SSL/TLS加密算法
+remarks: Insecure SSL/TLS cipher is used by host {src}.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match_phrase":{"duid":"SSL::Weak_Cipher"}}]}},"size":1000}'
+source: network
+status: 0
+tags: [attack.enterprise.T1573]
+threshold: 1
+timeWindow: 120000

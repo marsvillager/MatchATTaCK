@@ -1,0 +1,22 @@
+category: account,network
+ciaLevel: integrity
+component: SI
+eventId: '894'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'SMB: Windows Logon Failure'
+nameCN: SMB：Windows登录认证失败
+parseEsResultKeys: ''
+redisEventKey: event-ts-windows-logon-failure
+remarkCN: 账户试图登录Windows主机 {src} ，认证失败
+remarks: Account logon failure on Windows host {src}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match_phrase":
+  {"duid": "SMB2LogonFailure"}}]}},"size":1000}'
+source: T0802,T0888
+status: 0
+tags: ~
+threshold: 1
+timeWindow: 60000

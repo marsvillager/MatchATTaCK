@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: 'This rules triggers every time a new external usb device is connected to and recognized by a Linux operating system. Attackers can use external devices to inject malicious code capable of compromising system operation or exfiltrate data. In both cases, any attempt of a system to exchange data whenever unexpected should be alerted right away.'
+eventId: 15695
+eventType: alert
+impact: ''
+keys: ''
+name: New Usb Device Plugged-in (Linux)
+nameCN: ''
+os: linux
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, rail9000
+requirements: None.
+redisEventKey: event-usb-device-plugin-linux
+remarkCN: ''
+remarks: A USB device was plugged in
+ruleType: '1'
+script: '{ "query":{ "bool":{ "must":[ { "match": { "msg": "usb" } }, { "match": { "msg": "new" } }, {"bool":{"must_not":[{"match_phrase":{"msg":"no new event"}}]}}, { "range":{ "@timestamp":{ "gt":"<bt>", "lt":"<et>" } } } ] } }, "size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1200]
+threshold: 1
+timeWindow: 60000

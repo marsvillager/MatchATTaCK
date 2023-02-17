@@ -1,0 +1,20 @@
+category: application
+ciaLevel: integrity
+component: SI
+eventId: '953'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Unexpected (running) Service
+nameCN: 预期之外服务
+parseEsResultKeys: ''
+redisEventKey: unexpected-service
+remarkCN: 主机 {src} 上存在预期之外的服务
+remarks: Unexpected service runs on host {src}
+ruleType: '1'
+script: '{"query":{"constant_score":{"filter":{"bool":{"must":[{"term":{"id":953}},{"script":{"script":"!list_to_check.contains(doc[''service_name''].value);","params":{"list_to_check":["audioendpointbuilder","cdpsvc"]}}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}}}},"size":1000}'
+source: ''
+status: 1
+tags: ''
+threshold: 1
+timeWindow: 86400000

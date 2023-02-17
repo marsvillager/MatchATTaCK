@@ -1,0 +1,25 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1507'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: COMPlus_ETWEnabled Registry Modification
+nameCN: COMPlus_ETWEnabled注册表修改
+parseEsResultKeys: ''
+redisEventKey: event-ts-complus-etwenabled-registry-modification
+remarkCN: 主机 {src} 停止ETW提供记录加载.NET组件
+remarks: Potential adversaries {src} stopping ETW providers recording loaded .NET
+  assemblies.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4657"}}, {"match_phrase":
+  {"event_data.NewValue": "0"}}, {"wildcard": {"event_data.ObjectName.keyword": "*\\\\SOFTWARE\\\\Microsoft\\\\.NETFramework"}},
+  {"match_phrase": {"event_data.ObjectValueName": "ETWEnabled"}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1562, attack.enterprise.T1112]
+threshold: 1
+timeWindow: 60000

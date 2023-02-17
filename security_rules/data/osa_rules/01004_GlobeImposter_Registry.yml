@@ -1,0 +1,22 @@
+category: attack,malware
+ciaLevel: integrity
+component: SI
+eventId: '1004'
+eventType: alert
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: GlobeImposter Registry
+nameCN: GlobeImposter注册表项
+parseEsResultKeys: ''
+redisEventKey: event-ts-globeimposter-registry
+remarkCN: 主机 {dataSrcIP} 存在可疑GlobeImposter恶意程序注册表信息
+remarks: Registry item created by GlobeImposter was detected on host {dataSrcIP}
+requirements: Test if there is registry table entry created by GlobaImposter
+ruleType: '4'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"exists":
+  {"field": "s_targetObject"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [malware.host, attack.enterprise.T1112, query_unclear]
+threshold: 1
+timeWindow: 30000

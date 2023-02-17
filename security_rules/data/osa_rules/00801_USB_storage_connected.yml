@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '801'
+eventType: warning
+impact: ''
+keys: '{"shost":{"en":"Source Host", "zh":"源主机"}}'
+name: USB storage connected
+nameCN: USB存储设备插入
+parseEsResultKeys: ''
+redisEventKey: event-ts-usb-storage-plug-in
+remarkCN: USB存储设备的插入（发生于：{shost}）
+remarks: USB storage device was plugged in {shost}
+requirements: 'If USB stick is inserted, following event would be triggered:
+
+  1. If USB stick is on the allowlist, event type would be "Event".
+
+  2. If USB stick is not on the allowlist, event type would be "Warning".'
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"cat": "winEvent"}},{"match":{"eventId":
+  "2101"}},{"match_phrase_prefix": {"msg": "*_USBSTOR*"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: [operation.usb, attack.ics.T0847, attack.enterprise.T1091]
+threshold: 1
+timeWindow: 60000

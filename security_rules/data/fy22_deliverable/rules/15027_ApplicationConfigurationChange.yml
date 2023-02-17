@@ -1,0 +1,27 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: This rule identifies situations in which the configuration of a known Windows application is modified. Attackers can manually or automatically tamper the configuration of an application to perform malicious tasks (e.g., exploiting known vulnerabilities, spread across communicating devices, etc.) or subvert the coorect functioning of a system in a transparent way.
+eventId: 15027
+eventType: warning
+impact: ''
+keys: ''
+name: Application Configuration Change
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+ ConfigurationFileX: The configuration file of the application
+parseEsResultKeys: ''
+product: generic
+requirements: None.
+redisEventKey: event-application-configuration-changed
+remarkCN: ''
+remarks: An application configuration was changed.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"4663"}},{"terms":{"event_data.AccessList":["%%4417","%%4418","%%4420","%%4424","%%1539","%%1540"]}},{"match_phrase":{"s_targetFilename":"ConfigurationFileX*"}},{"match":{"cat":"winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 1
+tags: [attack.enterprise.T1565]
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,23 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '5103'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'S7comm: Read Clock'
+nameCN: 'S7comm: 读取时钟'
+parseEsResultKeys: ''
+redisEventKey: event-ts-read-clock
+remarkCN: 主机{src}读取了PLC{dst}时钟
+remarks: Host {src} read clock from PLC {dst}.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"s7_plc_func"}},{"match_phrase":{"rosctr.keyword":"Time
+  functions: Time Read"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

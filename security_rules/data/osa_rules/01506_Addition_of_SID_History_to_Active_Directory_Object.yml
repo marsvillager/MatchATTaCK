@@ -1,0 +1,28 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1506'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Addition of SID History to Active Directory Object
+nameCN: 将SID历史记录添加到AD对象中
+parseEsResultKeys: ''
+redisEventKey: event-ts-addition-of-sid-history-to-active-directory-object
+remarkCN: 攻击者 {src} 使用SID记录属性获得其他特权
+remarks: An attacker {src} can use the SID history attribute to gain additional privileges.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"bool": {"should": [{"bool": {"should": [{"match_phrase":
+  {"eventId": "4765"}}, {"match_phrase": {"eventId": "4766"}}]}}, {"bool": {"must":
+  [{"match_phrase": {"EventLog": "Security"}}, {"bool": {"must": [{"match_phrase":
+  {"eventId": "4738"}}, {"bool": {"must_not": [{"bool": {"must": [{"bool": {"should":
+  [{"match_phrase": {"event_data.SidHistory": "-"}}, {"match_phrase": {"event_data.SidHistory":
+  "%%1793"}}]}}]}}]}}]}}, {"bool": {"must_not": [{"bool": {"must": [{"bool": {"must_not":
+  {"exists": {"field": "event_data.SidHistory"}}}}]}}]}}]}}]}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1134.005]
+threshold: 1
+timeWindow: 60000

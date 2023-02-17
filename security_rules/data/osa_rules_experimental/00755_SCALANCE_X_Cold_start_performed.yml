@@ -1,0 +1,20 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '755'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'SCALANCE X: Cold start performed'
+nameCN: SCALANCE X：冷启动
+parseEsResultKeys: ''
+redisEventKey: event-ts-cold-start-performed
+remarkCN: SCALANCE X交换机 {src} 冷启动
+remarks: SCALANCE X {src} Cold START
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"Cold start performed"}},{"match_phrase":{"cat":"ScalanceX"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

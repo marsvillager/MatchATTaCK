@@ -1,0 +1,28 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1569'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Windows Pcap Drivers
+nameCN: Windows Pcap驱动程序
+parseEsResultKeys: ''
+redisEventKey: event-ts-windows-pcap-drivers
+remarkCN: 根据关联的.sys文件列表，主机 {src} 检测到Windows Pcap驱动程序安装
+remarks: Host {src} detects Windows Pcap driver installation based on a list of associated
+  .sys files.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase":
+  {"eventId": "4697"}}, {"bool": {"should": [{"wildcard": {"event_data.ServiceFileName.keyword":
+  "*pcap*"}}, {"wildcard": {"event_data.ServiceFileName.keyword": "*npcap*"}}, {"wildcard":
+  {"event_data.ServiceFileName.keyword": "*npf*"}}, {"wildcard": {"event_data.ServiceFileName.keyword":
+  "*nm3*"}}, {"wildcard": {"event_data.ServiceFileName.keyword": "*ndiscap*"}}, {"wildcard":
+  {"event_data.ServiceFileName.keyword": "*nmnt*"}}, {"wildcard": {"event_data.ServiceFileName.keyword":
+  "*windivert*"}}, {"wildcard": {"event_data.ServiceFileName.keyword": "*USBPcap*"}},
+  {"wildcard": {"event_data.ServiceFileName.keyword": "*pktmon*"}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

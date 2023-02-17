@@ -1,0 +1,20 @@
+category: attack
+ciaLevel: integrity
+component: EDA
+eventId: '2003'
+eventType: warning
+impact: ''
+keys: ''
+name: Multiple Hop Correlation
+nameCN: 多跳登录关联
+parseEsResultKeys: ''
+redisEventKey: event-ts-eda-multiple-hop-correlation
+remarkCN: 多跳登录关联
+remarks: Multiple Hop Correlation
+ruleType: '5'
+script: ''
+source: log
+status: 0
+tags: [attack.lateral_movement]
+threshold: 1
+timeWindow: 10000

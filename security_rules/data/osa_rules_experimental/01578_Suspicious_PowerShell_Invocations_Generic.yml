@@ -1,0 +1,27 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1578'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Suspicious PowerShell Invocations - Generic
+nameCN: 可疑的PowerShell调用(通用)
+parseEsResultKeys: ''
+redisEventKey: event-ts-suspicious-powershell-invocations-generic
+remarkCN: 主机 {src} 检测到可疑的PowerShell调用命令参数
+remarks: Host {src} detects suspicious PowerShell invocation command parameters
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"bool": {"should":
+  [{"multi_match": {"query": " -enc ", "fields": [], "type": "phrase"}}, {"multi_match":
+  {"query": " -EncodedCommand ", "fields": [], "type": "phrase"}}]}}, {"bool": {"should":
+  [{"multi_match": {"query": " -w hidden ", "fields": [], "type": "phrase"}}, {"multi_match":
+  {"query": " -window hidden ", "fields": [], "type": "phrase"}}, {"multi_match":
+  {"query": " -windowstyle hidden ", "fields": [], "type": "phrase"}}]}}, {"bool":
+  {"should": [{"multi_match": {"query": " -noni ", "fields": [], "type": "phrase"}},
+  {"multi_match": {"query": " -noninteractive ", "fields": [], "type": "phrase"}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '8018'
+eventType: alert
+impact: ''
+keys: '{"msg":{"en":"Message", "zh":"信息"}}'
+name: An attempted login using a suspicious username was detected
+nameCN: An attempted login using a suspicious username was detected
+parseEsResultKeys: ''
+redisEventKey: event-ts-an-attempted-login-using-a-suspicious-username-was-detected
+remarkCN: '{msg}'
+remarks: '{msg}'
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"suricata_event"}},{"match":{"event_type":"alert"}},{"match_phrase":{"alert_category.keyword":"An
+  attempted login using a suspicious username was detected"}}]}},"size":1000}'
+source: suricata
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

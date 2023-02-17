@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '5008'
+eventType: event
+impact: ''
+keys: '{"smac":{"en":"Source MAC", "zh":"源MAC"}}'
+name: 'PN-DCP: hello function'
+nameCN: PN-DCP：Hello功能使用
+parseEsResultKeys: ''
+redisEventKey: event-ts-hello-function
+remarkCN: 主机 {smac} 使用Hello功能与主机通信
+remarks: Src host {smac} performs Hello function on host.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":{"duid":"PN_DCP_Hello"}},{"match":
+  {"cat": "notice"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: ~
+threshold: 1
+timeWindow: 60000

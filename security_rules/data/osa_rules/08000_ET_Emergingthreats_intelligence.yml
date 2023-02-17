@@ -1,0 +1,23 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '8000'
+eventType: alert
+impact: ''
+keys: '{"msg":{"en":"Message", "zh":"信息"}}'
+name: 'ET: Emergingthreats intelligence'
+nameCN: 'ET: Emergingthreats威胁情报'
+parseEsResultKeys: ''
+redisEventKey: event-ts-et-3coresec-poor-reputation-ip-group-171
+remarkCN: 'ET: {msg}'
+remarks: 'ET: {msg}'
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "notice"}},{"match": {"duid": "Signatures::ids_suricata"}}]}},"size":
+  1000}'
+source: ''
+status: 1
+tags: [query-unclear]
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,26 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1504'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Secure Deletion with SDelete
+nameCN: 使用Sdelete进行安全删除
+parseEsResultKeys: ''
+redisEventKey: event-ts-secure-deletion-with-sdelete
+remarkCN: 主机 {src} 使用SDelete工具检测到文件重命名
+remarks: Host {src} detects renaming of file while deletion with SDelete tool.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"bool": {"should": [{"match_phrase": {"eventId": "4656"}},
+  {"match_phrase": {"eventId": "4663"}}, {"match_phrase": {"eventId": "4658"}}]}},
+  {"bool": {"should": [{"wildcard": {"event_data.ObjectName.keyword": "*.AAA"}}, {"wildcard":
+  {"event_data.ObjectName.keyword": "*.ZZZ"}}]}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1070.004, attack.enterprise.T1027.005, attack.enterprise.T1485,
+  attack.enterprise.T1553.002, attack.ics.T0872]
+threshold: 1
+timeWindow: 60000

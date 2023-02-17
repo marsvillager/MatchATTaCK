@@ -1,0 +1,21 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '708'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'S7-1500 syslog: PLC Authentication Failure'
+nameCN: 'S7-1500 syslog: PLC认证失败'
+parseEsResultKeys: ''
+redisEventKey: event-ts-authentication-failure
+remarkCN: S71500 PLC设备 {src} 访问认证失败
+remarks: Authentication failure on S7-1500 {src}.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"Security event: Session
+  authentication not successful"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

@@ -1,0 +1,21 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '917'
+eventType: event
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Windows Workstation was Unlocked
+nameCN: Windows：账户锁定
+parseEsResultKeys: ''
+redisEventKey: event-ts-account-unlocked
+remarkCN: 账号在Windows主机 {dataSrcIP} 上解锁
+remarks: The workstation was unlocked on Windows host {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"4801"}},{"match":{"cat": "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0859, attack.enterprise.T1078]
+threshold: 1
+timeWindow: 30000

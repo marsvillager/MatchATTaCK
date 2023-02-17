@@ -1,0 +1,21 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1558'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Suspicious Driver Load from Temp
+nameCN: 来自临时文件夹的可疑驱动负载
+parseEsResultKeys: ''
+redisEventKey: event-ts-suspicious-driver-load-from-temp
+remarkCN: 主机 {src} 检测到来自临时文件夹的驱动负载
+remarks: Host {src} detects a driver load from a temporary directory
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"wildcard": {"event_data.ImageLoaded.keyword":
+  "*\\\\Temp\\\\*"}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

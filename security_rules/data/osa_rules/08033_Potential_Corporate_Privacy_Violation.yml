@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '8033'
+eventType: alert
+impact: ''
+keys: '{"msg":{"en":"Message", "zh":"信息"}}'
+name: Potential Corporate Privacy Violation
+nameCN: Potential Corporate Privacy Violation
+parseEsResultKeys: ''
+redisEventKey: event-ts-potential-corporate-privacy-violation
+remarkCN: '{msg}'
+remarks: '{msg}'
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"suricata_event"}},{"match":{"event_type":"alert"}},{"match_phrase":{"alert_category.keyword":"Potential
+  Corporate Privacy Violation"}}]}},"size":1000}'
+source: suricata
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

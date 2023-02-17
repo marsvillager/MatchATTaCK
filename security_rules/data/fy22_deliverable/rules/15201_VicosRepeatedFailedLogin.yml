@@ -1,0 +1,26 @@
+category: account
+ciaLevel: integrity
+component: SI
+description: This rule identifies situations in which a user unsuccessfully tries to login to either the VICOS OC 100 workstation, server or TTP module. Situations such as this one might indicate a malicious attempt to guess application credentials and gain unauthorized access to VICOS systems with a valid account. It is worth noting that, VICOS software provides a built-in feature to expand the time required for a login after a given number of failed attempts (thus, avoiding the possibility to actually gain vaild credentials by ``brute-forcing'' the interface). Nonetheless, the enablement of this feature is optional and left to the administrator. Whenever in use, the built-in feature, would make this OSA correlation rule unnecessary.
+eventId: 15201
+eventType: warning
+impact: ''
+keys: ''
+name: Vicos Repeated Failed Login
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: vicosoc100
+redisEventKey: event-vicos-repeated-failed-login
+remarkCN: ''
+remarks: A repeated failed login on VICOS was observed.
+requirements: This rule requires VICOS software to log security events in the custom Windows event channel (the newest Vicos logging concept)
+ruleType: '3'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"152"}},{"match":{"eventId":"552"}},{"match":{"eventId":"1552"}}]}},{"match":{"cat":"winEvent"}},{"match":{"channel":"Vicos OC 100 channel"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"aggs":{"shost":{"terms":{"field":"shost.keyword"}}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1110.001]
+threshold: 5
+timeWindow: 60000

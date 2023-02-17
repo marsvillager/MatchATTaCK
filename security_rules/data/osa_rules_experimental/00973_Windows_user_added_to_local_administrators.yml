@@ -1,0 +1,22 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '973'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'Windows: user_added_to_local_administrators'
+nameCN: 'Windows: 用户管理员权限添加'
+parseEsResultKeys: ''
+redisEventKey: event-ts-user-added-to-local-administrators
+remarkCN: 主机 {src} 检测到本地Administrators组的用户帐户添加
+remarks: Host {src} detects the addition of user administrator rights.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "winEvent"}},{"match": {"eventId": "4732"}},{"match":
+  {"targetUserName": "Administrators"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,26 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '967'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'Windows: Pass the Hash Activity'
+nameCN: 'Windows: 传递Credentials Hash'
+parseEsResultKeys: ''
+redisEventKey: event-ts-pass-the-hash-activity
+remarkCN: 主机 {src} 传递凭证Hash
+remarks: Host {src} pass the credentials hash
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "winEvent"}},{"bool": {"should": [{"bool": {"must":
+  [{"match": {"eventId": "4624"}},{"match": {"logonType": "3"}},{"match": {"event_data.LogonProcessName":
+  "NtLmSsp"}}]}},{"bool": {"must": [{"match": {"eventId": "4624"}},{"match": {"logonType":
+  "9"}},{"match": {"event_data.LogonProcessName": "seclogo"}}]}},{"bool": {"must":
+  [{"match": {"eventId": "4625"}},{"match": {"logonType": "3"}},{"match": {"event_data.LogonProcessName":
+  "NtLmSsp"}}]}}]}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

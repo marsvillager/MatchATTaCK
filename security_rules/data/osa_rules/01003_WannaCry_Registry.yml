@@ -1,0 +1,33 @@
+category: attack,malware
+ciaLevel: integrity
+component: SI
+description: The WannaCry ransomware attack was a May 2017 worldwide cyberattack by
+  the WannaCry ransomware cryptoworm, which targeted computers running the Microsoft
+  Windows operating system by encrypting data and demanding ransom payments in the
+  Bitcoin cryptocurrency. It propagated through EternalBlue, an exploit developed
+  by the United States National Security Agency (NSA) for older Windows systems. EternalBlue
+  was stolen and leaked by a group called The Shadow Brokers a few months prior to
+  the attack. While Microsoft had released patches previously to close the exploit,
+  much of WannaCry spread was from organizations that had not applied these or were
+  using older Windows systems that were past their end-of-life. And this indicator
+  can detect wannacry registry items on the host.
+eventId: '1003'
+eventType: alert
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: WannaCry Registry
+nameCN: WannaCry注册表项
+parseEsResultKeys: ''
+redisEventKey: event-ts-wannacry-registry
+remarkCN: 主机 {dataSrcIP} 存在可疑WannaCry恶意程序注册表信息
+remarks: Registry item created by WannaCry was detected on host {dataSrcIP}
+requirements: Test if there is "Software\WanaCrypt[a-Za-z0-9]*?" in registry table
+  and test if there is activity start the auto-start services in registry table
+ruleType: '4'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":{"s_eventType":
+  "CreateKey"}},{"exists": {"field": "s_targetObject"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [malware.host, attack.enterprise.T1112, query_unclear]
+threshold: 1
+timeWindow: 30000

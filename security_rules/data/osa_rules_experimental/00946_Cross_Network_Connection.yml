@@ -1,0 +1,20 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '946'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Cross Network Connection
+nameCN: 主机跨网段连接
+parseEsResultKeys: ''
+redisEventKey: event-ts-cross-network-connection
+remarkCN: 主机 {src} 上存在跨网段连接
+remarks: The network has been connected with other network on host {src}
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"message":"cross network connection"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

@@ -1,0 +1,25 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1524'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: New or Renamed User Account with "$" in Attribute "SamAccountName"
+nameCN: SamAccountName属性中包含"$"符号的新账户或重命名账户
+parseEsResultKeys: ''
+redisEventKey: event-ts-new-or-renamed-user-account-with-in-attribute-samaccountname
+remarkCN: 主机 {src} 检测到可能通过异常账户名绕过EDR和SIEM
+remarks: Host {src} detects possible bypass EDR and SIEM via abnormal user account
+  name.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"bool": {"should": [{"match_phrase": {"eventId": "4720"}},
+  {"match_phrase": {"eventId": "4781"}}]}}, {"wildcard": {"event_data.UserName.keyword":
+  "*$*"}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1036, attack.ics.T0849]
+threshold: 1
+timeWindow: 60000

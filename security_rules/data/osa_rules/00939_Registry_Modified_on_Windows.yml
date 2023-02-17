@@ -1,0 +1,21 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '939'
+eventType: event
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Registry Modified on Windows
+nameCN: Windows：注册表被修改
+parseEsResultKeys: ''
+redisEventKey: event-ts-registry-modified
+remarkCN: Windows主机 {dataSrcIP} 注册表内容被修改
+remarks: A registry value was modified on Windows host {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"4657"}},{"match":{"cat": "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [operation.local, attack.enterprise.T1112]
+threshold: 1
+timeWindow: 30000

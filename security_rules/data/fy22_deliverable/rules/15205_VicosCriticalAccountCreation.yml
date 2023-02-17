@@ -1,0 +1,26 @@
+category: account
+ciaLevel: integrity
+component: SI
+description: This rule identifies situations in which a user account is created in a VICOS OC 100 server (such an account misbehaving might be more impactful than the ones created in a workstation or in a TTP)
+eventId: 15205
+eventType: alert
+impact: ''
+keys: ''
+name: Vicos Critical Account Creation
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: vicosoc100
+redisEventKey: event-login-critical-account-creation
+remarkCN: ''
+remarks: A new VICOS account was created on the server
+requirements: This rule requires VICOS software to log security events in the custom Windows event channel (the newest Vicos logging concept)
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"1553"}},{"match":{"cat":"winEvent"}},{"match":{"channel":"Vicos OC 100 channel"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1136.001]
+threshold: 1
+timeWindow: 60000

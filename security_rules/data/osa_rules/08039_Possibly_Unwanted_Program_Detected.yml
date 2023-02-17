@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '8039'
+eventType: alert
+impact: ''
+keys: '{"msg":{"en":"Message", "zh":"信息"}}'
+name: Possibly Unwanted Program Detected
+nameCN: Possibly Unwanted Program Detected
+parseEsResultKeys: ''
+redisEventKey: event-ts-possibly-unwanted-program-detected
+remarkCN: '{msg}'
+remarks: '{msg}'
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"suricata_event"}},{"match":{"event_type":"alert"}},{"match_phrase":{"alert_category.keyword":"Possibly
+  Unwanted Program Detected"}}]}},"size":1000}'
+source: suricata
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,24 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: Monitor Windows firewall delete behavior on Windows host, If detected,
+  an event will be prompted.
+eventId: '935'
+eventType: warning
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Firewall Rule Deleted on Windows
+nameCN: Windows：防火墙规则删除
+parseEsResultKeys: ''
+redisEventKey: event-ts-firewall-rule-deleted
+remarkCN: Windows主机 {dataSrcIP} 防火墙规则删除
+remarks: A change has been made to Windows Firewall exception list. A rule was deleted
+  on Windows host {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"4948"}},{"match":{"cat": "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [operation.local, attack.enterprise.T1599]
+threshold: 1
+timeWindow: 30000

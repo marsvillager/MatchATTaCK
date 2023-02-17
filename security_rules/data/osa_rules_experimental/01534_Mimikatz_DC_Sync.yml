@@ -1,0 +1,28 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1534'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Mimikatz DC Sync
+nameCN: Mimikatz DC Sync
+parseEsResultKeys: ''
+redisEventKey: event-ts-mimikatz-dc-sync
+remarkCN: 主机 {src} 检测到Mimikatz DC sync安全事件
+remarks: Host {src} detects Mimikatz DC sync security events
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"bool": {"must": [{"bool": {"must": [{"match_phrase":
+  {"eventId": "4662"}}, {"bool": {"should": [{"wildcard": {"event_data.Properties.keyword":
+  "*Replicating Directory Changes All*"}}, {"wildcard": {"event_data.Properties.keyword":
+  "*1131f6ad-9c07-11d1-f79f-00c04fc2dcd2*"}}]}}]}}, {"bool": {"must_not": [{"bool":
+  {"must": [{"match_phrase": {"event_data.SubjectDomainName": "Window Manager"}}]}}]}}]}},
+  {"bool": {"must_not": [{"bool": {"must": [{"bool": {"should": [{"wildcard": {"event_data.SubjectUserName.keyword":
+  "NT AUTHORITY*"}}, {"wildcard": {"event_data.SubjectUserName.keyword": "*$"}}, {"wildcard":
+  {"event_data.SubjectUserName.keyword": "MSOL_*"}}]}}]}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

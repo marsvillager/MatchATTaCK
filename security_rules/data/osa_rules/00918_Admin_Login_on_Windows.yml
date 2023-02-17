@@ -1,0 +1,22 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '918'
+eventType: event
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: Admin Login on Windows
+nameCN: Windows：管理员登录
+parseEsResultKeys: ''
+redisEventKey: event-ts-admin-login
+remarkCN: 管理员账号登录到Windows主机 {dataSrcIP}
+remarks: Special privileges assigned to new logon on Windows host {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"4672"}},{"match":{"eventId":"528"}}]}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0859, attack.ics.T0812, attack.enterprise.T1078]
+threshold: 1
+timeWindow: 30000

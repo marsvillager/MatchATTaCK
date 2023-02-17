@@ -1,0 +1,24 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '925'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dataSrcIP":{"en":"Destination
+  Address", "zh":"目的地址"}}'
+name: RDP on Windows
+nameCN: Windows：远程桌面访问
+parseEsResultKeys: ''
+redisEventKey: event-ts-remote-desktop-connected
+remarkCN: 源主机 {src} 使用RDP访问目标主机 {dataSrcIP}
+remarks: Src host {src} use RDP to accessing dst Windows host {dataSrcIP}.
+requirements: See if the monitored intranet (including different network segments)
+  has RDP tool.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"4624"}},{"match":{"logonType":"10"}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0823, attack.ics.T0886, attack.ics.T0859, attack.enterprise.T1078]
+threshold: 1
+timeWindow: 30000

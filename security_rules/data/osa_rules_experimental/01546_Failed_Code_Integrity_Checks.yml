@@ -1,0 +1,22 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1546'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Failed Code Integrity Checks
+nameCN: 代码完整性检查失败
+parseEsResultKeys: ''
+redisEventKey: event-ts-failed-code-integrity-checks
+remarkCN: 代码完整性失败可能表明可执行文件在主机 {src} 上被篡改
+remarks: Code integrity failures may indicate tampered executables on host {src}.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"bool": {"should": [{"match_phrase": {"eventId": "5038"}},
+  {"match_phrase": {"eventId": "6281"}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

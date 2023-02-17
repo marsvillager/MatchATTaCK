@@ -1,0 +1,23 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '877'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'S7Comm: Get PLC status - START'
+nameCN: S7Comm：查询PLC状态 - 启动
+parseEsResultKeys: ''
+redisEventKey: event-ts-get-plc-status-start
+remarkCN: PLC {src} 返回启动状态
+remarks: 'PLC {src} return status: START'
+requirements: 'In: data->szl-data-tree->bzu-id, the PLC status is shown as run, 0x08.'
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "notice"}},{"match_phrase": {"msg": "get plc status
+  start"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [operation.local, attack.ics.T0868]
+threshold: 1
+timeWindow: 60000

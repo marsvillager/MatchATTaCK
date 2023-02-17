@@ -1,0 +1,21 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '994'
+eventType: alert
+impact: ''
+keys: '{"shost":{"en":"Source Host", "zh":"源主机"}}'
+name: Abnormal logon
+nameCN: 异常登录
+parseEsResultKeys: ''
+redisEventKey: event-ts-abnormal-logon
+remarkCN: 账号{targetUserName}异常登录（发生于：{src}）
+remarks: Abnormal logon by {targetUserName}.{src}
+ruleType: '4'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":
+  "winEvent"}},{"match":{"eventId":"4624"}}]}},"size":1000}'
+source: ''
+status: 1
+tags: ''
+threshold: 1
+timeWindow: 120000

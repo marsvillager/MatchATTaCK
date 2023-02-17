@@ -1,0 +1,21 @@
+category: application
+ciaLevel: integrity
+component: SI
+eventId: '991'
+eventType: alert
+impact: ''
+keys: ''
+name: Unauthorized Executable Program
+nameCN: 非授权应用运行
+parseEsResultKeys: ''
+redisEventKey: event-ts-unauthorized-executable-program
+remarkCN: 非授权应用运行
+remarks: Unauthorized Executable Program.
+ruleType: '4'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":
+  "winEvent"}},{"match":{"eventId":"4688"}}],"must_not":[{"terms":{"processName":["svchost.exe","dllhost.exe"]}}]}},"size":1000}'
+source: ''
+status: 1
+tags: ''
+threshold: 1
+timeWindow: 120000

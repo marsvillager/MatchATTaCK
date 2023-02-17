@@ -1,0 +1,24 @@
+category: application,network
+ciaLevel: confidentiality
+component: SI
+eventId: '204'
+eventType: warning
+impact: ''
+keys: '{"protocol":{"en":"Protocol", "zh":"协议"}, "port":{"en":"Destination port",
+  "zh":"目的端口"}, "src":{"en":"Source IP Address", "zh":"源IP地址"}, "dst":{"en":"Destination
+  IP Address", "zh":"目的IP地址"}}'
+name: New APP Flow
+nameCN: 新应用流
+parseEsResultKeys: ''
+redisEventKey: event-ts-new-app-flow
+remarkCN: 网络中出现新的应用通信 {protocol}_{port}，源主机 {src} 至目标主机 {dst}
+remarks: New application communication (APP Flow) {protocol}_{port} is detected between
+  src host {src} and dst host {dst}.
+requirements: No requirements.
+ruleType: '0'
+script: ''
+source: network
+status: 0
+tags: [attack.enterprise.T1595, attack.ics.T0846, query-unclear]
+threshold: 1
+timeWindow: 60000

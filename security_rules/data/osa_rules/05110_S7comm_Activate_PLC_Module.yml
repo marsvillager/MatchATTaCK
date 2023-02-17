@@ -1,0 +1,23 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '5110'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'S7comm: Activate PLC Module'
+nameCN: 'S7comm: 激活PLC模块'
+parseEsResultKeys: ''
+redisEventKey: event-ts-activate-plc-module
+remarkCN: 主机{src}激活了PLC{dst}模块
+remarks: Host {src} activate module of PLC {dst}.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"s7_plc_func"}},{"match_phrase":{"rosctr.keyword":"Job
+  PLC Control"}},{"match_phrase":{"service.keyword":"_INSE"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

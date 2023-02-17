@@ -1,0 +1,25 @@
+category: network
+ciaLevel: integrity
+component: SI
+description: Monitor Malformed PN-DCP buffer overflow on traffic, If detected, an
+  event will be prompted.
+eventId: '862'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'PN-DCP: Overflow'
+nameCN: PN-DCP：缓冲区溢出
+parseEsResultKeys: ''
+redisEventKey: event-ts-buffer-overflow-attack
+remarkCN: 源主机 {src} 向目标主机 {dst} 发送可导致缓冲区溢出的PROFINET DCP帧
+remarks: Src host {src} sends PN-DCP buffer overflow frame to dst host {dst}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "Buffer_Overflow"}}]}},"size": 1000}'
+source: network
+status: 0
+tags: [attack.ics.T0826, attack.ics.T0814]
+threshold: 1
+timeWindow: 60000

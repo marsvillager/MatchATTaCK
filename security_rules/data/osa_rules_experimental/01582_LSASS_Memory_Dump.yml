@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1582'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: LSASS Memory Dump
+nameCN: LSASS内存转储
+parseEsResultKeys: ''
+redisEventKey: event-ts-lsass-memory-dump
+remarkCN: 主机 {src} 检测到基于win10上指向dbghelp.dll或dbgcore.dll的CallTrace而使用procdump或taskmgr的LSASS内存转储进程
+remarks: Host {src} detects process LSASS memory dump using procdump or taskmgr based
+  on the CallTrace pointing to dbghelp.dll or dbgcore.dll for win10
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"bool": {"should":
+  [{"wildcard": {"event_data.CallTrace.keyword": "*dbghelp.dll*"}}, {"wildcard": {"event_data.CallTrace.keyword":
+  "*dbgcore.dll*"}}]}}, {"match_phrase": {"event_data.GrantedAccess": "0x1fffff"}},
+  {"match_phrase": {"event_data.TargetImage": "C:\\windows\\system32\\lsass.exe"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

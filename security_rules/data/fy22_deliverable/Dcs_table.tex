@@ -1,0 +1,70 @@
+% !TEX root = ./AdditionalOsaRules.tex
+
+%%%
+%
+% Version 0.1
+%
+%%%
+
+\section*{DCS-related Products}
+\addcontentsline{toc}{section}{\protect\numberline{}DCS-related Products}%
+
+The following table lists the detection use cases selected during the DCS workshops (for more information, please, refer to the related Excel file). Every use case is associated with the corresponding OSA correlation rules.
+
+\begin{center}
+	\begin{longtable}{P{.3\textwidth}P{.6\textwidth}}
+		\hline
+		\textbf{Use Case} & \textbf{Rules} \\
+		\hline
+		DCU-related Events & \makecell[tl]{15301-Dcu-Invalid-Signature~[\ref{15301}]} \\ 
+		ESXi-related Events & \makecell[tl]{15401-Esxi-Authentication-Failure~[\ref{15401}] \\ 15402-Esxi-SSH-Enabled~[\ref{15402}]} \\ 
+		Hirchmann-related Events & \makecell[tl]{15701-Login-Hirschmann-Switch~[\ref{15701}]} \\ 
+		Fortigate-related Events & \makecell[tl]{15800-Firewall-Admin-Login~[\ref{15800}] \\ 15810-Firewall-UTM-Security-Event~[\ref{15810}]} \\ 
+		Repeated Failed Login & \makecell[tl]{00920-Failed-Logon-Attempt-on-Windows \\ 11007-Brute-force-attempt-for-Samba-on-QNAP-NAS \\ 12001-Sshd-Brute-Force \\ 12003-Ftpd-Debian-Brute-Force \\ 12006-Vsftpd-Brute-Force \\ 12020-Windows-Brute-Force \\ 05085-SSH-Bruteforcing \\ 05086-FTP-Bruteforcing \\ 05087-TELNET-Bruteforcing \\ 05088-RDP-Bruteforcing} \\
+		New Asset & \makecell[tl]{00201-Asset-connected} \\
+		Removed Asset & \makecell[tl]{00209-Asset-disconnected} \\
+		Modified Asset & \makecell[tl]{15053-Modified-File-Or-Folder~[\ref{15053}] \\ 00939-Registry-Modified-on-Windows \\ 01525-Unauthorized-System-Time-Modification} \\
+		DoS & \makecell[tl]{00820-SYN-flood \\ 00864-ARP-flooding \\ 00869-UDP-flooding \\ 00870-DNS-query-flooding \\ 00871-SNMP-query-flooding \\ 05093-IEC-60870-5-104-Dos-Flooding-Attack} \\
+		Newly-found Software Vulnerability & \makecell[tl]{05022-Vulnerability-Scan-CVE-2019-0708-Scan} \\
+		System Log Cleared & \makecell[tl]{00936-Audit-Log-Cleared-on-Window} \\
+		Account Lockout & \makecell[tl]{15017-Account-Locked-Out~[\ref{15017}]} \\
+		Login Attempt of a Non-registered Account & \makecell[tl]{15021-Login-Of-Non-Registered-Account~[\ref{15021}]} \\
+		Login at an Unusual Time & \makecell[tl]{15022-Login-Logout-At-Unusual-Time~[\ref{15302}]} \\
+		File Share Client-side Access & \makecell[tl]{00943-Network-Share-Access-on-Windows} \\
+		File Share Server-side Access & \makecell[tl]{00943-Network-Share-Access-on-Windows} \\
+		Application Installation/Removal& \makecell[tl]{15023-Application-Installation~[\ref{15023}] \\ 15024-Application-Removal~[\ref{15024}]} \\% \\ 15025-Application-Installation-Applocker} \\
+		New File Share & \makecell[tl]{15041-New-File-Share~[\ref{15041}]} \\
+		New Directory/file & \makecell[tl]{15050-New-File-Or-Folder~[\ref{15050}]} \\
+		Removed Directory/File & \makecell[tl]{15051-Deleted-File-Or-Folder~[\ref{15051}]} \\
+		Access to Directory/File & \makecell[tl]{15052-Accessed-File-Or-Folder~[\ref{15052}]} \\
+		Modification to Directory/File & \makecell[tl]{15053-Modified-File-Or-Folder~[\ref{15053}]} \\
+		Malicious Process Execution & \makecell[tl]{15060-Malicious-Process-Execution~[\ref{15060}] \\ 01001-Wanna-Cry-Process} \\
+		Anomalous Process Execution & \makecell[tl]{15061-Anomalous-Process-Execution~[\ref{15061}]} \\
+		Anomalous Process Execution with High Privileges & \makecell[tl]{15062-Anomalous-Process-Execution-with-High-Privileges~[\ref{15062}]} \\
+		Process Termination & \makecell[tl]{15063-Process-Termination~[\ref{15063}]} \\
+		New Service/Task/Autorun & \makecell[tl]{15064-New-Service-Execution~[\ref{15064}]} \\
+		New Hardware Plugged-in & \makecell[tl]{15030-New-Hardware-Plugged-In~[\ref{15030}]} \\
+		New USB Storage Device was Connected & \makecell[tl]{15032-New-USB-Device-Plugged-In~[\ref{15032}] \\ 15031-New-USB-Storage-Plugged-In~[\ref{15031}]} \\
+		OS Temporary User Account Creation & \makecell[tl]{00904-User-account-created-on-Windows} \\
+		OS High-Privilege User Account Creation & \makecell[tl]{15026-Os-High-Privileged-Account-Creation~[\ref{15026}]} \\
+		Application Log Cleared & \makecell[tl]{15028-Window-Object-Deletion~[\ref{15028}]} \\
+		%Ineffective Security Product & \makecell[tl]{15070-Applocker-Disabled} \\
+		%Security Product Alert & \makecell[tl]{15071-Applocker-Security-Event} \\
+		Systen Log Soace Full & \makecell[tl]{15080-Disk-Space-Exhaustion~[\ref{15080}]} \\
+		Anomalous Amount of DNS Requests/Responses & \makecell[tl]{00870-DNS-query-flooding} \\
+		%Firewall Configuration Change & \makecell[tl]{00934-Firewall-Rule-Added-on-Windows \\ 00935-Firewall-Rule-Deleted-on-Windows} \\
+		Malicious Connection & \makecell[tl]{``OSA Built-in Capability'' \\ 12004-Telnetd-Debian-Connection \\ 08020-A-TCP-connection-was-detected \\ 01511-Vulnerable-Netlogon-Secure-Channel-Connection-Allowed} \\
+		Malicious Payload & \makecell[tl]{00891-SMBv1-DoublePulsar-Deliver-Payload} \\
+		Insecure Communication & \makecell[tl]{00853-Insecure-SSL-TLS-Version \\ 00854-Insecure-SSL-TLS-Cyphers} \\
+		Network Scan & \makecell[tl]{08023-Detection-of-a-Network-Scan \\ 00808-IP-Scan-(ICMP) \\ 05015-IP-Scan-(ARP) \\ 00815-Port-Scan-(Fast)} \\
+		Modification of System Time & \makecell[tl]{01525-Unauthorized-System-Time-Modification} \\
+		Missing Backups & \makecell[tl]{01528-Backup-Catalog-Deleted} \\
+		Internet/Proxy Connection from System & \makecell[tl]{08037-Device-Retrieving-External-IP-Address-Detected} \\
+		Use of Unusual Application/Tools & \makecell[tl]{00885-QQ-Wechat-Weibo-(Social-Media) \\ 00886-Baidu-Bing-Google-(Search-Engine)} \\
+		TLS Certificate Problems & \makecell[tl]{00851-Expired-Certificate \\ 00850-Expiring-Certificate \\ 00849-Self-Signed-Certificate} \\
+		SNMP Access & \makecell[tl]{00871-SNMP-query-flooding \\ 00872-Reflective-SNMP-DOS} \\
+		% & \makecell[tl]{} \\
+    		\hline
+	\end{longtable}
+\end{center}
+

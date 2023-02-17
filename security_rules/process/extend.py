@@ -29,8 +29,8 @@ def get_synset(filename: str, lemma: bool) -> set[str]:
     """
     keywords: set[str] = process(filename, False)  # no lemma
 
-    word_list: str = ' '.join(keywords)
+    word_list: str = ' '.join(keywords) + ' '
     for keyword in keywords:
-        word_list = word_list + ' ' + ' '.join(match_synset(keyword))  # match synonyms
+        word_list = word_list + ' '.join(match_synset(keyword))  # match synonyms
 
-    return is_lemma(word_list, True)  # lemma
+    return is_lemma(word_list, lemma)  # lemma

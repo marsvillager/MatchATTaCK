@@ -1,0 +1,30 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1509'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Active Directory Replication from Non Machine Account
+nameCN: 非计算机账户AD复制
+parseEsResultKeys: ''
+redisEventKey: event-ts-active-directory-replication-from-non-machine-account
+remarkCN: 主机 {src} 检测到非机器账户通过请求证书实现活动目录复制
+remarks: Host {src} detects potential abuse of Active Directory Replication Service
+  (ADRS) from a non machine account to request credentials.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"bool": {"must": [{"match_phrase": {"eventId": "4662"}},
+  {"match_phrase": {"event_data.AccessMask": "0x100"}}, {"bool": {"should": [{"wildcard":
+  {"event_data.Properties.keyword": "*1131f6aa-9c07-11d1-f79f-00c04fc2dcd2*"}}, {"wildcard":
+  {"event_data.Properties.keyword": "*1131f6ad-9c07-11d1-f79f-00c04fc2dcd2*"}}, {"wildcard":
+  {"event_data.Properties.keyword": "*89e95b76-444d-4c62-991a-0facbeda640c*"}}]}}]}},
+  {"bool": {"must_not": [{"bool": {"should": [{"bool": {"must": [{"match_phrase":
+  {"event_data.SubjectUserName": "$"}}]}}, {"bool": {"must": [{"match_phrase": {"event_data.SubjectUserName":
+  "MSOL_"}}]}}]}}]}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1003.006]
+threshold: 1
+timeWindow: 60000

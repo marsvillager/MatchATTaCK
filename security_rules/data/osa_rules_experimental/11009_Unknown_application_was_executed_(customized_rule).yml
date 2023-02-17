@@ -1,0 +1,34 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '11009'
+eventType: warning
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Host", "zh":"源主机"}}'
+name: Unknown application was executed (customized rule)
+nameCN: ''
+parseEsResultKeys: ''
+redisEventKey: event-ts-windows-process-passlist
+remarkCN: ''
+remarks: 'A process that is not contained in the pass list was executed on {dataSrcIP}
+  (command line: "{s_commandLine}"). '
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"filter":[{"match":{"cat":"winEvent"}},{"match":{"eventId":"4688"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}],"must_not":[{"match_phrase":{"event_data.NewProcessName":"c:\\windows"}},{"match_phrase":{"event_data.NewProcessName":"C:\\IPCOMM\\ipconv3\\bin\\winnt\\ipzip.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\IPCOMM\\ipconv3\\bin\\winnt\\opcs.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\IPCOMM\\iplink\\bin\\ipLink.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\ProgramData\\Microsoft\\Windows
+  Defender\\Platform\\4.18.2110.6-0\\MpCmdRun.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\Program
+  Files\\Common Files\\Siemens\\Automation\\Simatic OAM\\bin\\TC.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\Program
+  Files\\Microsoft SQL Server\\130\\Shared\\sqlsqm.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\Program
+  Files\\rempl\\sedlauncher.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\Program
+  Files\\Siemens\\LogAgent\\filebeat.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\Program
+  Files\\Siemens\\LogAgent\\winlogbeat.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\Program
+  Files\\Siemens\\LogAgent\\wmibeat.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\Program
+  Files\\Siemens\\SmartMSGeXport\\SmartMSGeXport.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\Program
+  Files\\VMware\\VMware Tools\\VMwareResolutionSet.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\Program
+  Files\\Windows Defender\\MpCmdRun.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\Program
+  Files (x86)\\Common Files\\Oracle\\Java\\javapath_target_2678146312\\java.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\Program
+  Files (x86)\\Siemens\\WinCC\\bin\\CCMcpAutServer.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\Users\\Siemens\\AppData\\Local\\Temp\\0EEB5A47-15CF-4DD2-804E-31978C61D549\\DismHost.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\Users\\Siemens\\AppData\\Local\\Temp\\DDC1D007-E3D5-4339-9782-8905EB9B520A\\DismHost.exe"}},{"match_phrase":{"event_data.NewProcessName":"C:\\Users\\SMOAdmin\\AppData\\Local\\Temp\\476C42CF-B6A9-4D1C-B0B2-D8EBBB2AE446\\DismHost.exe"}},{"match_phrase":{"event_data.NewProcessName":"\\Device\\Mup\\10.105.5.222\\CCA\\TAS\\Library\\BatchScript\\EndTASrunning.exe"}},{"match_phrase":{"event_data.NewProcessName":"\\Device\\Mup\\10.105.5.222\\CCA\\TAS\\Library\\BatchScript\\TAsrunning.exe"}}]}}}'
+source: ''
+status: 0
+tags: [operation.local]
+threshold: 1
+timeWindow: 60000

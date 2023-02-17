@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1577'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: PowerShell ShellCode
+nameCN: PowerShell ShellCode
+parseEsResultKeys: ''
+redisEventKey: event-ts-powershell-shellcode
+remarkCN: 主机 {src} 检测到Base64编码的Shellcode
+remarks: Host {src} detects Base64 encoded Shellcode
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"bool": {"must":
+  [{"match_phrase": {"eventId": "4104"}}, {"multi_match": {"query": "*AAAAYInlM*",
+  "fields": [], "type": "phrase"}}]}}, {"bool": {"should": [{"multi_match": {"query":
+  "*OiCAAAAYInlM*", "fields": [], "type": "phrase"}}, {"multi_match": {"query": "*OiJAAAAYInlM*",
+  "fields": [], "type": "phrase"}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1536'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Register new Logon Process by Rubeus
+nameCN: 通过Rubeus注册新的登录过程
+parseEsResultKeys: ''
+redisEventKey: event-ts-register-new-logon-process-by-rubeus
+remarkCN: 因为注册了新的可信登录进程，主机 {src} 检测到Rubeus的潜在使用
+remarks: Host {src} detects potential use of Rubeus via registered new trusted logon
+  process
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4611"}}, {"match_phrase":
+  {"event_data.LogonProcessName": "User32LogonProcesss"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

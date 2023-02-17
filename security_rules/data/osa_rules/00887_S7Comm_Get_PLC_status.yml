@@ -1,0 +1,23 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '887'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'S7Comm: Get PLC status'
+nameCN: S7Comm：查询PLC状态
+parseEsResultKeys: ''
+redisEventKey: event-ts-get-plc-status
+remarkCN: 主机 {src} 对PLC设备 {dst} 进行状态查询
+remarks: Host {src} get status of PLC {dst}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"msg": "get plc status"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [operation.local, attack.ics.T0868]
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,22 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1554'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Addition of Domain Trusts
+nameCN: 添加域信任
+parseEsResultKeys: ''
+redisEventKey: event-ts-addition-of-domain-trusts
+remarkCN: 主机 {src} 检测到不常见的添加域信任场景，需要验证其合法性
+remarks: Addition of domains is seldom and should be verified for legitimacy on host
+  {src}.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4706"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

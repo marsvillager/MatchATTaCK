@@ -1,0 +1,21 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5094'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'IEC 60870-5-104: MiTM for Hijack the Communication'
+nameCN: 'IEC 60870-5-104: MiTM通信劫持攻击'
+parseEsResultKeys: ''
+redisEventKey: event-ts-iec-mitm-for-hijack-the-communication
+remarkCN: 攻击机 {src} 发起中间人通信劫持攻击
+remarks: Attacker {src} launches man in the middle communication hijacking attack
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match":{"duid.keyword":"IEC104::IEC104_MAN_IN_MID_HIJACK"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

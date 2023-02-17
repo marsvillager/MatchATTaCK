@@ -1,0 +1,35 @@
+% !TEX root = ./AdditionalOsaRules.tex
+
+%%%
+%
+% Version 0.1
+%
+%%%
+
+\section*{Fortigate Logstash Configuration}
+\addcontentsline{toc}{section}{\protect\numberline{}Fortigate Logstash Configuration}%
+\label{appendix:fortigatelogstashconfiguration}
+
+\begin{lstlisting}[language=json,firstnumber=1]
+
+filter {
+    if "deviceSyslog" in [tags] {
+        if [program] == "fortigate" { 
+            kv {
+                source => "msg"
+                include_keys => ["logid","type","subtype","level"]
+            }
+            mutate {
+                rename => {"logid" => "fortigateLogid"}
+                rename => {"type" => "fortigateType"}
+                rename => {"subtype" => "fortigateSubtype"}
+                rename => {"level" => "fortigateLevel"}
+            }
+        }
+    }    
+}
+
+\end{lstlisting}
+
+\pagebreak
+

@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: availability
+component: SI
+description: 'This rule identifies a login failure to the Hirschmann switches by matching phrase in Hirschmann switch log.'
+eventId: 15702
+eventType: warning
+impact: ''
+keys: ''
+name: Login failure to network switches
+nameCN: ''
+os: ''
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: dcs
+redisEventKey: event-login-failure-hirschmann-switch
+remarkCN: ''
+remarks: A login failure to Hirschmann switch is detected
+requirements: None.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"S_platform_LOGIN_FAILURE"}},{"bool":{"must_not":[{"match_phrase":{"msg":"no new event"}}]}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

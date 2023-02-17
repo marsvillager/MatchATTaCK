@@ -1,0 +1,22 @@
+category: attack,network
+ciaLevel: integrity
+component: SI
+eventId: '866'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Smurf
+nameCN: Smurf攻击
+parseEsResultKeys: ''
+redisEventKey: event-ts-smurf
+remarkCN: 主机 {src} 进行Smurf攻击
+remarks: Host {src} launchs Smurf
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "Smurf_Attacking"}}]}},"size": 1000}'
+source: network
+status: 0
+tags: [attack.enterprise.T1499, attack.enterprise.T1498.001, attack.ics.T0814]
+threshold: 1
+timeWindow: 60000

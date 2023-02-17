@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: "This rule is used to identify situations in which an attacker (or a malicious program) creates a new task (e.g., to ensure persistence within a given system). Particular cases in which this event occurs might be further specified to avoid the presence of false positives. For example, it is worth noting the opportunity to alert situations in which the event comes with the ``logon type'' set to ``Password''. In this case, the password for the account running the scheduled task is also stored in Windows ``Credential Manager'' in cleartext and can be therefore easiliy retrived."
+eventId: 15013
+eventType: alert
+impact: ''
+keys: ''
+name: Scheduled Task Created
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic
+requirements: None.
+redisEventKey: event-scheduled-task-created
+remarkCN: ''
+remarks: A new scheduled task was created
+ruleType: '1'
+source: ''
+status: 0
+script: '{ "query":{ "bool":{ "must":[ { "match":{ "eventId":"4698" } }, { "match":{ "cat":"winEvent" } }, { "range":{ "@timestamp":{ "gt":"<bt>", "lt":"<et>" } } } ] } }, "size":1000}'
+tags: [attack.enterprise.T1053.005]
+threshold: 1
+timeWindow: 60000

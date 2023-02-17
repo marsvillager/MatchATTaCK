@@ -1,0 +1,22 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '962'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'Windows: Powerview Add-DomainObjectAcl DCSync AD Extend Right'
+nameCN: 'Windows: 利用Powerview提权'
+parseEsResultKeys: ''
+redisEventKey: event-ts-powerview-add-domainobjectacl-dcsync-ad-extend-right
+remarkCN: 主机 {src} 利用Powerview Add-DomainObjectAcl DCSync AD提权
+remarks: Host {src} performs Powerview Add-DomainObjectAcl DCSync AD to extend right
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "winEvent"}},{"match": {"eventId": "5136"}},{"match":
+  {"event_data.AttributeLDAPDisplayName": "ntSecurityDescriptor"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

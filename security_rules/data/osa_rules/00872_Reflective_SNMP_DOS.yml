@@ -1,0 +1,23 @@
+category: attack,network
+ciaLevel: integrity
+component: SI
+eventId: '872'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Reflective SNMP DOS
+nameCN: 反射SNMP DoS
+parseEsResultKeys: ''
+redisEventKey: event-ts-snmp-reflection-dos
+remarkCN: 主机 {src} 进行反射型SNMP DoS攻击
+remarks: Host {src} launchs Reflective SNMP DOS
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "SNMP_Reflection_Attacking"}}]}},"size":
+  1000}'
+source: network
+status: 0
+tags: [attack.enterprise.T1499, attack.enterprise.T1498.001, attack.ics.T0814]
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,21 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '959'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Default Windows User used
+nameCN: Windows风险账户使用
+parseEsResultKeys: ''
+redisEventKey: event-ts-default-windows-user-used
+remarkCN: 主机 {src} 在使用风险Windows账户
+remarks: Vulnerable default Windows account is used on host {src}
+ruleType: '4'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":{"cat":"Win32_UserAccount"}},{"exists":
+  {"field": "msg"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

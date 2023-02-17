@@ -1,0 +1,27 @@
+category: account
+ciaLevel: integrity
+component: SI
+description: "This rule identifies failed attempts to login in Windows workstations, servers, etc.. The monitoring of this event is generally recommended for local accounts as these should normally not locked out. This rule is a more generic version of OSA correlation rule ``00920\\_Failed\\_Logon\\_Attempt\\_on\\_Windows''."
+eventId: 15011
+eventType: warning
+impact: ''
+keys: ''
+name: Attempted Login
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic
+requirements: None.
+redisEventKey: event-attempted-login
+remarkCN: ''
+remarks: A Windows login was attempted.
+ruleType: '1'
+script: '{ "query":{ "bool":{ "must":[ { "bool":{ "should":[ { "match":{ "eventId":"4625" } }, { "match":{ "eventId":"529" } } ] } }, { "match":{ "cat":"winEvent" } }, { "range":{ "@timestamp":{ "gt":"<bt>", "lt":"<et>" } } } ] } }, "size":1000}'
+source: ''
+status: 0
+tags:  ''
+threshold: 1
+timeWindow: 60000
+

@@ -1,0 +1,20 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '751'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'SCALANCE X: Authentication failure (Web Portal)'
+nameCN: SCALANCE X：Web登录认证失败
+parseEsResultKeys: ''
+redisEventKey: event-ts-authentication-failure-(web-portal)
+remarkCN: SCALANCE X交换机 {src} Web登录认证失败
+remarks: SCALANCE X {src} Authentication failure (Web Portal)
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"WBM: Authentication failure"}},{"match_phrase":{"cat":"ScalanceX"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

@@ -1,0 +1,23 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '5105'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'S7comm: Unsubscribe Cyclic Services'
+nameCN: S7comm：取消服务订阅
+parseEsResultKeys: ''
+redisEventKey: event-ts-unsubscribe-cyclic-services
+remarkCN: 主机{src}取消了PLC{dst}服务订阅
+remarks: Host {src} unsubscribe cyclic services on PLC {dst}.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"s7_plc_func"}},{"match_phrase":{"rosctr.keyword":"Cyclic
+  Service: Unsubscribe"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

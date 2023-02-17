@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1570'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: NTFS Alternate Data Stream
+nameCN: NTFS交换数据流
+parseEsResultKeys: ''
+redisEventKey: event-ts-ntfs-alternate-data-stream
+remarkCN: 主机 {src} 检测到从powershell将数据写入NTFS交换数据流，需要启用脚本块日志
+remarks: Host {src} detects writing data into NTFS alternate data streams from powershell.
+  Needs Script Block Logging
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"bool": {"should":
+  [{"multi_match": {"query": "set-content", "fields": [], "type": "phrase"}}, {"multi_match":
+  {"query": "add-content", "fields": [], "type": "phrase"}}]}}, {"multi_match": {"query":
+  "-stream", "fields": [], "type": "phrase"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

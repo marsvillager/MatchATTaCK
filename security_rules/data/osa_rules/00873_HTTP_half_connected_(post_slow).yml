@@ -1,0 +1,22 @@
+category: attack,network
+ciaLevel: integrity
+component: SI
+eventId: '873'
+eventType: alert
+impact: ''
+keys: '{"dst":{"en":"Destination Address", "zh":"目标地址"}}'
+name: HTTP half connected (post slow)
+nameCN: HTTP半连接DoS(低速Post)
+parseEsResultKeys: aggregations:sensor_ids:buckets:dst:buckets
+redisEventKey: event-ts-http-post-slow-attacking
+remarkCN: 主机 {src} 进行HTTP半连接DoS(低速Post)
+remarks: Host {src} launchs HTTP half connected (post slow) DoS
+requirements: No requirements.
+ruleType: '3'
+script: '{"query": {"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"range":{"duration":{"gt":10}}},{"match":{"cat":"conn"}},{"bool":
+  {"should":[{"match":{"app":"http"}},{"match":{"dpt":80}}]}},{"exists":{"field":"dst"}}]}},"aggs":{"sensor_ids":{"terms":{"field":"fields.gl2_source_collector.keyword"},"aggs":{"dst":{"terms":{"field":"dst"}}}}},"size":1}'
+source: network
+status: 0
+tags: [attack.enterprise.T1499, attack.enterprise.T1498.001, attack.ics.T0814]
+threshold: 1000
+timeWindow: 300000

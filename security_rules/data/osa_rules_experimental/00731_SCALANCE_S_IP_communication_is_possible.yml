@@ -1,0 +1,20 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '731'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'SCALANCE S: IP communication is possible'
+nameCN: SCALANCE S：通信目标IP不可达
+parseEsResultKeys: ''
+redisEventKey: event-ts-ip-communication-is-possible
+remarkCN: SCALANCE S防火墙 {src} 通信目的IP不可达
+remarks: SCALANCE S {src} IP communication is possible
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"IP communication is possible"}},{"match_phrase":{"cat":"ScalanceS"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

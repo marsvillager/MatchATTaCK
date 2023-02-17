@@ -1,0 +1,293 @@
+\documentclass[a4paper]{report}
+
+\usepackage{filecontents}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+
+%%% Header and Footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{CONFIDENTIAL}
+\fancyhead[R]{\rightmark}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{CONFIDENTIAL}
+
+\usepackage{etoolbox}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+\patchcmd{\section}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+%%% Chapters & Sections
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename~\thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{70pt}{40pt}
+
+%%% Tables
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{ragged2e}
+\newcolumntype{P}[1]{>{\RaggedRight\hspace{0pt}}p{#1}}
+\setlength{\extrarowheight}{5pt}
+
+\usepackage{makecell}
+\renewcommand{\cellalign}{l}
+
+%%% Images
+\usepackage{float}
+
+%%% Captions
+\usepackage[font={small}]{caption}
+
+%%% Table of Contents
+
+%%% Appendix
+\usepackage[toc,page]{appendix}
+\usepackage{pdfpages}
+
+%%% Title
+\makeatletter
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+
+   \begingroup\centering
+
+  {\Huge\textbf{\@title}} \vspace{2ex}
+
+  {\large\@author} \vspace{2ex}
+
+  {\@date} \vspace{2ex}
+
+   \endgroup
+
+}
+\makeatother
+
+\title{OSA Rule Creation}
+\date{\today}
+\author{Siemens AG, T CST}
+
+%%% Extras
+\usepackage{url}
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+
+\usepackage{setspace}
+
+\usepackage{xhfill}
+\setlength{\parindent}{0pt}
+
+\usepackage{amssymb}
+
+\usepackage[inline]{enumitem}
+
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
+\hspace{-2.5pt}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+
+\newcommand{\inlineitem}[1][]{%
+\ifnum\enit@type=\tw@
+    {\descriptionlabel{#1}}
+  \hspace{\labelsep}%
+\else
+  \ifnum\enit@type=\z@
+       \refstepcounter{\@listctr}\fi
+    \quad\@itemlabel\hspace{\labelsep}%
+\fi}
+\makeatother
+\parindent=0pt
+
+\showhyphens{createUnspecifiedNodeErrorMarker}
+
+\makeatletter
+\def\camelcasenewline{\leavevmode\begingroup
+\let\ifcase\iftrue
+\def\or##1{%
+  \catcode`##1\active\uccode`\~`##1\uppercase{%
+    \def~{\egroup\penalty2\hbox\bgroup\string##1}}}%
+\@Alph{}%
+\@camelcasenewline}
+
+\def\@camelcasenewline#1{\textbf{\hbox\bgroup#1\egroup}\endgroup}
+\makeatother
+
+%%% Draft
+%\usepackage{showframe}
+
+%\usepackage{draftwatermark}
+%\SetWatermarkText{DRAFT}
+%\SetWatermarkScale{5}
+
+\usepackage[colorinlistoftodos,textsize=scriptsize]{todonotes}
+
+%%% Json Visualization
+\usepackage{listings}
+\usepackage{xcolor}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1}
+}
+
+%%% DOCUMENT %%%
+\begin{document}
+
+\begin{figure}
+    \begin{flushright}
+        \includegraphics[scale=0.2]{images/SiemensLogo.jpg}
+        \label{img:siemens_logo}
+    \end{flushright}
+\end{figure}
+
+\vspace*{5cm}
+
+\maketitle
+
+\newpage
+
+\section*{\center Executive summary}
+\markboth{}{}
+
+Initiated in 2016 by T CST SAR-CN, the development process of the ``OT Security Appliance'' (OSA) is currently going through its last productization phase and eventually becoming Siemens's go-to-market solution for industrial monitoring. To support all related activities, T CST has been engaged in a continuous exchange with all OSA's stakeholders (primarily, DI and SMO) to enhance the product (e.g., its features and capabilities) and prepare it for deployment within real infrastructures. This last objective includes the improvement and customization of OSA's ``intelligence'', namely, the rules in charge of detecting cyber attacks against IT and OT systems. OSA correlation rules are, in fact, responsible of targeting on-going anomalous and potentially dangerous behaviors and providing informative alerts to human operators. In this regard, the present document, collects the list of rules specifically crafted in 2022 to monitor SMO products and environments. Such rules are planned to be used in 2023 within two proofs-of-concept projects of SMO: in Vienna (U6 line) and in Frankfurt.
+
+%\clearpage
+
+%\vspace*{8cm}
+
+\tableofcontents
+
+%\clearpage
+
+%%\vspace*{8cm}
+
+%%\chapter{Introduction}
+%%\markboth{}{Introduction}
+%\addcontentsline{toc}{chapter}{\protect\numberline{}Introduction}%
+
+%\section*{Overview}
+
+%%%\begin{itemize}
+%%%  \item Siemens's landscape
+%%%  \item Goal of the evaluation
+%%%\end{itemize}
+
+%%%\section*{Asset Discovery}
+
+%%%\begin{itemize}
+%%%  \item Topic
+%%%  \item Current solutions
+%%%  \item Limitations
+%%%\end{itemize}
+
+%%%\section*{Intrusion Detection}
+
+%%%\begin{itemize}
+%%%  \item Topic
+%%%  \item Current solutions
+%%%  \item Limitations
+%%%\end{itemize}
+
+%\clearpage
+
+\vspace*{8cm}
+
+\chapter{New Rule List}
+\markboth{}{New Rule List}
+%\addcontentsline{toc}{chapter}{\protect\numberline{}Rule List}%
+
+What follows in this chapter is the list of new OSA correlation rules created by T CST in FY22. The new rules are ideally divided in two main groups:
+	
+\begin{itemize}
+	\item {\bf Additional General Rules} (aka ``Windows/Linux Extra Rules'') - integrating the standard set of correlation rules available in OSA 4.5.
+	\item {\bf SMO-specific Rules} - targeting specific software used by SMO in customer deployments and thus enhancing OSA capabilities to detect cyber attacks (as well as misbehaviors) in those deployments
+\end{itemize}
+
+All rules include the following information:
+
+\begin{itemize}
+	\item the ``Categorization'' - indicating whenever the rule can be used for a given operating system
+	\item the ``Scope'' - indicating in which SMO environment the rule should be used (information derived from the workshops performed with SMO)
+	\item the ``Description'' - providing extra information about the rule as well as possible enhancements for the future
+	\item the ``Script'' - representing the actual script to run in the OSA backend
+	\item the ``Requirements'' - including all necessary conditions for the rule to run correctly
+	\item the ``Parameters'' - including all information to be defined in the script for the rule to run correctly
+	\item the ``Additional Information'' - representing all further information and categorization applying to the rule
+\end{itemize}
+
+Every rule described in this document links to a corresponding YAML (``.yml'') file including all meta-information needed to a rule to be integrated and loaded in OSA 4.6. The template used to describe each rule is available in the appendix.
+
+\pagebreak
+
+\input{Rules.tex}
+
+\pagebreak
+
+\chapter{SMO Workshops Results}
+\markboth{}{SMO Workshops Results}
+%\addcontentsline{toc}{chapter}{\protect\numberline{}SMO Workshops Results}%
+
+The following tables present the results of the performed workshops with SMO product owners and technical experts. Each table shows the identified detection use case of interest and the corresponding OSA correlation rules (both old an new) used to implement the related detection mechanism.
+
+\input{Vicos_table.tex}
+\input{Rail9000_table.tex}
+\input{Dcs_table.tex}
+
+\pagebreak
+
+\chapter{Conclusion}
+\markboth{}{Conclusion}
+%\addcontentsline{toc}{chapter}{\protect\numberline{}Conclusion}%
+
+All rules presented in this document have been made available to the OSA development team for integration. It has been agreed that the whole set of rules will be included in the OSA 4.6 installation package. Nonetheless, only the general rules without requirements will be switched on by default in the standard OSA 4.6 installation. This approach will avoid the indiscriminate use of rules created for specific environments (which should be deployed only with the operator confirming the presence of a matching monitored system).
+
+\begin{appendices}
+\chapter*{Appendix}
+\label{appendix}
+
+%\section*{List of ``countries of interest'' provided by DF}
+%\label{appendix:df_countries}
+
+\input{AppendixYMLTemplate.tex}
+\input{AppendixAuditdConfiguration.tex}
+\input{AppendixAuditdLogstashConfiguration.tex}
+\input{AppendixFortigateLogstashConfiguration.tex}
+
+\end{appendices}
+
+%\bibliographystyle{abbrv}
+%\bibliography{proposal}
+
+\end{document}

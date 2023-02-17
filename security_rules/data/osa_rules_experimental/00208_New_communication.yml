@@ -1,0 +1,20 @@
+category: application,network
+ciaLevel: confidentiality
+component: SI
+eventId: '208'
+eventType: warning
+impact: ''
+keys: ''
+name: New communication
+nameCN: 新通信
+parseEsResultKeys: ''
+redisEventKey: event-ts-new-communication
+remarkCN: 发现新通信
+remarks: A new communication found.
+ruleType: '0'
+script: ''
+source: network
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

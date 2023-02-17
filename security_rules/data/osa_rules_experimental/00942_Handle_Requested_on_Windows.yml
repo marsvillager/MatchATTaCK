@@ -1,0 +1,20 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '942'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Handle Requested on Windows
+nameCN: Windows：句柄请求
+parseEsResultKeys: ''
+redisEventKey: event-ts-handle-requested
+remarkCN: Windows主机 {src} 发生句柄请求
+remarks: A handle to an object was requested on Windows host {src}
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"4656"}},{"match":{"cat": "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

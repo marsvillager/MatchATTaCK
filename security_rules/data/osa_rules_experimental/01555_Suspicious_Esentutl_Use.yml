@@ -1,0 +1,24 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1555'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Suspicious Esentutl Use
+nameCN: 使用可疑的Esentutl
+parseEsResultKeys: ''
+redisEventKey: event-ts-suspicious-esentutl-use
+remarkCN: 主机 {src} 检测到使用LOLBAS Esentutl进行恶意活动的常见标志。在极少数情况下或维护期间，管理员可以使用它来访问锁定的文件
+remarks: Host {src} detects flags often used with the LOLBAS Esentutl for malicious
+  activity. It could be used in rare cases by administrators to access locked files
+  or during maintenance.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"wildcard":
+  {"event_data.CommandLine.keyword": "* /vss *"}}, {"wildcard": {"event_data.CommandLine.keyword":
+  "* /y *"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

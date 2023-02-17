@@ -1,0 +1,29 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+description: DCP ‘Identify All’ service is a way to identify/browse the PROFINET network
+  and find all the attached PROFINET devices. By using this function in the configuration
+  tool you can quickly find all connected PROFINET devices and get a device list of
+  all their information such as current device name, IP address, subnet mask, router
+  address, MAC address, device type, vendor and more.
+eventId: '884'
+eventType: warning
+impact: ''
+keys: '{"smac":{"en":"Source MAC", "zh":"源MAC"}}'
+name: 'PN-DCP: scan network'
+nameCN: PN-DCP：扫描网络
+parseEsResultKeys: ''
+redisEventKey: event-ts-scan-network
+remarkCN: 主机 {smac} 使用PROFINET DCP协议扫描当前网络
+remarks: Host {smac} launches PROFINET DCP (identify) scan
+requirements: Check if there is any scanning activity on network assets using PN-DCP
+  reconnaissance function
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "PN_DCP_Identify_All"}}]}},"size":
+  1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0846, attack.ics.T0888]
+threshold: 1
+timeWindow: 60000

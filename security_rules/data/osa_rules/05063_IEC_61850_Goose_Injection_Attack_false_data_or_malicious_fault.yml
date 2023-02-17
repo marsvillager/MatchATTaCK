@@ -1,0 +1,22 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5063'
+eventType: alert
+impact: ''
+keys: '{"orig_l2_addr":{"en":"Source MAC", "zh":"源MAC"}}'
+name: IEC 61850 Goose:Injection Attack - false data or malicious fault
+nameCN: 'IEC 61850 Goose: 注入攻击（虚假数据/恶意错误）'
+parseEsResultKeys: ''
+redisEventKey: event-ts-goose-injection-attack-false-data-or-malicious-fault
+remarkCN: 攻击机 {orig_l2_addr} 注入恶意数据或者翻转系统断路器状态产生无法预知的错误
+remarks: The attacker {orig_l2_addr} injects malicious data or flips the state of
+  the system circuit breaker, resulting in unpredictable errors
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match":{"duid.keyword":"GOOSE::GOOSE_INJECTION"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

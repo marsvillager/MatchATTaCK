@@ -1,0 +1,26 @@
+category: operation,network
+ciaLevel: confidentiality
+component: SI
+description: Monitor PROFINET reset factory setting high risk operation on the network,
+  If detected, an event will be prompted.
+eventId: '858'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'PN-DCP: Reset factory setting'
+nameCN: PN-DCP：恢复出厂设置
+parseEsResultKeys: ''
+redisEventKey: event-ts-reset-factory-setting
+remarkCN: 主机 {src} 使用PROFINET DCP协议发送高危指令，将设备重置为出厂配置
+remarks: 'Host {src} sends High risk operations : PN-DCP reset factory setting'
+requirements: Identify whether there is dangerous commands in network traffic, e.g.
+  RestFactorySetting of PROFINETDCP, which reset the device to factory setting from
+  network.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "PN_DCP_Reset"}}]}},"size": 1000}'
+source: network
+status: 0
+tags: [attack.ics.T0858, attack.ics.T0826, attack.ics.T0827]
+threshold: 1
+timeWindow: 180000

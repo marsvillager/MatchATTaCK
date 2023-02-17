@@ -1,0 +1,21 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '990'
+eventType: alert
+impact: ''
+keys: ''
+name: Windows Account Bruteforce
+nameCN: Windows账户暴力破解
+parseEsResultKeys: ''
+redisEventKey: event-ts-windows-account-bruteforce
+remarkCN: 3分钟内至少发生9次Windows账户暴力破解
+remarks: Windows Account Bruteforce.
+ruleType: '4'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":
+  "winEvent"}},{"match":{"eventId":"4625"}},{"match_phrase":{"subStatus":"0xc000006a"}}]}},"size":1000}'
+source: ''
+status: 1
+tags: ''
+threshold: 9
+timeWindow: 180000

@@ -1,0 +1,21 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '707'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'S7-1500 syslog: PLC (Protection level) Authentication Successful'
+nameCN: 'S7-1500 syslog: PLC(保护级)认证成功'
+parseEsResultKeys: ''
+redisEventKey: event-ts-authentication-successful
+remarkCN: S71500 PLC设备 {src} (保护级别)认证成功
+remarks: Protection level event from S7-1500 {src}
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"Security information: Session
+  authentication successful"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

@@ -1,0 +1,26 @@
+category: operation
+ciaLevel: integrity
+component: SI
+description: 'This rule identifies situations in which the Windows Applocker (utility introduced with Microsoft Windows 7 operating systems) is disabled. AppLocker is an application that allows an administrator to restrict which programs users can execute based on several features (e.g., programs` paths, publishers, hashes, etc.) or with a custom Group Policy. Attackers might disable AppLocker to ease the execution of malicious program and, in general, impairing Windows cybersecurity defenses.'  
+eventId: 15070
+eventType: alert
+impact: ''
+keys: ''
+name: Windows AppLocker Disabled
+nameCN: ''
+os: windows
+parameters:
+ std_tf: A standard time frame defined by the ``greater than'' (gt) and ``less than'' parameters.
+parseEsResultKeys: ''
+product: generic, vicosoc100, vicoss&d
+requirements: Windows Applocker needs to be installed and running.
+redisEventKey: event-applocker-disabled
+remarkCN: ''
+remarks: Windows AppLocker was disabled.
+ruleType: '1'
+script: '{ "query":{ "bool":{ "must":[ { "match":{ "eventId":"8008" } }, { "match":{ "cat":"winEvent" } }, { "range":{ "@timestamp":{ "gt":"<bt>", "lt":"<et>" } } } ] } }, "size":1000}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1562.001]
+threshold: 1
+timeWindow: 60000

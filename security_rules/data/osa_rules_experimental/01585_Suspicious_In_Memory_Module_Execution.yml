@@ -1,0 +1,40 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1585'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Suspicious In-Memory Module Execution
+nameCN: 可疑的内存模块执行
+parseEsResultKeys: ''
+redisEventKey: event-ts-suspicious-in-memory-module-execution
+remarkCN: 主机 {src} 检测到在内存空间中反射加载库的其他可疑进程对进程的访问，例如SilentTrinity C2行为。一般来说，当Sysmon EventID
+  10无法引用从磁盘加载的dll的堆栈调用(标准方式)时，将会显示”UNKNOWN”作为模块名称，通常意味着堆栈调用指向一个反射加载到内存中的模块。除此之外，在堆栈中并不常见到如此少的调用(ntdll.dll
+  --> kernelbase.dll --> unknown)，这实质上意味着进程执行某些程序所需的大部分功能已经存在于内存中，不需要对外部库的任何调用，后者也应被视为可疑
+remarks: Host {src} detects the access to processes by other suspicious processes
+  which have reflectively loaded libraries in their memory space. An example is SilentTrinity
+  C2 behaviour. Generally speaking, when Sysmon EventID 10 cannot reference a stack
+  call to a dll loaded from disk (the standard way), it will display "UNKNOWN" as
+  the module name. Usually this means the stack call points to a module that was reflectively
+  loaded in memory. Adding to this, it is not common to see such few calls in the
+  stack (ntdll.dll --> kernelbase.dll --> unknown) which essentially means that most
+  of the functions required by the process to execute certain routines are already
+  present in memory, not requiring any calls to external libraries. The latter should
+  also be considered suspicious
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"should": [{"bool": {"should":
+  [{"wildcard": {"event_data.CallTrace.keyword": "C:\\\\Windows\\\\SYSTEM32\\\\ntdll.dll+*|C:\\\\Windows\\\\System32\\\\KERNELBASE.dll+*|UNKNOWN(*)"}},
+  {"wildcard": {"event_data.CallTrace.keyword": "*UNKNOWN(*)|UNKNOWN(*)"}}]}}, {"bool":
+  {"must": [{"wildcard": {"event_data.CallTrace.keyword": "*UNKNOWN*"}}, {"bool":
+  {"should": [{"match_phrase": {"event_data.GrantedAccess": "0x1F0FFF"}}, {"match_phrase":
+  {"event_data.GrantedAccess": "0x1F1FFF"}}, {"match_phrase": {"event_data.GrantedAccess":
+  "0x143A"}}, {"match_phrase": {"event_data.GrantedAccess": "0x1410"}}, {"match_phrase":
+  {"event_data.GrantedAccess": "0x1010"}}, {"match_phrase": {"event_data.GrantedAccess":
+  "0x1F2FFF"}}, {"match_phrase": {"event_data.GrantedAccess": "0x1F3FFF"}}, {"match_phrase":
+  {"event_data.GrantedAccess": "0x1FFFFF"}}]}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

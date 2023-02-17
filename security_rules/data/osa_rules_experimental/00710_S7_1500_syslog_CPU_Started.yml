@@ -1,0 +1,20 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '710'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'S7-1500 syslog: CPU Started'
+nameCN: 'S7-1500 syslog: CPU 启动'
+parseEsResultKeys: ''
+redisEventKey: event-ts-plc-started
+remarkCN: S71500 PLC设备 {src} CPU启动
+remarks: S7-1500 {src} CPU START.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"Order ID: 6ES7 513-1AL01-0AB0"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

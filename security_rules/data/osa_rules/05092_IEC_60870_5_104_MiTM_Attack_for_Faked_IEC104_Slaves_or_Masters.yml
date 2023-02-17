@@ -1,0 +1,21 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5092'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'IEC 60870-5-104: MiTM Attack for Faked IEC104 Slaves or Masters'
+nameCN: 'IEC 60870-5-104: 主动或被动伪造IEC104的MiTM攻击'
+parseEsResultKeys: ''
+redisEventKey: event-ts-iec-mitm-attack-for-faked-iec104-slaves-or-masters
+remarkCN: 攻击机 {src} 接入非法的IEC104主从设备
+remarks: The attacker {src} accesses an illegal IEC104 master-slave device
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"match":{"duid.keyword":"IEC104::IEC104_MAN_IN_MID_PEER"}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

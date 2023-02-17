@@ -1,0 +1,21 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '8044'
+eventType: event
+impact: ''
+keys: '{"msg":{"en":"Message", "zh":"信息"}}'
+name: Basic Protocol Command Decode
+nameCN: Basic Protocol Command Decode
+parseEsResultKeys: ''
+redisEventKey: event-ts-basic-protocol-command-decode
+remarkCN: '{msg}'
+remarks: '{msg}'
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"suricata_event"}},{"match_phrase":{"alert_category.keyword":"Basic
+  Protocol Command Decode"}}]}},"size":1000}'
+source: suricata
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

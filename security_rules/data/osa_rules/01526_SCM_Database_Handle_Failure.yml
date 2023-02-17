@@ -1,0 +1,25 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1526'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: SCM Database Handle Failure
+nameCN: SCM数据库句柄失败
+parseEsResultKeys: ''
+redisEventKey: event-ts-scm-database-handle-failure
+remarkCN: 主机 {src} 检测到非系统用户获取SCM数据库句柄失败
+remarks: Host {src} detects non-system users failing to get a handle of the SCM database.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4656"}}, {"match_phrase":
+  {"event_data.ObjectName": "servicesactive"}}, {"match_phrase": {"event_data.ObjectType":
+  "SC_MANAGER OBJECT"}}, {"match_phrase": {"event_data.SubjectLogonId": "0x3e4"}},
+  {"match_phrase": {"keywords": "Audit Failure"}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1007]
+threshold: 1
+timeWindow: 60000

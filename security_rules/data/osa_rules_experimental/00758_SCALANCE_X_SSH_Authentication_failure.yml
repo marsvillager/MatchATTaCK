@@ -1,0 +1,20 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '758'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'SCALANCE X: SSH Authentication failure'
+nameCN: SCALANCE X：SSH认证失败
+parseEsResultKeys: ''
+redisEventKey: event-ts-ssh-authentication-failure
+remarkCN: SCALANCE X交换机 {src} SSH认证失败
+remarks: SCALANCE X {src} SSH Authentication failure
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"SSH: Authentication failure"}},{"match_phrase":{"cat":"ScalanceX"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

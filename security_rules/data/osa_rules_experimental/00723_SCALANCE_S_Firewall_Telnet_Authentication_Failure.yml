@@ -1,0 +1,21 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '723'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'SCALANCE S: Firewall Telnet Authentication Failure'
+nameCN: SCALANCE S：Telnet认证失败
+parseEsResultKeys: ''
+redisEventKey: event-ts-authentication-failure-(telnet)
+remarkCN: SCALANCE S防火墙 {src} Telnet认证失败
+remarks: Telnet authentication failure on SCALANCE S {src}
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"Telnet: Authentication
+  failure"}},{"match_phrase":{"cat":"ScalanceS"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

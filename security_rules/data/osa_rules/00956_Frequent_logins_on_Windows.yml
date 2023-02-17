@@ -1,0 +1,24 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '956'
+eventType: warning
+impact: ''
+keys: '{"shost":{"en":"Source Host", "zh":"源主机"}}'
+name: Frequent logins on Windows
+nameCN: 周期性登录
+parseEsResultKeys: aggregations:sensor_ids:buckets:shost:buckets
+redisEventKey: event-ts-frequently-login
+remarkCN: Windows主机 {shost} 出现账户的高频登录
+remarks: Successful account login in high frequency on Windows host {shost}
+requirements: No requirements.
+ruleType: '3'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "winEvent"}},{"match": {"eventId": "4624"}},{"exists":
+  {"field": "shost"}}]}},"aggs": {"sensor_ids": {"terms": {"field": "fields.gl2_source_collector.keyword"},"aggs":
+  {"shost": {"terms": {"field": "shost.keyword"}}}}},"size": 1}'
+source: ''
+status: 0
+tags: [attack.ics.T0859, attack.enterprise.T1078]
+threshold: 5
+timeWindow: 60000

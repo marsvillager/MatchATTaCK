@@ -1,0 +1,22 @@
+category: network
+ciaLevel: integrity
+component: SI
+eventId: '8001'
+eventType: event
+impact: ''
+keys: '{"msg":{"en":"Message", "zh":"信息"}}'
+name: Not Suspicious Traffic
+nameCN: Not Suspicious Traffic
+parseEsResultKeys: ''
+redisEventKey: event-ts-not-suspicious-traffic
+remarkCN: '{msg}'
+remarks: '{msg}'
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":{"cat":"suricata_event"}},{"match":{"event_type":"alert"}},{"match_phrase":{"alert_category.keyword":"Not
+  Suspicious Traffic"}}]}},"size":1000}'
+source: suricata
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,20 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '722'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: 'SCALANCE S: Firewall Web Console Authentication failure'
+nameCN: SCALANCE S：Web控制台认证失败
+parseEsResultKeys: ''
+redisEventKey: event-ts-authentication-failure-(web-Portal)
+remarkCN: SCALANCE S防火墙 {src} Web控制台认证失败
+remarks: Web console authenticatio failure on SCALANCE S {src}
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match_phrase":{"msg":"WBM: Authentication failure"}},{"match_phrase":{"cat":"ScalanceS"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: log
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 30000

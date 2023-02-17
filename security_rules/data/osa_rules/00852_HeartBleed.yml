@@ -1,0 +1,26 @@
+category: vulnerability
+ciaLevel: confidentiality
+component: SI
+description: Monitor OpenSSL with heartbleed vulnerability used on target network,
+  If OpenSSL (including HeartBleed vulnerability) has been used on network, and event
+  will be prompted.
+eventId: '852'
+eventType: warning
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: SSL Heartbleed attack or scan detected
+nameCN: 存在“心脏出血”漏洞
+parseEsResultKeys: ''
+redisEventKey: event-ts-heartBleed-attack
+remarkCN: 主机 {src} 存在“心脏出血”漏洞
+remarks: SSL Heartbleed attack or scan detected on host {src}.
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "notice"}},{"match_phrase": {"duid": "Heartbleed::SSL_Heartbeat_Attack"}}]}},"size":
+  1000}'
+source: network
+status: 0
+tags: [attack.enterprise.T1119, attack.ics.T0802]
+threshold: 1
+timeWindow: 180000

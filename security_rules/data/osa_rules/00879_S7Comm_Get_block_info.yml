@@ -1,0 +1,26 @@
+category: operation,network
+ciaLevel: integrity
+component: SI
+eventId: '879'
+eventType: event
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'S7Comm: Get block info'
+nameCN: S7Comm：获取PLC Block信息
+parseEsResultKeys: ''
+redisEventKey: event-ts-get-block-info
+remarkCN: 主机{src}查询目标PLC{dst}BLOCK信息
+remarks: Host {src} get BLOCK information from PLC {dst}
+requirements: 'Base on the datagram of Upload/Download configuration, extract from
+  every block of MC7 code the meta-info (such as author, family etc). The information
+  will be saved and displayed in Asset Detail -> Control Program widget. '
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range": {"@timestamp": {"gt": "<bt>","lt":
+  "<et>"}}},{"match": {"cat": "notice"}},{"match_phrase": {"msg": "get block info"}}]}},"size":
+  1000}'
+source: ''
+status: 0
+tags: [attack.ics.T0877]
+threshold: 1
+timeWindow: 60000

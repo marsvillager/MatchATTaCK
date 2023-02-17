@@ -1,0 +1,25 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1527'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Admin User Remote Logon
+nameCN: 管理员用户远程登录
+parseEsResultKeys: ''
+redisEventKey: event-ts-admin-user-remote-logon
+remarkCN: 主机 {src} 检测到管理员用户通过内部模式远程登录
+remarks: Host {src} detect remote login by Administrator user depending on internal
+  pattern
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"match_phrase": {"eventId": "4624"}}, {"wildcard": {"event_data.AccountName.keyword":
+  "Admin-*"}}, {"match_phrase": {"event_data.AuthenticationPackageName": "Negotiate"}},
+  {"match_phrase": {"logonType": "10"}}]}}}}}'
+source: ''
+status: 0
+tags: [attack.enterprise.T1078, attack.ics.T0859]
+threshold: 1
+timeWindow: 60000

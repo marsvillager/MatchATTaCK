@@ -1,0 +1,23 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '5072'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}, "dst":{"en":"Destination Address",
+  "zh":"目标地址"}}'
+name: 'DNP 3.0: Reset Function Command'
+nameCN: 'DNP 3.0: 重置功能命令'
+parseEsResultKeys: ''
+redisEventKey: event-ts-dnp-reset-function-command
+remarkCN: 攻击机 {src} 通过LINKRESET功能码复位链路状态，造成设备 {dst} 无法通信
+remarks: The attacker {src} resets the link state through the LINKRESET function code,
+  causing the device {dst} to be unable to communicate
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"<bt>","lt":"<et>"}}},{"match":{"cat":"notice"}},{"bool":{"should":[{"match":{"duid.keyword":"DNP3_LINK::DNP3_PROCESS_RESET"}},{"match":{"duid.keyword":"DNP3_MITM::DNP3_MAN_IN_MID_MODIFY_RESET_STATUS"}}]}}]}},"size":1000}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

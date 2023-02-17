@@ -1,0 +1,22 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '944'
+eventType: warning
+impact: ''
+keys: '{"dataSrcIP":{"en":"Source Address", "zh":"源地址"}}'
+name: System Log Cleared on Windows
+nameCN: Windows：系统日志被清除
+parseEsResultKeys: ''
+redisEventKey: event-ts-system-log-cleared
+remarkCN: Windows主机 {dataSrcIP} 系统日志被清除
+remarks: The system log was cleared on Windows host {dataSrcIP}
+requirements: No requirements.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"match":{"eventId":"104"}},{"match_phrase":{"channel":"System"}},{"match":{"cat":
+  "winEvent"}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}},"size":1000}'
+source: ''
+status: 0
+tags: [operation.local, attack.enterprise.T1070.001, attack.ics.T0872]
+threshold: 1
+timeWindow: 30000

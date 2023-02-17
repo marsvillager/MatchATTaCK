@@ -1,0 +1,23 @@
+category: attack,network
+ciaLevel: integrity
+component: SI
+eventId: '867'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Teardrop
+nameCN: Teardrop攻击
+parseEsResultKeys: ''
+redisEventKey: event-ts-teardrop
+remarkCN: 主机 {src} 进行Teardrop攻击
+remarks: Host {src} launchsTeardrop
+requirements: No requirements.
+ruleType: '1'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match":
+  {"cat": "weird"}},{"match_phrase": {"name": "fragment_size_inconsistency"}}]}},"size":
+  1000}'
+source: network
+status: 0
+tags: [attack.enterprise.T1499, attack.ics.T0814]
+threshold: 1
+timeWindow: 60000

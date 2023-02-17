@@ -1,0 +1,20 @@
+category: operation
+ciaLevel: integrity
+component: SI
+eventId: '12022'
+eventType: warning
+impact: ''
+keys: ''
+name: Disable System Firewall
+nameCN: 系统防火墙禁用
+parseEsResultKeys: ''
+redisEventKey: event-ts-disable-system-firewall
+remarkCN: 在主机 {src} 上检测到禁用系统防火墙的行为
+remarks: Detects disabling of system firewalls on host {src}.
+ruleType: '1'
+script: '{"query":{"bool":{"must":[{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase_prefix":{"msg":"*type=SERVICE_STOP*"}},{"bool":{"should":[{"match_phrase_prefix":{"msg":"*ufw*"}},{"match_phrase_prefix":{"msg":"*firewalld*"}},{"match_phrase_prefix":{"msg":"*iptables*"}}],"minimum_should_match":1}}]}},"size":1000}'
+source: ''
+status: 1
+tags: [operation.local]
+threshold: 1
+timeWindow: 60000

@@ -1,0 +1,27 @@
+category: account
+ciaLevel: integrity
+component: SI
+eventId: '960'
+eventType: alert
+impact: ''
+keys: '{"username":{"en":"Username", "zh":"账户名"}, "domain":{"en":"Domain", "zh":"域名"},
+  "accountType":{"en":"Account Type", "zh":"账号类型"}, "src":{"en":"Source Address",
+  "zh":"源地址"}}'
+name: Unauthorized account used on Windows
+nameCN: Windows非授权账号使用
+parseEsResultKeys: ''
+redisEventKey: event-ts-unauthorized-account-used-on-windows
+remarkCN: 'Windows主机 {src} 存在未被授权账户 (账户名: {username}, 域名: {domain}, 账号类型: {accountType}
+  ) 使用'
+remarks: 'Account (Name: {username}, Domain: {domain}, AccountType: {accountType}
+  ) was used on Windows host {src} without permission.'
+requirements: Collecting windows host account usage information and compare to account
+  allowlist in OSA basline. Generate warning accordingly.
+ruleType: '4'
+script: '{"query": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":{"cat":"Win32_UserAccount"}},{"exists":
+  {"field": "msg"}}]}},"size": 1000}'
+source: ''
+status: 0
+tags: [query-unclear]
+threshold: 1
+timeWindow: 60000

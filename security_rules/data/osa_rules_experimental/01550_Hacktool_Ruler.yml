@@ -1,0 +1,26 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1550'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Hacktool Ruler
+nameCN: 黑客工具Ruler
+parseEsResultKeys: ''
+redisEventKey: event-ts-hacktool-ruler
+remarkCN: 主机 {src} 检测到使用Sensepost的黑客工具Ruler
+remarks: This events that are generated when using the hacktool Ruler by Sensepost
+  on host {src}
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}},{"match_phrase":
+  {"EventLog": "Security"}}, {"bool": {"should": [{"bool": {"must": [{"bool": {"should":
+  [{"match_phrase": {"eventId": "4776"}}]}}, {"match_phrase": {"event_data.Workstation":
+  "RULER"}}]}}, {"bool": {"must": [{"bool": {"should": [{"match_phrase": {"eventId":
+  "4624"}}, {"match_phrase": {"eventId": "4625"}}]}}, {"match_phrase": {"event_data.WorkstationName":
+  "RULER"}}]}}]}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000

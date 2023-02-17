@@ -1,0 +1,32 @@
+category: attack
+ciaLevel: integrity
+component: SI
+eventId: '1573'
+eventType: alert
+impact: ''
+keys: '{"src":{"en":"Source Address", "zh":"源地址"}}'
+name: Winlogon Helper DLL
+nameCN: Winlogon Helper DLL
+parseEsResultKeys: ''
+redisEventKey: event-ts-winlogon-helper-dll
+remarkCN: Winlogon.exe是一个Windows组件，负责登录/注销时的操作以及由Ctrl-Alt-Delete触发的安全注意序列(SAS)。HKLM\Software[Wow6432Node]Microsoft\Windows
+  NT\CurrentVersion\Winlogon\和HKCU\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\中的注册表项用于管理支持Winlogon的其他辅助程序和功能。主机
+  {src} 检测到对这些注册表项的恶意修改，可能会导致Winlogon加载和执行恶意DLL和可执行文件
+remarks: Winlogon.exe is a Windows component responsible for actions at logon/logoff
+  as well as the secure attention sequence (SAS) triggered by Ctrl-Alt-Delete. Registry
+  entries in HKLM\Software[Wow6432Node]Microsoft\Windows NT\CurrentVersion\Winlogon\
+  and HKCU\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\ are used to manage
+  additional helper programs and functionalities that support Winlogon. Malicious
+  modifications to these Registry keys may cause Winlogon to load and execute malicious
+  DLLs and/or executables on host {src}
+ruleType: '1'
+script: '{"query": {"constant_score": {"filter": {"bool": {"must": [{"match_phrase":
+  {"eventId": "4104"}}, {"bool": {"should": [{"multi_match": {"query": "*Set-ItemProperty*",
+  "fields": [], "type": "phrase"}}, {"multi_match": {"query": "*New-Item*", "fields":
+  [], "type": "phrase"}}]}}, {"multi_match": {"query": "*CurrentVersion\\Winlogon*",
+  "fields": [], "type": "phrase"}}]}}}}}'
+source: ''
+status: 0
+tags: ''
+threshold: 1
+timeWindow: 60000
