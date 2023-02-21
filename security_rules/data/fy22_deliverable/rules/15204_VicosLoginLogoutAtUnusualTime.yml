@@ -20,7 +20,7 @@ remarkCN: ''
 remarks: A VICOS login/logout was attempted at unusual time.
 requirements: This rule requires VICOS software to log security events in the custom Windows event channel (the newest Vicos logging concept). Furthermore, this rule assumes the definition of a working shift.
 ruleType: '1'
-script: '{"runtime_mappings":{"daytime":{"type":"long","script":{"source":"emit(doc['@timestamp'].value.toEpochSecond()%86400)"}}},"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"150"}},{"match":{"eventId":"550"}},{"match":{"eventId":"1550"}},{"match":{"eventId":"152"}},{"match":{"eventId":"552"}},{"match":{"eventId":"1552"}}]}},{"match":{"cat":"winEvent"}},{"bool":{"should":[{"range":{"daytime":{"lte":"shitfStartingTime"}}},{"range":{"daytime":{"gte":"shitfFinishingTime"}}},{"range":{"@timestamp":{"gt":"<bt>", "lt":"<et>"}}}]}}]}},"fields":["daytime"]}'
+script: '{"runtime_mappings":{"daytime":{"type":"long","script":{"source":"emit(doc["@timestamp"].value.toEpochSecond()%86400)"}}},"query":{"bool":{"must":[{"bool":{"should":[{"match":{"eventId":"150"}},{"match":{"eventId":"550"}},{"match":{"eventId":"1550"}},{"match":{"eventId":"152"}},{"match":{"eventId":"552"}},{"match":{"eventId":"1552"}}]}},{"match":{"cat":"winEvent"}},{"bool":{"should":[{"range":{"daytime":{"lte":"shitfStartingTime"}}},{"range":{"daytime":{"gte":"shitfFinishingTime"}}},{"range":{"@timestamp":{"gt":"<bt>", "lt":"<et>"}}}]}}]}},"fields":["daytime"]}'
 source: ''
 status: 1
 tags: [attack.enterprise.T1078.003]

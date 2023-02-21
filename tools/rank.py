@@ -80,10 +80,12 @@ def tf_idf(keywords: set[str], mitre_list: pd.DataFrame) -> list[tuple]:
         mitre_item.setter(words, mitre_list.shape[0], words_all)
 
         weight: float = 0
+        pass_words: list[str] = []
         for keyword in keywords:
             tf: float = mitre_item.term[keyword]/mitre_item.term_num
 
             if tf != 0:
+                pass_words.append(keyword)
                 weight += tf * (math.log((mitre_item.doc_num + 1)/(mitre_item.term_all[keyword] + 1)) + 1)
 
                 # 单个输出测试
@@ -92,6 +94,6 @@ def tf_idf(keywords: set[str], mitre_list: pd.DataFrame) -> list[tuple]:
                 #     print(mitre_item.term[keyword])
                 #     print(tf * (math.log((mitre_item.doc_num + 1) / (mitre_item.term_all[keyword] + 1)) + 1))
 
-        tf_idf_result[mitre_list.loc[i, "id"]] = weight
+        tf_idf_result[mitre_list.loc[i, "id"]] = [weight, pass_words]
 
-    return sorted(tf_idf_result.items(), key=lambda k: float(k[1]), reverse=True)
+    return sorted(tf_idf_result.items(), key=lambda k: float(k[1][0]), reverse=True)

@@ -134,7 +134,7 @@ def get_related(src_type: str, rel_type: str, target_type: str, reverse=False) -
 
         for related in id_to_related[stix_id]:
             if not related["id"] in id_to_target:
-                continue  # targetting a revoked object
+                continue  # targeting a revoked object
 
             if related["id"].startswith("x-mitre"):
                 value.append(
@@ -155,8 +155,10 @@ def get_related(src_type: str, rel_type: str, target_type: str, reverse=False) -
     return output
 
 
-def datacomponents_detecting_technique():
+def datacomponents_detecting_technique() -> dict:
     """
-    Return technique => {data component, relationship} for each data component decting a technique.
+    Return technique => {data component, relationship} for each data component detecting a technique.
+
+    :return: dicts of detecting technique
     """
     return get_related("x-mitre-data-component", "detects", "attack-pattern", reverse=True)
