@@ -21,7 +21,7 @@ remarks: A login/logout operation happened at unusual time
 requirements: None.
 ruleType: '1'
 source: ''
-script: '{"runtime_mappings":{"daytime":{"type":"long","script":{"source":"emit(doc['@timestamp'].value.toEpochSecond()%86400)"}}},"query":{"bool":{"must":[{"bool":{"should":[{"match_phrase":{"msg":"session opened for user"}},{"match_phrase":{"eventId":"session closed for user"}}]}},{"bool":{"must_not":[{"match_phrase":{"msg":"no new event"}}]}},{"bool":{"should":[{"range":{"daytime":{"lte":"shitfStartingTime"}}},{"range":{"daytime":{"gte":"shitfFinishingTime"}}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}}]}},"fields":["daytime"]}'
+script: '{"runtime_mappings":{"daytime":{"type":"long","script":{"source":"emit(doc["@timestamp"].value.toEpochSecond()%86400)"}}},"query":{"bool":{"must":[{"bool":{"should":[{"match_phrase":{"msg":"session opened for user"}},{"match_phrase":{"eventId":"session closed for user"}}]}},{"bool":{"must_not":[{"match_phrase":{"msg":"no new event"}}]}},{"bool":{"should":[{"range":{"daytime":{"lte":"shitfStartingTime"}}},{"range":{"daytime":{"gte":"shitfFinishingTime"}}},{"range":{"@timestamp":{"gt":"<bt>","lt":"<et>"}}}]}}]}},"fields":["daytime"]}'
 status: 1
 tags: [attack.enterprise.T1078.003]
 threshold: 1

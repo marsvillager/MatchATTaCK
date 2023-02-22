@@ -46,7 +46,7 @@ def test_all(filedir: str, format_list: pd.DataFrame, rank: int) -> None:
         print(file)
 
         pairs: dict = load_file(file)
-        if pairs['tags'] is None or pairs['tags'] == '':
+        if 'description' not in pairs or pairs['tags'] is None or pairs['tags'] == '':
             print("未打标\n")
             continue
 
@@ -74,7 +74,7 @@ def test_all(filedir: str, format_list: pd.DataFrame, rank: int) -> None:
                 pass_count += 1
                 break
 
-    print("all tests:" + str(all_test))
+    print("all tests: " + str(all_test))
     print("actual tests: " + str(actual_test))
     print("tag tests: " + str(tag_test))
     print("pass: " + str(pass_count))

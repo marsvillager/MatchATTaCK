@@ -1,0 +1,70 @@
+G:\MatchATTaCK\venv\Scripts\python.exe G:\MatchATTaCK\main.py 
+Download/Update data or not? Please input yes or no:
+d
+1/14
+G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15403_EsxiFailedSshLogin.yml
+未打标
+
+2/14
+G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15410_EsxiHighCpuUsage.yml
+未打标
+
+3/14
+G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15420_EsxiNetworkHighConsumption.yml
+未打标
+
+4/14
+G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15693_ApplicationRemovalLinuxRedHat.yml
+未打标
+
+5/14
+G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15694_ApplicationInstallationLinuxRedHat.yml
+['attack.enterprise.T1543']
+tags of security rules: T1543
+top 10 of match results: T1443, T0827, T1154, T1447, T1630.002, T1546.005, T1546.016, T1137.005, T1625.001, T1463
+[['application'], ['system', 'damage', 'operation', 'installation'], ['persistence', 'situation'], ['attacker', 'objective', 'application'], ['attacker', 'objective', 'application'], ['persistence', 'situation'], ['persistence', 'instal', 'system', 'application', 'installation', 'linux'], ['persistence', 'system', 'application', 'rule'], ['persistence', 'system', 'application'], ['attacker', 'application']]
+
+
+6/14
+G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15701_LoginHirschmannSwitch_UPDATE.yml
+未打标
+
+7/14
+G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15702_LoginFailureHirschmannSwitch.yml
+未打标
+
+8/14
+G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15703_PrivilegedLoginHirschmannSwitch.yml
+未打标
+
+9/14
+G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15704_PrivilegedLoginFailureHirschmannSwitch.yml
+未打标
+
+10/14
+G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15710_ConfigurationErrorHirschmannSwitch.yml
+未打标
+
+11/14
+G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15722_LogErrorHirschmannSwitch.yml
+未打标
+
+12/14
+G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15723_LogEmptyHirschmannSwitch.yml
+未打标
+
+13/14
+G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15730_UsbAttachedHirschmannSwitch.yml
+未打标
+
+14/14
+G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15740_MacAddressOverflowHirschmannSwitch.yml
+未打标
+
+all tests: 14
+actual tests: 14
+tag tests: 1
+pass: 0
+run time: 34.428951999999995s ≈ 00:00:34
+
+Process finished with exit code 0

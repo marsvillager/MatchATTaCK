@@ -24,7 +24,7 @@ if __name__ == '__main__':
     format_list: pd.DataFrame = pd.read_csv(Config.OUTPUT_CSV + "mitre_data(完整).csv")
 
     # test(Config.SECURITY_RULES_PATH + "/sample/" + "15022_LoginLogoutAtUnusualTime.yml", format_list)
-    # test_all(Config.SECURITY_RULES_PATH + "/osa_rules/", format_list, 10)
+    test_all(Config.SECURITY_RULES_PATH + "/osa_rules/", format_list, 10)
     # test_all(Config.SECURITY_RULES_PATH + "/osa_rules_experimental/", format_list, 10)
-    test_all(Config.SECURITY_RULES_PATH + "/fy22_deliverable/rules/", format_list, 10)
+    # test_all(Config.SECURITY_RULES_PATH + "/fy22_deliverable/rules/", format_list, 10)
     # test_all(Config.SECURITY_RULES_PATH + "/fy23_deliverable/rules/", format_list, 10)
