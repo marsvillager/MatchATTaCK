@@ -1,16 +1,22 @@
 import nltk
 import pandas as pd
-from nltk import WordNetLemmatizer
+import ssl
 
 from mitre_attack.process.package import format_data
 from mitre_attack.process.prepare import update
 from tools.config import Config
 from tools.evaluation import test_all, test
-from tools.transform import lemmatize, stemmer, is_lemma, word_pos_tag
 
 if __name__ == '__main__':
     print("Download/Update data or not? Please input yes or no:")
     if input() == 'yes':
+        try:
+            _create_unverified_https_context = ssl._create_unverified_context
+        except AttributeError:
+            pass
+        else:
+            ssl._create_default_https_context = _create_unverified_https_context
+
         nltk.download('punkt')
         nltk.download('stopwords')
         nltk.download('wordnet')
