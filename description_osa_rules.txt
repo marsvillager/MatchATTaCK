@@ -1,6 +1,6 @@
 G:\MatchATTaCK\venv\Scripts\python.exe G:\MatchATTaCK\main.py 
 Download/Update data or not? Please input yes or no:
-j
+no
 1/241
 G:\MatchATTaCK/security_rules/data//osa_rules\00201_Asset_connected.yml
 未打标

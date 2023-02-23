@@ -3,7 +3,7 @@ import time
 import pandas as pd
 
 from security_rules.process.process_data import process, load_file
-from tools.rank import tf_idf
+from tools.rank import tf_idf, result
 
 
 def test(filename: str, format_list: pd.DataFrame) -> None:
@@ -46,7 +46,8 @@ def test_all(filedir: str, format_list: pd.DataFrame, rank: int) -> None:
         print(file)
 
         pairs: dict = load_file(file)
-        if 'description' not in pairs or pairs['tags'] is None or pairs['tags'] == '':
+        # if 'description' not in pairs or pairs['tags'] is None or pairs['tags'] == '':
+        if pairs['tags'] is None or pairs['tags'] == '':
             print("未打标\n")
             continue
 
@@ -61,25 +62,29 @@ def test_all(filedir: str, format_list: pd.DataFrame, rank: int) -> None:
 
         # security rules, lemma if True
         keywords: set[str] = process(file, False)
+        print("keywords: " + ", ".join(keywords))
 
         # match
-        # print(result(keywords, format_list))
-        rank_list: list[tuple] = [tag[0] for tag in tf_idf(keywords, format_list)[0: rank]]
-        print("top 10 of match results: " + ", ".join(rank_list))
-        print([tag[1][1] for tag in tf_idf(keywords, format_list)[0: rank]])
-        print("\n")
+        # rank_list: list[tuple] = [tag[0] for tag in result(keywords, format_list)[0: rank]]
+        tf_idf_rank: list[tuple] = tf_idf(keywords, format_list)
+        rank_list: list[tuple] = [tag[0] for tag in tf_idf_rank[0: rank]]
+        print("top " + str(rank) + " of match results: " + ", ".join(rank_list))
+        print([tag[1][1] for tag in tf_idf_rank[0: rank]])
 
         for tag in tag_list:
             if tag in rank_list:
                 pass_count += 1
+                print("pass")
                 break
+
+        print("\n")
 
     print("all tests: " + str(all_test))
     print("actual tests: " + str(actual_test))
     print("tag tests: " + str(tag_test))
     print("pass: " + str(pass_count))
     if pass_count > 0:
-        print("ratio: " + str(pass_count/tag_test))
+        print("ratio: " + str(pass_count / tag_test))
 
     time_end: float = time.perf_counter()
     seconds: float = (time_end - time_start)

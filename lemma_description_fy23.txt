@@ -21,9 +21,9 @@ G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15693_ApplicationRemo
 G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15694_ApplicationInstallationLinuxRedHat.yml
 ['attack.enterprise.T1543']
 tags of security rules: T1543
-keywords: objective, system, rule, hat, installation, instal, situation, application, dpkg, persistence, linux, damage, operation, attacker
-top 10 of match results: T1443, T0827, T1154, T1447, T1630.002, T1546.005, T1546.016, T1137.005, T1625.001, T1463
-[['application'], ['system', 'installation', 'damage', 'operation'], ['situation', 'persistence'], ['objective', 'application', 'attacker'], ['objective', 'application', 'attacker'], ['situation', 'persistence'], ['system', 'installation', 'instal', 'application', 'persistence', 'linux'], ['system', 'rule', 'application', 'persistence'], ['system', 'application', 'persistence'], ['application', 'attacker']]
+keywords: object, hat, dam, op, attack, instal, rul, persist, apply, situ, inst, linux, system, dpkg
+top 10 of match results: T1443, T1122, T0827, T1546.015, T1546.016, T1154, T0882, T1546.005, T1578.002, T0880
+[['apply'], ['object', 'op', 'persist', 'inst', 'system'], ['dam', 'op', 'attack', 'instal', 'system'], ['object', 'op', 'attack', 'persist', 'apply', 'inst', 'system'], ['attack', 'instal', 'persist', 'apply', 'inst', 'linux', 'system'], ['persist', 'situ'], ['dam', 'op', 'system'], ['persist', 'situ'], ['op', 'attack', 'rul', 'inst', 'system'], ['dam', 'op', 'attack', 'system']]
 
 
 6/14
@@ -66,6 +66,6 @@ all tests: 14
 actual tests: 14
 tag tests: 1
 pass: 0
-run time: 36.0378343s ≈ 00:00:36
+run time: 33.434696200000005s ≈ 00:00:33
 
 Process finished with exit code 0

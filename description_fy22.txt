@@ -1,6 +1,6 @@
 G:\MatchATTaCK\venv\Scripts\python.exe G:\MatchATTaCK\main.py 
 Download/Update data or not? Please input yes or no:
-j
+no
 1/73
 G:\MatchATTaCK/security_rules/data//fy22_deliverable/rules\15001_EventLoggingServiceShutDown.yml
 ['attack.enterprise.T1562.002']

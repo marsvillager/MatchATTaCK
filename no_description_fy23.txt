@@ -1,6 +1,6 @@
 G:\MatchATTaCK\venv\Scripts\python.exe G:\MatchATTaCK\main.py 
 Download/Update data or not? Please input yes or no:
-d
+no
 1/14
 G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15403_EsxiFailedSshLogin.yml
 未打标
@@ -21,8 +21,9 @@ G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15693_ApplicationRemo
 G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15694_ApplicationInstallationLinuxRedHat.yml
 ['attack.enterprise.T1543']
 tags of security rules: T1543
+keywords: installation, instal, linux, hat, application, operation
 top 10 of match results: T1443, T1546.016, T1418.001, T1116, T0827, T1010, T1053.001, T1407, T0800, T1437
-[['application'], ['instal', 'linux', 'installation', 'application'], ['instal', 'application'], ['operation', 'linux'], ['operation', 'installation'], ['operation', 'application'], ['linux'], ['installation', 'application'], ['operation', 'installation'], ['application']]
+[['application'], ['installation', 'instal', 'linux', 'application'], ['instal', 'application'], ['linux', 'operation'], ['installation', 'operation'], ['application', 'operation'], ['linux'], ['installation', 'application'], ['installation', 'operation'], ['application']]
 
 
 6/14
@@ -65,6 +66,6 @@ all tests: 14
 actual tests: 14
 tag tests: 1
 pass: 0
-run time: 36.3880423s ≈ 00:00:36
+run time: 34.3653217s ≈ 00:00:34
 
 Process finished with exit code 0
