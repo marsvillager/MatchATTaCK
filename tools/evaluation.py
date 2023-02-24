@@ -6,12 +6,13 @@ from security_rules.process.process_data import process, load_file
 from tools.rank import tf_idf, result
 
 
-def test(filename: str, format_list: pd.DataFrame) -> None:
+def test(filename: str, format_list: pd.DataFrame, lemma: bool) -> None:
     """
     Test single file.
 
     :param filename: security file
     :param format_list: processed data of mitre att&ck data
+    :param lemma: word ==> lemma if True, stay the same if False
     :return: None
     """
     # security rules, lemma if True
@@ -22,13 +23,14 @@ def test(filename: str, format_list: pd.DataFrame) -> None:
     print(tf_idf(keywords, format_list))
 
 
-def test_all(filedir: str, format_list: pd.DataFrame, rank: int) -> None:
+def test_all(filedir: str, format_list: pd.DataFrame, rank: int, lemma: bool) -> None:
     """
     Test all files.
 
     :param filedir: directory of security file
     :param format_list: processed data of mitre att&ck data
     :param rank: baseline
+    :param lemma: word ==> lemma if True, stay the same if False
     :return: None
     """
     time_start: float = time.perf_counter()
@@ -61,7 +63,7 @@ def test_all(filedir: str, format_list: pd.DataFrame, rank: int) -> None:
         tag_test += 1
 
         # security rules, lemma if True
-        keywords: set[str] = process(file, False)
+        keywords: set[str] = process(file, lemma)
         print("keywords: " + ", ".join(keywords))
 
         # match

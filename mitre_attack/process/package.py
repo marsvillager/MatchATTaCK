@@ -29,6 +29,7 @@ def format_data(lemma: bool) -> pd.DataFrame:
     """
     Extract technique data which is key to process then match.
 
+    :param lemma: word ==> lemma if True, stay the same if False
     :return: formatted data
     """
     techniques: list = get_data(Filter("type", "=", "attack-pattern"))
@@ -53,6 +54,8 @@ def format_data(lemma: bool) -> pd.DataFrame:
                                        "name": ' '.join(name),
                                        "description": ' '.join(description),
                                        "detects": ' '.join(detects)}
+
+        print(format_dict)
 
         format_list.append(format_dict)
 
