@@ -60,11 +60,11 @@ def stemmer(words: list[str]) -> list[str]:
     cut_word: list[str] = []
     for word in words:
         # 基于 Porter词干提取算法
-        # cut_word.append((PorterStemmer().stem(word)))
+        cut_word.append((PorterStemmer().stem(word)))
         # 基于 Lancaster 词干提取算法
         # cut_word.append(LancasterStemmer().stem(word))
         # 基于 Snowball 词干提取算法
-        cut_word.append(SnowballStemmer('english').stem(word))
+        # cut_word.append(SnowballStemmer('english').stem(word))
     return cut_word
 
 
