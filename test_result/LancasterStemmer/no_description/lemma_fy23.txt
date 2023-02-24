@@ -21,9 +21,9 @@ G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15693_ApplicationRemo
 G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15694_ApplicationInstallationLinuxRedHat.yml
 ['attack.enterprise.T1543']
 tags of security rules: T1543
-keywords: hat, oper, applic, instal, linux
-top 10 of match results: T1546.016, T1053.001, T1070.002, T1148, T1003.008, T1118, T1116, T1407, T0827, T1546.011
-[['instal', 'linux'], ['linux'], ['linux'], ['linux'], ['linux'], ['instal'], ['linux'], ['instal'], ['instal'], ['hat', 'instal']]
+keywords: apply, hat, inst, op, instal, linux
+top 10 of match results: T1443, T1546.016, T0829, T1578.003, T1578.004, T1536, T1116, T1522, T1578.002, T1122
+[['apply'], ['apply', 'inst', 'instal', 'linux'], ['inst', 'op'], ['inst', 'op'], ['inst', 'op'], ['inst'], ['op', 'linux'], ['apply', 'inst'], ['inst', 'op'], ['inst', 'op']]
 
 
 6/14
@@ -66,6 +66,6 @@ all tests: 14
 actual tests: 14
 tag tests: 1
 pass: 0
-run time: 17.4811331s ≈ 00:00:17
+run time: 17.6892776s ≈ 00:00:17
 
 Process finished with exit code 0

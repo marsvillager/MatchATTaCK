@@ -48,8 +48,8 @@ def test_all(filedir: str, format_list: pd.DataFrame, rank: int, lemma: bool) ->
         print(file)
 
         pairs: dict = load_file(file)
-        if 'description' not in pairs or pairs['tags'] is None or pairs['tags'] == '':
-        # if pairs['tags'] is None or pairs['tags'] == '':
+        # if 'description' not in pairs or pairs['tags'] is None or pairs['tags'] == '':
+        if pairs['tags'] is None or pairs['tags'] == '':
             print("未打标\n")
             continue
 
