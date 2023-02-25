@@ -1,24 +1,28 @@
-G:\MatchATTaCK\venv\Scripts\python.exe G:\MatchATTaCK\main.py 
+/Users/xuyi/Downloads/MatchATTaCK/venv/bin/python /Users/xuyi/Downloads/MatchATTaCK/main.py
 Download/Update data or not? Please input yes or no:
 no
 1/14
-G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15403_EsxiFailedSshLogin.yml
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15704_PrivilegedLoginFailureHirschmannSwitch.yml
 未打标
 
 2/14
-G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15410_EsxiHighCpuUsage.yml
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15703_PrivilegedLoginHirschmannSwitch.yml
 未打标
 
 3/14
-G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15420_EsxiNetworkHighConsumption.yml
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15701_LoginHirschmannSwitch_UPDATE.yml
 未打标
 
 4/14
-G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15693_ApplicationRemovalLinuxRedHat.yml
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15740_MacAddressOverflowHirschmannSwitch.yml
 未打标
 
 5/14
-G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15694_ApplicationInstallationLinuxRedHat.yml
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15710_ConfigurationErrorHirschmannSwitch.yml
+未打标
+
+6/14
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15694_ApplicationInstallationLinuxRedHat.yml
 ['attack.enterprise.T1543']
 tags of security rules: T1543
 keywords: apply, hat, inst, op, instal, linux
@@ -26,46 +30,42 @@ top 10 of match results: T1443, T1546.016, T0829, T1578.003, T1578.004, T1536, T
 [['apply'], ['apply', 'inst', 'instal', 'linux'], ['inst', 'op'], ['inst', 'op'], ['inst', 'op'], ['inst'], ['op', 'linux'], ['apply', 'inst'], ['inst', 'op'], ['inst', 'op']]
 
 
-6/14
-G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15701_LoginHirschmannSwitch_UPDATE.yml
-未打标
-
 7/14
-G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15702_LoginFailureHirschmannSwitch.yml
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15410_EsxiHighCpuUsage.yml
 未打标
 
 8/14
-G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15703_PrivilegedLoginHirschmannSwitch.yml
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15722_LogErrorHirschmannSwitch.yml
 未打标
 
 9/14
-G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15704_PrivilegedLoginFailureHirschmannSwitch.yml
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15702_LoginFailureHirschmannSwitch.yml
 未打标
 
 10/14
-G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15710_ConfigurationErrorHirschmannSwitch.yml
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15730_UsbAttachedHirschmannSwitch.yml
 未打标
 
 11/14
-G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15722_LogErrorHirschmannSwitch.yml
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15693_ApplicationRemovalLinuxRedHat.yml
 未打标
 
 12/14
-G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15723_LogEmptyHirschmannSwitch.yml
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15403_EsxiFailedSshLogin.yml
 未打标
 
 13/14
-G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15730_UsbAttachedHirschmannSwitch.yml
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15723_LogEmptyHirschmannSwitch.yml
 未打标
 
 14/14
-G:\MatchATTaCK/security_rules/data//fy23_deliverable/rules\15740_MacAddressOverflowHirschmannSwitch.yml
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15420_EsxiNetworkHighConsumption.yml
 未打标
 
 all tests: 14
 actual tests: 14
 tag tests: 1
 pass: 0
-run time: 17.6892776s ≈ 00:00:17
+run time: 26.623663667000002s ≈ 00:00:26
 
 Process finished with exit code 0
