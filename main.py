@@ -30,11 +30,11 @@ if __name__ == '__main__':
     # mitre att&ck
     # format_list: pd.DataFrame = pd.read_csv(Config.OUTPUT_CSV + "mitre_data(full).csv")
     # format_list: pd.DataFrame = pd.read_csv(Config.OUTPUT_CSV + "mitre_data(LancasterStemmer).csv")
-    # format_list: pd.DataFrame = pd.read_csv(Config.OUTPUT_CSV + "mitre_data(PorterStemmer).csv")
+    format_list: pd.DataFrame = pd.read_csv(Config.OUTPUT_CSV + "mitre_data(PorterStemmer).csv")
     # format_list: pd.DataFrame = pd.read_csv(Config.OUTPUT_CSV + "mitre_data(SnowballStemmer).csv")
 
     # test(Config.SECURITY_RULES_PATH + "/sample/" + "15022_LoginLogoutAtUnusualTime.yml", format_list, True)
     # test_all(Config.SECURITY_RULES_PATH + "/osa_rules_experimental/", format_list, 10, True)
-    # test_all(Config.SECURITY_RULES_PATH + "/osa_rules/", format_list, 10, True)
+    test_all(Config.SECURITY_RULES_PATH + "/osa_rules/", format_list, 10, True)
     # test_all(Config.SECURITY_RULES_PATH + "/fy22_deliverable/rules/", format_list, 10, True)
     # test_all(Config.SECURITY_RULES_PATH + "/fy23_deliverable/rules/", format_list, 10, True)

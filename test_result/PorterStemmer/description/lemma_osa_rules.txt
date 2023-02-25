@@ -25,9 +25,9 @@ no
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00891_SMBv1_DoublePulsar_Deliver_Payload.yml
 ['attack.ics.T0866', 'attack.enterprise.T1210']
 tags of security rules: T0866, T1210
-keywords: doubleplus, ev, host, dst, payload, src, monit, smbv1, vuln, doublepuls, window, prompt, attack, network
+keywords: attack, prompt, vulner, doubleplusar, window, network, dst, event, monitor, payload, host, doublepulsar, src, smbv1
 top 10 of match results: T1455, T1405, T1423, T1588.006, T1070.001, T0866, T1463, T1218.007, T1546.003, T1547.007
-[['vuln'], ['vuln', 'attack'], ['host', 'vuln', 'network'], ['monit', 'vuln', 'attack'], ['ev', 'monit', 'window', 'attack'], ['payload', 'smbv1', 'vuln', 'network'], ['vuln', 'attack', 'network'], ['ev', 'host', 'payload', 'monit', 'window', 'network'], ['ev', 'host', 'monit', 'window', 'attack'], ['payload', 'monit', 'window', 'prompt', 'attack']]
+[['vulner'], ['attack', 'vulner'], ['vulner', 'network', 'host'], ['attack', 'vulner', 'monitor'], ['attack', 'window', 'event', 'monitor'], ['vulner', 'network', 'payload', 'smbv1'], ['attack', 'vulner', 'network'], ['window', 'network', 'event', 'monitor', 'payload', 'host'], ['attack', 'window', 'event', 'monitor', 'host'], ['attack', 'prompt', 'window', 'monitor', 'payload']]
 pass
 
 
@@ -43,9 +43,9 @@ pass
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/05024_Vulnerability_Scan_TFTP_Access.yml
 ['attack.enterprise.T1595.002']
 tags of security rules: T1595.002
-keywords: ind, fil, connect, control, us, target, architect, access, serv, help, host, transf, dat, behavy, tftp, model, comput, protocol, scan, src, vuln, cli, network, ftp
-top 10 of match results: T1544, T1455, T1423, T1639, T1071.002, T0808, T1639.001, T1105, T1048.003, T1008
-[['fil', 'control', 'transf', 'protocol', 'ftp'], ['vuln'], ['connect', 'access', 'serv', 'host', 'scan', 'vuln', 'network'], ['control', 'us', 'serv', 'dat', 'protocol', 'network', 'ftp'], ['fil', 'connect', 'control', 'us', 'serv', 'transf', 'dat', 'tftp', 'protocol', 'cli', 'network', 'ftp'], ['control', 'target', 'model', 'vuln'], ['control', 'us', 'serv', 'dat', 'protocol', 'network', 'ftp'], ['fil', 'connect', 'control', 'us', 'serv', 'host', 'transf', 'dat', 'tftp', 'protocol', 'cli', 'network', 'ftp'], ['fil', 'connect', 'control', 'us', 'serv', 'host', 'dat', 'protocol', 'network', 'ftp'], ['connect', 'control', 'us', 'transf', 'dat', 'network']]
+keywords: indic, protocol, src, data, file, target, vulner, comput, tftp, use, connect, user, scan, help, network, access, ftp, server, behavior, model, transfer, architectur, client, control, host
+top 10 of match results: T1544, T1455, T1639, T1071.002, T1423, T1639.001, T0808, T1105, T1048.003, T1132
+[['protocol', 'file', 'ftp', 'transfer', 'control'], ['vulner'], ['protocol', 'data', 'use', 'network', 'ftp', 'server', 'control'], ['protocol', 'data', 'file', 'tftp', 'use', 'connect', 'network', 'ftp', 'server', 'transfer', 'client', 'control'], ['vulner', 'connect', 'scan', 'network', 'access', 'host'], ['protocol', 'data', 'use', 'network', 'ftp', 'server', 'control'], ['target', 'vulner', 'model', 'control'], ['protocol', 'data', 'file', 'tftp', 'use', 'connect', 'network', 'ftp', 'server', 'transfer', 'client', 'control', 'host'], ['protocol', 'data', 'file', 'use', 'connect', 'network', 'ftp', 'server', 'control', 'host'], ['protocol', 'data', 'use', 'network', 'server', 'behavior', 'client', 'control']]
 
 
 10/241
@@ -72,9 +72,9 @@ top 10 of match results: T1544, T1455, T1423, T1639, T1071.002, T0808, T1639.001
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00893_WannaCry_Kill_Switch_DNS.yml
 ['attack.enterprise.T1497']
 tags of security rules: T1497
-keywords: ind, ransom, run, encrypt, mon, group, cal, releas, target, malw, brok, switch, eternalblu, cryptoworm, develop, wannacry, pay, window, nsa, kil, host, dat, microsoft, lif, behavy, leak, shadow, cyberattack, stat, comput, org, end, patch, dns, system, sec, src, bitcoin, cryptocur, ransomw, ag, attack
-top 10 of match results: T1442, T1462, T1089, T1471, T1441, T1066, T0870, T0875, T0872, T1630
-[['develop'], ['develop'], ['run', 'kil', 'sec'], ['encrypt', 'dat', 'ransomw'], ['develop'], ['ind', 'target', 'malw', 'org', 'system', 'attack'], ['stat'], ['stat'], ['ind', 'malw', 'window', 'host', 'dat', 'org', 'system', 'attack'], ['ind', 'host', 'stat', 'sec']]
+keywords: cryptoworm, indic, secur, month, kill, develop, src, data, attack, target, malwar, comput, leak, window, patch, end, ransom, wannacri, ransomwar, agenc, switch, state, call, system, releas, microsoft, cryptocurr, encrypt, eternalblu, organ, behavior, payment, run, dn, nsa, life, shadow, bitcoin, group, cyberattack, broker, host
+top 10 of match results: T1442, T1462, T0870, T0875, T1089, T1471, T1441, T1066, T1079, T0872
+[['develop'], ['develop'], ['state'], ['state'], ['secur', 'kill', 'run'], ['data', 'ransomwar', 'encrypt'], ['develop'], ['indic', 'attack', 'target', 'malwar', 'system'], ['encrypt'], ['indic', 'data', 'attack', 'malwar', 'window', 'system', 'host']]
 
 
 16/241
@@ -101,9 +101,9 @@ top 10 of match results: T1442, T1462, T1089, T1471, T1441, T1066, T0870, T0875,
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00875_S7Comm_PLC_warm_START.yml
 ['attack.ics.T0858', 'attack.ics.T0816']
 tags of security rules: T0858, T0816
-keywords: network, ev, plc, host, dst, src, start, prompt, op, s7comm
-top 10 of match results: T0870, T1089, T0885, T1507, T1439, T1630, T0835, T1423, T0877, T1514
-[['plc'], ['ev', 'start'], ['network', 'host', 's7comm'], ['network'], ['network'], ['ev', 'host'], ['plc'], ['network', 'host'], ['plc'], ['prompt', 'op']]
+keywords: prompt, start, oper, dst, event, host, s7comm, plc, src, network
+top 10 of match results: T0870, T1089, T0885, T1507, T1439, T1423, T0835, T1630, T1514, T0877
+[['plc'], ['start', 'event'], ['host', 's7comm', 'network'], ['network'], ['network'], ['host', 'network'], ['plc'], ['event', 'host'], ['prompt', 'oper'], ['plc']]
 
 
 22/241
@@ -154,9 +154,9 @@ top 10 of match results: T0870, T1089, T0885, T1507, T1439, T1630, T0835, T1423,
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00863_S7Comm_Download_PLC_configuration.yml
 ['operation.local', 'attack.ics.T0843']
 tags of security rules: T0843
-keywords: ind, exchang, command, control, us, target, commun, dst, s7comm, help, scad, plcs, plc, host, s7, dat, purpos, acquisit, op, config, famy, protocol, system, src, program, log, download, network, access
-top 10 of match results: T0870, T1026, T1646, T1431, T1032, T0845, T1439, T0875, T1048.002, T1521
-[['plc', 'program', 'download'], ['command', 'control', 'us', 'commun', 'dat', 'protocol'], ['command', 'control', 'us', 'commun', 'dat', 'protocol'], ['download'], ['command', 'control', 'us', 'commun', 'config', 'protocol'], ['ind', 'us', 'target', 'commun', 'plc', 'dat', 'op', 'protocol', 'program', 'log', 'network'], ['commun', 'network'], ['control', 'us', 'program'], ['exchang', 'command', 'control', 'us', 'commun', 'host', 'dat', 'protocol', 'network'], ['command', 'control', 'us', 'commun', 'config', 'protocol']]
+keywords: indic, program, protocol, s7, src, data, target, download, oper, logic, user, help, network, command, access, system, dst, exchang, plc, famili, purpos, scada, commun, acquisit, s7comm, configur, control, host
+top 10 of match results: T0870, T1026, T1646, T1431, T0845, T1032, T1439, T1048.002, T1521, T1471
+[['program', 'download', 'plc'], ['protocol', 'data', 'command', 'commun', 'control'], ['protocol', 'data', 'command', 'commun', 'control'], ['download'], ['indic', 'program', 'protocol', 'data', 'target', 'oper', 'logic', 'user', 'network', 'plc', 'commun'], ['protocol', 'command', 'commun', 'configur', 'control'], ['network', 'commun'], ['protocol', 'data', 'network', 'command', 'exchang', 'commun', 'control', 'host'], ['protocol', 'command', 'commun', 'configur', 'control'], ['data', 'user', 'access', 'exchang']]
 
 
 34/241
@@ -183,9 +183,9 @@ top 10 of match results: T0870, T1026, T1646, T1431, T1032, T0845, T1439, T0875,
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00811_S7Comm_Upload_PLC_configuration.yml
 ['operation.local', 'attack.ics.T0845']
 tags of security rules: T0845
-keywords: ind, exchang, command, control, us, target, commun, dst, s7comm, help, scad, plcs, plc, host, s7, dat, purpos, acquisit, op, config, famy, protocol, system, src, program, upload, log, access
-top 10 of match results: T0845, T1026, T1646, T0870, T1032, T0875, T1521, T1433, T1466, T1048.002
-[['ind', 'us', 'target', 'commun', 'plc', 'dat', 'op', 'protocol', 'program', 'upload', 'log'], ['command', 'control', 'us', 'commun', 'dat', 'protocol'], ['command', 'control', 'us', 'commun', 'dat', 'protocol'], ['plc', 'program'], ['command', 'control', 'us', 'commun', 'config', 'protocol'], ['control', 'us', 'program'], ['command', 'control', 'us', 'commun', 'config', 'protocol'], ['dat', 'system', 'log', 'access'], ['us', 'commun', 'protocol'], ['exchang', 'command', 'control', 'us', 'commun', 'host', 'dat', 'protocol']]
+keywords: indic, program, protocol, s7, upload, src, data, target, oper, logic, user, help, command, access, system, dst, exchang, plc, famili, purpos, scada, commun, acquisit, s7comm, configur, control, host
+top 10 of match results: T0845, T0870, T1026, T1646, T1032, T1521, T1471, T0875, T1602, T1048.002
+[['indic', 'program', 'protocol', 'upload', 'data', 'target', 'oper', 'logic', 'user', 'plc', 'commun'], ['program', 'plc'], ['protocol', 'data', 'command', 'commun', 'control'], ['protocol', 'data', 'command', 'commun', 'control'], ['protocol', 'command', 'commun', 'configur', 'control'], ['protocol', 'command', 'commun', 'configur', 'control'], ['data', 'user', 'access', 'exchang'], ['program', 'control'], ['protocol', 'data', 'target', 'access', 'system', 'configur', 'control', 'host'], ['protocol', 'data', 'command', 'exchang', 'commun', 'control', 'host']]
 pass
 
 
@@ -193,9 +193,9 @@ pass
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00880_PN_DCP_device_IP_changed.yml
 ['attack.ics.T0826']
 tags of security rules: T0826
-keywords: ev, profinet, chang, behavy, pn, dcp, monit, dev, asset, prompt, ip, op, network
-top 10 of match results: T0875, T1473, T0864, T1507, T0800, T1439, T1459, T1419, T1402, T0891
-[['chang', 'dev'], ['dev'], ['chang', 'monit', 'dev', 'asset', 'ip', 'network'], ['dev', 'network'], ['monit', 'dev', 'asset', 'op', 'network'], ['dev', 'network'], ['dev'], ['dev'], ['ev', 'chang', 'behavy', 'dev', 'network'], ['chang', 'monit', 'dev', 'asset', 'op', 'network']]
+keywords: pn, asset, chang, prompt, oper, dcp, ip, profinet, event, monitor, behavior, devic, network
+top 10 of match results: T0875, T1473, T0864, T1507, T0800, T1439, T1459, T1419, T0891, T1402
+[['chang', 'devic'], ['devic'], ['asset', 'chang', 'ip', 'monitor', 'devic', 'network'], ['devic', 'network'], ['asset', 'oper', 'monitor', 'devic', 'network'], ['devic', 'network'], ['devic'], ['devic'], ['asset', 'chang', 'oper', 'monitor', 'devic', 'network'], ['chang', 'event', 'behavior', 'devic', 'network']]
 
 
 41/241
@@ -206,9 +206,9 @@ top 10 of match results: T0875, T1473, T0864, T1507, T0800, T1439, T1459, T1419,
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00885_QQ_Wechat_Weibo_(Social_Media).yml
 ['attack.enterprise.T585.001', 'attack.ics.T0883']
 tags of security rules: T585.001, T0883
-keywords: wech, ev, host, med, commun, qq, src, monit, prompt, weibo, network
-top 10 of match results: T1457, T1439, T1092, T1438, T1026, T1011, T1052, T1104, T1409, T1102.003
-[['med'], ['commun', 'network'], ['host', 'med', 'commun', 'network'], ['med', 'network'], ['commun'], ['med', 'commun', 'monit', 'network'], ['med', 'monit', 'network'], ['host', 'commun', 'monit', 'network'], ['wech'], ['host', 'med', 'commun', 'monit', 'network']]
+keywords: weibo, prompt, commun, src, event, monitor, host, medium, qq, wechat, network
+top 10 of match results: T1457, T1439, T1092, T1438, T1026, T1011, T1052, T1104, T1102.003, T1409
+[['medium'], ['commun', 'network'], ['commun', 'host', 'medium', 'network'], ['medium', 'network'], ['commun'], ['commun', 'monitor', 'medium', 'network'], ['monitor', 'medium', 'network'], ['commun', 'monitor', 'host', 'network'], ['commun', 'monitor', 'host', 'medium', 'network'], ['wechat']]
 
 
 43/241
@@ -235,9 +235,9 @@ top 10 of match results: T1457, T1439, T1092, T1438, T1026, T1011, T1052, T1104,
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00899_SMBv1_EternalBlue_Exploit.yml
 ['attack.ics.T0866', 'attack.enterprise.T1210']
 tags of security rules: T0866, T1210
-keywords: ev, host, dst, eternalblu, src, monit, smbv1, vuln, window, prompt, attack, network
+keywords: attack, prompt, vulner, window, network, dst, event, monitor, host, eternalblu, src, smbv1
 top 10 of match results: T1455, T1405, T1423, T1588.006, T1070.001, T1463, T1546.003, T1507, T1612, T1595.002
-[['vuln'], ['vuln', 'attack'], ['host', 'vuln', 'network'], ['monit', 'vuln', 'attack'], ['ev', 'monit', 'window', 'attack'], ['vuln', 'attack', 'network'], ['ev', 'host', 'monit', 'window', 'attack'], ['network'], ['host', 'monit', 'attack', 'network'], ['host', 'monit', 'vuln', 'attack', 'network']]
+[['vulner'], ['attack', 'vulner'], ['vulner', 'network', 'host'], ['attack', 'vulner', 'monitor'], ['attack', 'window', 'event', 'monitor'], ['attack', 'vulner', 'network'], ['attack', 'window', 'event', 'monitor', 'host'], ['network'], ['attack', 'network', 'monitor', 'host'], ['attack', 'vulner', 'network', 'monitor', 'host']]
 
 
 49/241
@@ -296,9 +296,9 @@ top 10 of match results: T1455, T1405, T1423, T1588.006, T1070.001, T1463, T1546
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00881_PN_DCP_device_name_changed.yml
 ['attack.ics.T0849']
 tags of security rules: T0849
-keywords: ev, profinet, chang, behavy, pn, dcp, monit, dev, nam, asset, prompt, op, network
-top 10 of match results: T0875, T1473, T1507, T0800, T1439, T0864, T1459, T1419, T1402, T0891
-[['chang', 'dev'], ['dev'], ['dev', 'network'], ['monit', 'dev', 'asset', 'op', 'network'], ['dev', 'network'], ['chang', 'monit', 'dev', 'asset', 'network'], ['dev'], ['dev'], ['ev', 'chang', 'behavy', 'dev', 'network'], ['chang', 'monit', 'dev', 'asset', 'op', 'network']]
+keywords: name, pn, asset, chang, prompt, oper, dcp, profinet, event, monitor, behavior, devic, network
+top 10 of match results: T0875, T1473, T1507, T0800, T1439, T1459, T0864, T1419, T0891, T1402
+[['chang', 'devic'], ['devic'], ['devic', 'network'], ['asset', 'oper', 'monitor', 'devic', 'network'], ['devic', 'network'], ['devic'], ['asset', 'chang', 'monitor', 'devic', 'network'], ['devic'], ['asset', 'chang', 'oper', 'monitor', 'devic', 'network'], ['chang', 'event', 'behavior', 'devic', 'network']]
 
 
 63/241
@@ -321,18 +321,18 @@ top 10 of match results: T0875, T1473, T1507, T0800, T1439, T0864, T1459, T1419,
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00854_Insecure_SSL_TLS_Ciphers.yml
 ['attack.enterprise.T1573']
 tags of security rules: T1573
-keywords: us, ciph, ev, host, src, vuln, ssl, prompt, tl, network
-top 10 of match results: T1455, T1463, T1001.003, T1423, T1405, T1507, T1481.003, T1481, T1048.002, T1102
-[['vuln'], ['vuln', 'ssl', 'tl', 'network'], ['us', 'ssl', 'tl', 'network'], ['host', 'vuln', 'network'], ['vuln'], ['us', 'network'], ['us', 'host', 'ssl', 'tl', 'network'], ['us', 'host', 'ssl', 'tl', 'network'], ['us', 'host', 'ssl', 'tl', 'network'], ['us', 'host', 'ssl', 'tl', 'network']]
+keywords: prompt, vulner, use, network, event, tl, ssl, cipher, src, host
+top 10 of match results: T1455, T1463, T1001.003, T1423, T1507, T1405, T1481.003, T1481, T1048.002, T1102
+[['vulner'], ['vulner', 'network', 'tl', 'ssl'], ['use', 'network', 'tl', 'ssl'], ['vulner', 'network', 'host'], ['use', 'network'], ['vulner'], ['use', 'network', 'tl', 'ssl', 'host'], ['use', 'network', 'tl', 'ssl', 'host'], ['use', 'network', 'tl', 'ssl', 'host'], ['use', 'network', 'tl', 'ssl', 'host']]
 
 
 68/241
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00870_DNS_query_flooding.yml
 ['attack.enterprise.T1499', 'attack.enterprise.T1498.001', 'attack.ics.T0814']
 tags of security rules: T1499, T1498.001, T0814
-keywords: target, host, traff, dns, serv, typ, src, query, cli, request, launch, attack, network, flood
-top 10 of match results: T1419, T1439, T1498.001, T1437, T1498.002, T1499.002, T1554, T1596.001, T0842, T1612
-[['target', 'typ'], ['traff', 'serv', 'network'], ['target', 'host', 'traff', 'serv', 'cli', 'attack', 'network', 'flood'], ['traff', 'dns', 'serv', 'network'], ['target', 'host', 'traff', 'dns', 'serv', 'typ', 'request', 'attack', 'network', 'flood'], ['target', 'host', 'traff', 'serv', 'typ', 'cli', 'request', 'attack', 'network', 'flood'], ['target', 'host', 'serv', 'typ', 'cli'], ['target', 'host', 'dns', 'serv', 'query', 'attack', 'network'], ['target', 'traff', 'dns', 'serv', 'network'], ['host', 'traff', 'serv', 'request', 'attack', 'network']]
+keywords: target, dn, type, attack, request, queri, network, client, traffic, launch, server, src, flood, host
+top 10 of match results: T1439, T1419, T1437, T1498.001, T1554, T1498.002, T1612, T1499.002, T1639, T1584.002
+[['network', 'traffic', 'server'], ['target', 'type'], ['dn', 'network', 'traffic', 'server'], ['target', 'attack', 'network', 'client', 'traffic', 'flood', 'host'], ['target', 'type', 'client', 'server', 'host'], ['target', 'dn', 'type', 'attack', 'request', 'network', 'traffic', 'server', 'flood', 'host'], ['attack', 'request', 'network', 'traffic', 'server', 'host'], ['target', 'type', 'attack', 'request', 'network', 'client', 'traffic', 'server', 'flood', 'host'], ['dn', 'network', 'server'], ['target', 'dn', 'attack', 'queri', 'network', 'traffic', 'server']]
 pass
 
 
@@ -340,9 +340,9 @@ pass
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00935_Firewall_Rule_Deleted_on_Windows.yml
 ['operation.local', 'attack.enterprise.T1599']
 tags of security rules: T1599
-keywords: firewal, host, ev, list, behavy, rul, exceiv, monit, datasrcip, window, prompt, op, chang
-top 10 of match results: T1562.007, T1562.004, T1010, T0870, T1065, T1432, T0875, T1070.007, T1562, T1063
-[['firewal', 'ev', 'rul', 'monit', 'window', 'chang'], ['firewal', 'ev', 'rul', 'monit', 'window', 'chang'], ['ev', 'list', 'behavy', 'monit', 'window', 'op'], ['exceiv'], ['firewal'], ['list'], ['chang'], ['firewal', 'host', 'behavy', 'rul', 'monit', 'window', 'op', 'chang'], ['firewal', 'host', 'ev', 'behavy', 'rul', 'exceiv', 'monit', 'window', 'chang'], ['firewal', 'list', 'behavy', 'rul', 'window']]
+keywords: prompt, chang, oper, window, datasrcip, event, list, host, except, monitor, firewal, behavior, rule
+top 10 of match results: T1562.007, T1562.004, T1010, T0870, T1432, T1065, T0875, T1070.007, T1562, T1063
+[['chang', 'window', 'event', 'monitor', 'firewal', 'rule'], ['chang', 'window', 'event', 'monitor', 'firewal', 'rule'], ['oper', 'window', 'event', 'list', 'monitor', 'behavior'], ['except'], ['list'], ['firewal'], ['chang'], ['chang', 'oper', 'window', 'host', 'monitor', 'firewal', 'behavior', 'rule'], ['chang', 'window', 'event', 'host', 'except', 'monitor', 'firewal', 'behavior', 'rule'], ['window', 'list', 'firewal', 'behavior', 'rule']]
 
 
 70/241
@@ -365,9 +365,9 @@ top 10 of match results: T1562.007, T1562.004, T1010, T0870, T1065, T1432, T0875
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00898_SMBv1_EternalBlue_Exists.yml
 ['attack.ics.T0866', 'attack.enterprise.T1210']
 tags of security rules: T0866, T1210
-keywords: ev, host, eternalblu, src, monit, smbv1, vuln, window, prompt, network
-top 10 of match results: T1455, T1423, T1405, T1070.001, T1588.006, T1507, T1010, T1546.003, T1046, T1084
-[['vuln'], ['host', 'vuln', 'network'], ['vuln'], ['ev', 'monit', 'window'], ['monit', 'vuln'], ['network'], ['ev', 'monit', 'window', 'network'], ['ev', 'host', 'monit', 'window'], ['ev', 'host', 'monit', 'vuln', 'network'], ['ev', 'window']]
+keywords: prompt, vulner, window, network, event, monitor, eternalblu, host, src, smbv1
+top 10 of match results: T1455, T1423, T1405, T1070.001, T1588.006, T1507, T1010, T1546.003, T1073, T1084
+[['vulner'], ['vulner', 'network', 'host'], ['vulner'], ['window', 'event', 'monitor'], ['vulner', 'monitor'], ['network'], ['window', 'network', 'event', 'monitor'], ['window', 'event', 'monitor', 'host'], ['vulner', 'window'], ['window', 'event']]
 
 
 75/241
@@ -390,9 +390,9 @@ top 10 of match results: T1455, T1423, T1405, T1070.001, T1588.006, T1507, T1010
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/01005_Windows_Defender_Real_time_Protection_Disabled.yml
 ['attack.enterprise.T1562.001', 'query-unclear']
 tags of security rules: T1562.001
-keywords: defend, host, ev, protect, tim, real, monit, datasrcip, window, prompt, stat, attack
-top 10 of match results: T0870, T0875, T1467, T1630, T0801, T1084, T1070.001, T1188, T1546.003, T0800
-[['stat'], ['stat'], ['stat'], ['host', 'ev', 'stat'], ['monit', 'window', 'stat'], ['ev', 'tim', 'window'], ['ev', 'monit', 'window', 'attack'], ['defend'], ['host', 'ev', 'tim', 'monit', 'window', 'attack'], ['protect', 'monit', 'stat']]
+keywords: protect, time, prompt, window, datasrcip, real, event, monitor, host, statu, defend, attack
+top 10 of match results: T1630, T1188, T1084, T1070.001, T1546.003, T0837, T1089, T1070.009, T1124, T1612
+[['event', 'host', 'statu'], ['defend'], ['time', 'window', 'event'], ['window', 'event', 'monitor', 'attack'], ['time', 'window', 'event', 'monitor', 'host', 'attack'], ['protect', 'attack'], ['time', 'event'], ['window', 'monitor', 'host', 'defend', 'attack'], ['time', 'window', 'monitor', 'attack'], ['monitor', 'host', 'attack']]
 
 
 80/241
@@ -407,9 +407,9 @@ top 10 of match results: T0870, T0875, T1467, T1630, T0801, T1084, T1070.001, T1
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/16001_Wannacry_Artifact_Checker.yml
 ['malware.host', 'attack.ics.T1569']
 tags of security rules: T1569
-keywords: check, host, infect, malw, artifact, rul, part, tasksch, wannacry, datasrcip, nam, execut, attack, search, ex
-top 10 of match results: T1633.001, T1630.003, T1408, T1633, T1520, T1637.001, T1099, T1070.009, T1157, T1035
-[['check', 'host', 'malw', 'artifact', 'nam', 'search'], ['check', 'artifact', 'nam', 'search'], ['check', 'artifact', 'nam', 'search'], ['check', 'malw', 'artifact', 'attack', 'search'], ['check', 'malw', 'nam', 'attack'], ['check', 'malw', 'nam', 'attack'], ['malw', 'nam', 'attack', 'ex'], ['host', 'malw', 'artifact', 'execut', 'attack'], ['malw', 'nam', 'search'], ['execut', 'attack', 'ex']]
+keywords: name, rule, search, malwar, part, tasksch, datasrcip, artifact, exe, host, execut, checker, wannacri, infect, attack
+top 10 of match results: T1633.001, T1630.003, T1408, T1070.009, T1157, T1628, T1637, T1107, T1633, T0872
+[['name', 'search', 'malwar', 'artifact', 'host'], ['name', 'search', 'artifact'], ['name', 'search', 'artifact'], ['malwar', 'artifact', 'host', 'execut', 'attack'], ['name', 'search', 'malwar'], ['artifact'], ['name', 'malwar'], ['malwar', 'part', 'host', 'attack'], ['search', 'malwar', 'artifact', 'attack'], ['malwar', 'artifact', 'host', 'attack']]
 
 
 83/241
@@ -465,9 +465,9 @@ top 10 of match results: T1633.001, T1630.003, T1408, T1633, T1520, T1637.001, T
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00862_PN_DCP_Overflow.yml
 ['attack.ics.T0826', 'attack.ics.T0814']
 tags of security rules: T0826, T0814
-keywords: prompt, ev, host, buff, fram, dst, overflow, pn, dcp, src, monit, traff, network
-top 10 of match results: T1439, T1188, T1029, T0842, T1612, T1020.001, T1507, T1509, T1630, T1423
-[['traff', 'network'], ['traff', 'network'], ['host', 'monit', 'traff', 'network'], ['monit', 'traff', 'network'], ['host', 'monit', 'traff', 'network'], ['host', 'monit', 'traff', 'network'], ['network'], ['traff', 'network'], ['ev', 'host'], ['host', 'network']]
+keywords: pn, prompt, dcp, buffer, dst, traffic, event, monitor, host, frame, overflow, src, network
+top 10 of match results: T1439, T1188, T1029, T0842, T1612, T1507, T1020.001, T1509, T1423, T1630
+[['traffic', 'network'], ['traffic', 'network'], ['traffic', 'monitor', 'host', 'network'], ['traffic', 'monitor', 'network'], ['traffic', 'monitor', 'host', 'network'], ['network'], ['traffic', 'monitor', 'host', 'network'], ['traffic', 'network'], ['host', 'network'], ['event', 'host']]
 
 
 96/241
@@ -510,9 +510,9 @@ top 10 of match results: T1439, T1188, T1029, T0842, T1612, T1020.001, T1507, T1
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00934_Firewall_Rule_Added_on_Windows.yml
 ['operation.local', 'attack.enterprise.T1599']
 tags of security rules: T1599
-keywords: firewal, host, ev, list, behavy, rul, exceiv, monit, ad, datasrcip, window, prompt, op, chang
-top 10 of match results: T1562.007, T1562.004, T1010, T0870, T1065, T1432, T0875, T1070.007, T1562, T1063
-[['firewal', 'ev', 'rul', 'monit', 'window', 'chang'], ['firewal', 'ev', 'rul', 'monit', 'window', 'chang'], ['ev', 'list', 'behavy', 'monit', 'window', 'op'], ['exceiv'], ['firewal'], ['list'], ['chang'], ['firewal', 'host', 'behavy', 'rul', 'monit', 'window', 'op', 'chang'], ['firewal', 'host', 'ev', 'behavy', 'rul', 'exceiv', 'monit', 'window', 'chang'], ['firewal', 'list', 'behavy', 'rul', 'window']]
+keywords: prompt, chang, oper, window, datasrcip, event, add, list, except, host, monitor, firewal, behavior, rule
+top 10 of match results: T1562.007, T1562.004, T1010, T0870, T1432, T1065, T0875, T1070.007, T1136.001, T1136.002
+[['chang', 'window', 'event', 'monitor', 'firewal', 'rule'], ['chang', 'window', 'event', 'monitor', 'firewal', 'rule'], ['oper', 'window', 'event', 'list', 'monitor', 'behavior'], ['except'], ['list'], ['firewal'], ['chang'], ['chang', 'oper', 'window', 'host', 'monitor', 'firewal', 'behavior', 'rule'], ['window', 'event', 'add', 'monitor'], ['window', 'event', 'add', 'monitor']]
 
 
 106/241
@@ -539,9 +539,9 @@ top 10 of match results: T1562.007, T1562.004, T1010, T0870, T1065, T1432, T0875
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00897_SMBv1_EternalBlue_Recon.yml
 ['attack.enterprise.T1588.006']
 tags of security rules: T1588.006
-keywords: ev, host, dst, eternalblu, scan, behavy, src, monit, smbv1, vuln, recon, window, prompt, attack, network
-top 10 of match results: T1455, T1423, T1405, T1588.006, T1595.002, T0841, T1046, T1070.001, T1010, T1595.001
-[['vuln'], ['host', 'scan', 'vuln', 'network'], ['vuln', 'attack'], ['behavy', 'monit', 'vuln', 'attack'], ['host', 'scan', 'monit', 'vuln', 'attack', 'network'], ['scan', 'vuln', 'attack', 'network'], ['ev', 'host', 'scan', 'behavy', 'monit', 'vuln', 'network'], ['ev', 'monit', 'window', 'attack'], ['ev', 'behavy', 'monit', 'window', 'network'], ['host', 'scan', 'monit', 'attack', 'network']]
+keywords: attack, prompt, vulner, window, recon, network, dst, event, monitor, host, eternalblu, scan, behavior, src, smbv1
+top 10 of match results: T1455, T1423, T1405, T1588.006, T1595.002, T0841, T1046, T1070.001, T1010, T1089
+[['vulner'], ['vulner', 'network', 'host', 'scan'], ['attack', 'vulner'], ['attack', 'vulner', 'monitor', 'behavior'], ['attack', 'vulner', 'network', 'monitor', 'host', 'scan'], ['attack', 'vulner', 'network', 'scan'], ['vulner', 'network', 'event', 'monitor', 'host', 'scan', 'behavior'], ['attack', 'window', 'event', 'monitor'], ['window', 'network', 'event', 'monitor', 'behavior'], ['event', 'scan']]
 pass
 
 
@@ -557,9 +557,9 @@ pass
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00820_SYN_flood.yml
 ['attack.impact', 'attack.enterprise.T1499', 'attack.ics.T0814']
 tags of security rules: T1499, T0814
-keywords: half, port, typ, den, aim, launch, request, target, caus, traff, serv, flood, packet, host, ddo, resourc, machin, src, dev, syn, attack, network, connect
-top 10 of match results: T1419, T1498.001, T1439, T1464, T1499.001, T1509, T1499.003, T1423, T1065, T1499.002
-[['typ', 'target', 'dev'], ['den', 'target', 'caus', 'traff', 'serv', 'flood', 'packet', 'host', 'ddo', 'resourc', 'attack', 'network'], ['traff', 'serv', 'dev', 'network'], ['den', 'target', 'serv', 'resourc', 'dev', 'attack', 'network'], ['den', 'launch', 'request', 'target', 'caus', 'traff', 'serv', 'flood', 'packet', 'host', 'resourc', 'syn', 'attack', 'network', 'connect'], ['port', 'traff', 'network'], ['typ', 'den', 'request', 'target', 'caus', 'traff', 'serv', 'flood', 'packet', 'host', 'resourc', 'attack', 'network', 'connect'], ['port', 'serv', 'host', 'dev', 'network', 'connect'], ['port'], ['typ', 'den', 'request', 'target', 'caus', 'traff', 'serv', 'flood', 'packet', 'host', 'resourc', 'attack', 'network', 'connect']]
+keywords: packet, port, resourc, machin, ddo, half, devic, src, attack, target, type, denial, connect, traffic, aim, network, request, caus, server, syn, servic, launch, flood, host
+top 10 of match results: T1419, T1439, T1498.001, T1499.003, T1499.001, T1065, T1509, T1423, T1464, T1499.002
+[['devic', 'target', 'type'], ['devic', 'traffic', 'network', 'server'], ['packet', 'resourc', 'ddo', 'attack', 'target', 'denial', 'traffic', 'network', 'caus', 'servic', 'flood', 'host'], ['packet', 'resourc', 'attack', 'target', 'type', 'denial', 'connect', 'traffic', 'network', 'request', 'caus', 'server', 'servic', 'flood', 'host'], ['packet', 'resourc', 'attack', 'target', 'denial', 'connect', 'traffic', 'network', 'request', 'caus', 'server', 'syn', 'servic', 'launch', 'flood', 'host'], ['port'], ['port', 'traffic', 'network'], ['port', 'devic', 'connect', 'network', 'servic', 'host'], ['resourc', 'devic', 'attack', 'target', 'denial', 'network', 'servic'], ['packet', 'resourc', 'attack', 'target', 'type', 'denial', 'connect', 'traffic', 'network', 'request', 'caus', 'server', 'servic', 'flood', 'host']]
 
 
 115/241
@@ -610,9 +610,9 @@ top 10 of match results: T1419, T1498.001, T1439, T1464, T1499.001, T1509, T1499
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00815_Port_Scan_(Fast).yml
 ['attack.discovery', 'attack.enterprise.T1046', 'attack.ics.T0846']
 tags of security rules: T1046, T0846
-keywords: fast, method, pres, plac, inform, port, tool, list, reconnaiss, target, know, break, send, destin, dst, serv, point, host, sourc, strength, funct, someon, fingerprint, comput, door, firewal, system, scan, sec, techn, test, src, dev, knock, attack, network, access
-top 10 of match results: T1454, T1423, T1065, T1473, T1205.001, T0841, T1465, T1089, T1629.003, T1507
-[['test'], ['method', 'inform', 'port', 'list', 'serv', 'host', 'scan', 'techn', 'dev', 'network', 'access'], ['port', 'firewal'], ['funct', 'dev'], ['method', 'port', 'list', 'send', 'serv', 'host', 'firewal', 'system', 'techn', 'dev', 'knock', 'network'], ['inform', 'port', 'tool', 'target', 'serv', 'firewal', 'system', 'scan', 'techn', 'test', 'dev', 'attack', 'network'], ['point', 'dev', 'attack', 'network', 'access'], ['method', 'tool', 'scan', 'sec'], ['method', 'inform', 'tool', 'system', 'scan', 'sec', 'dev', 'access'], ['inform', 'dev', 'network']]
+keywords: function, port, destin, test, reconnaiss, method, point, secur, tool, break, devic, knock, attack, src, target, send, comput, fast, sender, strength, scan, network, inform, listen, sourc, techniqu, system, place, access, dst, server, firewal, door, someon, presenc, know, fingerprint, host
+top 10 of match results: T1454, T1065, T1423, T1205.001, T1473, T1465, T0841, T1089, T1629.003, T1507
+[['test'], ['port', 'firewal'], ['port', 'method', 'devic', 'scan', 'network', 'inform', 'techniqu', 'access', 'host'], ['port', 'method', 'devic', 'knock', 'send', 'network', 'listen', 'techniqu', 'system', 'server', 'firewal', 'host'], ['function', 'devic'], ['point', 'devic', 'attack', 'network', 'access'], ['port', 'test', 'tool', 'devic', 'attack', 'target', 'scan', 'network', 'inform', 'techniqu', 'system', 'firewal'], ['method', 'secur', 'tool', 'scan'], ['method', 'secur', 'tool', 'devic', 'scan', 'inform', 'system', 'access'], ['devic', 'network', 'inform']]
 
 
 127/241
@@ -623,9 +623,9 @@ top 10 of match results: T1454, T1423, T1065, T1473, T1205.001, T0841, T1465, T1
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00889_SMBv1_DoublePulsar_Recon.yml
 ['attack.enterprise.T1588.006']
 tags of security rules: T1588.006
-keywords: doubleplus, ev, host, dst, scan, src, monit, smbv1, vuln, recon, window, prompt, attack, network
-top 10 of match results: T1455, T1423, T1405, T1595.002, T0841, T1588.006, T1070.001, T1595.001, T1089, T1046
-[['vuln'], ['host', 'scan', 'vuln', 'network'], ['vuln', 'attack'], ['host', 'scan', 'monit', 'vuln', 'attack', 'network'], ['scan', 'vuln', 'attack', 'network'], ['monit', 'vuln', 'attack'], ['ev', 'monit', 'window', 'attack'], ['host', 'scan', 'monit', 'attack', 'network'], ['ev', 'scan'], ['ev', 'host', 'scan', 'monit', 'vuln', 'network']]
+keywords: attack, prompt, vulner, doubleplusar, window, recon, network, dst, event, monitor, host, scan, src, smbv1
+top 10 of match results: T1455, T1423, T1405, T1595.002, T0841, T1588.006, T1070.001, T1089, T1595.001, T1046
+[['vulner'], ['vulner', 'network', 'host', 'scan'], ['attack', 'vulner'], ['attack', 'vulner', 'network', 'monitor', 'host', 'scan'], ['attack', 'vulner', 'network', 'scan'], ['attack', 'vulner', 'monitor'], ['attack', 'window', 'event', 'monitor'], ['event', 'scan'], ['attack', 'network', 'monitor', 'host', 'scan'], ['vulner', 'network', 'event', 'monitor', 'host', 'scan']]
 pass
 
 
@@ -645,9 +645,9 @@ pass
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/01002_WannaCry_Behavior.yml
 ['malware.host', 'attack.ics.T0826', 'attack.enterprise.T1486', 'query_unclear']
 tags of security rules: T0826, T1486
-keywords: ind, ransom, run, encrypt, mon, group, datasrcip, cal, releas, target, malw, brok, eternalblu, cryptoworm, develop, wannacry, pay, window, nsa, host, dat, behavy, microsoft, lif, leak, shadow, cyberattack, stat, comput, org, end, patch, system, sec, bitcoin, cryptocur, ransomw, ag, attack
-top 10 of match results: T1442, T1462, T1471, T1441, T1066, T0870, T0875, T0872, T1630, T1467
-[['develop'], ['develop'], ['encrypt', 'dat', 'ransomw'], ['develop'], ['ind', 'target', 'malw', 'org', 'system', 'attack'], ['stat'], ['stat'], ['ind', 'malw', 'window', 'host', 'dat', 'org', 'system', 'attack'], ['ind', 'host', 'stat', 'sec'], ['stat']]
+keywords: cryptoworm, indic, secur, month, develop, attack, data, target, malwar, comput, leak, window, patch, end, ransom, wannacri, ransomwar, agenc, state, call, system, releas, microsoft, datasrcip, cryptocurr, encrypt, eternalblu, organ, behavior, payment, run, nsa, life, shadow, bitcoin, group, cyberattack, broker, host
+top 10 of match results: T1442, T1462, T0870, T0875, T1471, T1441, T1066, T1079, T0872, T1027.005
+[['develop'], ['develop'], ['state'], ['state'], ['data', 'ransomwar', 'encrypt'], ['develop'], ['indic', 'attack', 'target', 'malwar', 'system'], ['encrypt'], ['indic', 'attack', 'data', 'malwar', 'window', 'system', 'host'], ['indic', 'secur', 'target', 'malwar', 'system']]
 
 
 133/241
@@ -686,9 +686,9 @@ top 10 of match results: T1442, T1462, T1471, T1441, T1066, T0870, T0875, T0872,
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00848_HTTP_plaintext_password.yml
 ['attack.enterprise.T1040', 'attack.ics.T0842']
 tags of security rules: T1040, T0842
-keywords: prompt, http, ev, host, find, commun, dst, password, src, monit, account, plaintext, traff, network, target
-top 10 of match results: T1439, T1521.001, T1442, T0842, T1640, T1110.002, T1463, T1026, T1555, T1573.001
-[['commun', 'traff', 'network'], ['commun', 'plaintext', 'traff'], ['account'], ['commun', 'monit', 'traff', 'network', 'target'], ['account', 'network'], ['http', 'password', 'monit', 'account', 'plaintext', 'network', 'target'], ['commun', 'traff', 'network'], ['commun'], ['password', 'monit'], ['commun', 'monit', 'plaintext', 'traff']]
+keywords: plaintext, target, password, account, commun, prompt, find, dst, traffic, event, monitor, host, http, src, network
+top 10 of match results: T1439, T1521.001, T1442, T0842, T1640, T1110.002, T1463, T1026, T1573.001, T1555
+[['commun', 'traffic', 'network'], ['plaintext', 'commun', 'traffic'], ['account'], ['target', 'commun', 'traffic', 'monitor', 'network'], ['account', 'network'], ['plaintext', 'target', 'password', 'account', 'monitor', 'http', 'network'], ['commun', 'traffic', 'network'], ['commun'], ['plaintext', 'commun', 'traffic', 'monitor'], ['password', 'monitor']]
 pass
 
 
@@ -712,18 +712,18 @@ pass
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/01003_WannaCry_Registry.yml
 ['malware.host', 'attack.enterprise.T1112', 'query_unclear']
 tags of security rules: T1112
-keywords: ind, ransom, run, encrypt, mon, group, datasrcip, cal, releas, reg, target, malw, brok, eternalblu, cryptoworm, develop, item, wannacry, pay, window, nsa, host, dat, microsoft, lif, leak, shadow, cyberattack, stat, comput, org, end, patch, system, sec, bitcoin, cryptocur, ransomw, ag, attack
-top 10 of match results: T1442, T1462, T1471, T1441, T1066, T0872, T1028, T0870, T0875, T1630
-[['develop'], ['develop'], ['encrypt', 'dat', 'ransomw'], ['develop'], ['ind', 'target', 'malw', 'org', 'system', 'attack'], ['ind', 'reg', 'malw', 'window', 'host', 'dat', 'org', 'system', 'attack'], ['cal', 'reg', 'window', 'microsoft', 'system'], ['stat'], ['stat'], ['ind', 'host', 'stat', 'sec']]
+keywords: cryptoworm, indic, secur, month, develop, data, attack, target, malwar, comput, leak, window, patch, end, ransom, wannacri, ransomwar, agenc, state, call, system, releas, microsoft, datasrcip, cryptocurr, encrypt, eternalblu, organ, payment, run, nsa, life, shadow, bitcoin, group, item, cyberattack, broker, registri, host
+top 10 of match results: T1442, T1462, T0870, T0875, T1471, T1441, T1028, T0872, T1066, T1614.001
+[['develop'], ['develop'], ['state'], ['state'], ['data', 'ransomwar', 'encrypt'], ['develop'], ['window', 'call', 'system', 'microsoft', 'registri'], ['indic', 'data', 'attack', 'malwar', 'window', 'system', 'registri', 'host'], ['indic', 'attack', 'target', 'malwar', 'system'], ['develop', 'data', 'attack', 'target', 'malwar', 'window', 'ransomwar', 'agenc', 'call', 'system', 'registri', 'host']]
 
 
 147/241
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/05022_Vulnerability_Scan_CVE_2019_0708_Scan.yml
 ['attack.enterprise.T1595.002']
 tags of security rules: T1595.002
-keywords: ind, request, target, us, craft, sign, rdp, cve, help, serv, host, behavy, cod, system, scan, src, vuln, desktop, execut, attack, network
-top 10 of match results: T1455, T1423, T1027.005, T1066, T1405, T1441, T1021.001, T0841, T1587.002, T0872
-[['vuln'], ['serv', 'host', 'scan', 'vuln', 'network'], ['ind', 'target', 'us', 'sign', 'system', 'scan', 'network'], ['ind', 'target', 'us', 'sign', 'system', 'attack'], ['cod', 'system', 'vuln', 'execut', 'attack'], ['sign'], ['us', 'rdp', 'serv', 'behavy', 'cod', 'system', 'desktop', 'attack', 'network'], ['target', 'us', 'serv', 'system', 'scan', 'vuln', 'attack', 'network'], ['target', 'us', 'craft', 'sign', 'behavy', 'cod', 'attack'], ['ind', 'sign', 'host', 'system', 'attack']]
+keywords: indic, src, attack, target, signatur, vulner, use, cve, user, scan, help, network, request, system, craft, behavior, servic, execut, desktop, rdp, code, host
+top 10 of match results: T1455, T1423, T1066, T1027.005, T1405, T1021.001, T0841, T1399, T1588.006, T1027.001
+[['vulner'], ['vulner', 'scan', 'network', 'servic', 'host'], ['indic', 'attack', 'target', 'signatur', 'use', 'system'], ['indic', 'target', 'signatur', 'use', 'scan', 'network', 'system'], ['attack', 'vulner', 'system', 'execut', 'code'], ['attack', 'use', 'user', 'network', 'system', 'behavior', 'servic', 'desktop', 'rdp', 'code'], ['attack', 'target', 'vulner', 'use', 'scan', 'network', 'system', 'servic'], ['use', 'user', 'behavior', 'execut', 'code'], ['attack', 'target', 'vulner', 'use', 'system', 'behavior'], ['indic', 'signatur', 'use', 'scan', 'network', 'system', 'behavior', 'servic']]
 
 
 148/241
@@ -754,9 +754,9 @@ top 10 of match results: T1455, T1423, T1027.005, T1066, T1405, T1441, T1021.001
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00858_PN_DCP_Reset_factory_setting.yml
 ['attack.ics.T0858', 'attack.ics.T0826', 'attack.ics.T0827']
 tags of security rules: T0858, T0826, T0827
-keywords: ev, host, profinet, pn, dcp, fact, src, set, monit, prompt, reset, op, network, risk
-top 10 of match results: T1399, T1400, T1069, T1401, T1602.002, T1507, T1412, T1626.001, T1439, T1621
-[['monit', 'reset'], ['reset'], ['ev', 'set', 'monit', 'op', 'network'], ['fact', 'reset'], ['host', 'monit', 'reset', 'op', 'network'], ['network'], ['fact', 'op'], ['fact', 'reset'], ['network'], ['ev', 'fact', 'monit', 'prompt']]
+keywords: factori, pn, prompt, set, oper, dcp, risk, profinet, event, monitor, host, reset, src, network
+top 10 of match results: T1399, T1401, T1400, T1626.001, T1069, T1602.002, T1507, T1439, T1612, T1451
+[['monitor', 'reset'], ['factori', 'reset'], ['reset'], ['factori', 'reset'], ['set', 'oper', 'event', 'monitor', 'network'], ['oper', 'monitor', 'host', 'reset', 'network'], ['network'], ['network'], ['monitor', 'host', 'network'], ['oper', 'reset', 'network']]
 
 
 155/241
@@ -767,9 +767,9 @@ top 10 of match results: T1399, T1400, T1069, T1401, T1602.002, T1507, T1412, T1
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00864_ARP_flooding.yml
 ['attack.enterprise.T1498.001', 'attack.ics.T0814']
 tags of security rules: T1498.001, T0814
-keywords: smac, cach, launch, request, ip, address, mac, network, commun, keep, send, attack, flood, packet, record, host, broadcast, resolv, entry, comput, affect, system, arp, result, know, reply
-top 10 of match results: T1557.002, T1637, T1435, T1439, T1568, T0848, T1092, T1403, T1612, T1568.001
-[['cach', 'request', 'ip', 'address', 'mac', 'network', 'commun', 'attack', 'broadcast', 'resolv', 'arp', 'reply'], ['ip', 'address', 'commun', 'resolv'], ['entry', 'system'], ['network', 'commun'], ['ip', 'address', 'network', 'commun', 'send', 'attack', 'packet', 'host', 'resolv'], ['address', 'mac', 'network', 'commun', 'send', 'attack', 'comput', 'affect', 'system', 'arp', 'know'], ['network', 'commun', 'attack', 'host', 'system', 'reply'], ['cach', 'system'], ['request', 'ip', 'network', 'commun', 'send', 'attack', 'host'], ['request', 'ip', 'address', 'network', 'record', 'host', 'resolv']]
+keywords: record, result, packet, address, mac, broadcast, attack, send, comput, arp, cach, network, resolv, request, system, repli, keep, entri, commun, smac, ip, know, launch, affect, flood, host
+top 10 of match results: T1557.002, T1435, T1439, T0848, T1612, T1637, T1403, T1016, T1481.001, T1018
+[['address', 'mac', 'broadcast', 'attack', 'arp', 'cach', 'network', 'resolv', 'request', 'repli', 'commun', 'ip'], ['system', 'entri'], ['network', 'commun'], ['address', 'mac', 'attack', 'send', 'comput', 'arp', 'network', 'system', 'commun', 'know', 'affect'], ['attack', 'send', 'network', 'request', 'commun', 'ip', 'host'], ['address', 'commun', 'ip'], ['cach', 'system'], ['address', 'mac', 'attack', 'arp', 'network', 'system', 'ip'], ['address', 'network', 'resolv', 'ip', 'host'], ['address', 'attack', 'arp', 'cach', 'network', 'system', 'entri', 'ip', 'host']]
 
 
 157/241
@@ -824,9 +824,9 @@ top 10 of match results: T1557.002, T1637, T1435, T1439, T1568, T0848, T1092, T1
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00892_COTP_S7Comm_illegal_field_value.yml
 ['attack.ics.T0814', 'attack.ics.T0855']
 tags of security rules: T0814, T0855
-keywords: prompt, network, packet, host, ev, dst, cotp, valu, src, monit, field, traff, attack, s7comm
-top 10 of match results: T1439, T0885, T1071.001, T0842, T1071.002, T1048.003, T1071.003, T1020.001, T1090.004, T1029
-[['network', 'traff'], ['network', 'packet', 'host', 'traff', 's7comm'], ['network', 'packet', 'monit', 'field', 'traff'], ['network', 'packet', 'monit', 'traff'], ['network', 'packet', 'monit', 'field', 'traff'], ['network', 'packet', 'host', 'monit', 'field', 'traff'], ['network', 'packet', 'monit', 'field', 'traff'], ['network', 'packet', 'host', 'monit', 'traff', 'attack'], ['network', 'packet', 'host', 'monit', 'field', 'traff'], ['network', 'host', 'monit', 'traff', 'attack']]
+keywords: cotp, attack, prompt, packet, field, dst, traffic, event, monitor, host, s7comm, valu, src, network
+top 10 of match results: T1439, T0885, T1071.001, T1071.002, T0842, T1048.003, T1071.003, T1090.004, T1020.001, T1172
+[['traffic', 'network'], ['packet', 'traffic', 'host', 's7comm', 'network'], ['packet', 'field', 'traffic', 'monitor', 'network'], ['packet', 'field', 'traffic', 'monitor', 'network'], ['packet', 'traffic', 'monitor', 'network'], ['packet', 'field', 'traffic', 'monitor', 'host', 'network'], ['packet', 'field', 'traffic', 'monitor', 'network'], ['packet', 'field', 'traffic', 'monitor', 'host', 'network'], ['attack', 'packet', 'traffic', 'monitor', 'host', 'network'], ['field', 'traffic', 'host', 'network']]
 
 
 170/241
@@ -857,9 +857,9 @@ top 10 of match results: T1439, T0885, T1071.001, T0842, T1071.002, T1048.003, T
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/01001_WannaCry_Process.yml
 ['malware.host', 'attack.ics.T0826', 'attack.enterprise.T1486', 'query_unclear']
 tags of security rules: T0826, T1486
-keywords: ind, ransom, run, encrypt, mon, group, datasrcip, cal, releas, target, malw, brok, eternalblu, cryptoworm, develop, wannacry, pay, window, nsa, host, dat, microsoft, lif, leak, shadow, cyberattack, stat, comput, org, end, patch, system, sec, process, bitcoin, cryptocur, ransomw, ag, attack
-top 10 of match results: T1442, T1462, T1471, T1441, T1066, T0872, T0870, T0875, T1630, T1467
-[['develop'], ['develop'], ['encrypt', 'dat', 'ransomw'], ['develop'], ['ind', 'target', 'malw', 'org', 'system', 'attack'], ['ind', 'malw', 'window', 'host', 'dat', 'org', 'system', 'process', 'attack'], ['stat'], ['stat'], ['ind', 'host', 'stat', 'sec'], ['stat']]
+keywords: cryptoworm, indic, secur, month, develop, data, attack, target, malwar, comput, leak, window, patch, end, ransom, wannacri, ransomwar, process, agenc, state, call, system, releas, microsoft, datasrcip, cryptocurr, encrypt, eternalblu, organ, payment, run, nsa, life, shadow, bitcoin, group, cyberattack, broker, host
+top 10 of match results: T1442, T1462, T0870, T0875, T1471, T1441, T1066, T0872, T1079, T1027.005
+[['develop'], ['develop'], ['state'], ['state'], ['data', 'ransomwar', 'encrypt'], ['develop'], ['indic', 'attack', 'target', 'malwar', 'system'], ['indic', 'data', 'attack', 'malwar', 'window', 'process', 'system', 'host'], ['encrypt'], ['indic', 'secur', 'target', 'malwar', 'system']]
 
 
 177/241
@@ -898,9 +898,9 @@ top 10 of match results: T1442, T1462, T1471, T1441, T1066, T0872, T0870, T0875,
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00869_UDP_flooding.yml
 ['attack.enterprise.T1499', 'attack.enterprise.T1498.001', 'attack.ics.T0814']
 tags of security rules: T1499, T1498.001, T0814
-keywords: typ, den, aim, udp, launch, target, us, abl, respond, numb, send, traff, attack, serv, flood, packet, host, exhaust, protocol, firewal, src, process, dev, result, datagram, network
-top 10 of match results: T1419, T1464, T1499.001, T1499.003, T1439, T1436, T1498.001, T1499.002, T1498.002, T1205.001
-[['typ', 'target', 'dev'], ['den', 'target', 'us', 'attack', 'serv', 'exhaust', 'dev', 'network'], ['den', 'launch', 'target', 'us', 'abl', 'respond', 'numb', 'send', 'traff', 'attack', 'serv', 'flood', 'packet', 'host', 'exhaust', 'protocol', 'process', 'network'], ['typ', 'den', 'target', 'us', 'respond', 'traff', 'attack', 'serv', 'flood', 'packet', 'host', 'exhaust', 'protocol', 'process', 'network'], ['traff', 'serv', 'dev', 'network'], ['udp', 'protocol', 'firewal', 'network'], ['den', 'target', 'us', 'respond', 'traff', 'attack', 'serv', 'flood', 'packet', 'host', 'protocol', 'process', 'network'], ['typ', 'den', 'target', 'us', 'respond', 'numb', 'traff', 'attack', 'serv', 'flood', 'packet', 'host', 'exhaust', 'protocol', 'process', 'network'], ['typ', 'den', 'target', 'us', 'respond', 'send', 'traff', 'attack', 'serv', 'flood', 'packet', 'host', 'protocol', 'process', 'network'], ['us', 'send', 'traff', 'serv', 'packet', 'host', 'protocol', 'firewal', 'dev', 'network']]
+keywords: result, packet, number, protocol, devic, src, attack, target, type, send, denial, udp, traffic, aim, user, process, network, respond, server, firewal, servic, exhaust, datagram, launch, abil, flood, host
+top 10 of match results: T1419, T1439, T1499.001, T1464, T1499.003, T1436, T1499.002, T1205.001, T1498.001, T1095
+[['devic', 'target', 'type'], ['devic', 'traffic', 'network', 'server'], ['packet', 'number', 'protocol', 'attack', 'target', 'send', 'denial', 'traffic', 'process', 'network', 'server', 'servic', 'exhaust', 'launch', 'abil', 'flood', 'host'], ['devic', 'attack', 'target', 'denial', 'user', 'network', 'servic', 'exhaust'], ['packet', 'protocol', 'attack', 'target', 'type', 'denial', 'traffic', 'process', 'network', 'server', 'servic', 'exhaust', 'flood', 'host'], ['protocol', 'udp', 'network', 'firewal'], ['packet', 'number', 'protocol', 'attack', 'target', 'type', 'denial', 'traffic', 'process', 'network', 'server', 'servic', 'exhaust', 'flood', 'host'], ['packet', 'protocol', 'devic', 'send', 'traffic', 'network', 'server', 'firewal', 'host'], ['packet', 'protocol', 'attack', 'target', 'denial', 'traffic', 'process', 'network', 'servic', 'flood', 'host'], ['packet', 'protocol', 'udp', 'traffic', 'user', 'process', 'network', 'server', 'datagram', 'host']]
 pass
 
 
@@ -928,9 +928,9 @@ pass
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00847_FTP_plaintext_password.yml
 ['attack.enterprise.T1040', 'attack.ics.T0842']
 tags of security rules: T1040, T0842
-keywords: target, prompt, ev, host, find, commun, dst, password, src, monit, account, plaintext, traff, network, ftp
-top 10 of match results: T1439, T1521.001, T1442, T0842, T1640, T1463, T1026, T1555, T1573.001, T1048.003
-[['commun', 'traff', 'network'], ['commun', 'plaintext', 'traff'], ['account'], ['target', 'commun', 'monit', 'traff', 'network'], ['account', 'network'], ['commun', 'traff', 'network'], ['commun'], ['password', 'monit'], ['commun', 'monit', 'plaintext', 'traff'], ['host', 'commun', 'monit', 'traff', 'network', 'ftp']]
+keywords: plaintext, target, password, account, commun, prompt, find, dst, ftp, traffic, event, monitor, host, src, network
+top 10 of match results: T1439, T1521.001, T1442, T0842, T1640, T1463, T1026, T1573.001, T1048.003, T1555
+[['commun', 'traffic', 'network'], ['plaintext', 'commun', 'traffic'], ['account'], ['target', 'commun', 'traffic', 'monitor', 'network'], ['account', 'network'], ['commun', 'traffic', 'network'], ['commun'], ['plaintext', 'commun', 'traffic', 'monitor'], ['commun', 'ftp', 'traffic', 'monitor', 'host', 'network'], ['password', 'monitor']]
 pass
 
 
@@ -958,9 +958,9 @@ pass
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00846_Telnet_plaintext_password.yml
 ['attack.enterprise.T1040', 'attack.ics.T0842']
 tags of security rules: T1040, T0842
-keywords: prompt, telnet, ev, host, find, commun, dst, password, src, monit, account, vuln, plaintext, traff, network, target
-top 10 of match results: T1455, T1439, T1521.001, T1442, T1463, T0842, T1588.006, T1640, T1423, T1026
-[['vuln'], ['commun', 'traff', 'network'], ['commun', 'plaintext', 'traff'], ['account'], ['commun', 'vuln', 'traff', 'network'], ['telnet', 'commun', 'monit', 'traff', 'network', 'target'], ['find', 'monit', 'vuln', 'target'], ['account', 'network'], ['host', 'vuln', 'network'], ['commun']]
+keywords: plaintext, target, password, account, telnet, vulner, commun, find, prompt, dst, traffic, event, monitor, host, src, network
+top 10 of match results: T1455, T1439, T1521.001, T1442, T1463, T0842, T1588.006, T1423, T1640, T1026
+[['vulner'], ['commun', 'traffic', 'network'], ['plaintext', 'commun', 'traffic'], ['account'], ['vulner', 'commun', 'traffic', 'network'], ['target', 'telnet', 'commun', 'traffic', 'monitor', 'network'], ['target', 'vulner', 'find', 'monitor'], ['vulner', 'host', 'network'], ['account', 'network'], ['commun']]
 pass
 
 
@@ -972,9 +972,9 @@ pass
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00890_SMBv1_DoublePulsar_Exists.yml
 ['attack.ics.T0866', 'attack.enterprise.T1210']
 tags of security rules: T0866, T1210
-keywords: doubleplus, ev, host, src, monit, smbv1, vuln, window, prompt, network, ex
-top 10 of match results: T1455, T1423, T1588.006, T1405, T1070.001, T1546.003, T1136, T0889, T1595.002, T1507
-[['vuln'], ['host', 'vuln', 'network'], ['monit', 'vuln', 'ex'], ['vuln'], ['ev', 'monit', 'window'], ['ev', 'host', 'monit', 'window', 'ex'], ['ev', 'monit', 'window', 'network', 'ex'], ['ev', 'host', 'monit', 'vuln', 'network', 'ex'], ['host', 'monit', 'vuln', 'network', 'ex'], ['network']]
+keywords: exist, prompt, vulner, doubleplusar, window, network, event, monitor, host, src, smbv1
+top 10 of match results: T1455, T1423, T1588.006, T1405, T0889, T1070.001, T1507, T1010, T1546.003, T1073
+[['vulner'], ['vulner', 'network', 'host'], ['exist', 'vulner', 'monitor'], ['vulner'], ['exist', 'vulner', 'network', 'event', 'monitor', 'host'], ['window', 'event', 'monitor'], ['network'], ['window', 'network', 'event', 'monitor'], ['window', 'event', 'monitor', 'host'], ['vulner', 'window']]
 
 
 200/241
@@ -993,9 +993,9 @@ top 10 of match results: T1455, T1423, T1588.006, T1405, T1070.001, T1546.003, T
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/05020_Vulnerability_Scan_SIP_Access.yml
 ['attack.enterprise.T1595.002']
 tags of security rules: T1595.002
-keywords: ind, tim, voic, target, us, mess, sign, video, help, host, apply, behavy, protocol, in, scan, sess, src, vuln, network, access
-top 10 of match results: T1455, T1454, T1423, T1443, T1123, T1027.005, T1441, T1066, T1437, T1412
-[['vuln'], ['mess'], ['host', 'scan', 'vuln', 'network', 'access'], ['apply'], ['voic', 'us', 'video', 'apply'], ['ind', 'target', 'us', 'sign', 'apply', 'scan', 'network'], ['sign'], ['ind', 'target', 'us', 'sign'], ['us', 'apply', 'protocol', 'network'], ['tim', 'us', 'mess', 'apply', 'access']]
+keywords: indic, protocol, src, target, time, vulner, use, user, scan, help, network, access, messag, applic, session, video, signal, behavior, voic, initi, host
+top 10 of match results: T1455, T1454, T1423, T1398, T1443, T1123, T1037, T1450, T1437, T1027.005
+[['vulner'], ['messag'], ['vulner', 'scan', 'network', 'access', 'host'], ['use', 'user', 'initi'], ['applic'], ['use', 'applic', 'video', 'voic'], ['time', 'use', 'user', 'access', 'initi'], ['vulner', 'signal'], ['protocol', 'use', 'network', 'applic'], ['indic', 'target', 'use', 'scan', 'network']]
 
 
 204/241
@@ -1018,9 +1018,9 @@ top 10 of match results: T1455, T1454, T1423, T1443, T1123, T1027.005, T1441, T1
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00853_Insecure_SSL_TLS_Version.yml
 ['attack.enterprise.T1573']
 tags of security rules: T1573
-keywords: us, ev, host, vert, src, vuln, ssl, prompt, tl, network
-top 10 of match results: T1455, T1463, T1001.003, T1423, T1405, T1507, T1481.003, T1481, T1595.002, T1048.002
-[['vuln'], ['vuln', 'ssl', 'tl', 'network'], ['us', 'ssl', 'tl', 'network'], ['host', 'vuln', 'network'], ['vuln'], ['us', 'network'], ['us', 'host', 'ssl', 'tl', 'network'], ['us', 'host', 'ssl', 'tl', 'network'], ['us', 'host', 'vert', 'vuln', 'network'], ['us', 'host', 'ssl', 'tl', 'network']]
+keywords: prompt, version, vulner, use, network, event, tl, ssl, src, host
+top 10 of match results: T1455, T1463, T1001.003, T1423, T1507, T1405, T1481.003, T1481, T1595.002, T1048.002
+[['vulner'], ['vulner', 'network', 'tl', 'ssl'], ['use', 'network', 'tl', 'ssl'], ['vulner', 'network', 'host'], ['use', 'network'], ['vulner'], ['use', 'network', 'tl', 'ssl', 'host'], ['use', 'network', 'tl', 'ssl', 'host'], ['version', 'vulner', 'use', 'network', 'host'], ['use', 'network', 'tl', 'ssl', 'host']]
 
 
 209/241
@@ -1031,9 +1031,9 @@ top 10 of match results: T1455, T1463, T1001.003, T1423, T1405, T1507, T1481.003
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/05023_Vulnerability_Scan_OS_Fingerprint_Scan_over_RDP.yml
 ['attack.enterprise.T1595.002']
 tags of security rules: T1595.002
-keywords: ind, check, inform, interfac, softw, target, us, sign, rdp, serv, help, purpos, host, microsoft, behavy, fingerprint, comput, protocol, scan, src, vuln, desktop, cli, network, connect
-top 10 of match results: T1455, T1423, T1021.001, T1554, T1507, T1027.005, T1066, T1588.006, T1070.007, T1645
-[['vuln'], ['inform', 'softw', 'serv', 'host', 'scan', 'vuln', 'network', 'connect'], ['interfac', 'us', 'rdp', 'serv', 'behavy', 'comput', 'protocol', 'desktop', 'network', 'connect'], ['check', 'softw', 'target', 'us', 'sign', 'serv', 'host', 'cli'], ['inform', 'us', 'network'], ['ind', 'softw', 'target', 'us', 'sign', 'scan', 'network'], ['ind', 'softw', 'target', 'us', 'sign'], ['inform', 'softw', 'target', 'us', 'behavy', 'comput', 'vuln'], ['ind', 'inform', 'softw', 'us', 'rdp', 'serv', 'host', 'microsoft', 'behavy', 'cli', 'network', 'connect'], ['softw', 'us', 'cli']]
+keywords: indic, check, protocol, fingerprint, src, target, signatur, vulner, comput, connect, user, scan, help, network, inform, microsoft, server, purpos, behavior, softwar, interfac, desktop, rdp, client, host
+top 10 of match results: T1455, T1423, T1021.001, T1554, T1027.005, T1645, T1070.007, T1066, T1588.006, T1036.001
+[['vulner'], ['vulner', 'connect', 'scan', 'network', 'inform', 'softwar', 'host'], ['protocol', 'comput', 'connect', 'user', 'network', 'behavior', 'interfac', 'desktop', 'rdp'], ['check', 'target', 'signatur', 'user', 'server', 'softwar', 'client', 'host'], ['indic', 'target', 'signatur', 'scan', 'network', 'softwar'], ['user', 'softwar', 'client'], ['indic', 'connect', 'user', 'network', 'inform', 'microsoft', 'server', 'behavior', 'softwar', 'rdp', 'client', 'host'], ['indic', 'target', 'signatur', 'softwar'], ['target', 'vulner', 'comput', 'inform', 'behavior', 'softwar'], ['check', 'signatur', 'user', 'inform', 'softwar']]
 
 
 211/241
@@ -1044,9 +1044,9 @@ top 10 of match results: T1455, T1423, T1021.001, T1554, T1507, T1027.005, T1066
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/05021_Vulnerability_Scan_Nessus_RDP_SSH_Access.yml
 ['attack.enterprise.T1595.002']
 tags of security rules: T1595.002
-keywords: ind, command, interfac, softw, target, us, ness, ssh, rdp, login, access, serv, help, purpos, host, apply, microsoft, behavy, lin, comput, protocol, scan, shel, src, vuln, desktop, cli, execut, network, connect
-top 10 of match results: T1455, T1423, T1021.001, T0807, T1071, T0823, T1100, T1554, T1605, T1443
-[['vuln'], ['softw', 'access', 'serv', 'host', 'scan', 'vuln', 'network', 'connect'], ['interfac', 'us', 'rdp', 'login', 'access', 'serv', 'behavy', 'comput', 'protocol', 'desktop', 'network', 'connect'], ['command', 'interfac', 'softw', 'us', 'ssh', 'rdp', 'serv', 'purpos', 'apply', 'lin', 'comput', 'shel', 'cli', 'execut', 'network'], ['command', 'us', 'ssh', 'rdp', 'serv', 'apply', 'lin', 'protocol', 'cli', 'execut', 'network', 'connect'], ['command', 'interfac', 'target', 'us', 'rdp', 'login', 'access', 'serv', 'host', 'apply', 'behavy', 'comput', 'protocol', 'cli', 'execut', 'connect'], ['command', 'interfac', 'us', 'access', 'serv', 'host', 'lin', 'shel', 'cli', 'network'], ['softw', 'target', 'us', 'ssh', 'access', 'serv', 'host', 'apply', 'cli'], ['command', 'interfac', 'us', 'lin', 'shel'], ['apply']]
+keywords: indic, protocol, login, line, src, target, shell, ssh, vulner, comput, connect, user, scan, help, network, command, access, microsoft, applic, server, purpos, behavior, nessu, servic, softwar, interfac, execut, desktop, rdp, client, host
+top 10 of match results: T1455, T1423, T1021.001, T1071, T1554, T1100, T0823, T1645, T1605, T0807
+[['vulner'], ['vulner', 'connect', 'scan', 'network', 'access', 'servic', 'softwar', 'host'], ['protocol', 'login', 'comput', 'connect', 'user', 'network', 'access', 'behavior', 'servic', 'interfac', 'desktop', 'rdp'], ['protocol', 'line', 'ssh', 'connect', 'network', 'command', 'applic', 'server', 'execut', 'rdp', 'client'], ['target', 'ssh', 'user', 'access', 'applic', 'server', 'servic', 'softwar', 'client', 'host'], ['line', 'shell', 'network', 'command', 'access', 'server', 'interfac', 'client', 'host'], ['protocol', 'login', 'target', 'comput', 'connect', 'user', 'command', 'access', 'applic', 'behavior', 'servic', 'interfac', 'execut', 'rdp', 'host'], ['user', 'access', 'softwar', 'client'], ['line', 'shell', 'user', 'command', 'interfac'], ['line', 'shell', 'ssh', 'comput', 'user', 'network', 'command', 'applic', 'purpos', 'servic', 'softwar', 'interfac', 'execut', 'rdp']]
 
 
 213/241
@@ -1061,9 +1061,9 @@ top 10 of match results: T1455, T1423, T1021.001, T0807, T1071, T0823, T1100, T1
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00886_Baidu_Bing_Google_(Search_Engine).yml
 ['attack.ics.T0883']
 tags of security rules: T0883
-keywords: engin, network, ev, googl, bing, host, commun, baidu, src, monit, prompt, search, access
-top 10 of match results: T1439, T1463, T1114.002, T1465, T1593.002, T1555, T1026, T1092, T1032, T1521
-[['network', 'commun'], ['network', 'googl', 'commun'], ['network', 'googl', 'host', 'monit', 'search', 'access'], ['network', 'commun', 'access'], ['engin', 'network', 'googl', 'search', 'access'], ['monit', 'search', 'access'], ['commun'], ['network', 'host', 'commun', 'access'], ['engin', 'commun'], ['engin', 'commun']]
+keywords: engin, search, prompt, commun, access, event, monitor, host, baidu, googl, bing, src, network
+top 10 of match results: T1439, T1463, T1114.002, T1465, T1593.002, T1026, T1555, T1092, T1032, T1521
+[['commun', 'network'], ['commun', 'googl', 'network'], ['search', 'access', 'monitor', 'host', 'googl', 'network'], ['commun', 'access', 'network'], ['engin', 'search', 'access', 'googl', 'network'], ['commun'], ['search', 'access', 'monitor'], ['commun', 'access', 'host', 'network'], ['engin', 'commun'], ['engin', 'commun']]
 
 
 216/241
@@ -1074,18 +1074,18 @@ top 10 of match results: T1439, T1463, T1114.002, T1465, T1593.002, T1555, T1026
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00933_Firewall_Rule_Changed_on_Windows.yml
 ['operation.local', 'attack.enterprise.T1599']
 tags of security rules: T1599
-keywords: firewal, host, ev, list, behavy, rul, exceiv, monit, datasrcip, window, prompt, op, chang
-top 10 of match results: T1562.007, T1562.004, T1010, T0870, T1065, T1432, T0875, T1070.007, T1562, T1063
-[['firewal', 'ev', 'rul', 'monit', 'window', 'chang'], ['firewal', 'ev', 'rul', 'monit', 'window', 'chang'], ['ev', 'list', 'behavy', 'monit', 'window', 'op'], ['exceiv'], ['firewal'], ['list'], ['chang'], ['firewal', 'host', 'behavy', 'rul', 'monit', 'window', 'op', 'chang'], ['firewal', 'host', 'ev', 'behavy', 'rul', 'exceiv', 'monit', 'window', 'chang'], ['firewal', 'list', 'behavy', 'rul', 'window']]
+keywords: prompt, chang, oper, window, datasrcip, event, list, host, except, monitor, firewal, behavior, rule
+top 10 of match results: T1562.007, T1562.004, T1010, T0870, T1432, T1065, T0875, T1070.007, T1562, T1063
+[['chang', 'window', 'event', 'monitor', 'firewal', 'rule'], ['chang', 'window', 'event', 'monitor', 'firewal', 'rule'], ['oper', 'window', 'event', 'list', 'monitor', 'behavior'], ['except'], ['list'], ['firewal'], ['chang'], ['chang', 'oper', 'window', 'host', 'monitor', 'firewal', 'behavior', 'rule'], ['chang', 'window', 'event', 'host', 'except', 'monitor', 'firewal', 'behavior', 'rule'], ['window', 'list', 'firewal', 'behavior', 'rule']]
 
 
 218/241
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00876_S7Comm_PLC_warm_STOP.yml
 ['attack.ics.T0858', 'attack.ics.T0816', 'query-unclear']
 tags of security rules: T0858, T0816
-keywords: network, ev, plc, s7comm, host, dst, src, prompt, op, stop
-top 10 of match results: T0870, T0885, T1507, T0881, T1439, T1630, T0835, T1423, T0877, T1514
-[['plc'], ['network', 's7comm', 'host'], ['network'], ['stop'], ['network'], ['ev', 'host'], ['plc'], ['network', 'host'], ['plc'], ['prompt', 'op']]
+keywords: prompt, oper, stop, dst, event, host, s7comm, plc, src, network
+top 10 of match results: T0870, T0885, T1507, T0881, T1439, T1423, T0835, T1630, T1514, T0877
+[['plc'], ['host', 's7comm', 'network'], ['network'], ['stop'], ['network'], ['host', 'network'], ['plc'], ['event', 'host'], ['prompt', 'oper'], ['plc']]
 
 
 219/241
@@ -1136,9 +1136,9 @@ top 10 of match results: T0870, T0885, T1507, T0881, T1439, T1630, T0835, T1423,
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/05002_OMS_Download_PLC_hardware_configuration.yml
 ['attack.ics.T0843']
 tags of security rules: T0843
-keywords: config, ev, plc, host, dst, src, hardw, prompt, om, download, op, network
-top 10 of match results: T1431, T0870, T1474.002, T1195.003, T1612, T1602.002, T0843, T1507, T1610, T1439
-[['download'], ['plc', 'download'], ['hardw', 'network'], ['hardw', 'network'], ['host', 'download', 'network'], ['config', 'host', 'op', 'network'], ['config', 'download'], ['network'], ['config', 'host', 'download', 'network'], ['network']]
+keywords: download, hardwar, prompt, oper, dst, event, host, configur, plc, om, src, network
+top 10 of match results: T1431, T0870, T1474.002, T1195.003, T1612, T1602.002, T1507, T0843, T1610, T1439
+[['download'], ['download', 'plc'], ['hardwar', 'network'], ['hardwar', 'network'], ['download', 'host', 'network'], ['oper', 'host', 'configur', 'network'], ['network'], ['download', 'configur'], ['download', 'host', 'configur', 'network'], ['network']]
 pass
 
 
@@ -1154,9 +1154,9 @@ pass
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00871_SNMP_query_flooding.yml
 ['attack.enterprise.T1499', 'attack.enterprise.T1498.001', 'attack.ics.T0814']
 tags of security rules: T1499, T1498.001, T0814
-keywords: run, udp, launch, spoof, request, ip, target, us, internet, query, send, flood, packet, host, carry, respons, snmp, src, dev, attack, network, ampl
-top 10 of match results: T1460, T1498.002, T1467, T1602.001, T0885, T1016.001, T1602.002, T1507, T1498.001, T1419
-[['spoof'], ['spoof', 'request', 'ip', 'target', 'us', 'send', 'flood', 'packet', 'host', 'respons', 'attack', 'network', 'ampl'], ['us', 'carry', 'dev'], ['run', 'request', 'target', 'us', 'query', 'send', 'packet', 'host', 'snmp', 'dev', 'attack', 'network'], ['udp', 'ip', 'us', 'packet', 'host', 'snmp', 'network'], ['request', 'us', 'internet', 'respons', 'attack'], ['target', 'us', 'query', 'send', 'packet', 'host', 'snmp', 'dev', 'attack', 'network'], ['us', 'dev', 'network'], ['target', 'us', 'internet', 'flood', 'packet', 'host', 'respons', 'attack', 'network'], ['target', 'dev']]
+keywords: snmp, packet, queri, devic, src, attack, target, send, use, amplif, udp, internet, spoof, respons, network, request, carri, run, ip, launch, flood, host
+top 10 of match results: T1460, T1467, T1498.002, T1602.001, T0885, T1016.001, T1507, T1498.001, T1602.002, T1419
+[['spoof'], ['devic', 'use', 'carri'], ['packet', 'attack', 'target', 'send', 'use', 'amplif', 'spoof', 'respons', 'network', 'request', 'ip', 'flood', 'host'], ['snmp', 'packet', 'queri', 'devic', 'attack', 'target', 'send', 'use', 'network', 'request', 'run', 'host'], ['snmp', 'packet', 'use', 'udp', 'network', 'ip', 'host'], ['attack', 'use', 'internet', 'respons', 'request'], ['devic', 'use', 'network'], ['packet', 'attack', 'target', 'use', 'internet', 'respons', 'network', 'flood', 'host'], ['snmp', 'packet', 'queri', 'devic', 'attack', 'target', 'send', 'use', 'network', 'host'], ['devic', 'target']]
 pass
 
 
@@ -1164,9 +1164,9 @@ pass
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00852_HeartBleed.yml
 ['attack.enterprise.T1119', 'attack.ics.T0802']
 tags of security rules: T1119, T0802
-keywords: us, ev, host, heartblee, scan, openssl, src, vuln, ssl, prompt, attack, network, target
-top 10 of match results: T1455, T1423, T1463, T0841, T1595.002, T1405, T1588.006, T0808, T1595.001, T1507
-[['vuln'], ['host', 'scan', 'vuln', 'network'], ['vuln', 'ssl', 'attack', 'network'], ['us', 'scan', 'vuln', 'attack', 'network', 'target'], ['us', 'host', 'scan', 'vuln', 'attack', 'network', 'target'], ['vuln', 'attack'], ['us', 'vuln', 'attack', 'target'], ['vuln', 'target'], ['us', 'host', 'scan', 'attack', 'network', 'target'], ['us', 'network']]
+keywords: target, openssl, attack, prompt, vulner, use, network, event, host, scan, ssl, src, heartble
+top 10 of match results: T1455, T1423, T1463, T0841, T1595.002, T1405, T1588.006, T0808, T1507, T1595.001
+[['vulner'], ['vulner', 'network', 'host', 'scan'], ['attack', 'vulner', 'network', 'ssl'], ['target', 'attack', 'vulner', 'use', 'network', 'scan'], ['target', 'attack', 'vulner', 'use', 'network', 'host', 'scan'], ['attack', 'vulner'], ['target', 'attack', 'vulner', 'use'], ['target', 'vulner'], ['use', 'network'], ['target', 'attack', 'use', 'network', 'host', 'scan']]
 
 
 235/241
@@ -1185,9 +1185,9 @@ top 10 of match results: T1455, T1423, T1463, T0841, T1595.002, T1405, T1588.006
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00882_Enumerate_Redpoint_NSE_Request_CPU_Function_Read_SZL_attempt.yml
 ['attack.ics.T0846', 'attack.ics.T0888']
 tags of security rules: T0846, T0888
-keywords: inform, szl, request, target, us, cpu, read, siem, dst, help, host, plc, s7, behavy, funct, redpoint, scan, src, nse, attempt, dev, network
-top 10 of match results: T1473, T1507, T1423, T1120, T1419, T0870, T0808, T1633.001, T0841, T0845
-[['funct', 'dev'], ['inform', 'us', 'dev', 'network'], ['inform', 'host', 'scan', 'attempt', 'dev', 'network'], ['inform', 'us', 'read', 'funct', 'attempt', 'dev', 'network'], ['inform', 'target', 'dev'], ['inform', 'plc'], ['inform', 'target', 'funct', 'dev'], ['cpu', 'read', 'host', 'behavy', 'funct', 'dev', 'network'], ['inform', 'target', 'us', 'plc', 'scan', 'attempt', 'dev', 'network'], ['inform', 'target', 'us', 'read', 'plc', 'funct', 'attempt', 'dev', 'network']]
+keywords: function, s7, cpu, read, devic, src, target, user, attempt, scan, help, nse, redpoint, network, inform, siemen, request, dst, plc, behavior, szl, host
+top 10 of match results: T1473, T1423, T1507, T1419, T0870, T0808, T1633.001, T0841, T0845, T1120
+[['function', 'devic'], ['devic', 'attempt', 'scan', 'network', 'inform', 'host'], ['devic', 'network', 'inform'], ['devic', 'target', 'inform'], ['inform', 'plc'], ['function', 'devic', 'target', 'inform'], ['function', 'cpu', 'read', 'devic', 'network', 'behavior', 'host'], ['devic', 'target', 'attempt', 'scan', 'network', 'inform', 'plc'], ['function', 'read', 'devic', 'target', 'user', 'attempt', 'network', 'inform', 'plc'], ['function', 'devic', 'attempt', 'network', 'inform']]
 
 
 239/241
@@ -1198,9 +1198,9 @@ top 10 of match results: T1473, T1507, T1423, T1120, T1419, T0870, T0808, T1633.
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//osa_rules/00884_PN_DCP_scan_network.yml
 ['attack.ics.T0846', 'attack.ics.T0888']
 tags of security rules: T0846, T0888
-keywords: subnet, find, smac, inform, pn, mask, tool, typ, rout, nam, launch, ip, list, us, address, mac, profinet, vend, serv, host, dcp, funct, op, config, way, scan, dev, network
-top 10 of match results: T1473, T1419, T1423, T1507, T0841, T1432, T0846, T1629.003, T1016, T0864
-[['funct', 'dev'], ['inform', 'typ', 'dev'], ['inform', 'list', 'serv', 'host', 'scan', 'dev', 'network'], ['inform', 'us', 'dev', 'network'], ['inform', 'tool', 'typ', 'nam', 'ip', 'us', 'serv', 'scan', 'dev', 'network'], ['list', 'address'], ['tool', 'ip', 'list', 'us', 'address', 'vend', 'host', 'funct', 'scan', 'dev', 'network'], ['inform', 'tool', 'us', 'config', 'scan', 'dev'], ['inform', 'rout', 'ip', 'us', 'address', 'mac', 'funct', 'config', 'dev', 'network'], ['launch', 'ip', 'us', 'address', 'mac', 'vend', 'funct', 'config', 'way', 'dev', 'network']]
+keywords: function, pn, address, mac, tool, devic, name, type, oper, use, profinet, subnet, scan, list, network, router, inform, find, way, servic, smac, dcp, ip, mask, launch, vendor, configur, host
+top 10 of match results: T1473, T1423, T1419, T1507, T0841, T1432, T0846, T1629.003, T1637, T0864
+[['function', 'devic'], ['devic', 'scan', 'list', 'network', 'inform', 'servic', 'host'], ['devic', 'type', 'inform'], ['devic', 'use', 'network', 'inform'], ['tool', 'devic', 'name', 'type', 'use', 'scan', 'network', 'inform', 'servic', 'ip'], ['address', 'list'], ['function', 'address', 'tool', 'devic', 'use', 'scan', 'list', 'network', 'ip', 'vendor', 'host'], ['tool', 'devic', 'use', 'scan', 'inform', 'configur'], ['address', 'name', 'use', 'ip'], ['function', 'address', 'mac', 'devic', 'network', 'way', 'ip', 'launch', 'vendor', 'configur']]
 pass
 
 
@@ -1213,6 +1213,6 @@ actual tests: 241
 tag tests: 46
 pass: 12
 ratio: 0.2608695652173913
-run time: 1246.210701458s ≈ 00:20:46
+run time: 1279.561250584s ≈ 00:21:19
 
 Process finished with exit code 0

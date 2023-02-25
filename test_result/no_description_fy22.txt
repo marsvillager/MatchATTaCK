@@ -1,0 +1,586 @@
+/Users/xuyi/Downloads/MatchATTaCK/venv/bin/python /Users/xuyi/Downloads/MatchATTaCK/main.py
+Download/Update data or not? Please input yes or no:
+no
+1/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15071_WindowsApplockerSecurityEvent.yml
+未打标
+
+2/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15013_ScheduledTaskCreated.yml
+['attack.enterprise.T1053.005']
+tags of security rules: T1053.005
+keywords: task, operation, schedule
+top 10 of match results: T1603, T1053, T0882, T1036.004, T1053.007, T1029, T1053.001, T1053.005, T1053.003, T1583.002
+[['task', 'schedule'], ['task', 'schedule'], ['operation', 'schedule'], ['task', 'schedule'], ['task', 'schedule'], ['schedule'], ['task', 'schedule'], ['task', 'schedule'], ['task', 'schedule'], ['task', 'operation']]
+pass
+
+
+3/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15052_AccessedFileOrFolder.yml
+未打标
+
+4/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15023_ApplicationInstallation.yml
+['attack.enterprise.T1543']
+tags of security rules: T1543
+keywords: operation, installation, instal, application
+top 10 of match results: T1443, T1418.001, T1546.016, T0827, T1010, T1407, T0800, T1437, T1508, T1412
+[['application'], ['instal', 'application'], ['installation', 'instal', 'application'], ['operation', 'installation'], ['operation', 'application'], ['installation', 'application'], ['operation', 'installation'], ['application'], ['application'], ['operation', 'application']]
+
+
+5/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15019_MembershipEnumerated.yml
+['attack.enterprise.T1087.001', 'attack.enterprise.T1087.002']
+tags of security rules: T1087.001, T1087.002
+keywords: account, membership
+top 10 of match results: T1442, T1640, T1136, T1069, T1136.003, T1136.001, T1136.002, T1585.003, T1585.002, T1037.003
+[['account'], ['account'], ['account'], ['account', 'membership'], ['account'], ['account'], ['account'], ['account'], ['account'], ['account']]
+
+
+6/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15672_OsTemporaryUserAccountLinux.yml
+['attack.enterprise.T1531']
+tags of security rules: T1531
+keywords: linux, account, user
+top 10 of match results: T1442, T1640, T1136.003, T1136.001, T1136.002, T1053.001, T1136, T1078.003, T1078.002, T1003.008
+[['account'], ['account', 'user'], ['account', 'user'], ['account', 'user'], ['account', 'user'], ['linux', 'account'], ['account', 'user'], ['linux', 'account', 'user'], ['linux', 'account', 'user'], ['linux', 'account', 'user']]
+
+
+7/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15651_AuditdGenericFileWrite.yml
+['attack.enterprise.T1485', 'attack.enterprise.T1565']
+tags of security rules: T1485, T1565
+keywords: operation, write, file, directory
+top 10 of match results: T1420, T1574.010, T1083, T1625, T1037.003, T0852, T1074.002, T1113, T1074.001, T1409
+[['file', 'directory'], ['file', 'directory'], ['file', 'directory'], ['file', 'directory'], ['file', 'directory'], ['operation', 'write', 'file'], ['write', 'file', 'directory'], ['operation', 'write', 'file'], ['write', 'file', 'directory'], ['file', 'directory']]
+
+
+8/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15070_WindowsApplockerDisabled.yml
+['attack.enterprise.T1562.001']
+tags of security rules: T1562.001
+keywords: operation, applocker, window
+top 10 of match results: T1010, T1028, T1216, T1116, T1126, T1122, T1012, T1061, T1059.003, T1037.001
+[['operation', 'window'], ['window'], ['applocker', 'window'], ['operation', 'window'], ['operation', 'window'], ['operation', 'window'], ['operation', 'window'], ['operation', 'window'], ['operation', 'window'], ['window']]
+
+
+9/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15026_OsHighPrivilegedAccountCreation.yml
+['attack.enterprise.T1136.001', 'attack.enterprise.T1136.002']
+tags of security rules: T1136.001, T1136.002
+keywords: account, creation, privilege
+top 10 of match results: T1442, T1640, T1136, T1136.003, T1136.001, T1136.002, T1435, T1419, T1432, T1037.003
+[['account'], ['account'], ['account', 'creation'], ['account', 'creation'], ['account', 'creation'], ['account', 'creation'], ['privilege'], ['privilege'], ['privilege'], ['account', 'privilege']]
+pass
+
+
+10/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15650_AuditdGenericFileRead.yml
+['attack.enterprise.T1083']
+tags of security rules: T1083
+keywords: operation, read, file, directory
+top 10 of match results: T1420, T1574.010, T1083, T1625, T1074.002, T1037.003, T1074.001, T1409, T0845, T1074
+[['file', 'directory'], ['file', 'directory'], ['file', 'directory'], ['file', 'directory'], ['read', 'file', 'directory'], ['file', 'directory'], ['read', 'file', 'directory'], ['file', 'directory'], ['operation', 'read', 'file'], ['read', 'file', 'directory']]
+pass
+
+
+11/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15030_NewHardwarePluggedIn.yml
+['attack.enterprise.T1200']
+tags of security rules: T1200
+keywords: operation, hardware, plug
+top 10 of match results: T1474.002, T1195.003, T1547.008, T1019, T1062, T1600.002, T1200, T0829, T1542.004, T0834
+[['hardware'], ['hardware'], ['operation', 'plug'], ['hardware'], ['hardware'], ['hardware'], ['hardware'], ['operation'], ['operation', 'hardware'], ['operation', 'hardware']]
+pass
+
+
+12/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15014_ScheduledTaskEnabled.yml
+['attack.enterprise.T1053.005']
+tags of security rules: T1053.005
+keywords: task, operation, schedule
+top 10 of match results: T1603, T1053, T0882, T1036.004, T1053.007, T1029, T1053.001, T1053.005, T1053.003, T1583.002
+[['task', 'schedule'], ['task', 'schedule'], ['operation', 'schedule'], ['task', 'schedule'], ['task', 'schedule'], ['schedule'], ['task', 'schedule'], ['task', 'schedule'], ['task', 'schedule'], ['task', 'operation']]
+pass
+
+
+13/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15032_NewUsbDevicePluggedIn.yml
+['attack.enterprise.T1200']
+tags of security rules: T1200
+keywords: operation, usb, plug, device
+top 10 of match results: T1052.001, T1473, T1459, T1427, T1419, T1052, T1450, T0808, T1025, T1472
+[['usb', 'device'], ['device'], ['device'], ['usb', 'device'], ['device'], ['usb', 'device'], ['device'], ['device'], ['usb'], ['device']]
+
+
+14/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15401_EsxiAuthenticationFailure.yml
+未打标
+
+15/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15012_LoginWithExplicitCredentials.yml
+['attack.enterprise.T1078.003']
+tags of security rules: T1078.003
+keywords: account, login, credential, window
+top 10 of match results: T1442, T1640, T1441, T0812, T1634, T1056.003, T1555, T1075, T1110.004, T1214
+[['account'], ['account', 'credential'], ['credential'], ['account', 'credential'], ['credential'], ['account', 'login', 'credential'], ['credential'], ['account', 'credential', 'window'], ['account', 'login', 'credential', 'window'], ['credential', 'window']]
+
+
+16/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15697_ApplicationInstallationLinux.yml
+['attack.enterprise.T1543']
+tags of security rules: T1543
+keywords: linux, installation, operation, instal, application
+top 10 of match results: T1443, T1546.016, T1418.001, T1116, T0827, T1010, T1053.001, T1407, T0800, T1437
+[['application'], ['linux', 'installation', 'instal', 'application'], ['instal', 'application'], ['linux', 'operation'], ['installation', 'operation'], ['operation', 'application'], ['linux'], ['installation', 'application'], ['installation', 'operation'], ['application']]
+
+
+17/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15010_AuthenticationPackageLoaded.yml
+['attack.enterprise.T1547']
+tags of security rules: T1547
+keywords: lsa, load, authentication, window, account, package
+top 10 of match results: T1131, T1547.002, T1442, T1556.002, T1101, T1547.005, T1073, T1177, T0812, T1640
+[['lsa', 'load', 'authentication', 'window', 'package'], ['lsa', 'load', 'authentication', 'window', 'package'], ['account'], ['lsa', 'load', 'authentication', 'window', 'account', 'package'], ['lsa', 'load', 'window', 'package'], ['lsa', 'load', 'window', 'package'], ['load', 'window'], ['lsa', 'load', 'authentication', 'window'], ['authentication', 'account', 'package'], ['account']]
+
+
+18/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15800_NOT_TESTED_FortigateFirewallAdminLogin.yml
+['attack.enterprise.T1078']
+tags of security rules: T1078
+keywords: admin, fortigate, administrator, datasrcip, firewall, operation, login
+top 10 of match results: T1065, T1026, T1126, T1562.007, T1436, T1136.003, T1562.004, T1037.002, T1070.005, T1077
+[['firewall'], ['firewall'], ['admin', 'operation'], ['firewall'], ['firewall'], ['admin', 'administrator'], ['firewall'], ['administrator', 'login'], ['admin', 'operation'], ['admin', 'administrator']]
+
+
+19/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15016_UserAddedToGroup.yml
+未打标
+
+20/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15062_AnomalousProcessExecutionWithHighPrivileges.yml
+['attack.enterprise.T1204.002']
+tags of security rules: T1204.002
+keywords: execution, operation, process, privilege
+top 10 of match results: T1399, T1631, T1035, T1093, T1435, T1412, T1419, T1121, T0829, T1404
+[['execution', 'privilege'], ['execution', 'process', 'privilege'], ['execution', 'privilege'], ['execution', 'process'], ['privilege'], ['operation', 'privilege'], ['privilege'], ['execution', 'process', 'privilege'], ['operation', 'process'], ['process', 'privilege']]
+
+
+21/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15602_AuditdGroupModication.yml
+['attack.enterprise.T1098', 'attack.enterprise.T1136.001', 'attack.enterprise.T1531']
+tags of security rules: T1098, T1136.001, T1531
+keywords: linux, host, datasrcip, group, modification, account, auditd
+top 10 of match results: T1442, T1069.001, T1069.002, T1640, T1037.003, T1003.008, T1069, T1098, T1087.002, T1053.001
+[['account'], ['linux', 'group'], ['linux', 'group'], ['account'], ['group', 'modification', 'account'], ['linux', 'account', 'auditd'], ['group', 'account'], ['group', 'modification', 'account'], ['linux', 'group', 'account'], ['linux', 'account']]
+pass
+
+
+22/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15662_AnomalousProcessExecutionWithHighPrivilegesLinux.yml
+['attack.enterprise.T1204.002']
+tags of security rules: T1204.002
+keywords: linux, execution, operation, process, privilege
+top 10 of match results: T1053.001, T1399, T1631, T1035, T1093, T1116, T1435, T1055.008, T1412, T1419
+[['linux', 'execution', 'process', 'privilege'], ['execution', 'privilege'], ['execution', 'process', 'privilege'], ['execution', 'privilege'], ['execution', 'process'], ['linux', 'operation'], ['privilege'], ['linux', 'execution', 'process', 'privilege'], ['operation', 'privilege'], ['privilege']]
+
+
+23/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15670_OsUserAccountCreationLinux.yml
+['attack.enterprise.T1136.001', 'attack.enterprise.T1136.002']
+tags of security rules: T1136.001, T1136.002
+keywords: linux, account, user, creation
+top 10 of match results: T1442, T1640, T1136.003, T1136, T1136.001, T1136.002, T1053.001, T1078.003, T0823, T1078.002
+[['account'], ['account', 'user'], ['account', 'user', 'creation'], ['account', 'user', 'creation'], ['account', 'user', 'creation'], ['account', 'user', 'creation'], ['linux', 'account'], ['linux', 'account', 'user'], ['linux', 'account', 'user', 'creation'], ['linux', 'account', 'user']]
+pass
+
+
+24/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15301_DcuInvalidSignature.yml
+未打标
+
+25/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15203_VicosLoginAttemptOfNonAuthorizedUsername.yml
+['attack.enterprise.T1078.003']
+tags of security rules: T1078.003
+keywords: vicos, attempt, account, deletion
+top 10 of match results: T1442, T1640, T1630.002, T1107, T1070.004, T1136, T0875, T1578, T1136.003, T1578.003
+[['account'], ['account'], ['deletion'], ['deletion'], ['deletion'], ['account'], ['attempt'], ['attempt', 'account', 'deletion'], ['account'], ['attempt', 'account', 'deletion']]
+
+
+26/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15652_AuditdGenericFileExecute.yml
+未打标
+
+27/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15653_AuditdGenericFileRemove.yml
+['attack.enterprise.T1485', 'attack.enterprise.T1565']
+tags of security rules: T1485, T1565
+keywords: operation, remove, file, directory
+top 10 of match results: T1640, T1126, T0809, T1066, T1027.005, T1070.009, T1420, T1070.005, T1574.010, T1083
+[['remove'], ['operation', 'remove'], ['operation', 'remove', 'file', 'directory'], ['remove', 'file'], ['operation', 'remove', 'file'], ['remove', 'file'], ['file', 'directory'], ['operation', 'remove', 'file'], ['file', 'directory'], ['file', 'directory']]
+
+
+28/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15011_AttemptedLogin.yml
+未打标
+
+29/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15701_LoginHirschmannSwitch.yml
+未打标
+
+30/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15202_VicosAccountDeletion.yml
+['attack.enterprise.T1531']
+tags of security rules: T1531
+keywords: vicos, account, deletion
+top 10 of match results: T1442, T1640, T1630.002, T1107, T1070.004, T1136, T1136.003, T0809, T1136.001, T1136.002
+[['account'], ['account'], ['deletion'], ['deletion'], ['deletion'], ['account'], ['account'], ['deletion'], ['account'], ['account']]
+
+
+31/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15101_RepeatedFailedLogin.yml
+['attack.enterprise.T1110.001']
+tags of security rules: T1110.001
+keywords: log, account, login, repeat
+top 10 of match results: T1442, T1640, T1433, T1621, T1056.003, T1136.003, T1021.004, T1603, T1413, T1070.002
+[['account'], ['account'], ['log'], ['log', 'account', 'login', 'repeat'], ['log', 'account', 'login'], ['log', 'account'], ['log', 'account', 'login'], ['repeat'], ['log'], ['log', 'login']]
+
+
+32/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15025_ApplicationInstallationApplocker.yml
+['attack.enterprise.T1543']
+tags of security rules: T1543
+keywords: operation, installation, instal, application
+top 10 of match results: T1443, T1418.001, T1546.016, T0827, T1010, T1407, T0800, T1437, T1508, T1412
+[['application'], ['instal', 'application'], ['installation', 'instal', 'application'], ['operation', 'installation'], ['operation', 'application'], ['installation', 'application'], ['operation', 'installation'], ['application'], ['application'], ['operation', 'application']]
+
+
+33/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15027_ApplicationConfigurationChange.yml
+['attack.enterprise.T1565']
+tags of security rules: T1565
+keywords: configuration, operation, change, application
+top 10 of match results: T1443, T0875, T1017, T0836, T1602.002, T1602, T1012, T1010, T1059.008, T1418.001
+[['application'], ['change'], ['configuration', 'application'], ['configuration', 'operation', 'change', 'application'], ['configuration', 'operation', 'application'], ['configuration', 'application'], ['configuration', 'operation'], ['operation', 'application'], ['configuration', 'operation', 'change'], ['configuration', 'application']]
+
+
+34/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15201_VicosRepeatedFailedLogin.yml
+['attack.enterprise.T1110.001']
+tags of security rules: T1110.001
+keywords: vicos, account, login, repeat
+top 10 of match results: T1442, T1640, T1621, T1603, T1056.003, T1136, T1037.002, T1136.003, T1147, T1078.003
+[['account'], ['account'], ['account', 'login', 'repeat'], ['repeat'], ['account', 'login'], ['account'], ['account', 'login'], ['account'], ['account', 'login'], ['account', 'login']]
+
+
+35/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15053_ModifiedFileOrFolder.yml
+未打标
+
+36/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15810_NOT_TESTED_FortigateFirewallUTMSecurityEvent.yml
+未打标
+
+37/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15024_ApplicationRemoval.yml
+未打标
+
+38/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15018_UserAccountUnlocked.yml
+['attack.enterprise.T1098']
+tags of security rules: T1098
+keywords: account, user, unlock
+top 10 of match results: T1459, T1442, T1640, T1400, T1136.003, T1136.001, T1136.002, T1136, T1446, T1402
+[['unlock'], ['account'], ['account', 'user'], ['user', 'unlock'], ['account', 'user'], ['account', 'user'], ['account', 'user'], ['account', 'user'], ['user', 'unlock'], ['user', 'unlock']]
+
+
+39/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15050_NewFileOrFolder.yml
+未打标
+
+40/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15064_NewServiceExecution.yml
+['attack.enterprise.T1569.002']
+tags of security rules: T1569.002
+keywords: execution, operation, service, start
+top 10 of match results: T1035, T1050, T1036.004, T1089, T1399, T1574.010, T1625, T0826, T1575, T1541
+[['execution', 'service'], ['execution', 'service', 'start'], ['execution', 'service', 'start'], ['start'], ['execution'], ['service', 'start'], ['execution'], ['operation', 'service'], ['execution', 'start'], ['service', 'start']]
+
+
+41/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15205_VicosCriticalAccountCreation.yml
+['attack.enterprise.T1136.001']
+tags of security rules: T1136.001
+keywords: vicos, account, server, creation
+top 10 of match results: T1442, T1640, T1136, T1136.003, T1136.001, T1136.002, T1439, T1585.003, T1017, T1037
+[['account'], ['account'], ['account', 'creation'], ['account', 'creation'], ['account', 'creation'], ['account', 'creation'], ['server'], ['account', 'server'], ['account', 'server'], ['account', 'server']]
+pass
+
+
+42/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15063_ProcessTermination.yml
+['attack.enterprise.T1489']
+tags of security rules: T1489
+keywords: operation, termination, process
+top 10 of match results: T1154, T1546.005, T0829, T1093, T0852, T0804, T0880, T0803, T1113, T1631
+[['termination'], ['termination', 'process'], ['operation', 'process'], ['process'], ['operation', 'process'], ['termination', 'process'], ['operation', 'process'], ['termination', 'process'], ['operation', 'process'], ['process']]
+
+
+43/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15002_EventLoggingServiceError.yml
+['attack.enterprise.T1562']
+tags of security rules: T1562
+keywords: encounter, error, event, log, operation, window, service
+top 10 of match results: T1070.001, T1154, T1433, T1028, T1061, T1010, T1084, T1089, T1035, T1021.006
+[['error', 'event', 'log', 'window'], ['encounter'], ['log'], ['window', 'service'], ['event', 'operation', 'window', 'service'], ['event', 'operation', 'window'], ['event', 'window'], ['event', 'log'], ['window', 'service'], ['event', 'log', 'window', 'service']]
+
+
+44/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15607_AuditdEffectiveRulesChange.yml
+['attack.enterprise.T1070']
+tags of security rules: T1070
+keywords: rule, linux, host, datasrcip, account, change, auditd
+top 10 of match results: T1442, T1640, T0875, T1003.008, T1053.001, T1055.008, T0872, T1562.004, T1562.007, T1531
+[['account'], ['account', 'change'], ['change'], ['linux', 'account', 'auditd'], ['linux', 'account'], ['linux', 'change', 'auditd'], ['host', 'change'], ['rule', 'change'], ['rule', 'change'], ['linux', 'account', 'change']]
+
+
+45/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15207_VicosApplicationLogCleared.yml
+['attack.enterprise.T1070.001']
+tags of security rules: T1070.001
+keywords: vicos, operation, application, log
+top 10 of match results: T1443, T1433, T1413, T1017, T1547.007, T1010, T1636.002, T1613, T1437, T1508
+[['application'], ['application', 'log'], ['application', 'log'], ['application', 'log'], ['application', 'log'], ['operation', 'application'], ['log'], ['application', 'log'], ['application'], ['application']]
+
+
+46/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15041_NewFileShare.yml
+未打标
+
+47/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15204_VicosLoginLogoutAtUnusualTime.yml
+['attack.enterprise.T1078.003']
+tags of security rules: T1078.003
+keywords: vicos, time, logout, login, attempt, account
+top 10 of match results: T1442, T1037.002, T1640, T1056.003, T1078.003, T1078.002, T1621, T1517, T0859, T1162
+[['account'], ['time', 'logout', 'login', 'account'], ['account'], ['login', 'attempt', 'account'], ['time', 'login', 'attempt', 'account'], ['time', 'login', 'attempt', 'account'], ['login', 'attempt', 'account'], ['time', 'attempt'], ['time', 'login', 'attempt', 'account'], ['time', 'login']]
+pass
+
+
+48/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15605_AuditdEtcGroupModification.yml
+['attack.enterprise.T1098', 'attack.enterprise.T1136.001', 'attack.enterprise.T1531']
+tags of security rules: T1098, T1136.001, T1531
+keywords: linux, host, datasrcip, gshadow, group, modification, etc, account, file
+top 10 of match results: T1442, T1003.008, T1169, T1069.001, T1098, T1037.003, T1069.002, T1087.001, T1640, T1070.009
+[['account'], ['linux', 'etc', 'account', 'file'], ['group', 'etc', 'file'], ['linux', 'group'], ['group', 'modification', 'etc', 'account', 'file'], ['group', 'modification', 'account', 'file'], ['linux', 'group'], ['linux', 'group', 'etc', 'account', 'file'], ['account'], ['host', 'group', 'modification', 'file']]
+pass
+
+
+49/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15031_NewUsbStorageDevicePluggedIn.yml
+['attack.enterprise.T1200', 'attack.enterprise.T1025']
+tags of security rules: T1200, T1025
+keywords: usb, operation, device, storage, plug
+top 10 of match results: T1052.001, T1427, T1473, T1052, T1459, T1419, T1634, T1120, T1555, T1450
+[['usb', 'device', 'storage'], ['usb', 'device', 'storage'], ['device'], ['usb', 'device', 'storage'], ['device'], ['device'], ['device', 'storage'], ['device', 'storage'], ['storage'], ['device']]
+
+
+50/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15671_OsHighPrivilegeUserAccountCreationLinux.yml
+['attack.enterprise.T1136.001', 'attack.enterprise.T1136.002']
+tags of security rules: T1136.001, T1136.002
+keywords: linux, creation, user, account, privilege
+top 10 of match results: T1442, T1640, T1136.003, T1136, T1136.001, T1136.002, T1053.001, T1078.003, T1400, T1078.002
+[['account'], ['user', 'account'], ['creation', 'user', 'account'], ['creation', 'user', 'account'], ['creation', 'user', 'account'], ['creation', 'user', 'account'], ['linux', 'account', 'privilege'], ['linux', 'user', 'account', 'privilege'], ['user', 'privilege'], ['linux', 'user', 'account', 'privilege']]
+pass
+
+
+51/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15020_PasswordHashAccessed.yml
+['attack.enterprise.T1555']
+tags of security rules: T1555
+keywords: access, account, hash, password
+top 10 of match results: T1442, T1075, T1640, T1555, T1634, T1110, T1110.002, T1558.001, T1413, T1174
+[['account'], ['access', 'account', 'hash', 'password'], ['access', 'account'], ['access', 'password'], ['access', 'password'], ['access', 'account', 'hash', 'password'], ['access', 'account', 'hash', 'password'], ['access', 'account', 'hash', 'password'], ['access', 'password'], ['account', 'password']]
+pass
+
+
+52/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15206_VicosOperationPerformedAtAnomalousTime.yml
+未打标
+
+53/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15695_NewUsbDevicePluggedIn.yml
+['attack.enterprise.T1200']
+tags of security rules: T1200
+keywords: linux, usb, operation, device, plug
+top 10 of match results: T1052.001, T1473, T1459, T1427, T1419, T1120, T1052, T1450, T0808, T1025
+[['usb', 'device'], ['device'], ['device'], ['usb', 'device'], ['device'], ['linux', 'device'], ['usb', 'device'], ['device'], ['device'], ['usb']]
+
+
+54/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15601_AuditdUserModification.yml
+['attack.enterprise.T1098', 'attack.enterprise.T1136.001', 'attack.enterprise.T1531']
+tags of security rules: T1098, T1136.001, T1531
+keywords: linux, host, datasrcip, user, modification, account, auditd
+top 10 of match results: T1442, T1640, T1003.008, T1136.003, T1628.002, T1618, T1136.001, T1136.002, T1053.001, T1136
+[['account'], ['user', 'account'], ['linux', 'user', 'account', 'auditd'], ['user', 'account'], ['user', 'modification'], ['user', 'modification'], ['user', 'account'], ['user', 'account'], ['linux', 'account'], ['user', 'account']]
+pass
+
+
+55/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15015_GroupCreated.yml
+['attack.enterprise.T1136']
+tags of security rules: T1136
+keywords: account, group
+top 10 of match results: T1442, T1640, T1069, T1069.001, T1069.002, T1037.003, T1136, T1069.003, T1552.006, T1136.003
+[['account'], ['account'], ['account', 'group'], ['group'], ['group'], ['account', 'group'], ['account'], ['account', 'group'], ['account', 'group'], ['account']]
+pass
+
+
+56/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15606_AuditdSystemTimeChange.yml
+未打标
+
+57/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15051_DeletedFileOrFolder.yml
+未打标
+
+58/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15021_LoginOfNonRegisteredAccount.yml
+['attack.enterprise.T1078.003']
+tags of security rules: T1078.003
+keywords: log, login, register, attempt, account
+top 10 of match results: T1442, T1056.003, T1413, T1640, T1433, T1416, T1635.001, T1162, T1021.004, T1621
+[['account'], ['log', 'login', 'attempt', 'account'], ['log', 'attempt'], ['account'], ['log'], ['log', 'register', 'account'], ['log', 'register', 'account'], ['log', 'login', 'register'], ['log', 'login', 'attempt', 'account'], ['log', 'login', 'attempt', 'account']]
+
+
+59/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15600_AuditdPasswdCommand.yml
+['attack.enterprise.T1098']
+tags of security rules: T1098
+keywords: passwd, linux, host, auditd, datasrcip, account, command
+top 10 of match results: T1003.008, T1442, T1640, T1053.001, T1087.001, T1136.001, T1136.002, T1136, T1556.003, T1531
+[['passwd', 'linux', 'auditd', 'account', 'command'], ['account'], ['account'], ['linux', 'account', 'command'], ['passwd', 'linux', 'account', 'command'], ['account', 'command'], ['account', 'command'], ['account', 'command'], ['passwd', 'auditd', 'account'], ['passwd', 'linux', 'account']]
+
+
+60/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15660_MaliciousProcessExecutionLinux.yml
+['attack.enterprise.T1204.002']
+tags of security rules: T1204.002
+keywords: execution, operation, linux, process
+top 10 of match results: T1093, T1053.001, T1116, T0829, T1631, T1399, T0880, T1625, T0801, T1035
+[['execution', 'process'], ['execution', 'linux', 'process'], ['operation', 'linux'], ['operation', 'process'], ['execution', 'process'], ['execution'], ['execution', 'operation', 'process'], ['execution'], ['linux', 'process'], ['execution']]
+
+
+61/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15698_LoginLogoutAtUnusualTimeLinux.yml
+['attack.enterprise.T1078.003']
+tags of security rules: T1078.003
+keywords: time, linux, logout, operation, login, account
+top 10 of match results: T1442, T1037.002, T1640, T1078.003, T1078.002, T1053.001, T1116, T1412, T1021.004, T1070.002
+[['account'], ['time', 'logout', 'login', 'account'], ['account'], ['time', 'linux', 'login', 'account'], ['time', 'linux', 'login', 'account'], ['linux', 'account'], ['linux', 'operation'], ['time', 'operation'], ['linux', 'login', 'account'], ['linux', 'login']]
+pass
+
+
+62/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15080_DiskSpaceExhaustion.yml
+未打标
+
+63/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15696_ApplicationRemovalLinux.yml
+未打标
+
+64/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15001_EventLoggingServiceShutDown.yml
+['attack.enterprise.T1562.002']
+tags of security rules: T1562.002
+keywords: event, shut, log, operation, window, service
+top 10 of match results: T1070.001, T1529, T1433, T1028, T1061, T1010, T1084, T1089, T1035, T1021.006
+[['event', 'log', 'window'], ['event', 'shut', 'log', 'window'], ['log'], ['window', 'service'], ['event', 'operation', 'window', 'service'], ['event', 'operation', 'window'], ['event', 'window'], ['event', 'log'], ['window', 'service'], ['event', 'log', 'window', 'service']]
+
+
+65/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15402_EsxiSSHEnabled.yml
+未打标
+
+66/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15061_AnomalousProcessExecution.yml
+['attack.enterprise.T1204.002']
+tags of security rules: T1204.002
+keywords: execution, operation, process
+top 10 of match results: T1093, T0829, T1631, T1399, T0880, T1625, T1035, T0870, T1127, T1161
+[['execution', 'process'], ['operation', 'process'], ['execution', 'process'], ['execution'], ['execution', 'operation', 'process'], ['execution'], ['execution'], ['execution'], ['execution', 'process'], ['execution', 'operation']]
+
+
+67/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15022_LoginLogoutAtUnusualTime.yml
+['attack.enterprise.T1078.003']
+tags of security rules: T1078.003
+keywords: time, logout, operation, login, account
+top 10 of match results: T1442, T1037.002, T1640, T1412, T1078.003, T1585.003, T1056.003, T1161, T1078.002, T1585.002
+[['account'], ['time', 'logout', 'login', 'account'], ['account'], ['time', 'operation'], ['time', 'login', 'account'], ['operation', 'account'], ['login', 'account'], ['time', 'operation'], ['time', 'login', 'account'], ['operation', 'account']]
+pass
+
+
+68/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15699_AccessUnlocked.yml
+['attack.enterprise.T1562']
+tags of security rules: T1562
+keywords: access, account, linux, unlock
+top 10 of match results: T1459, T1442, T1640, T1400, T1053.001, T1136, T1446, T1136.003, T1078.003, T1642
+[['unlock'], ['account'], ['access', 'account'], ['unlock'], ['account', 'linux'], ['access', 'account'], ['access', 'unlock'], ['access', 'account'], ['access', 'account', 'linux'], ['access', 'unlock']]
+
+
+69/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15028_WindowsObjectDeletion.yml
+['attack.enterprise.T1485']
+tags of security rules: T1485
+keywords: operation, object, deletion, window
+top 10 of match results: T1122, T1107, T0809, T1630.002, T1546.015, T1070.004, T1084, T1070.001, T1010, T1619
+[['operation', 'object', 'window'], ['deletion', 'window'], ['operation', 'deletion', 'window'], ['deletion'], ['operation', 'object', 'window'], ['deletion', 'window'], ['object', 'window'], ['deletion', 'window'], ['operation', 'window'], ['operation', 'object']]
+
+
+70/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15017_AccountLockedOut.yml
+未打标
+
+71/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15603_AuditdEtcPasswdModification.yml
+['attack.enterprise.T1098', 'attack.enterprise.T1136.001', 'attack.enterprise.T1531']
+tags of security rules: T1098, T1136.001, T1531
+keywords: passwd, linux, host, datasrcip, modification, etc, account, file, auditd
+top 10 of match results: T1003.008, T1442, T1556.003, T1087.001, T1640, T1098.004, T1098, T1547.013, T1087, T1531
+[['passwd', 'linux', 'etc', 'account', 'file', 'auditd'], ['account'], ['passwd', 'modification', 'etc', 'account', 'file', 'auditd'], ['passwd', 'linux', 'etc', 'account', 'file'], ['account'], ['linux', 'host', 'etc', 'account', 'file'], ['modification', 'etc', 'account', 'file'], ['linux', 'modification', 'etc', 'file'], ['passwd', 'etc', 'account', 'file'], ['passwd', 'linux', 'modification', 'account']]
+pass
+
+
+72/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15604_AuditdEtcShadowModification.yml
+['attack.enterprise.T1098']
+tags of security rules: T1098
+keywords: linux, host, datasrcip, shadow, modification, etc, account, file, auditd
+top 10 of match results: T1003.008, T1442, T1556.003, T1640, T1098.004, T1098, T1547.013, T1053.001, T1222.002, T1169
+[['linux', 'shadow', 'etc', 'account', 'file', 'auditd'], ['account'], ['shadow', 'modification', 'etc', 'account', 'file', 'auditd'], ['account'], ['linux', 'host', 'etc', 'account', 'file'], ['modification', 'etc', 'account', 'file'], ['linux', 'modification', 'etc', 'file'], ['linux', 'account'], ['linux', 'modification', 'file'], ['etc', 'file']]
+pass
+
+
+73/73
+/Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy22_deliverable/rules/15060_MaliciousProcessExecution.yml
+['attack.enterprise.T1204.002']
+tags of security rules: T1204.002
+keywords: execution, operation, process
+top 10 of match results: T1093, T0829, T1631, T1399, T0880, T1625, T1035, T0870, T1127, T1161
+[['execution', 'process'], ['operation', 'process'], ['execution', 'process'], ['execution'], ['execution', 'operation', 'process'], ['execution'], ['execution'], ['execution'], ['execution', 'process'], ['execution', 'operation']]
+
+
+all tests: 73
+actual tests: 73
+tag tests: 53
+pass: 18
+ratio: 0.33962264150943394
+run time: 1427.196583833s ≈ 00:23:47
+
+Process finished with exit code 0

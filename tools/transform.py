@@ -1,4 +1,4 @@
-from nltk import pos_tag, WordNetLemmatizer, PorterStemmer, LancasterStemmer, SnowballStemmer, FreqDist
+from nltk import pos_tag, WordNetLemmatizer, LancasterStemmer, PorterStemmer, SnowballStemmer, FreqDist
 from nltk.tag import StanfordPOSTagger
 from tools.clean_data import tokenize, rm_punctuation, rm_stop_words, rm_single_word
 from tools.config import Config
@@ -59,10 +59,10 @@ def stemmer(words: list[str]) -> list[str]:
     """
     cut_word: list[str] = []
     for word in words:
-        # 基于 Porter词干提取算法
-        cut_word.append((PorterStemmer().stem(word)))
         # 基于 Lancaster 词干提取算法
         # cut_word.append(LancasterStemmer().stem(word))
+        # 基于 Porter词干提取算法
+        cut_word.append((PorterStemmer().stem(word)))
         # 基于 Snowball 词干提取算法
         # cut_word.append(SnowballStemmer('english').stem(word))
     return cut_word

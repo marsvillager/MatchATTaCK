@@ -25,9 +25,9 @@ no
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15694_ApplicationInstallationLinuxRedHat.yml
 ['attack.enterprise.T1543']
 tags of security rules: T1543
-keywords: op, inst, system, linux, situ, dpkg, apply, rul, instal, object, persist, attack, hat, dam
-top 10 of match results: T1443, T1122, T0827, T1546.015, T1546.016, T1154, T0882, T1546.005, T1578.002, T0880
-[['apply'], ['op', 'inst', 'system', 'object', 'persist'], ['op', 'system', 'instal', 'attack', 'dam'], ['op', 'inst', 'system', 'apply', 'object', 'persist', 'attack'], ['inst', 'system', 'linux', 'apply', 'instal', 'persist', 'attack'], ['situ', 'persist'], ['op', 'system', 'dam'], ['situ', 'persist'], ['op', 'inst', 'system', 'rul', 'attack'], ['op', 'system', 'attack', 'dam']]
+keywords: installation, system, attacker, rule, situation, application, linux, operation, instal, damage, objective, hat, persistence, dpkg
+top 10 of match results: T1443, T0827, T1154, T1447, T1630.002, T1546.005, T1546.016, T1137.005, T1625.001, T1463
+[['application'], ['installation', 'system', 'operation', 'damage'], ['situation', 'persistence'], ['attacker', 'application', 'objective'], ['attacker', 'application', 'objective'], ['situation', 'persistence'], ['installation', 'system', 'application', 'linux', 'instal', 'persistence'], ['system', 'rule', 'application', 'persistence'], ['system', 'application', 'persistence'], ['attacker', 'application']]
 
 
 7/14
@@ -66,6 +66,6 @@ all tests: 14
 actual tests: 14
 tag tests: 1
 pass: 0
-run time: 27.851350834s ≈ 00:00:27
+run time: 29.366253125000004s ≈ 00:00:29
 
 Process finished with exit code 0

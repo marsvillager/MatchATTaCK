@@ -25,9 +25,9 @@ no
 /Users/xuyi/Downloads/MatchATTaCK/security_rules/data//fy23_deliverable/rules/15694_ApplicationInstallationLinuxRedHat.yml
 ['attack.enterprise.T1543']
 tags of security rules: T1543
-keywords: op, inst, system, linux, situ, dpkg, apply, rul, instal, object, persist, attack, hat, dam
-top 10 of match results: T1443, T1122, T0827, T1546.015, T1546.016, T1154, T0882, T1546.005, T1578.002, T0880
-[['apply'], ['op', 'inst', 'system', 'object', 'persist'], ['op', 'system', 'instal', 'attack', 'dam'], ['op', 'inst', 'system', 'apply', 'object', 'persist', 'attack'], ['inst', 'system', 'linux', 'apply', 'instal', 'persist', 'attack'], ['situ', 'persist'], ['op', 'system', 'dam'], ['situ', 'persist'], ['op', 'inst', 'system', 'rul', 'attack'], ['op', 'system', 'attack', 'dam']]
+keywords: attack, rule, hat, instal, situat, persist, system, applic, damag, linux, oper, object, dpkg
+top 10 of match results: T1443, T1122, T0827, T1154, T1546.015, T1546.005, T1546.016, T0880, T0832, T0837
+[['applic'], ['persist', 'system', 'oper', 'object'], ['attack', 'instal', 'system', 'damag', 'oper'], ['situat', 'persist'], ['attack', 'persist', 'system', 'applic', 'oper', 'object'], ['situat', 'persist'], ['attack', 'instal', 'persist', 'system', 'applic', 'linux'], ['attack', 'system', 'damag', 'oper'], ['situat', 'system', 'oper'], ['attack', 'system', 'damag', 'oper']]
 
 
 7/14
@@ -66,6 +66,6 @@ all tests: 14
 actual tests: 14
 tag tests: 1
 pass: 0
-run time: 27.851350834s ≈ 00:00:27
+run time: 28.591284709s ≈ 00:00:28
 
 Process finished with exit code 0
