@@ -27,3 +27,11 @@ class Config:
     STANFORD_POSTAGGER_JAR_PATH: str = STANFORD_POSTAGGER + "/stanford-postagger.jar"
 
     POS_TAGGER_PATH: str = STANFORD_POSTAGGER + "/models/english-bidirectional-distsim.tagger"
+
+    MODE_en = "rsl"
+
+    NUM_RESPONSE = 500
+
+    GET_NUM = 100
+
+    PROMPT_RESOURCE_PATH = BASE_DIR + "/WantWords/resources/"
