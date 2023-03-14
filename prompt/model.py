@@ -1,5 +1,5 @@
 import torch
-from WantWords.data import device
+from prompt.data import device
 
 
 class BiLSTM(torch.nn.Module):
