@@ -8,17 +8,36 @@ import torch
 
 from pytorch_transformers import *
 from sklearn.cluster import KMeans
+from WantWords.data import device, load_data
+from WantWords.model import Encoder
 from tools.config import Config
 
 kmeans = KMeans(n_clusters=6, random_state=0, init='k-means++', n_init=10, max_iter=10)
-device = torch.device('cpu')
 
 
 def load_model():
-    os.chdir(Config.BASE_DIR)
+    os.chdir(Config.BASE_DIR + "/WantWords/")
     print(os.getcwd())
+
+    # 法一. 直接载入, 难移植, 易报错
     # 保存模型的时候保存了相对目录，要是在其它目录下调用，就会出现 ModuleNotFoundError: No module named 'model_en' 的问题
-    model_en = torch.load('./WantWords/website_RD/models/En.model', map_location=lambda storage, loc: storage)
+    # model_en = torch.load('./WantWords/website_RD/models/En.model', map_location=lambda storage, loc: storage)
+
+    # 法二. 载入网络参数
+    word2index, index2word, word2vec, index2each, label_size_each, data_idx_each = load_data(20)
+    (label_size, label_lexname_size, label_rootaffix_size, label_sememe_size) = label_size_each
+    (index2sememe, index2lexname, index2rootaffix) = index2each
+    sememe_num = len(index2sememe)
+    lexname_num = len(index2lexname)
+    rootaffix_num = len(index2rootaffix)
+
+    model_en = Encoder(vocab_size=len(word2index), embed_dim=word2vec.shape[1], hidden_dim=384, layers=12,
+                       class_num=label_size, sememe_num=sememe_num, lexname_num=lexname_num,
+                       rootaffix_num=rootaffix_num)
+    model_en.embedding.weight.data = torch.from_numpy(word2vec)
+    model_en.to(device)
+
+    model_en.load_state_dict(torch.load('./model/En.model', map_location=lambda storage, loc: storage), strict=False)
     return model_en
 
 
@@ -191,7 +210,8 @@ def score(description):
         r = kmeans.fit_predict(model_en.embedding.weight.data[predicted[:Config.GET_NUM]].cpu().numpy())  # GET_NUM
         class2class = get_class2class(r, score[:Config.GET_NUM])
     else:
-        return "输入为空"
+        print("输入为空")
+        return
 
     ret = []
     if len(predicted) > 0:
@@ -212,4 +232,4 @@ def score(description):
                 except:
                     continue
 
-    return ret
+    return ret[:Config.GET_NUM]
