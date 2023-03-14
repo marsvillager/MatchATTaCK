@@ -1,6 +1,7 @@
 import glob
 import time
 import pandas as pd
+import sys
 
 from security_rules.process.process_data import process, load_file
 from tools.rank import tf_idf, result
@@ -48,8 +49,8 @@ def test_all(filedir: str, format_list: pd.DataFrame, rank: int, lemma: bool) ->
         print(file)
 
         pairs: dict = load_file(file)
-        if 'description' not in pairs or pairs['tags'] is None or pairs['tags'] == '':
         # if pairs['tags'] is None or pairs['tags'] == '':
+        if 'description' not in pairs or pairs['tags'] is None or pairs['tags'] == '':
             print("未打标\n")
             continue
 
@@ -93,3 +94,6 @@ def test_all(filedir: str, format_list: pd.DataFrame, rank: int, lemma: bool) ->
     m, s = divmod(seconds, 60)
     h, m = divmod(m, 60)
     print("run time: " + str(seconds) + "s" + " ≈ %02d:%02d:%02d" % (h, m, s))
+
+    if actual_test == 0:
+        sys.exit('Error: Test None.')

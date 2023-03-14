@@ -32,6 +32,6 @@ class Config:
 
     NUM_RESPONSE = 500
 
-    GET_NUM = 100
+    GET_NUM = 500
 
     PROMPT_RESOURCE_PATH = BASE_DIR + "/WantWords/resources/"
