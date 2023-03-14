@@ -28,10 +28,10 @@ class Config:
 
     POS_TAGGER_PATH: str = STANFORD_POSTAGGER + "/models/english-bidirectional-distsim.tagger"
 
-    MODE_en = "rsl"
+    MODE_en = "rsl"  # Multi-channel Reverse Dictionary Model, four channels: basic, root-affix, sememe, lexname
 
     NUM_RESPONSE = 500
 
     GET_NUM = 500
 
-    PROMPT_RESOURCE_PATH = BASE_DIR + "/WantWords/resources/"
+    PROMPT_RESOURCE_PATH = BASE_DIR + "/prompt/resources/"

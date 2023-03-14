@@ -7,7 +7,7 @@ import ssl
 
 from mitre_attack.process.package import format_data
 from mitre_attack.process.prepare import update
-from WantWords.english_reverse_dictionary import score
+from prompt.english_reverse_dictionary import score
 from tools.config import Config
 from tools.evaluation import test_all, test
 
