@@ -1,39 +1,32 @@
 import glob
 import time
+
+import gensim
 import pandas as pd
 import sys
 
 from security_rules.process.process_data import process, load_file
-from tools.rank import tf_idf, result
+from tools.doc2vec import build_document, find_closest_documents, train_model
+from tools.rank import tf_idf
 
 
-def tf_idf_test(filename: str, format_list: pd.DataFrame, lemma: bool) -> None:
-    """
-    Test single file.
-
-    :param filename: security file
-    :param format_list: processed data of mitre att&ck data
-    :param lemma: word ==> lemma if True, stay the same if False
-    :return: None
-    """
-    # security rules, lemma if True
-    keywords: set[str] = process(filename, lemma)
-
-    # match
-    # print(result(keywords, format_list))
-    print(tf_idf(keywords, format_list))
-
-
-def tf_idf_test_all(filedir: str, format_list: pd.DataFrame, rank: int, lemma: bool) -> None:
+def test_all(filedir: str, method: str, format_list: pd.DataFrame, model: str, num: int, lemma: bool) -> None:
     """
     Test all files.
 
     :param filedir: directory of security file
-    :param format_list: processed data of mitre att&ck data
-    :param rank: baseline
+    :param method: tf-idf or doc2vec
+    :param num: baseline
     :param lemma: word ==> lemma if True, stay the same if False
     :return: None
     """
+    if method != 'tf-idf' and method != 'doc2vec':
+        sys.exit('Error: Please confirm the way to evaluate and choose "tf-idf" or "doc2vec".')
+
+    if method == 'doc2vec':
+        all_docs: list = build_document()
+        models: list[gensim.models.doc2vec.Doc2Vec] = train_model(all_docs)
+
     time_start: float = time.perf_counter()
 
     id_file: str = filedir + '*.yml'
@@ -68,11 +61,15 @@ def tf_idf_test_all(filedir: str, format_list: pd.DataFrame, rank: int, lemma: b
         print("keywords: " + ", ".join(keywords))
 
         # match
-        # rank_list: list[tuple] = [tag[0] for tag in result(keywords, format_list)[0: rank]]
-        tf_idf_rank: list[tuple] = tf_idf(keywords, format_list)
-        rank_list: list[tuple] = [tag[0] for tag in tf_idf_rank[0: rank]]
-        print("top " + str(rank) + " of match results: " + ", ".join(rank_list))
-        print([tag[1][1] for tag in tf_idf_rank[0: rank]])
+        if method == 'tf-idf':
+            tf_idf_rank: list[tuple] = tf_idf(keywords, format_list)
+            rank_list: list[tuple] = [tag[0] for tag in tf_idf_rank[0: num]]
+            print("top " + str(num) + " of match results: " + ", ".join(rank_list))
+            print([tag[1][1] for tag in tf_idf_rank[0: num]])
+        elif method == 'doc2vec':
+            doc2vec_rank: list[str] = find_closest_documents(models, all_docs, list(keywords), num)[model]
+            rank_list: list[str] = [tag[0] for tag in doc2vec_rank]
+            print("top " + str(num) + " of match results: " + ", ".join(rank_list))
 
         for tag in tag_list:
             if tag in rank_list:
