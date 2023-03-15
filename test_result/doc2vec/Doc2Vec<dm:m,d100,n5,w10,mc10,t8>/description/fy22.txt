@@ -1,0 +1,528 @@
+(venv) xuyi@xuyideMBP MatchATTaCK % python main.py -dt './security_rules/data/fy22_deliverable/rules/' -dtn 10
+Doc2Vec<dbow,d100,n5,mc10,t8> vocabulary scanned & state initialized
+Doc2Vec<dm/m,d100,n5,w10,mc10,t8> vocabulary scanned & state initialized
+Doc2Vec<dm/c,d100,n5,w5,mc10,t8> vocabulary scanned & state initialized
+Training Doc2Vec<dbow,d100,n5,mc10,t8>
+Training Doc2Vec<dm/m,d100,n5,w10,mc10,t8>
+Training Doc2Vec<dm/c,d100,n5,w5,mc10,t8>
+1/73
+./security_rules/data/fy22_deliverable/rules/15071_WindowsApplockerSecurityEvent.yml
+未打标
+
+2/73
+./security_rules/data/fy22_deliverable/rules/15013_ScheduledTaskCreated.yml
+['attack.enterprise.T1053.005']
+tags of security rules: T1053.005
+keywords: situation, rule, system, cleartext, persistence, case, note, avoid, manager, give, task, logon, false, schedule, store, presence, opportunity, window, credential, type, example, alert, attacker, operation, account, password, program, event, run, use
+top 10 of match results: T1556.003, T1037, T1037.001, T1593.002, T1181, T1414, T1547.012, T1175, T1488, T1078.002
+
+
+3/73
+./security_rules/data/fy22_deliverable/rules/15052_AccessedFileOrFolder.yml
+未打标
+
+4/73
+./security_rules/data/fy22_deliverable/rules/15023_ApplicationInstallation.yml
+['attack.enterprise.T1543']
+tags of security rules: T1543
+keywords: window, situation, damage, rule, application, installation, attacker, system, instal, operation, persistence, objective
+top 10 of match results: T1596.003, T1407, T1623, T1506, T1414, T1629, T1437.001, T1574.013, T1492, T1180
+
+
+5/73
+./security_rules/data/fy22_deliverable/rules/15019_MembershipEnumerated.yml
+['attack.enterprise.T1087.001', 'attack.enterprise.T1087.002']
+tags of security rules: T1087.001, T1087.002
+keywords: situation, enumeration, rule, exe, process, cain, system32, together, name, oncer, field, check, gain, focus, access, immersivecontrolpanel, example, attacker, folder, implemention, account, membership, program, event, denylist, explorer
+top 10 of match results: T1624, T1541, T1474.002, T1474, T1163, T1430.002, T1596, T1148, T1004, T1597.002
+
+
+6/73
+./security_rules/data/fy22_deliverable/rules/15672_OsTemporaryUserAccountLinux.yml
+['attack.enterprise.T1531']
+tags of security rules: T1531
+keywords: situation, time, rule, linux, alert, event, attacker, system, trace, action, remove, server, criticality, user, monitor, account, trigger
+top 10 of match results: T1098.004, T1070.002, T1037, T1037.001, T1097, T1136.001, T1136.002, T1037.003, T1603, T1180
+
+
+7/73
+./security_rules/data/fy22_deliverable/rules/15651_AuditdGenericFileWrite.yml
+['attack.enterprise.T1485', 'attack.enterprise.T1565']
+tags of security rules: T1485, T1565
+keywords: file, directory, rule, action, operation, write
+top 10 of match results: T1633, T1590.002, T1593.002, T1596.003, T1426, T1100, T1434, T0880, T1631.001, T1009
+
+
+8/73
+./security_rules/data/fy22_deliverable/rules/15070_WindowsApplockerDisabled.yml
+['attack.enterprise.T1562.001']
+tags of security rules: T1562.001
+keywords: situation, policy, utility, hash, rule, execution, system, custom, feature, window, application, publisher, attacker, microsoft, ease, operation, defense, program, cybersecurity, path, user, base, applocker, administrator, group
+top 10 of match results: T1099, T1097, T1417.001, T1035, T1149, T1547.012, T1641.001, T1442, T1032, T1519
+
+
+9/73
+./security_rules/data/fy22_deliverable/rules/15026_OsHighPrivilegedAccountCreation.yml
+['attack.enterprise.T1136.001', 'attack.enterprise.T1136.002']
+tags of security rules: T1136.001, T1136.002
+keywords: machine, situation, rule, persistence, way, drive, name, privilege, escalation, sam, window, directory, attacker, abnd, id, number, account, home, resource, action, creation, user, domain, group
+top 10 of match results: T1098, T1136.003, T1484, T1078.002, T1632, T1556.003, T1098.003, T1078.004, T1484.002, T1136.002
+pass
+
+
+10/73
+./security_rules/data/fy22_deliverable/rules/15650_AuditdGenericFileRead.yml
+['attack.enterprise.T1083']
+tags of security rules: T1083
+keywords: file, directory, read, rule, action, operation
+top 10 of match results: T1178, T1034, T1564.007, T1044, T0854, T1065, T1070.004, T1532, T1597.001, T1516
+
+
+11/73
+./security_rules/data/fy22_deliverable/rules/15030_NewHardwarePluggedIn.yml
+['attack.enterprise.T1200']
+tags of security rules: T1200
+keywords: rule, subject, system, security, approach, hardware, name, vendor, usb, gain, property, trigger, window, time, access, stick, attacker, kind, id, operation, accessory, device, network, variety, textbackslash, plug
+top 10 of match results: T0827, T1634.001, T1100, T0870, T1454, T1527, T1425, T1398, T1638, T1477
+
+
+12/73
+./security_rules/data/fy22_deliverable/rules/15014_ScheduledTaskEnabled.yml
+['attack.enterprise.T1053.005']
+tags of security rules: T1053.005
+keywords: situation, program, name, rule, event, attacker, system, task, criticality, use, schedule, operation, correspondence, look
+top 10 of match results: T1101, T1422, T1193, T1527, T1566, T0828, T1408, T1430.002, T1147, T1438
+
+
+13/73
+./security_rules/data/fy22_deliverable/rules/15032_NewUsbDevicePluggedIn.yml
+['attack.enterprise.T1200']
+tags of security rules: T1200
+keywords: window, storage, textbackslash, plug, time, set, name, rule, kind, system, id, vendor, usb, security, operation, device, property, trigger
+top 10 of match results: T1417.002, T1513, T1167, T1585.003, T1141, T1522, T1165, T1477, T1590.005, T1481.003
+
+
+14/73
+./security_rules/data/fy22_deliverable/rules/15401_EsxiAuthenticationFailure.yml
+未打标
+
+15/73
+./security_rules/data/fy22_deliverable/rules/15012_LoginWithExplicitCredentials.yml
+['attack.enterprise.T1078.003']
+tags of security rules: T1078.003
+keywords: window, reason, credential, case, osa, rule, attacker, use, login, password, username, account, interface, presence, focus, leak
+top 10 of match results: T1558.002, T1550.002, T1098, T1110, T1136.003, T1558.001, T1606.002, T1558.004, T1519, T1056.003
+
+
+16/73
+./security_rules/data/fy22_deliverable/rules/15697_ApplicationInstallationLinux.yml
+['attack.enterprise.T1543']
+tags of security rules: T1543
+keywords: situation, dpkg, damage, rule, linux, application, installation, attacker, system, instal, operation, persistence, objective
+top 10 of match results: T1178, T1597, T1024, T1032, T1591.004, T1523, T1637, T1417, T1504, T1589.001
+
+
+17/73
+./security_rules/data/fy22_deliverable/rules/15010_AuthenticationPackageLoaded.yml
+['attack.enterprise.T1547']
+tags of security rules: T1547
+keywords: machine, situation, authentication, rule, authority, code, library, security, persistence, force, privilege, escalation, window, load, link, attacker, dynamic, package, mechanism, account, lsa
+top 10 of match results: T1547.012, T1556, T1473, T1556.002, T1547.005, T1547.008, T1556.001, T1145, T1593.003, T1547.002
+
+
+18/73
+./security_rules/data/fy22_deliverable/rules/15800_NOT_TESTED_FortigateFirewallAdminLogin.yml
+['attack.enterprise.T1078']
+tags of security rules: T1078
+keywords: fortigate, rule, admin, login, datasrcip, operation, administrator, firewall
+top 10 of match results: T1474, T1629.002, T1629.003, T1516, T1450, T1143, T1590.005, T1558.003, T1523, T1625.001
+
+
+19/73
+./security_rules/data/fy22_deliverable/rules/15016_UserAddedToGroup.yml
+未打标
+
+20/73
+./security_rules/data/fy22_deliverable/rules/15062_AnomalousProcessExecutionWithHighPrivileges.yml
+['attack.enterprise.T1204.002']
+tags of security rules: T1204.002
+keywords: scope, situation, attack, execution, rule, system, process, malware, privilege, toolkits, configuration, window, attacker, phase, intrusion, operation, event, specification, run, change
+top 10 of match results: T1144, T1194, T1450, T1462, T1031, T1408, T1575, T1451, T1591.004, T1053.002
+
+
+21/73
+./security_rules/data/fy22_deliverable/rules/15602_AuditdGroupModication.yml
+['attack.enterprise.T1098', 'attack.enterprise.T1136.001', 'attack.enterprise.T1531']
+tags of security rules: T1098, T1136.001, T1531
+keywords: modification, add, rule, linux, execution, datasrcip, group, account, host, auditd
+top 10 of match results: T1184, T1161, T1432, T0813, T1585.002, T1051, T1077, T1617, T1431, T1065
+
+
+22/73
+./security_rules/data/fy22_deliverable/rules/15662_AnomalousProcessExecutionWithHighPrivilegesLinux.yml
+['attack.enterprise.T1204.002']
+tags of security rules: T1204.002
+keywords: situation, attack, execution, privilege, linux, rule, event, system, attacker, run, toolkits, phase, intrusion, process, operation, malware
+top 10 of match results: T1617, T1023, T1527, T1629, T1054, T1435, T1056.001, T1514, T1142, T1085
+
+
+23/73
+./security_rules/data/fy22_deliverable/rules/15670_OsUserAccountCreationLinux.yml
+['attack.enterprise.T1136.001', 'attack.enterprise.T1136.002']
+tags of security rules: T1136.001, T1136.002
+keywords: situation, time, rule, linux, alert, event, attacker, system, creation, server, criticality, monitor, user, persistence, account, reason, trigger
+top 10 of match results: T1098.004, T1037, T1037.001, T1070.002, T1037.003, T1223, T1053.007, T1644, T1475, T1483
+
+
+24/73
+./security_rules/data/fy22_deliverable/rules/15301_DcuInvalidSignature.yml
+未打标
+
+25/73
+./security_rules/data/fy22_deliverable/rules/15203_VicosLoginAttemptOfNonAuthorizedUsername.yml
+['attack.enterprise.T1078.003']
+tags of security rules: T1078.003
+keywords: ttp, situation, rule, workstation, server, know, attempt, case, give, list, access, application, deletion, vicos, account, log, interface, discrepancy, oc, user, module
+top 10 of match results: T1070.002, T1181, T1493, T1428, T1414, T1186, T1131, T1605, T1156, T1469
+
+
+26/73
+./security_rules/data/fy22_deliverable/rules/15652_AuditdGenericFileExecute.yml
+未打标
+
+27/73
+./security_rules/data/fy22_deliverable/rules/15653_AuditdGenericFileRemove.yml
+['attack.enterprise.T1485', 'attack.enterprise.T1565']
+tags of security rules: T1485, T1565
+keywords: file, directory, rule, action, remove, operation
+top 10 of match results: T1603, T1583.005, T1625.001, T1635, T1194, T1107, T0829, T1116, T1167, T1179
+
+
+28/73
+./security_rules/data/fy22_deliverable/rules/15011_AttemptedLogin.yml
+未打标
+
+29/73
+./security_rules/data/fy22_deliverable/rules/15701_LoginHirschmannSwitch.yml
+未打标
+
+30/73
+./security_rules/data/fy22_deliverable/rules/15202_VicosAccountDeletion.yml
+['attack.enterprise.T1531']
+tags of security rules: T1531
+keywords: ttp, situation, access, rule, deletion, oc, vicos, workstation, server, monitor, user, operation, module, account, operator, attempt, track
+top 10 of match results: T1417.001, T1136.003, T1427, T1137.006, T1589.001, T1494, T1574.012, T1481.001, T1521.002, T1424
+
+
+31/73
+./security_rules/data/fy22_deliverable/rules/15101_RepeatedFailedLogin.yml
+['attack.enterprise.T1110.001']
+tags of security rules: T1110.001
+keywords: situation, time, case, feedback, workshop, rule, frame, application, block, repeat, login, accord, feature, rail9000, exist, account, log, attempt
+top 10 of match results: T1591.003, T1628.002, T1158, T1136.003, T1456, T1103, T1586.002, T1407, T0875, T1500
+
+
+32/73
+./security_rules/data/fy22_deliverable/rules/15025_ApplicationInstallationApplocker.yml
+['attack.enterprise.T1543']
+tags of security rules: T1543
+keywords: situation, policy, hash, utility, rule, installation, system, persistence, advantage, damage, custom, feature, window, raise, alert, application, publisher, attacker, monitor, microsoft, operation, objective, program, take, path, user, base, instal, applocker, administrator, group
+top 10 of match results: T1488, T0844, T1547.012, T1137.002, T1223, T1169, T1546.001, T1081, T1193, T1546.002
+
+
+33/73
+./security_rules/data/fy22_deliverable/rules/15027_ApplicationConfigurationChange.yml
+['attack.enterprise.T1565']
+tags of security rules: T1565
+keywords: window, situation, rule, application, attacker, vulnerability, task, coorect, function, know, device, system, operation, way, configuration, change
+top 10 of match results: T0889, T1542.001, T0833, T0851, T1488, T0800, T0836, T1015, T1616, T1413
+
+
+34/73
+./security_rules/data/fy22_deliverable/rules/15201_VicosRepeatedFailedLogin.yml
+['attack.enterprise.T1110.001']
+tags of security rules: T1110.001
+keywords: ttp, situation, software, leave, rule, guess, system, workstation, server, attempt, note, build, force, vaild, login, repeat, feature, gain, correlation, credential, access, time, application, vicos, number, account, interface, osa, enablement, oc, possibility, use, user, administrator, module
+top 10 of match results: T1078.001, T0812, T1110.004, T1459, T1072, T1521.002, T1621, T1556.006, T1626, T1114.002
+
+
+35/73
+./security_rules/data/fy22_deliverable/rules/15053_ModifiedFileOrFolder.yml
+未打标
+
+36/73
+./security_rules/data/fy22_deliverable/rules/15810_NOT_TESTED_FortigateFirewallUTMSecurityEvent.yml
+未打标
+
+37/73
+./security_rules/data/fy22_deliverable/rules/15024_ApplicationRemoval.yml
+未打标
+
+38/73
+./security_rules/data/fy22_deliverable/rules/15018_UserAccountUnlocked.yml
+['attack.enterprise.T1098']
+tags of security rules: T1098
+keywords: situation, rule, unlock, attacker, system, use, user, leverage, account
+top 10 of match results: T1136.001, T1136.002, T1136, T1628.001, T1494, T1428, T1098, T1098.004, T1576, T1156
+pass
+
+
+39/73
+./security_rules/data/fy22_deliverable/rules/15050_NewFileOrFolder.yml
+未打标
+
+40/73
+./security_rules/data/fy22_deliverable/rules/15064_NewServiceExecution.yml
+['attack.enterprise.T1569.002']
+tags of security rules: T1569.002
+keywords: situation, attack, rule, execution, system, process, malware, privilege, toolkits, list, window, certainty, attacker, phase, intrusion, start, operation, service, event, run, use
+top 10 of match results: T1543, T1474, T1171, T1547.012, T1569.002, T1546.003, T1629.003, T1053, T1427, T1574.010
+pass
+
+
+41/73
+./security_rules/data/fy22_deliverable/rules/15205_VicosCriticalAccountCreation.yml
+['attack.enterprise.T1136.001']
+tags of security rules: T1136.001
+keywords: ttp, situation, rule, oc, vicos, creation, server, workstation, user, account, misbehave
+top 10 of match results: T1403, T1635.001, T1564.007, T1547.011, T1100, T1159, T1139, T1478, T1448, T1426
+
+
+42/73
+./security_rules/data/fy22_deliverable/rules/15063_ProcessTermination.yml
+['attack.enterprise.T1489']
+tags of security rules: T1489
+keywords: scope, situation, specifing, rule, execution, system, function, security, tool, process, attempt, name, information, concern, list, window, time, attacker, folder, operation, defense, try, event, termination, run
+top 10 of match results: T1120, T1010, T1605, T1057, T1113, T1106, T1614.001, T1460, T1123, T1012
+
+
+43/73
+./security_rules/data/fy22_deliverable/rules/15002_EventLoggingServiceError.yml
+['attack.enterprise.T1562']
+tags of security rules: T1562
+keywords: machine, situation, rule, security, write, issue, give, information, behavior, look, window, attacker, operation, error, regard, log, service, cause, event, root, encounter, analysis
+top 10 of match results: T1605, T1028, T1164, T1639, T1410, T1628.001, T1398, T1108, T1526, T1629
+
+
+44/73
+./security_rules/data/fy22_deliverable/rules/15607_AuditdEffectiveRulesChange.yml
+['attack.enterprise.T1070']
+tags of security rules: T1070
+keywords: modification, addition, rule, linux, deletion, datasrcip, account, configuration, host, auditd, change
+top 10 of match results: T1002, T1474.003, T1088, T1627.001, T1494, T1633, T1626, T1031, T1521.001, T1452
+
+
+45/73
+./security_rules/data/fy22_deliverable/rules/15207_VicosApplicationLogCleared.yml
+['attack.enterprise.T1070.001']
+tags of security rules: T1070.001
+keywords: rule, security, misbehavior, cover, object, window, activity, raise, alert, application, attacker, deletion, vicos, operation, log, operator, recovery, version, oc, action, forensics
+top 10 of match results: T1475, T1474.002, T1596.005, T1173, T1544, T1630, T1646, T0850, T1032, T1596.001
+
+
+46/73
+./security_rules/data/fy22_deliverable/rules/15041_NewFileShare.yml
+未打标
+
+47/73
+./security_rules/data/fy22_deliverable/rules/15204_VicosLoginLogoutAtUnusualTime.yml
+['attack.enterprise.T1078.003']
+tags of security rules: T1078.003
+keywords: logout, situation, ttp, rule, system, workstation, server, security, work, advantage, attempt, category, absence, login, timeframe, time, attacker, vicos, hour, operation, account, operator, try, shift, personnel, event, oc, target, module
+top 10 of match results: T1078.001, T1078.003, T1167, T1591.004, T1136.003, T1078.002, T1110, T1558.002, T0850, T1078.004
+pass
+
+
+48/73
+./security_rules/data/fy22_deliverable/rules/15605_AuditdEtcGroupModification.yml
+['attack.enterprise.T1098', 'attack.enterprise.T1136.001', 'attack.enterprise.T1531']
+tags of security rules: T1098, T1136.001, T1531
+keywords: modification, file, gshadow, rule, linux, information, etc, datasrcip, group, account, password, host, change
+top 10 of match results: T1552.006, T1136.002, T1070.002, T1531, T1037.003, T1136.001, T1552.003, T1555, T1172, T1222.001
+pass
+
+
+49/73
+./security_rules/data/fy22_deliverable/rules/15031_NewUsbStorageDevicePluggedIn.yml
+['attack.enterprise.T1200', 'attack.enterprise.T1025']
+tags of security rules: T1200, T1025
+keywords: rule, subject, system, security, malware, name, information, vendor, usb, property, trigger, window, time, access, attacker, kind, id, operation, device, storage, textbackslash, plug, extract
+top 10 of match results: T1512, T0810, T1051, T1596.004, T1500, T1163, T1013, T1583.007, T1434, T1591
+
+
+50/73
+./security_rules/data/fy22_deliverable/rules/15671_OsHighPrivilegeUserAccountCreationLinux.yml
+['attack.enterprise.T1136.001', 'attack.enterprise.T1136.002']
+tags of security rules: T1136.001, T1136.002
+keywords: time, rule, linux, privilege, attacker, system, creation, user, persistence, account, reason, trigger
+top 10 of match results: T1037, T1098.004, T1547.012, T1467, T1143, T1418, T1037.001, T1167, T1546.014, T1138
+
+
+51/73
+./security_rules/data/fy22_deliverable/rules/15020_PasswordHashAccessed.yml
+['attack.enterprise.T1555']
+tags of security rules: T1555
+keywords: window, plan, fire, access, file, time, hash, rule, alert, information, monitor, account, password
+top 10 of match results: T1555, T1003.003, T1136.001, T1552.006, T1136, T1552.001, T1136.002, T1531, T1558.002, T1098
+pass
+
+
+52/73
+./security_rules/data/fy22_deliverable/rules/15206_VicosOperationPerformedAtAnomalousTime.yml
+未打标
+
+53/73
+./security_rules/data/fy22_deliverable/rules/15695_NewUsbDevicePluggedIn.yml
+['attack.enterprise.T1200']
+tags of security rules: T1200
+keywords: rule, linux, code, system, exfiltrate, attempt, case, data, usb, exchange, trigger, time, alert, attacker, operation, device, compromise, plug, use
+top 10 of match results: T0826, T1442, T1031, T1493, T1593.001, T1463, T0841, T1159, T1188, T1401
+
+
+54/73
+./security_rules/data/fy22_deliverable/rules/15601_AuditdUserModification.yml
+['attack.enterprise.T1098', 'attack.enterprise.T1136.001', 'attack.enterprise.T1531']
+tags of security rules: T1098, T1136.001, T1531
+keywords: modification, add, rule, linux, execution, user, datasrcip, account, host, auditd
+top 10 of match results: T1451, T1406.002, T1633.001, T1037.001, T1574.013, T0818, T1023, T1596.001, T1575, T1432
+
+
+55/73
+./security_rules/data/fy22_deliverable/rules/15015_GroupCreated.yml
+['attack.enterprise.T1136']
+tags of security rules: T1136
+keywords: scope, situation, pivot, case, rule, attacker, creation, user, foothold, group, account, compromise
+top 10 of match results: T1136.003, T1098, T1056.003, T1077, T1563.002, T1593.003, T1444, T1096, T1151, T1630.003
+
+
+56/73
+./security_rules/data/fy22_deliverable/rules/15606_AuditdSystemTimeChange.yml
+未打标
+
+57/73
+./security_rules/data/fy22_deliverable/rules/15051_DeletedFileOrFolder.yml
+未打标
+
+58/73
+./security_rules/data/fy22_deliverable/rules/15021_LoginOfNonRegisteredAccount.yml
+['attack.enterprise.T1078.003']
+tags of security rules: T1078.003
+keywords: situation, register, policy, utility, hash, rule, system, know, advantage, attempt, case, build, custom, login, feature, list, window, access, publisher, microsoft, account, log, interface, program, discrepancy, take, path, user, base, applocker, administrator, group
+top 10 of match results: T1037.001, T1037, T1070.002, T1134.001, T1136.002, T1548.002, T1552.006, T1552.003, T1136.001, T1501
+
+
+59/73
+./security_rules/data/fy22_deliverable/rules/15600_AuditdPasswdCommand.yml
+['attack.enterprise.T1098']
+tags of security rules: T1098
+keywords: binary, rule, linux, execution, change, use, datasrcip, bin, user, passwd, account, password, host, auditd, command, usr
+top 10 of match results: T1552.003, T1136.001, T1136.002, T1183, T1037.001, T1037.003, T1098.004, T1063, T1098, T1037
+pass
+
+
+60/73
+./security_rules/data/fy22_deliverable/rules/15660_MaliciousProcessExecutionLinux.yml
+['attack.enterprise.T1204.002']
+tags of security rules: T1204.002
+keywords: situation, attack, execution, linux, rule, system, process, malware, case, name, privilege, toolkits, denylists, file, attacker, folder, phase, intrusion, operation, event, run
+top 10 of match results: T1103, T1527, T1464, T1182, T1406, T1462, T1590.004, T1099, T1004, T1502
+
+
+61/73
+./security_rules/data/fy22_deliverable/rules/15698_LoginLogoutAtUnusualTimeLinux.yml
+['attack.enterprise.T1078.003']
+tags of security rules: T1078.003
+keywords: logout, situation, rule, linux, system, security, work, advantage, attempt, category, absence, login, timeframe, window, time, attacker, hour, operation, account, operator, try, shift, personnel, event, target
+top 10 of match results: T1078.002, T1078.003, T1078.001, T1556.001, T1558.002, T1098, T1110, T1078.004, T0859, T1467
+pass
+
+
+62/73
+./security_rules/data/fy22_deliverable/rules/15080_DiskSpaceExhaustion.yml
+未打标
+
+63/73
+./security_rules/data/fy22_deliverable/rules/15696_ApplicationRemovalLinux.yml
+未打标
+
+64/73
+./security_rules/data/fy22_deliverable/rules/15001_EventLoggingServiceShutDown.yml
+['attack.enterprise.T1562.002']
+tags of security rules: T1562.002
+keywords: machine, situation, importance, visibility, rule, case, issue, avoid, window, hide, loss, attacker, operation, shut, log, operator, service, try, event, action, mistake, analysis
+top 10 of match results: T1636.004, T1627.001, T1593.001, T1398, T1582, T1101, T1019, T1455, T1475, T0880
+
+
+65/73
+./security_rules/data/fy22_deliverable/rules/15402_EsxiSSHEnabled.yml
+未打标
+
+66/73
+./security_rules/data/fy22_deliverable/rules/15061_AnomalousProcessExecution.yml
+['attack.enterprise.T1204.002']
+tags of security rules: T1204.002
+keywords: situation, attack, execution, rule, system, process, malware, privilege, toolkits, list, window, certainty, attacker, phase, intrusion, operation, event, run, use
+top 10 of match results: T1453, T1400, T1103, T1427, T1466, T1096, T1470, T1583.005, T1501, T1407
+
+
+67/73
+./security_rules/data/fy22_deliverable/rules/15022_LoginLogoutAtUnusualTime.yml
+['attack.enterprise.T1078.003']
+tags of security rules: T1078.003
+keywords: logout, situation, rule, system, security, work, advantage, attempt, category, absence, login, timeframe, window, time, attacker, hour, operation, account, operator, try, shift, personnel, event, target
+top 10 of match results: T1136.003, T1078.002, T1078.003, T1078.004, T1429, T1538, T1110, T0859, T1552.007, T1558.002
+pass
+
+
+68/73
+./security_rules/data/fy22_deliverable/rules/15699_AccessUnlocked.yml
+['attack.enterprise.T1562']
+tags of security rules: T1562
+keywords: situation, access, effort, rule, linux, unlock, attacker, system, danger, data, abuse, user, account, password
+top 10 of match results: T1136.003, T1403, T0808, T0875, T1555, T1136.001, T1034, T1166, T1136, T1024
+
+
+69/73
+./security_rules/data/fy22_deliverable/rules/15028_WindowsObjectDeletion.yml
+['attack.enterprise.T1485']
+tags of security rules: T1485
+keywords: window, situation, file, help, rule, avoid, resource, object, deletion, might, attacker, recovery, log, operation, forensics, operator, track
+top 10 of match results: T1474.001, T1627, T1426, T1107, T1590.002, T1640, T1623, T1504, T1065, T1009
+
+
+70/73
+./security_rules/data/fy22_deliverable/rules/15017_AccountLockedOut.yml
+未打标
+
+71/73
+./security_rules/data/fy22_deliverable/rules/15603_AuditdEtcPasswdModification.yml
+['attack.enterprise.T1098', 'attack.enterprise.T1136.001', 'attack.enterprise.T1531']
+tags of security rules: T1098, T1136.001, T1531
+keywords: modification, file, rule, linux, information, etc, datasrcip, user, passwd, account, host, auditd
+top 10 of match results: T1552.003, T1070.002, T1552.006, T1136.001, T1136.002, T1098.004, T1208, T1114.001, T1037.001, T1222.001
+pass
+
+
+72/73
+./security_rules/data/fy22_deliverable/rules/15604_AuditdEtcShadowModification.yml
+['attack.enterprise.T1098']
+tags of security rules: T1098
+keywords: modification, file, rule, linux, etc, datasrcip, user, shadow, account, password, host, encrypt, auditd, change
+top 10 of match results: T1070.002, T1037.003, T0808, T1037, T1098, T1098.004, T1519, T1552.003, T1406, T1037.001
+pass
+
+
+73/73
+./security_rules/data/fy22_deliverable/rules/15060_MaliciousProcessExecution.yml
+['attack.enterprise.T1204.002']
+tags of security rules: T1204.002
+keywords: situation, attack, execution, rule, exe, system, process, cain, malware, case, name, privilege, toolkits, denylists, window, file, add, example, attacker, folder, phase, intrusion, operation, event, run, denylist, mimikatz
+top 10 of match results: T1171, T1596.005, T1548.001, T1630, T1574.009, T1178, T1037.005, T1172, T1637, T1623
+
+
+all tests: 73
+actual tests: 73
+tag tests: 53
+pass: 11
+ratio: 0.20754716981132076
+run time: 259.571907542s ≈ 00:04:19
