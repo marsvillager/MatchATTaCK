@@ -1,4 +1,4 @@
-(venv) xuyi@xuyideMBP MatchATTaCK % python main.py -dt './security_rules/data/osa_rules/' -dtn 10    
+(venv) xuyi@xuyideMBP MatchATTaCK % python main.py -dt './security_rules/data/osa_rules/' -dtm 'Doc2Vec<dm/m,d100,n5,w10,mc10,t8>' -dtn 10
 Doc2Vec<dbow,d100,n5,mc10,t8> vocabulary scanned & state initialized
 Doc2Vec<dm/m,d100,n5,w10,mc10,t8> vocabulary scanned & state initialized
 Doc2Vec<dm/c,d100,n5,w5,mc10,t8> vocabulary scanned & state initialized
@@ -29,8 +29,8 @@ Training Doc2Vec<dm/c,d100,n5,w5,mc10,t8>
 ./security_rules/data/osa_rules/00891_SMBv1_DoublePulsar_Deliver_Payload.yml
 ['attack.ics.T0866', 'attack.enterprise.T1210']
 tags of security rules: T0866, T1210
-keywords: src, host, doublepulsar, smbv1, attack, payload, prompt, window, monitor, dst, event, doubleplusar, vulnerability, network
-top 10 of match results: T1590.003, T1574.012, T1099, T1079, T1503, T1131, T1629.002, T1644, T1625, T1151
+keywords: window, vulnerability, smbv1, host, prompt, dst, monitor, network, attack, payload, event, doubleplusar, src, doublepulsar
+top 10 of match results: T1612, T1195.003, T1098.002, T1129, T1055.011, T1221, T1542.004, T1556.004, T1556.006, T1498.001
 
 
 7/241
@@ -45,8 +45,8 @@ top 10 of match results: T1590.003, T1574.012, T1099, T1079, T1503, T1131, T1629
 ./security_rules/data/osa_rules/05024_Vulnerability_Scan_TFTP_Access.yml
 ['attack.enterprise.T1595.002']
 tags of security rules: T1595.002
-keywords: protocol, server, connection, computer, vulnerability, access, scan, host, model, tftp, ftp, use, transfer, src, client, data, indicator, network, target, architecture, behavior, user, control, file, help
-top 10 of match results: T1001.002, T1165, T1132.002, T1494, T1443, T1593.003, T1406.001, T1516, T1132.001, T1642
+keywords: client, computer, architecture, control, model, ftp, user, protocol, help, use, data, behavior, access, src, scan, transfer, connection, vulnerability, host, indicator, file, network, server, target, tftp
+top 10 of match results: T1486, T1499, T1021.003, T0817, T1029, T1134.001, T1204.001, T1608.001, T1592.004, T1592.001
 
 
 10/241
@@ -73,8 +73,8 @@ top 10 of match results: T1001.002, T1165, T1132.002, T1494, T1443, T1593.003, T
 ./security_rules/data/osa_rules/00893_WannaCry_Kill_Switch_DNS.yml
 ['attack.enterprise.T1497']
 tags of security rules: T1497
-keywords: life, end, security, shadow, switch, computer, system, dns, host, microsoft, release, cyberattack, window, bitcoin, develop, patch, ransomware, malware, src, call, attack, cryptocurrency, broker, month, data, agency, kill, state, nsa, eternalblue, group, indicator, target, cryptoworm, encrypt, organization, run, leak, payment, behavior, wannacry, ransom
-top 10 of match results: T1614.001, T1633, T1401, T1031, T1138, T1519, T1533, T0854, T1223, T1501
+keywords: cryptocurrency, end, computer, group, develop, encrypt, cyberattack, leak, organization, dns, run, ransom, eternalblue, switch, release, cryptoworm, security, call, payment, nsa, wannacry, ransomware, window, month, shadow, microsoft, data, behavior, bitcoin, src, kill, broker, agency, state, host, indicator, malware, attack, patch, target, system, life
+top 10 of match results: T1565.002, T1486, T0872, T1119, T1480, T1600.001, T1027.005, T1110, T1612, T1039
 
 
 16/241
@@ -101,8 +101,8 @@ top 10 of match results: T1614.001, T1633, T1401, T1031, T1138, T1519, T1533, T0
 ./security_rules/data/osa_rules/00875_S7Comm_PLC_warm_START.yml
 ['attack.ics.T0858', 'attack.ics.T0816']
 tags of security rules: T0858, T0816
-keywords: src, host, s7comm, prompt, start, plc, event, operation, dst, network
-top 10 of match results: T0808, T1415, T0854, T1050, T1630.001, T1501, T1184, T1618, T1179, T1043
+keywords: s7comm, host, prompt, dst, event, network, start, src, operation, plc
+top 10 of match results: T1037.003, T1098.002, T0889, T1021.003, T1134.001, T1218.007, T1547.007, T1095, T1542.004, T1547.009
 
 
 22/241
@@ -153,8 +153,9 @@ top 10 of match results: T0808, T1415, T0854, T1050, T1630.001, T1501, T1184, T1
 ./security_rules/data/osa_rules/00863_S7Comm_Download_PLC_configuration.yml
 ['operation.local', 'attack.ics.T0843']
 tags of security rules: T0843
-keywords: protocol, s7comm, controller, system, operation, communication, access, host, purpose, help, scada, acquisition, logic, dst, src, download, data, command, indicator, network, s7, target, exchange, program, plc, user, configuration, family, control, plcs
-top 10 of match results: T1602, T1624.001, T1132, T1587.004, T1053.002, T1132.001, T1474.001, T1175, T1013, T1064
+keywords: family, controller, scada, control, operation, program, plc, communication, configuration, user, command, download, protocol, help, data, access, plcs, src, acquisition, exchange, s7comm, host, indicator, dst, network, purpose, s7, target, system, logic
+top 10 of match results: T1486, T1555, T1562.010, T0819, T0823, T0857, T1070, T0843, T1078.003, T1059.008
+pass
 
 
 34/241
@@ -181,16 +182,16 @@ top 10 of match results: T1602, T1624.001, T1132, T1587.004, T1053.002, T1132.00
 ./security_rules/data/osa_rules/00811_S7Comm_Upload_PLC_configuration.yml
 ['operation.local', 'attack.ics.T0845']
 tags of security rules: T0845
-keywords: protocol, s7comm, controller, system, operation, access, communication, host, purpose, help, scada, acquisition, logic, dst, src, data, command, upload, indicator, s7, target, exchange, program, plc, user, configuration, family, control, plcs
-top 10 of match results: T1602, T1054, T1401, T1629.003, T1629.002, T1437.001, T1634.001, T1045, T1132, T1427
+keywords: family, controller, scada, control, operation, program, plc, communication, configuration, user, command, protocol, help, data, access, plcs, src, acquisition, exchange, s7comm, host, indicator, dst, purpose, upload, s7, target, system, logic
+top 10 of match results: T1486, T1499.004, T0843, T1070, T1584.006, T1530, T0819, T0823, T1562.010, T1602
 
 
 40/241
 ./security_rules/data/osa_rules/00880_PN_DCP_device_IP_changed.yml
 ['attack.ics.T0826']
 tags of security rules: T0826
-keywords: ip, prompt, behavior, profinet, monitor, asset, change, event, operation, dcp, pn, device, network
-top 10 of match results: T1044, T1088, T1043, T0815, T1583.007, T1142, T1466, T1430, T0800, T1178
+keywords: change, prompt, monitor, asset, device, network, behavior, event, pn, profinet, operation, dcp, ip
+top 10 of match results: T1535, T1578.003, T1113, T1111, T1037.004, T1059.002, T1538, T1036.004, T1601.002, T1614
 
 
 41/241
@@ -201,8 +202,8 @@ top 10 of match results: T1044, T1088, T1043, T0815, T1583.007, T1142, T1466, T1
 ./security_rules/data/osa_rules/00885_QQ_Wechat_Weibo_(Social_Media).yml
 ['attack.enterprise.T585.001', 'attack.ics.T0883']
 tags of security rules: T585.001, T0883
-keywords: src, host, communication, prompt, qq, wechat, monitor, event, weibo, medium, network
-top 10 of match results: T0885, T1041, T0844, T1132.002, T0810, T1182, T1636, T1448, T1095, T1132
+keywords: src, host, prompt, communication, monitor, network, event, qq, medium, weibo, wechat
+top 10 of match results: T1612, T0842, T1059.002, T0812, T1020.001, T1518, T1003.004, T0891, T1556.004, T1134.004
 
 
 43/241
@@ -229,8 +230,8 @@ top 10 of match results: T0885, T1041, T0844, T1132.002, T0810, T1182, T1636, T1
 ./security_rules/data/osa_rules/00899_SMBv1_EternalBlue_Exploit.yml
 ['attack.ics.T0866', 'attack.enterprise.T1210']
 tags of security rules: T0866, T1210
-keywords: src, host, smbv1, attack, prompt, window, monitor, dst, event, eternalblue, vulnerability, network
-top 10 of match results: T1070.005, T1413, T1006, T1623, T1454, T1021.006, T1055.015, T1626, T1398, T1180
+keywords: window, vulnerability, smbv1, host, prompt, eternalblue, dst, network, attack, monitor, event, src
+top 10 of match results: T1612, T1498.001, T1195.003, T0822, T1535, T1055.011, T1556.006, T1496, T1037.003, T1098.002
 
 
 49/241
@@ -289,8 +290,8 @@ top 10 of match results: T1070.005, T1413, T1006, T1623, T1454, T1021.006, T1055
 ./security_rules/data/osa_rules/00881_PN_DCP_device_name_changed.yml
 ['attack.ics.T0849']
 tags of security rules: T0849
-keywords: name, prompt, behavior, profinet, monitor, asset, change, event, operation, dcp, pn, device, network
-top 10 of match results: T1625, T1444, T1032, T1420, T1500, T0832, T1023, T1583.007, T1536, T1437.001
+keywords: change, name, prompt, monitor, asset, device, network, behavior, event, pn, profinet, operation, dcp
+top 10 of match results: T1111, T1526, T1578.003, T1059.002, T1046, T1547.003, T1556.004, T1037.004, T1134.004, T1552
 
 
 63/241
@@ -313,24 +314,25 @@ top 10 of match results: T1625, T1444, T1032, T1420, T1500, T0832, T1023, T1583.
 ./security_rules/data/osa_rules/00854_Insecure_SSL_TLS_Ciphers.yml
 ['attack.enterprise.T1573']
 tags of security rules: T1573
-keywords: src, host, tl, ssl, prompt, cipher, event, use, vulnerability, network
-top 10 of match results: T0841, T1433, T1596, T1605, T1502, T1017, T1616, T1194, T1596.005, T1093
+keywords: vulnerability, host, tl, prompt, cipher, event, network, ssl, src, use
+top 10 of match results: T1037.003, T1134.001, T1571, T1098.002, T1612, T1546.003, T1027.005, T0885, T1491.002, T1129
 
 
 68/241
 ./security_rules/data/osa_rules/00870_DNS_query_flooding.yml
 ['attack.enterprise.T1499', 'attack.enterprise.T1498.001', 'attack.ics.T0814']
 tags of security rules: T1499, T1498.001, T0814
-keywords: src, host, launch, target, attack, client, request, server, type, query, traffic, flood, dns, network
-top 10 of match results: T1642, T1481.001, T1595.001, T1504, T1444, T1477, T1470, T1445, T1084, T1426
+keywords: dns, traffic, host, flood, client, network, attack, request, type, query, target, server, src, launch
+top 10 of match results: T1498.001, T1565.002, T1098.002, T1498.002, T1547.009, T1608, T1029, T1548, T1565, T1499.003
+pass
 
 
 69/241
 ./security_rules/data/osa_rules/00935_Firewall_Rule_Deleted_on_Windows.yml
 ['operation.local', 'attack.enterprise.T1599']
 tags of security rules: T1599
-keywords: host, firewall, prompt, list, behavior, window, monitor, change, rule, event, operation, datasrcip, exception
-top 10 of match results: T1584.005, T1032, T1407, T1597, T1172, T1121, T1166, T1024, T1523, T1426
+keywords: exception, window, change, rule, host, prompt, monitor, event, behavior, operation, datasrcip, firewall, list
+top 10 of match results: T1562, T1111, T1612, T1578.003, T1106, T1562.007, T1029, T1525, T0885, T1047
 
 
 70/241
@@ -353,8 +355,8 @@ top 10 of match results: T1584.005, T1032, T1407, T1597, T1172, T1121, T1166, T1
 ./security_rules/data/osa_rules/00898_SMBv1_EternalBlue_Exists.yml
 ['attack.ics.T0866', 'attack.enterprise.T1210']
 tags of security rules: T0866, T1210
-keywords: src, host, smbv1, prompt, window, monitor, event, eternalblue, vulnerability, network
-top 10 of match results: T1604, T1637.001, T0824, T1031, T1043, T1035, T0875, T1451, T1636.004, T1417.001
+keywords: window, vulnerability, smbv1, host, prompt, eternalblue, monitor, network, event, src
+top 10 of match results: T1612, T1496, T1110.001, T1205.002, T1114.002, T1098.002, T1548.002, T1556.006, T1037.003, T1187
 
 
 75/241
@@ -377,8 +379,8 @@ top 10 of match results: T1604, T1637.001, T0824, T1031, T1043, T1035, T0875, T1
 ./security_rules/data/osa_rules/01005_Windows_Defender_Real_time_Protection_Disabled.yml
 ['attack.enterprise.T1562.001', 'query-unclear']
 tags of security rules: T1562.001
-keywords: protection, host, defender, attack, prompt, status, window, monitor, event, time, datasrcip, real
-top 10 of match results: T1629.002, T1015, T1586.002, T1081, T1488, T1088, T1194, T1410, T1474, T1022
+keywords: window, time, status, host, defender, monitor, event, prompt, attack, protection, datasrcip, real
+top 10 of match results: T0822, T1611, T1098.003, T1612, T1562.007, T1525, T1518, T1006, T0864, T1036.004
 
 
 80/241
@@ -393,8 +395,8 @@ top 10 of match results: T1629.002, T1015, T1586.002, T1081, T1488, T1088, T1194
 ./security_rules/data/osa_rules/16001_Wannacry_Artifact_Checker.yml
 ['malware.host', 'attack.ics.T1569']
 tags of security rules: T1569
-keywords: exe, host, artifact, search, attack, wannacry, part, tasksche, checker, execution, rule, name, datasrcip, infection, malware
-top 10 of match results: T1194, T1062, T1218.012, T1126, T1208, T1061, T1641, T1574.012, T1165, T1564.007
+keywords: checker, part, name, rule, infection, host, search, malware, attack, artifact, tasksche, wannacry, datasrcip, execution, exe
+top 10 of match results: T1036.004, T1036.007, T1036.006, T1497, T1612, T1608.001, T0872, T1610, T1548.004, T1553.006
 
 
 83/241
@@ -450,8 +452,8 @@ top 10 of match results: T1194, T1062, T1218.012, T1126, T1208, T1061, T1641, T1
 ./security_rules/data/osa_rules/00862_PN_DCP_Overflow.yml
 ['attack.ics.T0826', 'attack.ics.T0814']
 tags of security rules: T0826, T0814
-keywords: src, host, prompt, traffic, monitor, dst, event, buffer, frame, pn, overflow, dcp, network
-top 10 of match results: T1044, T0885, T1629.003, T1178, T1589.003, T1416, T1055.015, T0827, T1547.011, T1148
+keywords: traffic, host, buffer, prompt, dst, monitor, network, event, frame, pn, src, dcp, overflow
+top 10 of match results: T0842, T0891, T0812, T1612, T1020.001, T1003.004, T1498.001, T1040, T1557.001, T1059.002
 
 
 96/241
@@ -494,8 +496,8 @@ top 10 of match results: T1044, T0885, T1629.003, T1178, T1589.003, T1416, T1055
 ./security_rules/data/osa_rules/00934_Firewall_Rule_Added_on_Windows.yml
 ['operation.local', 'attack.enterprise.T1599']
 tags of security rules: T1599
-keywords: host, firewall, prompt, add, list, window, behavior, monitor, rule, change, event, operation, datasrcip, exception
-top 10 of match results: T1065, T1158, T1435, T1146, T1521, T1084, T1198, T1427, T1478, T1541
+keywords: exception, window, change, add, rule, host, prompt, monitor, event, behavior, operation, datasrcip, firewall, list
+top 10 of match results: T1612, T1562.007, T1571, T1562, T1578.003, T1029, T1047, T1580, T1611, T1525
 
 
 106/241
@@ -522,8 +524,8 @@ top 10 of match results: T1065, T1158, T1435, T1146, T1521, T1084, T1198, T1427,
 ./security_rules/data/osa_rules/00897_SMBv1_EternalBlue_Recon.yml
 ['attack.enterprise.T1588.006']
 tags of security rules: T1588.006
-keywords: src, host, scan, smbv1, attack, recons, recon, prompt, behavior, window, monitor, dst, event, eternalblue, vulnerability, network
-top 10 of match results: T1463, T1403, T1629, T1420, T1440, T1590.003, T1183, T1457, T1582, T1158
+keywords: window, vulnerability, smbv1, host, prompt, dst, monitor, network, attack, recons, eternalblue, behavior, event, src, recon, scan
+top 10 of match results: T1612, T1055.011, T1195.003, T1556.006, T1562.007, T1535, T1542.004, T1078.001, T1098.002, T0822
 
 
 112/241
@@ -538,8 +540,8 @@ top 10 of match results: T1463, T1403, T1629, T1420, T1440, T1590.003, T1183, T1
 ./security_rules/data/osa_rules/00820_SYN_flood.yml
 ['attack.impact', 'attack.enterprise.T1499', 'attack.ics.T0814']
 tags of security rules: T1499, T0814
-keywords: type, server, connection, syn, port, packet, device, machine, host, ddos, resource, src, request, attack, aim, denial, service, attacker, network, target, launch, half, traffic, cause, flood
-top 10 of match results: T1498.001, T1029, T1595.001, T1498.002, T1144, T0885, T1498, T1624.001, T0883, T0826
+keywords: packet, cause, request, type, syn, resource, attacker, service, port, aim, device, half, denial, src, launch, connection, traffic, host, flood, network, attack, ddos, machine, server, target
+top 10 of match results: T1195.003, T1498.001, T0883, T1612, T1565.002, T0822, T1491, T1120, T1498.002, T1036.004
 
 
 115/241
@@ -590,8 +592,8 @@ top 10 of match results: T1498.001, T1029, T1595.001, T1498.002, T1144, T0885, T
 ./security_rules/data/osa_rules/00815_Port_Scan_(Fast).yml
 ['attack.discovery', 'attack.enterprise.T1046', 'attack.ics.T0846']
 tags of security rules: T1046, T0846
-keywords: place, source, security, functionality, server, computer, system, someone, technique, destination, reconnaissance, fast, port, point, device, access, scan, host, method, break, listen, door, sender, know, tool, dst, src, fingerprint, attack, test, information, firewall, knock, strength, attacker, presence, network, target, send
-top 10 of match results: T1590.006, T1595.001, T1600.002, T1590.005, T1639.001, T1460, T1473, T1214, T1532, T1449
+keywords: technique, computer, place, sender, reconnaissance, source, know, point, fast, door, information, security, destination, someone, send, listen, fingerprint, test, knock, firewall, attacker, port, tool, strength, break, device, access, method, src, scan, host, presence, dst, network, attack, functionality, server, target, system
+top 10 of match results: T1565.002, T0806, T1608, T1055.011, T1562.008, T0840, T1190, T1592.001, T1040, T1600
 
 
 127/241
@@ -602,8 +604,8 @@ top 10 of match results: T1590.006, T1595.001, T1600.002, T1590.005, T1639.001, 
 ./security_rules/data/osa_rules/00889_SMBv1_DoublePulsar_Recon.yml
 ['attack.enterprise.T1588.006']
 tags of security rules: T1588.006
-keywords: src, host, scan, smbv1, attack, recons, recon, prompt, window, monitor, dst, event, doubleplusar, vulnerability, network
-top 10 of match results: T1099, T1452, T1406, T1507, T1604, T1062, T1510, T1522, T0854, T1597.001
+keywords: window, vulnerability, smbv1, host, prompt, dst, monitor, network, attack, recons, event, doubleplusar, src, recon, scan
+top 10 of match results: T1195.003, T1612, T1055.011, T1496, T0864, T1498.001, T0822, T1556.006, T1542.004, T0842
 
 
 129/241
@@ -622,8 +624,9 @@ top 10 of match results: T1099, T1452, T1406, T1507, T1604, T1062, T1510, T1522,
 ./security_rules/data/osa_rules/01002_WannaCry_Behavior.yml
 ['malware.host', 'attack.ics.T0826', 'attack.enterprise.T1486', 'query_unclear']
 tags of security rules: T0826, T1486
-keywords: life, end, security, shadow, computer, system, encryption, host, microsoft, release, cyberattack, window, bitcoin, develop, patch, ransomware, malware, call, attack, cryptocurrency, broker, month, data, agency, state, nsa, eternalblue, group, indicator, target, cryptoworm, encrypt, organization, run, leak, payment, behavior, datasrcip, wannacry, ransom
-top 10 of match results: T1614.001, T1593, T1532, T1471, T1431, T1467, T1076, T1632, T1144, T1521.001
+keywords: cryptocurrency, end, computer, group, develop, encrypt, cyberattack, leak, organization, run, ransom, eternalblue, release, cryptoworm, security, call, payment, nsa, wannacry, ransomware, window, month, shadow, microsoft, data, behavior, bitcoin, broker, agency, state, host, indicator, malware, encryption, attack, patch, target, system, datasrcip, life
+top 10 of match results: T1486, T1565.002, T1614.001, T1110, T1029, T1565.003, T1078.004, T1055.005, T1119, T1600.001
+pass
 
 
 133/241
@@ -662,8 +665,8 @@ top 10 of match results: T1614.001, T1593, T1532, T1471, T1431, T1467, T1076, T1
 ./security_rules/data/osa_rules/00848_HTTP_plaintext_password.yml
 ['attack.enterprise.T1040', 'attack.ics.T0842']
 tags of security rules: T1040, T0842
-keywords: src, host, target, account, communication, find, prompt, traffic, plaintext, monitor, event, http, password, dst, network
-top 10 of match results: T1110.004, T0822, T1110, T1040, T1110.001, T1110.003, T0842, T1422, T1133, T1067
+keywords: traffic, host, prompt, password, plaintext, http, network, dst, monitor, communication, find, event, target, src, account
+top 10 of match results: T0812, T1110.003, T0842, T1110.001, T1571, T0891, T1205, T1557.001, T1134.004, T1205.002
 pass
 
 
@@ -687,16 +690,16 @@ pass
 ./security_rules/data/osa_rules/01003_WannaCry_Registry.yml
 ['malware.host', 'attack.enterprise.T1112', 'query_unclear']
 tags of security rules: T1112
-keywords: life, end, security, shadow, computer, system, host, microsoft, release, registry, cyberattack, window, bitcoin, develop, patch, ransomware, malware, call, attack, cryptocurrency, broker, month, data, agency, state, item, eternalblue, nsa, group, indicator, target, cryptoworm, encrypt, organization, run, leak, payment, datasrcip, wannacry, ransom
-top 10 of match results: T1614.001, T0872, T1636, T1097, T1481.002, T1015, T1413, T1194, T1167, T1214
+keywords: cryptocurrency, end, computer, group, develop, encrypt, item, cyberattack, leak, organization, run, ransom, eternalblue, release, cryptoworm, security, call, payment, nsa, wannacry, ransomware, window, month, shadow, microsoft, data, bitcoin, broker, registry, agency, state, host, indicator, malware, attack, patch, target, system, datasrcip, life
+top 10 of match results: T1119, T1565.002, T1039, T1006, T1611, T1614.001, T1560.002, T1559.002, T1110, T1610
 
 
 147/241
 ./security_rules/data/osa_rules/05022_Vulnerability_Scan_CVE_2019_0708_Scan.yml
 ['attack.enterprise.T1595.002']
 tags of security rules: T1595.002
-keywords: desktop, system, execution, vulnerability, scan, host, craft, code, signature, use, src, request, rdp, service, attacker, indicator, network, target, cve, behavior, user, help
-top 10 of match results: T1590.006, T1478, T1586.003, T1548.001, T1639.001, T1417, T1064, T1575, T1583.007, T1592.003
+keywords: rdp, code, cve, craft, user, request, help, use, attacker, service, behavior, src, scan, vulnerability, host, indicator, signature, network, desktop, target, system, execution
+top 10 of match results: T1486, T0817, T1499, T1498, T1195.001, T0834, T1491.002, T1491, T1554, T1037.003
 
 
 148/241
@@ -727,8 +730,8 @@ top 10 of match results: T1590.006, T1478, T1586.003, T1548.001, T1639.001, T141
 ./security_rules/data/osa_rules/00858_PN_DCP_Reset_factory_setting.yml
 ['attack.ics.T0858', 'attack.ics.T0826', 'attack.ics.T0827']
 tags of security rules: T0858, T0826, T0827
-keywords: src, host, set, reset, prompt, factory, profinet, monitor, risk, event, operation, pn, dcp, network
-top 10 of match results: T0850, T1591.002, T1597.002, T1430.001, T1428, T1593.003, T1076, T1004, T1494, T1633
+keywords: risk, set, host, prompt, monitor, event, network, reset, pn, profinet, src, operation, dcp, factory
+top 10 of match results: T1612, T0842, T1098.002, T1599, T1547.015, T1542.004, T0812, T0891, T0864, T1059.002
 
 
 155/241
@@ -739,8 +742,8 @@ top 10 of match results: T0850, T1591.002, T1597.002, T1430.001, T1428, T1593.00
 ./security_rules/data/osa_rules/00864_ARP_flooding.yml
 ['attack.enterprise.T1498.001', 'attack.ics.T0814']
 tags of security rules: T1498.001, T0814
-keywords: ip, mac, computer, entry, system, cache, packet, communication, host, smac, know, broadcast, address, request, attack, record, result, arp, network, launch, affect, send, keep, resolve, flood, reply
-top 10 of match results: T1205.001, T1200, T1638, T1020.001, T1585.003, T1577, T1205, T1184, T0885, T1502
+keywords: mac, keep, entry, packet, computer, know, reply, communication, request, send, smac, arp, resolve, address, launch, broadcast, ip, cache, result, record, host, flood, network, attack, affect, system
+top 10 of match results: T1612, T1029, T0840, T1499.004, T1486, T0864, T1205.001, T0860, T1059.008, T0866
 
 
 157/241
@@ -795,8 +798,8 @@ top 10 of match results: T1205.001, T1200, T1638, T1020.001, T1585.003, T1577, T
 ./security_rules/data/osa_rules/00892_COTP_S7Comm_illegal_field_value.yml
 ['attack.ics.T0814', 'attack.ics.T0855']
 tags of security rules: T0814, T0855
-keywords: src, host, attack, value, field, s7comm, prompt, traffic, cotp, monitor, event, packet, dst, network
-top 10 of match results: T1571, T0885, T1572, T1599, T1148, T0869, T1029, T1599.001, T1132.002, T1065
+keywords: value, field, traffic, cotp, s7comm, host, prompt, dst, monitor, network, attack, packet, event, src
+top 10 of match results: T1547.015, T0842, T1612, T1134.005, T1020.001, T1535, T1552.003, T0864, T1120, T1059.002
 
 
 170/241
@@ -827,8 +830,9 @@ top 10 of match results: T1571, T0885, T1572, T1599, T1148, T0869, T1029, T1599.
 ./security_rules/data/osa_rules/01001_WannaCry_Process.yml
 ['malware.host', 'attack.ics.T0826', 'attack.enterprise.T1486', 'query_unclear']
 tags of security rules: T0826, T1486
-keywords: life, end, security, shadow, computer, system, encryption, process, host, microsoft, release, cyberattack, window, bitcoin, develop, patch, ransomware, malware, call, attack, cryptocurrency, broker, month, data, agency, state, nsa, eternalblue, group, indicator, target, cryptoworm, encrypt, organization, run, leak, payment, datasrcip, wannacry, ransom
-top 10 of match results: T0872, T1614.001, T1487, T1605, T1461, T0854, T1438, T1006, T1109, T1591
+keywords: cryptocurrency, end, computer, group, develop, encrypt, process, cyberattack, leak, organization, run, ransom, eternalblue, release, cryptoworm, security, call, payment, nsa, wannacry, ransomware, window, month, shadow, microsoft, data, bitcoin, broker, agency, state, host, indicator, malware, encryption, attack, patch, target, system, datasrcip, life
+top 10 of match results: T1565.002, T1565.003, T1027.003, T1027.005, T1610, T1560.002, T1486, T1570, T1039, T0862
+pass
 
 
 177/241
@@ -867,8 +871,8 @@ top 10 of match results: T0872, T1614.001, T1487, T1605, T1461, T0854, T1438, T1
 ./security_rules/data/osa_rules/00869_UDP_flooding.yml
 ['attack.enterprise.T1499', 'attack.enterprise.T1498.001', 'attack.ics.T0814']
 tags of security rules: T1499, T1498.001, T0814
-keywords: type, protocol, server, number, process, packet, device, exhaust, host, src, attack, aim, denial, firewall, service, result, udp, ability, datagram, network, target, launch, respond, traffic, user, send, flood
-top 10 of match results: T1498.001, T1499.001, T0885, T1548.001, T1491, T1130, T1426, T1029, T1623, T1031
+keywords: udp, ability, packet, process, exhaust, number, user, type, protocol, send, datagram, firewall, service, aim, device, denial, src, launch, result, traffic, host, flood, network, attack, target, server, respond
+top 10 of match results: T1498, T1498.002, T1557, T1559.003, T1559, T1020.001, T1599, T0860, T0814, T1205
 pass
 
 
@@ -896,8 +900,8 @@ pass
 ./security_rules/data/osa_rules/00847_FTP_plaintext_password.yml
 ['attack.enterprise.T1040', 'attack.ics.T0842']
 tags of security rules: T1040, T0842
-keywords: src, host, target, account, communication, find, prompt, ftp, traffic, plaintext, monitor, event, password, dst, network
-top 10 of match results: T0842, T1040, T1110.004, T1566, T0822, T1590.002, T0828, T1421, T1110.001, T1512
+keywords: traffic, host, prompt, password, plaintext, network, dst, monitor, communication, find, event, target, src, account, ftp
+top 10 of match results: T0842, T0891, T0812, T1110.001, T1557.001, T1205, T1083, T1040, T1602.002, T1110.003
 pass
 
 
@@ -925,8 +929,8 @@ pass
 ./security_rules/data/osa_rules/00846_Telnet_plaintext_password.yml
 ['attack.enterprise.T1040', 'attack.ics.T0842']
 tags of security rules: T1040, T0842
-keywords: src, host, target, account, telnet, communication, find, prompt, traffic, plaintext, monitor, dst, event, password, vulnerability, network
-top 10 of match results: T0842, T1086, T0822, T0812, T1404, T1110.004, T0810, T1468, T1040, T1096
+keywords: vulnerability, traffic, host, prompt, password, plaintext, network, dst, telnet, monitor, communication, find, event, target, src, account
+top 10 of match results: T0812, T1110.001, T1557.001, T0891, T1111, T0842, T1078.001, T1110.003, T1612, T1557.003
 pass
 
 
@@ -938,8 +942,8 @@ pass
 ./security_rules/data/osa_rules/00890_SMBv1_DoublePulsar_Exists.yml
 ['attack.ics.T0866', 'attack.enterprise.T1210']
 tags of security rules: T0866, T1210
-keywords: src, host, smbv1, prompt, exist, window, monitor, event, doubleplusar, vulnerability, network
-top 10 of match results: T1591.001, T1158, T1597, T1563.002, T1521.002, T1636.001, T1476, T1639, T1616, T1521
+keywords: window, vulnerability, smbv1, host, prompt, monitor, event, network, doubleplusar, src, exist
+top 10 of match results: T1612, T1037.003, T1110.001, T1114.002, T1098.002, T1542.004, T1496, T1571, T1129, T0842
 
 
 200/241
@@ -958,8 +962,8 @@ top 10 of match results: T1591.001, T1158, T1597, T1563.002, T1521.002, T1636.00
 ./security_rules/data/osa_rules/05020_Vulnerability_Scan_SIP_Access.yml
 ['attack.enterprise.T1595.002']
 tags of security rules: T1595.002
-keywords: application, protocol, initiation, session, signal, voice, vulnerability, access, scan, host, use, src, video, indicator, message, network, target, behavior, user, time, help
-top 10 of match results: T0808, T1442, T1590, T1034, T1100, T1604, T1506, T1141, T1586.003, T1636.002
+keywords: video, initiation, signal, user, protocol, help, application, session, use, time, behavior, message, access, src, scan, vulnerability, host, indicator, network, voice, target
+top 10 of match results: T1029, T1486, T1592.004, T1484.001, T1563.001, T1134.001, T1592.001, T1555, T1078.003, T0885
 
 
 204/241
@@ -982,8 +986,8 @@ top 10 of match results: T0808, T1442, T1590, T1034, T1100, T1604, T1506, T1141,
 ./security_rules/data/osa_rules/00853_Insecure_SSL_TLS_Version.yml
 ['attack.enterprise.T1573']
 tags of security rules: T1573
-keywords: src, host, tl, ssl, prompt, event, version, use, vulnerability, network
-top 10 of match results: T1536, T1044, T1440, T0829, T1522, T0825, T1460, T1516, T1628.002, T1019
+keywords: vulnerability, host, tl, prompt, event, network, version, ssl, src, use
+top 10 of match results: T1037.003, T1571, T1612, T1046, T1491, T1134.001, T1098.002, T0885, T1547.010, T1027.005
 
 
 209/241
@@ -994,8 +998,8 @@ top 10 of match results: T1536, T1044, T1440, T0829, T1522, T0825, T1460, T1516,
 ./security_rules/data/osa_rules/05023_Vulnerability_Scan_OS_Fingerprint_Scan_over_RDP.yml
 ['attack.enterprise.T1595.002']
 tags of security rules: T1595.002
-keywords: desktop, protocol, server, connection, computer, interface, vulnerability, scan, host, microsoft, purpose, signature, src, fingerprint, client, information, check, rdp, indicator, network, target, behavior, user, help, software
-top 10 of match results: T1063, T1544, T1628, T1521, T1521.001, T0819, T1142, T0827, T1582, T1642
+keywords: client, software, computer, rdp, user, information, protocol, fingerprint, help, microsoft, behavior, src, scan, connection, vulnerability, check, host, indicator, signature, network, purpose, desktop, server, target, interface
+top 10 of match results: T1029, T1602.001, T1078.001, T1608.004, T1095, T0842, T1059.008, T1600.001, T0806, T1547.009
 
 
 211/241
@@ -1006,8 +1010,8 @@ top 10 of match results: T1063, T1544, T1628, T1521, T1521.001, T0819, T1142, T0
 ./security_rules/data/osa_rules/05021_Vulnerability_Scan_Nessus_RDP_SSH_Access.yml
 ['attack.enterprise.T1595.002']
 tags of security rules: T1595.002
-keywords: application, nessus, protocol, desktop, server, connection, shell, computer, interface, execution, vulnerability, access, scan, host, microsoft, purpose, src, client, line, rdp, service, command, login, indicator, network, target, behavior, user, ssh, help, software
-top 10 of match results: T1095, T1071, T1219, T1505.003, T1505, T1215, T1440, T1444, T0869, T1487
+keywords: client, software, computer, rdp, ssh, user, shell, nessus, command, login, protocol, help, application, service, microsoft, behavior, access, src, scan, connection, vulnerability, line, host, indicator, network, purpose, desktop, server, target, execution, interface
+top 10 of match results: T1608, T1608.004, T1078.001, T1546.004, T0866, T1608.001, T1021, T1059, T1095, T1559.003
 
 
 213/241
@@ -1022,8 +1026,8 @@ top 10 of match results: T1095, T1071, T1219, T1505.003, T1505, T1215, T1440, T1
 ./security_rules/data/osa_rules/00886_Baidu_Bing_Google_(Search_Engine).yml
 ['attack.ics.T0883']
 tags of security rules: T0883
-keywords: src, engine, host, search, access, bing, communication, baidu, prompt, google, monitor, event, network
-top 10 of match results: T1625.001, T1629.002, T1447, T1093, T1481.003, T1159, T1088, T1596.002, T1050, T0841
+keywords: google, host, baidu, search, bing, network, monitor, communication, event, prompt, access, src, engine
+top 10 of match results: T1612, T1059.002, T0842, T1134.004, T1098.002, T0891, T1562.007, T1556.004, T0871, T1552.007
 
 
 216/241
@@ -1034,16 +1038,16 @@ top 10 of match results: T1625.001, T1629.002, T1447, T1093, T1481.003, T1159, T
 ./security_rules/data/osa_rules/00933_Firewall_Rule_Changed_on_Windows.yml
 ['operation.local', 'attack.enterprise.T1599']
 tags of security rules: T1599
-keywords: host, firewall, prompt, list, behavior, window, monitor, change, rule, event, operation, datasrcip, exception
-top 10 of match results: T1626, T1517, T1043, T1141, T1590, T1590.003, T1023, T1173, T1443, T1593.002
+keywords: exception, window, change, rule, host, prompt, monitor, event, behavior, operation, datasrcip, firewall, list
+top 10 of match results: T1612, T1562.007, T1562, T1029, T1106, T0843, T1578.003, T1580, T1571, T1611
 
 
 218/241
 ./security_rules/data/osa_rules/00876_S7Comm_PLC_warm_STOP.yml
 ['attack.ics.T0858', 'attack.ics.T0816', 'query-unclear']
 tags of security rules: T0858, T0816
-keywords: src, host, s7comm, stop, prompt, plc, event, operation, dst, network
-top 10 of match results: T1597, T1596.002, T1522, T1162, T1432, T0810, T1122, T1031, T0837, T1422
+keywords: s7comm, host, prompt, stop, dst, network, event, src, operation, plc
+top 10 of match results: T1037.003, T1098.002, T1552.007, T1134.001, T1095, T0889, T1053.007, T1078.001, T1218.007, T1498.001
 
 
 219/241
@@ -1094,8 +1098,8 @@ top 10 of match results: T1597, T1596.002, T1522, T1162, T1432, T0810, T1122, T1
 ./security_rules/data/osa_rules/05002_OMS_Download_PLC_hardware_configuration.yml
 ['attack.ics.T0843']
 tags of security rules: T0843
-keywords: src, host, download, prompt, oms, plc, configuration, event, operation, hardware, dst, network
-top 10 of match results: T1032, T1636.004, T1453, T1513, T1165, T1547.011, T1398, T1430.002, T1017, T1122
+keywords: oms, host, prompt, dst, configuration, network, event, download, src, operation, plc, hardware
+top 10 of match results: T1037.003, T1612, T1012, T1095, T1555, T1615, T1078.003, T1046, T1619, T0889
 
 
 231/241
@@ -1110,16 +1114,17 @@ top 10 of match results: T1032, T1636.004, T1453, T1513, T1165, T1547.011, T1398
 ./security_rules/data/osa_rules/00871_SNMP_query_flooding.yml
 ['attack.enterprise.T1499', 'attack.enterprise.T1498.001', 'attack.ics.T0814']
 tags of security rules: T1499, T1498.001, T0814
-keywords: ip, snmp, response, packet, device, host, spoof, use, src, request, attack, internet, udp, network, target, launch, query, run, amplification, send, carry, flood
-top 10 of match results: T0831, T1161, T1588.006, T1097, T1522, T0885, T1593.003, T1623, T1584.005, T1429
+keywords: udp, packet, run, request, internet, query, send, response, carry, amplification, use, spoof, device, src, launch, snmp, ip, host, flood, network, attack, target
+top 10 of match results: T1562.004, T1037.003, T0885, T1499, T1027.005, T1499.002, T1602.001, T1571, T1499.001, T1499.004
+pass
 
 
 234/241
 ./security_rules/data/osa_rules/00852_HeartBleed.yml
 ['attack.enterprise.T1119', 'attack.ics.T0802']
 tags of security rules: T1119, T0802
-keywords: src, scan, host, openssl, attack, target, ssl, prompt, event, heartbleed, use, vulnerability, network
-top 10 of match results: T1477, T1188, T1636.004, T1468, T1162, T1629.002, T1172, T1096, T1566, T1625
+keywords: vulnerability, openssl, heartbleed, host, prompt, event, network, attack, ssl, target, src, scan, use
+top 10 of match results: T1037.003, T1498.001, T1612, T1098.002, T1571, T0889, T1110.002, T1588.004, T0842, T1565
 
 
 235/241
@@ -1138,8 +1143,8 @@ top 10 of match results: T1477, T1188, T1636.004, T1468, T1162, T1629.002, T1172
 ./security_rules/data/osa_rules/00882_Enumerate_Redpoint_NSE_Request_CPU_Function_Read_SZL_attempt.yml
 ['attack.ics.T0846', 'attack.ics.T0888']
 tags of security rules: T0846, T0888
-keywords: cpu, device, host, scan, function, nse, read, redpoint, dst, src, request, information, szl, siemens, network, s7, target, behavior, user, plc, attempt, help
-top 10 of match results: T1064, T1150, T1056.001, T1583.007, T1164, T1589.001, T1636.001, T1404, T1521, T1633.001
+keywords: read, plc, cpu, user, request, siemens, information, help, redpoint, device, behavior, src, scan, nse, host, attempt, dst, network, s7, target, function, szl
+top 10 of match results: T1498.001, T1486, T1498.002, T1078.001, T1498, T1614, T1561.002, T1595.002, T1069, T1602.002
 
 
 239/241
@@ -1150,8 +1155,8 @@ top 10 of match results: T1064, T1150, T1056.001, T1583.007, T1164, T1589.001, T
 ./security_rules/data/osa_rules/00884_PN_DCP_scan_network.yml
 ['attack.ics.T0846', 'attack.ics.T0888']
 tags of security rules: T0846, T0888
-keywords: type, ip, mac, mask, operation, vendor, device, scan, host, smac, function, list, tool, address, name, use, dcp, find, information, service, profinet, pn, network, launch, router, way, configuration, subnet
-top 10 of match results: T0888, T1168, T1627.001, T1636.004, T1630.002, T1120, T1463, T0845, T1584.007, T1432
+keywords: mac, vendor, operation, way, configuration, information, type, pn, profinet, smac, use, service, name, mask, tool, device, find, address, launch, scan, list, ip, host, network, subnet, router, function, dcp
+top 10 of match results: T1014, T0814, T0846, T1557.001, T0883, T1082, T0845, T0888, T1120, T1205
 pass
 
 
@@ -1162,6 +1167,6 @@ pass
 all tests: 241
 actual tests: 241
 tag tests: 46
-pass: 5
-ratio: 0.10869565217391304
-run time: 240.931031125s ≈ 00:04:00
+pass: 10
+ratio: 0.21739130434782608
+run time: 250.562139167s ≈ 00:04:10

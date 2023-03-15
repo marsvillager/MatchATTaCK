@@ -1,4 +1,4 @@
-(venv) xuyi@xuyideMBP MatchATTaCK % python main.py -dt './security_rules/data/fy23_deliverable/rules/' -dtn 10
+(venv) xuyi@xuyideMBP MatchATTaCK % python main.py -dt './security_rules/data/fy23_deliverable/rules/' -dtm 'Doc2Vec<dm/c,d100,n5,w5,mc10,t8>' -dtn 10
 Doc2Vec<dbow,d100,n5,mc10,t8> vocabulary scanned & state initialized
 Doc2Vec<dm/m,d100,n5,w10,mc10,t8> vocabulary scanned & state initialized
 Doc2Vec<dm/c,d100,n5,w5,mc10,t8> vocabulary scanned & state initialized
@@ -29,8 +29,8 @@ Training Doc2Vec<dm/c,d100,n5,w5,mc10,t8>
 ./security_rules/data/fy23_deliverable/rules/15694_ApplicationInstallationLinuxRedHat.yml
 ['attack.enterprise.T1543']
 tags of security rules: T1543
-keywords: situation, objective, rule, hat, linux, dpkg, damage, persistence, application, installation, system, instal, attacker, operation
-top 10 of match results: T1130, T1193, T1164, T1475, T1399, T1175, T1181, T1053.007, T1629, T1447
+keywords: operation, rule, installation, application, situation, persistence, instal, system, hat, damage, linux, attacker, objective, dpkg
+top 10 of match results: T1547.007, T1647, T0819, T1562.002, T1499.004, T1613, T0869, T1505, T1203, T1218.003
 
 
 7/14
@@ -69,4 +69,4 @@ all tests: 14
 actual tests: 14
 tag tests: 1
 pass: 0
-run time: 6.209284084s ≈ 00:00:06
+run time: 6.262825417000001s ≈ 00:00:06
