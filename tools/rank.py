@@ -97,3 +97,28 @@ def tf_idf(keywords: set[str], mitre_list: pd.DataFrame) -> list[tuple]:
         tf_idf_result[mitre_list.loc[i, "id"]] = [weight, pass_words]
 
     return sorted(tf_idf_result.items(), key=lambda k: float(k[1][0]), reverse=True)
+
+
+def show_tf_idf(keywords: set[str], mitre_list: pd.DataFrame, topn: int) -> None:
+    """
+    Show rank list depends on tf_idf.
+
+    :param keywords:  keywords of security rules
+    :param mitre_list: processed data of mitre att&ck data
+    :param topn: only show the first few
+    :return: sort result of mitre att&ck id according to its tf_idf
+    """
+    pd.set_option('expand_frame_repr', False)
+    # show all columns
+    pd.set_option('display.max_columns', None)
+    pd.set_option('max_colwidth', 1000)
+    # show all rows
+    pd.set_option('display.max_rows', None)
+
+    print("TOP " + str(topn) + " of closest documents:")
+    tmp: list[tuple] = tf_idf(keywords, mitre_list)[:topn]
+    tf_idf_dict: dict = dict()
+    tf_idf_dict['id'] = [x[0] for x in tmp]
+    tf_idf_dict['weight'] = [x[1][0] for x in tmp]
+    tf_idf_dict['words'] = [x[1][1] for x in tmp]
+    print(pd.DataFrame(tf_idf_dict))

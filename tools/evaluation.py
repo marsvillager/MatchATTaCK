@@ -7,7 +7,7 @@ from security_rules.process.process_data import process, load_file
 from tools.rank import tf_idf, result
 
 
-def test(filename: str, format_list: pd.DataFrame, lemma: bool) -> None:
+def tf_idf_test(filename: str, format_list: pd.DataFrame, lemma: bool) -> None:
     """
     Test single file.
 
@@ -17,14 +17,14 @@ def test(filename: str, format_list: pd.DataFrame, lemma: bool) -> None:
     :return: None
     """
     # security rules, lemma if True
-    keywords: set[str] = process(filename, False)
+    keywords: set[str] = process(filename, lemma)
 
     # match
     # print(result(keywords, format_list))
     print(tf_idf(keywords, format_list))
 
 
-def test_all(filedir: str, format_list: pd.DataFrame, rank: int, lemma: bool) -> None:
+def tf_idf_test_all(filedir: str, format_list: pd.DataFrame, rank: int, lemma: bool) -> None:
     """
     Test all files.
 
