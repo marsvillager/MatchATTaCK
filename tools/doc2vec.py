@@ -4,7 +4,6 @@ import pandas as pd
 
 from random import shuffle
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
-from security_rules.process.process_data import process
 from tools.config import Config
 
 
