@@ -5,7 +5,7 @@
 
 # Preparing
 
-- 去除拉取 mitre att&ck 数据时的 VCS root mapping（PyCharm ==> Settings ==> Version Control ==> Directory Mappings）
+- 去除拉取 mitre att&ck 数据时的 VCS root mapping（PyCharm ==> Settings ==> Version Control ==> Directory Mappings）or `./idea/vcs.xml` 中去除不相关的 `<mapping>` 标签
 - 需另外在 [Google Drive](https://drive.google.com/drive/folders/1e-rdHZCyjCW1VsrJu8dNkWWFELc7J9g1?usp=sharing) 下载 3 个过大的文件：`./prompt/model/en.model`, `./prompt/data/data_train.json`, `./prompt/data/vec_inuse.json`
 - `pip install -r requirement.txt`
 - Update: `python main.py -u`
@@ -15,20 +15,17 @@
 ## Global ONE
 
 ```bash
-usage: main.py [-h] [-u UPDATE] [-l LEMMA] [-a ATTACK] [-t TF_IDF] [-tn TF_IDF_NUMBER] [-tt TF_IDF_TEST] [-ttn TF_IDF_TEST_NUMBER] [-d DOC2VEC] [-dn DOC2VEC_NUMBER]
-               [-dt DOC2VEC_TEST] [-dtm DOC2VEC_TEST_MODEL] [-dtn DOC2VEC_TEST_NUMBER] [-p PROMPT]
+usage: main.py [-h] [-u] [-l LEMMA] [-a ATTACK] [-t TF_IDF] [-tn TF_IDF_NUMBER] [-tt TF_IDF_TEST] [-ttn TF_IDF_TEST_NUMBER] [-d DOC2VEC] [-dn DOC2VEC_NUMBER] [-dt DOC2VEC_TEST] [-dtm DOC2VEC_TEST_MODEL] [-dtn DOC2VEC_TEST_NUMBER] [-p PROMPT]
 
 Match Security Rules to Mitre ATT&CK.
 
 optional arguments:
   -h, --help            show this help message and exit
-  -u UPDATE, --update UPDATE
-                        Download or Update data source.
+  -u, --update          Download or Update data source.
   -l LEMMA, --lemma LEMMA
                         Extract lemma of words if True, else please choose False.
   -a ATTACK, --attack ATTACK
-                        Tables that store processed data of Mitre ATT&CK. -(full) means use complete words instead of extracting lemma of words -(xxxStemmer) means
-                        different tools used to extract lemma of words
+                        Tables that store processed data of Mitre ATT&CK. -(full) means use complete words instead of extracting lemma of words -(xxxStemmer) means different tools used to extract lemma of words
   -t TF_IDF, --tf_idf TF_IDF
                         Match single security rule by TF-IDF.
   -tn TF_IDF_NUMBER, --tf_idf_number TF_IDF_NUMBER

@@ -17,7 +17,7 @@ from tools.rank import show_tf_idf
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Match Security Rules to Mitre ATT&CK.")
-    parser.add_argument('-u', '--update', action='store', default=None, help='Download or Update data source.')
+    parser.add_argument('-u', '--update', action='store_true', help='Download or Update data source.')
     parser.add_argument('-l', '--lemma', action='store', default=True,
                         help='Extract lemma of words if True, else please choose False.')
     parser.add_argument('-a', '--attack', action='store', default=Config.OUTPUT_CSV + "mitre_data(PorterStemmer).csv",
@@ -47,7 +47,7 @@ def parse_arguments():
                         help='Show the first few results ranked depends on doc2vec.')
     parser.add_argument('-dt', '--doc2vec_test', action='store', default=None,
                         help='Test all files in directory of input.')
-    parser.add_argument('-dtm', '--doc2vec_test_model', action='store', default='Doc2Vec<dbow,d100,n5,mc10,t8>',
+    parser.add_argument('-dtm', '--doc2vec_test_model', action='store', default=1,
                         help='Choose one model to test.')
     # e.g.'Config.SECURITY_RULES_PATH + "/fy22_deliverable/rules/"'
     #     './security_rules/data/fy22_deliverable/rules/'
@@ -62,9 +62,6 @@ def parse_arguments():
 
 
 def check_arguments(args):
-    if not os.path.exists(Config.MITRE_ATTACK_DATA_PATH + "enterprise-attack"):
-        sys.exit('Error: You must Download or Update date source first, please input argument -u.')
-
     if args.update:
         try:
             _create_unverified_https_context = ssl._create_unverified_context
@@ -82,6 +79,9 @@ def check_arguments(args):
         update()
         # format_list: pd.DataFrame = format_data(False)  # lemma if True
         # format_list.to_csv(Config.OUTPUT_CSV + "mitre_data(full).csv", sep=',', index=False, header=True)
+
+    if not os.path.exists(Config.MITRE_ATTACK_DATA_PATH + "enterprise-attack"):
+        sys.exit('Error: You must Download or Update date source first, please input argument -u.')
 
     if not args.lemma:
         format_list: pd.DataFrame = pd.read_csv(Config.OUTPUT_CSV + "mitre_data(full).csv")
@@ -102,8 +102,7 @@ def check_arguments(args):
         if not os.path.exists(args.tf_idf_test):
             sys.exit('Error: Directory does not exist.')
         else:
-            test_all(args.tf_idf_test, 'tf-idf', format_list, 'Doc2Vec<dbow,d100,n5,mc10,t8>',
-                     int(args.tf_idf_test_number), args.lemma)
+            test_all(args.tf_idf_test, 'tf-idf', format_list, 1, int(args.tf_idf_test_number), args.lemma)
 
     if args.doc2vec:
         if not os.path.exists(args.doc2vec):
@@ -118,8 +117,8 @@ def check_arguments(args):
         if not os.path.exists(args.doc2vec_test):
             sys.exit('Error: Directory does not exist.')
         else:
-            test_all(args.doc2vec_test, 'doc2vec', format_list, args.doc2vec_test_model, int(args.doc2vec_test_number),
-                     False)  # lemma == False
+            test_all(args.doc2vec_test, 'doc2vec', format_list, int(args.doc2vec_test_model),
+                     int(args.doc2vec_test_number), False)  # lemma == False
 
     if args.prompt:
         results = score(args.prompt)
