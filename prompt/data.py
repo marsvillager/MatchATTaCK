@@ -31,14 +31,15 @@ def data2index(data_x, word2index, sememe2index, lexname2index, rootaffix2index,
 
 def load_data(frequency):
     print('Loading dataset...')
-    data_train = json.load(open(os.path.join(data_path, 'data_train.json')))
-    data_dev = json.load(open(os.path.join(data_path, 'data_dev.json')))
-    data_test_500_rand1_seen = json.load(open(os.path.join(data_path, 'data_test_500_rand1_seen.json')))
-    # data_test_500_others
-    data_test_500_rand1_unseen = json.load(open(os.path.join(data_path, 'data_test_500_rand1_unseen.json')))
-    data_defi_c = json.load(open(os.path.join(data_path, 'data_defi_c.json')))
-    data_desc_c = json.load(open(os.path.join(data_path, 'data_desc_c.json')))
-    lines = open(os.path.join(data_path, 'target_words.txt')).readlines()
+    data_train = json.load(open(os.path.join(data_path, 'data_train.json'), encoding='UTF-8'))
+    data_dev = json.load(open(os.path.join(data_path, 'data_dev.json'), encoding='UTF-8'))
+    data_test_500_rand1_seen = json.load(
+        open(os.path.join(data_path, 'data_test_500_rand1_seen.json'), encoding='UTF-8'))
+    data_test_500_rand1_unseen = json.load(
+        open(os.path.join(data_path, 'data_test_500_rand1_unseen.json'), encoding='UTF-8'))  # data_test_500_others
+    data_defi_c = json.load(open(os.path.join(data_path, 'data_defi_c.json'), encoding='UTF-8'))
+    data_desc_c = json.load(open(os.path.join(data_path, 'data_desc_c.json'), encoding='UTF-8'))
+    lines = open(os.path.join(data_path, 'target_words.txt'), encoding='UTF-8').readlines()
     target_words = [line.strip() for line in lines]
     label_size = len(target_words)+2
     print('target_words (include <PAD><OOV>): ', label_size)
@@ -58,7 +59,7 @@ def load_data(frequency):
     sememes_all = [line.strip() for line in lines]
     label_sememe_size = len(sememes_all)+1
     print('label_sememe_size: ', label_sememe_size)
-    vec_inuse = json.load(open(os.path.join(data_path, 'vec_inuse.json')))
+    vec_inuse = json.load(open(os.path.join(data_path, 'vec_inuse.json'), encoding='UTF-8'))
     vocab = list(vec_inuse)
     vocab_size = len(vocab)+2
     print('vocab (embeddings in use)(include <PAD><OOV>): ', vocab_size)
