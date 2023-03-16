@@ -21,7 +21,7 @@ def load_model():
 
     # 法一. 直接载入, 难移植, 易报错
     # 保存模型的时候保存了相对目录，要是在其它目录下调用，就会出现 ModuleNotFoundError: No module named 'model_en' 的问题
-    # model_en = torch.load('./prompt/website_RD/models/En.model', map_location=lambda storage, loc: storage)
+    # model_en = torch.load('./website_RD/models/En.model', map_location=lambda storage, loc: storage)
 
     # 法二. 载入网络参数
     word2index, index2word, word2vec, index2each, label_size_each, data_idx_each = load_data(20)
