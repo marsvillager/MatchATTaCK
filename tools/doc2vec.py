@@ -9,6 +9,11 @@ from tools.config import Config
 
 
 def build_document() -> list:
+    """
+    Build corpus for training doc2vec model in the format of TaggedDocument.
+
+    :return: TaggedDocument
+    """
     docs: list = []
 
     # Mitre ATT&CK
@@ -22,7 +27,13 @@ def build_document() -> list:
     return docs
 
 
-def train_model(docs: list) -> list:
+def train_model(docs: list) -> list[gensim.models.doc2vec.Doc2Vec]:
+    """
+    Train two kinds of doc2vec model: PV-DBOW and PV-DM.
+
+    :param docs: corpus used to train
+    :return: list[doc2vec model]
+    """
     cores = multiprocessing.cpu_count()
     simple_models: list[gensim.models.doc2vec.Doc2Vec] = [
         # PV-DBOW plain
@@ -53,6 +64,15 @@ def train_model(docs: list) -> list:
 
 
 def find_similar_words(all_models: list[gensim.models.doc2vec.Doc2Vec], word: str, topn: int) -> None:
+    """
+    Use model to find similar words, although in the method of Doc2Vec, actually call wv.most_similar, which is the
+    abbreviation of word2vec.
+
+    :param all_models: trained doc2vec models
+    :param word: target word
+    :param topn: number of displays
+    :return: None
+    """
     result: dict = dict()
     for model in all_models:
         result[str(model)] = model.wv.most_similar(word, topn=topn)
@@ -69,6 +89,13 @@ def find_similar_words(all_models: list[gensim.models.doc2vec.Doc2Vec], word: st
 
 
 def cal_cos(a_vect, b_vect) -> float:
+    """
+    Calculate the cosine similarity between two vectors.
+
+    :param a_vect: vector a
+    :param b_vect: vector b
+    :return: cosine similarity
+    """
     dot_val = 0.0
     a_norm = 0.0
     b_norm = 0.0
@@ -87,6 +114,14 @@ def cal_cos(a_vect, b_vect) -> float:
 
 
 def rank_by_vector(model: gensim.models.doc2vec.Doc2Vec, docs: list, security_rule: list) -> list:
+    """
+    Rank depends on the cosine similarity between target doc (security rule) and corpus (mitre att&ck).
+
+    :param model: trained doc2vec models
+    :param docs: corpus established previously
+    :param security_rule: target doc
+    :return: rank results
+    """
     inferred_vector = model.infer_vector(security_rule)
 
     vect_list: dict = {}
@@ -99,6 +134,15 @@ def rank_by_vector(model: gensim.models.doc2vec.Doc2Vec, docs: list, security_ru
 
 def find_closest_documents(all_models: list[gensim.models.doc2vec.Doc2Vec], docs: list, security_rule: list, topn: int)\
         -> dict:
+    """
+    Find the documents that has the closest meaning to the target documents.
+
+    :param all_models: trained doc2vec models
+    :param docs: corpus established previously
+    :param security_rule: target doc
+    :param topn: number of displays
+    :return: results of different models
+    """
     result: dict = dict()
 
     # PV-DBOW plain
@@ -115,6 +159,15 @@ def find_closest_documents(all_models: list[gensim.models.doc2vec.Doc2Vec], docs
 
 def show_closest_documents(all_models: list[gensim.models.doc2vec.Doc2Vec], docs: list, security_rule: list, topn: int)\
         -> None:
+    """
+    Show the documents that has the closest meaning to the target documents.
+
+    :param all_models: trained doc2vec models
+    :param docs: corpus established previously
+    :param security_rule: target doc
+    :param topn: number of displays
+    :return: None
+    """
     pd.set_option('expand_frame_repr', False)
     # show all columns
     pd.set_option('display.max_columns', None)
