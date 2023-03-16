@@ -169,7 +169,7 @@ def get_class2class(r, score):
     return class2class
 
 
-def score(description):
+def score(description: str):
     model_en = load_model()
     mode_en = Config.MODE_en
     wd_data_en, wd_defi_en = process_data()
