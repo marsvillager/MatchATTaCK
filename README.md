@@ -49,14 +49,26 @@ optional arguments:
 ```
 
 - **Match**
+  
   - *tf-idf*   `python main.py [-t path] [-tn number]` 
-  - *Doc2vec*   `python main.py [-d path] [-dn number]` 
 
+    ![image-20230317093758063](https://github.com/marsvillager/pictures_for_markdown/raw/main/image-20230317093758063.png)
+  
+  - *Doc2vec*   `python main.py [-d path] [-dn number]` 
+  
+    ![image-20230317093832954](https://github.com/marsvillager/pictures_for_markdown/raw/main/image-20230317093832954.png)
+  
 - **Test**
   - *tf-idf*  `python main.py [-tt directory] [-ttn number]`
+  
+    ![image-20230317093847609](https://github.com/marsvillager/pictures_for_markdown/raw/main/image-20230317093847609.png)
   - *Doc2vec*   `python main.py [-dt directory] [-dtn number] [-dtm model]`
-
+  
+    ![image-20230317093912052](https://github.com/marsvillager/pictures_for_markdown/raw/main/image-20230317093912052.png))
+  
 - **Prompt**  `python main.py [-p description]`
+
+  ![image-20230317093944986](https://github.com/marsvillager/pictures_for_markdown/raw/main/image-20230317093944986.png)
 
 ## Global TWO
 
@@ -103,3 +115,47 @@ class Config:
 >
 > - *SECURITY_RULES_PROP: match properties of Security Rules*
 > - *GET_NUM: return number of prompt words*
+
+# Process Mitre Data(optional)
+
+**Processed cvs files locate in `./mitre_attack/data/`**:
+
+- no lemma
+  - mitre_data(full).csv
+- lemma
+  - mitre_data(LancasterStemmer).csv
+  - mitre_data(PorterStemmer).csv
+  - mitre_data(SnowballStemmer).csv
+
+If you want to use this code to archieve self-defined data, more preparatory work will be necessary:
+
+- **java** environment
+
+- **postagger tools** 
+
+  - usage: [nltk和stanford nlp](https://blog.csdn.net/lizzy05/article/details/88148097)
+  - download from website [The Stanford Natural Language Processing Group](https://nlp.stanford.edu/software/tagger.html)
+  - or `wget https://nlp.stanford.edu/software/stanford-tagger-4.2.0.zip`
+
+- **memory** problem
+
+  - warning: `Exception in thread "main" java.lang.OutOfMemoryError: Java heap space`
+
+    - ```python
+          # \nltk\tag\stanford.py
+          def __init__(
+              self,
+              model_filename,
+              path_to_jar=None,
+              encoding="utf8",
+              verbose=False,
+              java_options="-mx1000m",
+          ):
+      ```
+
+  - change java_options in the way of pass arument
+
+    - ```python
+      st = StanfordPOSTagger(Config.POS_TAGGER_PATH, path_to_jar=Config.STANFORD_POSTAGGER_JAR_PATH, java_options="-Xmx8G")
+      ```
+
