@@ -77,11 +77,18 @@ def check_arguments(args):
 
         # mitre att&ck
         update()
-        # format_list: pd.DataFrame = format_data(False)  # lemma if True
+        # format_list: pd.DataFrame = format_data(bool(args.lemma))  # lemma if True
         # format_list.to_csv(Config.OUTPUT_CSV + "mitre_data(full).csv", sep=',', index=False, header=True)
 
     if not os.path.exists(Config.MITRE_ATTACK_DATA_PATH + "enterprise-attack"):
         sys.exit('Error: You must Download or Update date source first, please input argument -u.')
+
+    if args.lemma == 'True':
+        args.lemma: bool = True
+    elif args.lemma == 'False':
+        args.lemma: bool = False
+    else:
+        sys.exit('Error: Wrong parameter of lemma.')
 
     if not args.lemma:
         format_list: pd.DataFrame = pd.read_csv(Config.OUTPUT_CSV + "mitre_data(full).csv")
