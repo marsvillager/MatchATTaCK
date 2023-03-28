@@ -3,6 +3,7 @@ import pandas as pd
 
 from tools.clean_data import tokenize
 from tools.TF_IDF import TfIdf
+from tools.config import Config
 
 
 def get_id_list(keywords: set[str], mitre_list: pd.DataFrame) -> list[str]:
@@ -59,40 +60,47 @@ def tf_idf(keywords: set[str], mitre_list: pd.DataFrame) -> list[tuple]:
     words_all: list[str] = []
     for i in range(mitre_list.shape[0]):
         names: list[str] = tokenize(mitre_list.loc[i, "name"])
-        for name in names:
-            words_all.append(name)
+        if str(names) != 'nan':
+            for name in names:
+                words_all.append(name)
 
         descriptions: list[str] = tokenize(mitre_list.loc[i, "description"])
-        for description in descriptions:
-            words_all.append(description)
+        if str(descriptions) != 'nan':
+            for description in descriptions:
+                words_all.append(description)
 
         detects: list[str] = tokenize(mitre_list.loc[i, "detects"])
-        for detect in detects:
-            words_all.append(detect)
+        if str(detects) != 'nan':
+            for detect in detects:
+                words_all.append(detect)
 
     # single
     for i in range(mitre_list.shape[0]):
-        words: list[str] = tokenize(mitre_list.loc[i, "name"]) + \
-                           tokenize(mitre_list.loc[i, "description"]) + \
-                           tokenize(mitre_list.loc[i, "detects"])
+        words: list[str] = [word for word in tokenize(mitre_list.loc[i, "name"]) if word != 'nan'] + \
+                           [word for word in tokenize(mitre_list.loc[i, "description"]) if word != 'nan'] + \
+                           [word for word in tokenize(mitre_list.loc[i, "detects"]) if word != 'nan']
 
         mitre_item = TfIdf()
         mitre_item.setter(words, mitre_list.shape[0], words_all)
 
+        # fix: the total number of mitre_item, that is term_num is too small
+        if len(words) < Config.ADJUST_TF:
+            mitre_item.term_num = Config.ADJUST_TF
+
         weight: float = 0
         pass_words: list[str] = []
+        # print(mitre_list.loc[i, "id"])
         for keyword in keywords:
             tf: float = mitre_item.term[keyword]/mitre_item.term_num
 
             if tf != 0:
                 pass_words.append(keyword)
-                weight += tf * (math.log((mitre_item.doc_num + 1)/(mitre_item.term_all[keyword] + 1)) + 1)
-
-                # 单个输出测试
-                # if mitre_list.loc[i, "id"] == 'T1078.003':
-                #     print(keyword)
-                #     print(mitre_item.term[keyword])
-                #     print(tf * (math.log((mitre_item.doc_num + 1) / (mitre_item.term_all[keyword] + 1)) + 1))
+                idf: float = math.log((mitre_item.doc_num + 1)/(mitre_item.term_all[keyword] + 1)) + 1
+                # print("keyword: " + keyword +
+                #       " word: " + str(mitre_item.term[keyword]) + " words: " + str(mitre_item.term_num) +
+                #       " docs: " + str(mitre_item.doc_num) + " doc: " + str(mitre_item.term_all[keyword] + 1) +
+                #       " tf: " + str(tf) + "  idf: " + str(idf))
+                weight += tf * idf
 
         tf_idf_result[mitre_list.loc[i, "id"]] = [weight, pass_words]
 

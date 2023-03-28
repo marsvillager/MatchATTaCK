@@ -34,4 +34,6 @@ class Config:
 
     GET_NUM = 500
 
+    ADJUST_TF = 70
+
     PROMPT_RESOURCE_PATH = BASE_DIR + "/prompt/resources/"
