@@ -1,0 +1,67 @@
+(venv) xuyi@xuyideMBP MatchATTaCK % python main.py -l False -tt './security_rules/data/fy23_deliverable/rules/' -ttn 10
+1/14
+./security_rules/data/fy23_deliverable/rules/15704_PrivilegedLoginFailureHirschmannSwitch.yml
+未打标
+
+2/14
+./security_rules/data/fy23_deliverable/rules/15703_PrivilegedLoginHirschmannSwitch.yml
+未打标
+
+3/14
+./security_rules/data/fy23_deliverable/rules/15701_LoginHirschmannSwitch_UPDATE.yml
+未打标
+
+4/14
+./security_rules/data/fy23_deliverable/rules/15740_MacAddressOverflowHirschmannSwitch.yml
+未打标
+
+5/14
+./security_rules/data/fy23_deliverable/rules/15710_ConfigurationErrorHirschmannSwitch.yml
+未打标
+
+6/14
+./security_rules/data/fy23_deliverable/rules/15694_ApplicationInstallationLinuxRedHat.yml
+['attack.enterprise.T1543']
+tags of security rules: T1543
+keywords: linux, operation, instal, hat, installation, application
+top 10 of match results: T1443, T1546.016, T1418.001, T1116, T0827, T1010, T1407, T1053.001, T1437, T1508
+[['application'], ['linux', 'instal', 'installation', 'application'], ['instal', 'application'], ['linux', 'operation'], ['operation', 'installation'], ['operation', 'application'], ['installation', 'application'], ['linux'], ['application'], ['application']]
+
+
+7/14
+./security_rules/data/fy23_deliverable/rules/15410_EsxiHighCpuUsage.yml
+未打标
+
+8/14
+./security_rules/data/fy23_deliverable/rules/15722_LogErrorHirschmannSwitch.yml
+未打标
+
+9/14
+./security_rules/data/fy23_deliverable/rules/15702_LoginFailureHirschmannSwitch.yml
+未打标
+
+10/14
+./security_rules/data/fy23_deliverable/rules/15730_UsbAttachedHirschmannSwitch.yml
+未打标
+
+11/14
+./security_rules/data/fy23_deliverable/rules/15693_ApplicationRemovalLinuxRedHat.yml
+未打标
+
+12/14
+./security_rules/data/fy23_deliverable/rules/15403_EsxiFailedSshLogin.yml
+未打标
+
+13/14
+./security_rules/data/fy23_deliverable/rules/15723_LogEmptyHirschmannSwitch.yml
+未打标
+
+14/14
+./security_rules/data/fy23_deliverable/rules/15420_EsxiNetworkHighConsumption.yml
+未打标
+
+all tests: 14
+actual tests: 14
+tag tests: 1
+pass: 0
+run time: 27.610025709000002s ≈ 00:00:27

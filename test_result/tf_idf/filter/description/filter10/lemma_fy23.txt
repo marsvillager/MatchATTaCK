@@ -1,0 +1,67 @@
+(venv) xuyi@xuyideMBP MatchATTaCK % python main.py -tt './security_rules/data/fy23_deliverable/rules/' -ttn 10
+1/14
+./security_rules/data/fy23_deliverable/rules/15704_PrivilegedLoginFailureHirschmannSwitch.yml
+未打标
+
+2/14
+./security_rules/data/fy23_deliverable/rules/15703_PrivilegedLoginHirschmannSwitch.yml
+未打标
+
+3/14
+./security_rules/data/fy23_deliverable/rules/15701_LoginHirschmannSwitch_UPDATE.yml
+未打标
+
+4/14
+./security_rules/data/fy23_deliverable/rules/15740_MacAddressOverflowHirschmannSwitch.yml
+未打标
+
+5/14
+./security_rules/data/fy23_deliverable/rules/15710_ConfigurationErrorHirschmannSwitch.yml
+未打标
+
+6/14
+./security_rules/data/fy23_deliverable/rules/15694_ApplicationInstallationLinuxRedHat.yml
+['attack.enterprise.T1543']
+tags of security rules: T1543
+keywords: damag, system, linux, rule, instal, attack, dpkg, applic, hat, oper, persist, object, situat
+top 10 of match results: T1122, T0827, T1154, T1546.015, T0880, T1546.005, T1546.016, T0832, T0837, T1053.001
+[['system', 'oper', 'persist', 'object'], ['damag', 'system', 'instal', 'attack', 'oper'], ['persist', 'situat'], ['system', 'attack', 'applic', 'oper', 'persist', 'object'], ['damag', 'system', 'attack', 'oper'], ['persist', 'situat'], ['system', 'linux', 'instal', 'attack', 'applic', 'persist'], ['system', 'oper', 'situat'], ['damag', 'system', 'attack', 'oper'], ['system', 'linux', 'attack', 'persist']]
+
+
+7/14
+./security_rules/data/fy23_deliverable/rules/15410_EsxiHighCpuUsage.yml
+未打标
+
+8/14
+./security_rules/data/fy23_deliverable/rules/15722_LogErrorHirschmannSwitch.yml
+未打标
+
+9/14
+./security_rules/data/fy23_deliverable/rules/15702_LoginFailureHirschmannSwitch.yml
+未打标
+
+10/14
+./security_rules/data/fy23_deliverable/rules/15730_UsbAttachedHirschmannSwitch.yml
+未打标
+
+11/14
+./security_rules/data/fy23_deliverable/rules/15693_ApplicationRemovalLinuxRedHat.yml
+未打标
+
+12/14
+./security_rules/data/fy23_deliverable/rules/15403_EsxiFailedSshLogin.yml
+未打标
+
+13/14
+./security_rules/data/fy23_deliverable/rules/15723_LogEmptyHirschmannSwitch.yml
+未打标
+
+14/14
+./security_rules/data/fy23_deliverable/rules/15420_EsxiNetworkHighConsumption.yml
+未打标
+
+all tests: 14
+actual tests: 14
+tag tests: 1
+pass: 0
+run time: 27.301282709000002s ≈ 00:00:27

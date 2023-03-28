@@ -1,0 +1,1224 @@
+(venv) xuyi@xuyideMBP MatchATTaCK % python main.py -tt './security_rules/data/osa_rules/' -ttn 10
+
+1/241
+./security_rules/data/osa_rules/05015_IP_Scan_(ARP).yml
+未打标
+
+2/241
+./security_rules/data/osa_rules/05072_DNP_3_0_Reset_Function_Command.yml
+未打标
+
+3/241
+./security_rules/data/osa_rules/00840_WAN_Traffic_PPPoE.yml
+未打标
+
+4/241
+./security_rules/data/osa_rules/00878_S7Comm_Get_PLC_status_STOP.yml
+未打标
+
+5/241
+./security_rules/data/osa_rules/05087_TELNET_Bruteforcing.yml
+未打标
+
+6/241
+./security_rules/data/osa_rules/00891_SMBv1_DoublePulsar_Deliver_Payload.yml
+['attack.ics.T0866', 'attack.enterprise.T1210']
+tags of security rules: T0866, T1210
+keywords: host, attack, dst, vulner, payload, network, prompt, event, src, monitor, window, doublepulsar, smbv1, doubleplusar
+top 10 of match results: T1070.001, T0866, T1588.006, T1218.007, T1546.003, T1423, T1547.007, T1612, T1595.002, T1405
+[['attack', 'event', 'monitor', 'window'], ['vulner', 'payload', 'network', 'smbv1'], ['attack', 'vulner', 'monitor'], ['host', 'payload', 'network', 'event', 'monitor', 'window'], ['host', 'attack', 'event', 'monitor', 'window'], ['host', 'vulner', 'network'], ['attack', 'payload', 'prompt', 'monitor', 'window'], ['host', 'attack', 'network', 'monitor'], ['host', 'attack', 'vulner', 'network', 'monitor'], ['attack', 'vulner']]
+pass
+
+
+7/241
+./security_rules/data/osa_rules/05042_S7Comm_PLC_Program_Command_VarTab.yml
+未打标
+
+8/241
+./security_rules/data/osa_rules/01514_Suspicious_LDAP_Attributes_Used.yml
+未打标
+
+9/241
+./security_rules/data/osa_rules/05024_Vulnerability_Scan_TFTP_Access.yml
+['attack.enterprise.T1595.002']
+tags of security rules: T1595.002
+keywords: access, host, transfer, file, client, tftp, use, control, help, user, server, vulner, network, src, target, behavior, comput, scan, model, connect, data, architectur, indic, protocol, ftp
+top 10 of match results: T1071.002, T1105, T1048.003, T1554, T1132, T1542.005, T1132.001, T1570, T1595.002, T1132.002
+[['transfer', 'file', 'client', 'tftp', 'use', 'control', 'server', 'network', 'connect', 'data', 'protocol', 'ftp'], ['host', 'transfer', 'file', 'client', 'tftp', 'use', 'control', 'server', 'network', 'connect', 'data', 'protocol', 'ftp'], ['host', 'file', 'use', 'control', 'server', 'network', 'connect', 'data', 'protocol', 'ftp'], ['access', 'host', 'file', 'client', 'use', 'user', 'server', 'target', 'ftp'], ['client', 'use', 'control', 'server', 'network', 'behavior', 'data', 'protocol'], ['transfer', 'file', 'tftp', 'use', 'control', 'server', 'network', 'target', 'behavior', 'connect', 'protocol'], ['client', 'use', 'control', 'server', 'network', 'behavior', 'data', 'protocol'], ['access', 'host', 'transfer', 'file', 'use', 'network', 'connect', 'data', 'protocol', 'ftp'], ['access', 'host', 'file', 'use', 'server', 'vulner', 'network', 'target', 'scan', 'connect', 'data', 'protocol'], ['client', 'use', 'control', 'server', 'network', 'behavior', 'data', 'protocol']]
+pass
+
+
+10/241
+./security_rules/data/osa_rules/00861_PN_DCP_scan_specified_device.yml
+未打标
+
+11/241
+./security_rules/data/osa_rules/01513_SAM_Registry_Hive_Handle_Request.yml
+未打标
+
+12/241
+./security_rules/data/osa_rules/08007_Attempted_Denial_of_Service.yml
+未打标
+
+13/241
+./security_rules/data/osa_rules/01509_Active_Directory_Replication_from_Non_Machine_Account.yml
+未打标
+
+14/241
+./security_rules/data/osa_rules/00939_Registry_Modified_on_Windows.yml
+未打标
+
+15/241
+./security_rules/data/osa_rules/00893_WannaCry_Kill_Switch_DNS.yml
+['attack.enterprise.T1497']
+tags of security rules: T1497
+keywords: leak, run, call, eternalblu, host, attack, patch, encrypt, ransomwar, switch, state, cyberattack, month, window, organ, microsoft, system, cryptocurr, nsa, group, releas, agenc, dn, payment, src, target, shadow, behavior, comput, broker, bitcoin, life, malwar, wannacri, develop, data, secur, indic, cryptoworm, ransom, end, kill
+top 10 of match results: T0872, T1027.005, T1614.001, T1510, T1596.001, T1446, T1584.002, T1641.001, T1588.001, T1069.001
+[['host', 'attack', 'window', 'system', 'malwar', 'data', 'indic'], ['system', 'target', 'malwar', 'secur', 'indic'], ['call', 'host', 'attack', 'ransomwar', 'window', 'system', 'agenc', 'target', 'behavior', 'malwar', 'develop', 'data'], ['run', 'attack', 'cryptocurr', 'releas', 'target', 'behavior', 'bitcoin'], ['leak', 'host', 'attack', 'organ', 'dn', 'target', 'data'], ['payment', 'malwar', 'ransom'], ['attack', 'organ', 'system', 'dn', 'target', 'shadow', 'behavior', 'data'], ['run', 'attack', 'system', 'cryptocurr', 'releas', 'target', 'behavior', 'bitcoin', 'data'], ['organ', 'group', 'target', 'behavior', 'malwar', 'develop', 'data'], ['call', 'attack', 'window', 'system', 'group']]
+
+
+16/241
+./security_rules/data/osa_rules/05041_S7Comm_PLC_Write_Var.yml
+未打标
+
+17/241
+./security_rules/data/osa_rules/00955_Unauthorized_USB_storage_connected.yml
+未打标
+
+18/241
+./security_rules/data/osa_rules/00937_Log_Full_on_Windows.yml
+未打标
+
+19/241
+./security_rules/data/osa_rules/01523_DNS_Server_Error_Failed_Loading_the_ServerLevelPluginDLL.yml
+未打标
+
+20/241
+./security_rules/data/osa_rules/05079_DNP_3_0_Outstation_Data_Reset_Command.yml
+未打标
+
+21/241
+./security_rules/data/osa_rules/00875_S7Comm_PLC_warm_START.yml
+['attack.ics.T0858', 'attack.ics.T0816']
+tags of security rules: T0858, T0816
+keywords: host, plc, dst, start, network, prompt, event, src, s7comm, oper
+top 10 of match results: T0885, T0835, T1514, T0877, T1046, T1141, T0845, T0841, T1027.005, T0801
+[['host', 'network', 's7comm'], ['plc'], ['prompt', 'oper'], ['plc'], ['host', 'network', 'event', 'oper'], ['prompt'], ['plc', 'network', 'oper'], ['plc', 'network'], ['network', 'event', 'oper'], ['plc', 'network']]
+
+
+22/241
+./security_rules/data/osa_rules/01522_Password_Dumper_Activity_on_LSASS.yml
+未打标
+
+23/241
+./security_rules/data/osa_rules/08100_CDC_Threat_Intelligence_Detected.yml
+未打标
+
+24/241
+./security_rules/data/osa_rules/00872_Reflective_SNMP_DOS.yml
+未打标
+
+25/241
+./security_rules/data/osa_rules/00928_Account_Enabled_on_Windows.yml
+未打标
+
+26/241
+./security_rules/data/osa_rules/01501_Active_Directory_User_Backdoors.yml
+未打标
+
+27/241
+./security_rules/data/osa_rules/05076_DNP_3_0_Transport_Sequence_Modification.yml
+未打标
+
+28/241
+./security_rules/data/osa_rules/00957_USB_Device_connected.yml
+未打标
+
+29/241
+./security_rules/data/osa_rules/05084_DNP_3_0_Breaker_Repeated_Operation.yml
+未打标
+
+30/241
+./security_rules/data/osa_rules/00932_Password_Changed_on_Windows.yml
+未打标
+
+31/241
+./security_rules/data/osa_rules/05078_DNP_3_0_Clear_Data_Object_Command.yml
+未打标
+
+32/241
+./security_rules/data/osa_rules/08015_Executable_code_was_detected.yml
+未打标
+
+33/241
+./security_rules/data/osa_rules/00863_S7Comm_Download_PLC_configuration.yml
+['operation.local', 'attack.ics.T0843']
+tags of security rules: T0843
+keywords: access, command, plc, logic, scada, purpos, host, dst, download, commun, control, system, help, user, s7, famili, network, src, program, target, s7comm, exchang, acquisit, data, indic, protocol, configur, oper
+top 10 of match results: T0845, T1048.002, T1602, T1041, T0889, T1048.001, T0843, T1048.003, T1027.005, T1011.001
+[['plc', 'logic', 'commun', 'user', 'network', 'program', 'target', 'data', 'indic', 'protocol', 'oper'], ['command', 'host', 'commun', 'control', 'network', 'exchang', 'data', 'protocol'], ['access', 'host', 'control', 'system', 'network', 'target', 'data', 'protocol', 'configur'], ['command', 'host', 'commun', 'control', 'network', 'data', 'protocol'], ['logic', 'host', 'download', 'control', 'network', 'program', 'data', 'protocol'], ['command', 'host', 'commun', 'control', 'network', 'exchang', 'data', 'protocol'], ['download', 'control', 'system', 'user', 'program', 'protocol', 'configur'], ['command', 'host', 'commun', 'control', 'network', 'data', 'protocol'], ['system', 'network', 'target', 'indic', 'oper'], ['access', 'command', 'host', 'commun', 'control', 'network', 'data', 'protocol']]
+pass
+
+
+34/241
+./security_rules/data/osa_rules/08037_Device_Retrieving_External_IP_Address_Detected.yml
+未打标
+
+35/241
+./security_rules/data/osa_rules/00902_Software_Install_on_Windows.yml
+未打标
+
+36/241
+./security_rules/data/osa_rules/00845_RDP.yml
+未打标
+
+37/241
+./security_rules/data/osa_rules/00929_Privilege_Assigned_on_Windows.yml
+未打标
+
+38/241
+./security_rules/data/osa_rules/05104_S7comm_Set_Clock.yml
+未打标
+
+39/241
+./security_rules/data/osa_rules/00811_S7Comm_Upload_PLC_configuration.yml
+['operation.local', 'attack.ics.T0845']
+tags of security rules: T0845
+keywords: access, command, plc, upload, logic, scada, purpos, host, dst, commun, control, system, help, user, s7, famili, src, program, target, s7comm, exchang, acquisit, data, indic, protocol, configur, oper
+top 10 of match results: T0845, T1602, T1048.002, T1041, T0835, T1104, T0877, T0833, T1048.001, T1027.005
+[['plc', 'upload', 'logic', 'commun', 'user', 'program', 'target', 'data', 'indic', 'protocol', 'oper'], ['access', 'host', 'control', 'system', 'target', 'data', 'protocol', 'configur'], ['command', 'host', 'commun', 'control', 'exchang', 'data', 'protocol'], ['command', 'host', 'commun', 'control', 'data', 'protocol'], ['plc', 'logic', 'user', 'program', 'data'], ['access', 'command', 'upload', 'host', 'commun', 'control', 'system', 'data'], ['access', 'plc', 'logic', 'user', 'program', 'data'], ['access', 'command', 'logic', 'host', 'commun', 'control', 'system', 's7', 'program', 'target', 'data', 'configur'], ['command', 'host', 'commun', 'control', 'exchang', 'data', 'protocol'], ['system', 'target', 'indic', 'oper']]
+pass
+
+
+40/241
+./security_rules/data/osa_rules/00880_PN_DCP_device_IP_changed.yml
+['attack.ics.T0826']
+tags of security rules: T0826
+keywords: dcp, pn, chang, network, prompt, event, profinet, monitor, behavior, ip, asset, devic, oper
+top 10 of match results: T0864, T0800, T0891, T0889, T1601.002, T0845, T1402, T0857, T0871, T0861
+[['chang', 'network', 'monitor', 'ip', 'asset', 'devic'], ['network', 'monitor', 'asset', 'devic', 'oper'], ['chang', 'network', 'monitor', 'asset', 'devic', 'oper'], ['chang', 'network', 'event', 'monitor', 'asset', 'devic'], ['chang', 'network', 'monitor', 'behavior', 'devic'], ['network', 'monitor', 'asset', 'devic', 'oper'], ['chang', 'network', 'event', 'behavior', 'devic'], ['chang', 'network', 'monitor', 'behavior', 'asset', 'devic'], ['event', 'monitor', 'behavior', 'devic'], ['chang', 'monitor', 'asset', 'devic', 'oper']]
+
+
+41/241
+./security_rules/data/osa_rules/00204_New_APP_Flow.yml
+未打标
+
+42/241
+./security_rules/data/osa_rules/00885_QQ_Wechat_Weibo_(Social_Media).yml
+['attack.enterprise.T585.001', 'attack.ics.T0883']
+tags of security rules: T585.001, T0883
+keywords: host, qq, network, prompt, event, medium, src, monitor, wechat, commun, weibo
+top 10 of match results: T1092, T1011, T1052, T1104, T1102.003, T1612, T1041, T1438, T1481.003, T1102
+[['host', 'network', 'medium', 'commun'], ['network', 'medium', 'monitor', 'commun'], ['network', 'medium', 'monitor'], ['host', 'network', 'monitor', 'commun'], ['host', 'network', 'medium', 'monitor', 'commun'], ['host', 'network', 'monitor', 'commun'], ['host', 'network', 'monitor', 'commun'], ['network', 'medium'], ['host', 'network', 'medium', 'commun'], ['host', 'network', 'medium', 'monitor', 'commun']]
+
+
+43/241
+./security_rules/data/osa_rules/00887_S7Comm_Get_PLC_status.yml
+未打标
+
+44/241
+./security_rules/data/osa_rules/01527_Admin_User_Remote_Logon.yml
+未打标
+
+45/241
+./security_rules/data/osa_rules/05083_DNP_3_0_Power_Outrage_Interception.yml
+未打标
+
+46/241
+./security_rules/data/osa_rules/08043_Malware_Command_and_Control_Activity_Detected.yml
+未打标
+
+47/241
+./security_rules/data/osa_rules/08024_Detection_of_a_Denial_of_Service_Attack.yml
+未打标
+
+48/241
+./security_rules/data/osa_rules/00899_SMBv1_EternalBlue_Exploit.yml
+['attack.ics.T0866', 'attack.enterprise.T1210']
+tags of security rules: T0866, T1210
+keywords: host, attack, dst, vulner, network, prompt, event, src, monitor, window, eternalblu, smbv1
+top 10 of match results: T1070.001, T1588.006, T1546.003, T1423, T1612, T1595.002, T1405, T1010, T1084, T1046
+[['attack', 'event', 'monitor', 'window'], ['attack', 'vulner', 'monitor'], ['host', 'attack', 'event', 'monitor', 'window'], ['host', 'vulner', 'network'], ['host', 'attack', 'network', 'monitor'], ['host', 'attack', 'vulner', 'network', 'monitor'], ['attack', 'vulner'], ['network', 'event', 'monitor', 'window'], ['event', 'window'], ['host', 'vulner', 'network', 'event', 'monitor']]
+
+
+49/241
+./security_rules/data/osa_rules/08016_A_suspicious_string_was_detected.yml
+未打标
+
+50/241
+./security_rules/data/osa_rules/08018_An_attempted_login_using_a_suspicious_username_was_detected.yml
+未打标
+
+51/241
+./security_rules/data/osa_rules/08023_Detection_of_a_Network_Scan.yml
+未打标
+
+52/241
+./security_rules/data/osa_rules/05105_S7comm_Unsubscribe_Cyclic_Services.yml
+未打标
+
+53/241
+./security_rules/data/osa_rules/08026_Generic_Protocol_Command_Decode.yml
+未打标
+
+54/241
+./security_rules/data/osa_rules/08039_Possibly_Unwanted_Program_Detected.yml
+未打标
+
+55/241
+./security_rules/data/osa_rules/05101_S7comm_Set_Password.yml
+未打标
+
+56/241
+./security_rules/data/osa_rules/05003_OMS_Download_PLC_configuration_program.yml
+未打标
+
+57/241
+./security_rules/data/osa_rules/01526_SCM_Database_Handle_Failure.yml
+未打标
+
+58/241
+./security_rules/data/osa_rules/01507_COMPlus_ETWEnabled_Registry_Modification.yml
+未打标
+
+59/241
+./security_rules/data/osa_rules/08036_Exploit_Kit_Activity_Detected.yml
+未打标
+
+60/241
+./security_rules/data/osa_rules/00920_Failed_Logon_Attempt_on_Windows.yml
+未打标
+
+61/241
+./security_rules/data/osa_rules/01512_WCE_wceaux_dll_Access.yml
+未打标
+
+62/241
+./security_rules/data/osa_rules/00881_PN_DCP_device_name_changed.yml
+['attack.ics.T0849']
+tags of security rules: T0849
+keywords: name, dcp, pn, chang, network, prompt, event, profinet, monitor, behavior, asset, devic, oper
+top 10 of match results: T0800, T0864, T0891, T0889, T1601.002, T1633.001, T0845, T1402, T0857, T0871
+[['network', 'monitor', 'asset', 'devic', 'oper'], ['chang', 'network', 'monitor', 'asset', 'devic'], ['chang', 'network', 'monitor', 'asset', 'devic', 'oper'], ['chang', 'network', 'event', 'monitor', 'asset', 'devic'], ['chang', 'network', 'monitor', 'behavior', 'devic'], ['name', 'chang', 'network', 'behavior', 'devic'], ['network', 'monitor', 'asset', 'devic', 'oper'], ['chang', 'network', 'event', 'behavior', 'devic'], ['chang', 'network', 'monitor', 'behavior', 'asset', 'devic'], ['event', 'monitor', 'behavior', 'devic']]
+
+
+63/241
+./security_rules/data/osa_rules/08021_A_Network_Trojan_was_detected.yml
+未打标
+
+64/241
+./security_rules/data/osa_rules/05093_IEC_60870_5_104_Dos_Flooding_Attack.yml
+未打标
+
+65/241
+./security_rules/data/osa_rules/05062_IEC_61850_Goose_Replay_Attack.yml
+未打标
+
+66/241
+./security_rules/data/osa_rules/08041_Possible_Social_Engineering_Attempted.yml
+未打标
+
+67/241
+./security_rules/data/osa_rules/00854_Insecure_SSL_TLS_Ciphers.yml
+['attack.enterprise.T1573']
+tags of security rules: T1573
+keywords: host, vulner, ssl, network, prompt, use, event, src, cipher, tl
+top 10 of match results: T1001.003, T1463, T1481.003, T1481, T1048.002, T1102, T1102.003, T1030, T1481.001, T1423
+[['ssl', 'network', 'use', 'tl'], ['vulner', 'ssl', 'network', 'tl'], ['host', 'ssl', 'network', 'use', 'tl'], ['host', 'ssl', 'network', 'use', 'tl'], ['host', 'ssl', 'network', 'use', 'tl'], ['host', 'ssl', 'network', 'use', 'tl'], ['host', 'ssl', 'network', 'use', 'tl'], ['host', 'ssl', 'network', 'use', 'tl'], ['host', 'ssl', 'network', 'use', 'tl'], ['host', 'vulner', 'network']]
+
+
+68/241
+./security_rules/data/osa_rules/00870_DNS_query_flooding.yml
+['attack.enterprise.T1499', 'attack.enterprise.T1498.001', 'attack.ics.T0814']
+tags of security rules: T1499, T1498.001, T0814
+keywords: host, server, dn, attack, queri, traffic, client, network, launch, flood, src, target, type, request
+top 10 of match results: T1498.001, T1554, T1498.002, T1612, T1583.002, T1596.001, T1499.002, T1584.002, T1568.001, T1499.003
+[['host', 'attack', 'traffic', 'client', 'network', 'flood', 'target'], ['host', 'server', 'client', 'target', 'type'], ['host', 'server', 'dn', 'attack', 'traffic', 'network', 'flood', 'target', 'type', 'request'], ['host', 'server', 'attack', 'traffic', 'network', 'request'], ['server', 'dn', 'attack', 'traffic', 'target'], ['host', 'server', 'dn', 'attack', 'queri', 'network', 'target'], ['host', 'server', 'attack', 'traffic', 'client', 'network', 'flood', 'target', 'type', 'request'], ['server', 'dn', 'attack', 'queri', 'traffic', 'network', 'target'], ['host', 'server', 'dn', 'traffic', 'client', 'network', 'request'], ['host', 'server', 'attack', 'traffic', 'network', 'flood', 'target', 'type', 'request']]
+pass
+
+
+69/241
+./security_rules/data/osa_rules/00935_Firewall_Rule_Deleted_on_Windows.yml
+['operation.local', 'attack.enterprise.T1599']
+tags of security rules: T1599
+keywords: list, host, firewal, rule, chang, datasrcip, prompt, event, monitor, behavior, window, except, oper
+top 10 of match results: T1562.007, T1562.004, T1010, T1070.007, T1063, T1562, T1518, T1518.001, T1070.001, T1054
+[['firewal', 'rule', 'chang', 'event', 'monitor', 'window'], ['firewal', 'rule', 'chang', 'event', 'monitor', 'window'], ['list', 'event', 'monitor', 'behavior', 'window', 'oper'], ['host', 'firewal', 'rule', 'chang', 'monitor', 'behavior', 'window', 'oper'], ['list', 'firewal', 'rule', 'behavior', 'window'], ['host', 'firewal', 'rule', 'chang', 'event', 'monitor', 'behavior', 'window', 'except'], ['list', 'firewal', 'rule', 'monitor', 'behavior'], ['list', 'firewal', 'rule', 'monitor', 'behavior'], ['event', 'monitor', 'window'], ['host', 'firewal', 'rule', 'event', 'window']]
+
+
+70/241
+./security_rules/data/osa_rules/08027_Access_to_a_potentially_vulnerable_web_application.yml
+未打标
+
+71/241
+./security_rules/data/osa_rules/00936_Audit_Log_Cleared_on_Windows.yml
+未打标
+
+72/241
+./security_rules/data/osa_rules/01502_DHCP_Server_Loaded_the_CallOut_DLL.yml
+未打标
+
+73/241
+./security_rules/data/osa_rules/01521_Access_to_ADMIN_Share.yml
+未打标
+
+74/241
+./security_rules/data/osa_rules/00898_SMBv1_EternalBlue_Exists.yml
+['attack.ics.T0866', 'attack.enterprise.T1210']
+tags of security rules: T0866, T1210
+keywords: host, vulner, network, prompt, event, src, monitor, window, eternalblu, smbv1
+top 10 of match results: T1070.001, T1423, T1588.006, T1010, T1546.003, T1084, T1046, T0866, T1595.002, T0889
+[['event', 'monitor', 'window'], ['host', 'vulner', 'network'], ['vulner', 'monitor'], ['network', 'event', 'monitor', 'window'], ['host', 'event', 'monitor', 'window'], ['event', 'window'], ['host', 'vulner', 'network', 'event', 'monitor'], ['vulner', 'network', 'smbv1'], ['host', 'vulner', 'network', 'monitor'], ['host', 'vulner', 'network', 'event', 'monitor']]
+pass
+
+
+75/241
+./security_rules/data/osa_rules/08003_Potentially_Bad_Traffic.yml
+未打标
+
+76/241
+./security_rules/data/osa_rules/00801_USB_storage_connected.yml
+未打标
+
+77/241
+./security_rules/data/osa_rules/00802_USB_storage_disconnected.yml
+未打标
+
+78/241
+./security_rules/data/osa_rules/05063_IEC_61850_Goose_Injection_Attack_false_data_or_malicious_fault.yml
+未打标
+
+79/241
+./security_rules/data/osa_rules/01005_Windows_Defender_Real_time_Protection_Disabled.yml
+['attack.enterprise.T1562.001', 'query-unclear']
+tags of security rules: T1562.001
+keywords: host, attack, statu, datasrcip, prompt, event, monitor, time, window, real, protect, defend
+top 10 of match results: T1084, T1070.001, T1546.003, T1630, T1070.009, T0837, T1124, T1141, T1612, T1006
+[['event', 'time', 'window'], ['attack', 'event', 'monitor', 'window'], ['host', 'attack', 'event', 'monitor', 'time', 'window'], ['host', 'statu', 'event'], ['host', 'attack', 'monitor', 'window', 'defend'], ['attack', 'protect'], ['attack', 'monitor', 'time', 'window'], ['attack', 'prompt'], ['host', 'attack', 'monitor'], ['attack', 'monitor', 'window', 'protect']]
+
+
+80/241
+./security_rules/data/osa_rules/05111_S7comm_Flash_LED.yml
+未打标
+
+81/241
+./security_rules/data/osa_rules/05080_DNP_3_0_Cold_Start_or_Warm_Start_Command.yml
+未打标
+
+82/241
+./security_rules/data/osa_rules/16001_Wannacry_Artifact_Checker.yml
+['malware.host', 'attack.ics.T1569']
+tags of security rules: T1569
+keywords: host, attack, wannacri, malwar, rule, name, tasksch, exe, execut, artifact, datasrcip, search, part, checker, infect
+top 10 of match results: T1633.001, T1070.009, T1633, T1107, T0872, T1137.005, T1630.003, T1408, T1589.003, T1574.008
+[['host', 'malwar', 'name', 'artifact', 'search'], ['host', 'attack', 'malwar', 'execut', 'artifact'], ['attack', 'malwar', 'artifact', 'search'], ['host', 'attack', 'malwar', 'part'], ['host', 'attack', 'malwar', 'artifact'], ['attack', 'rule', 'execut', 'artifact'], ['name', 'artifact', 'search'], ['name', 'artifact', 'search'], ['attack', 'name', 'search'], ['attack', 'name', 'exe', 'search']]
+
+
+83/241
+./security_rules/data/osa_rules/05071_DNP_3_0_DFC_Flag_Modification.yml
+未打标
+
+84/241
+./security_rules/data/osa_rules/00905_User_account_deleted_on_Windows.yml
+未打标
+
+85/241
+./security_rules/data/osa_rules/01004_GlobeImposter_Registry.yml
+未打标
+
+86/241
+./security_rules/data/osa_rules/00813_MITM_Attack.yml
+未打标
+
+87/241
+./security_rules/data/osa_rules/05060_IEC_61850_Goose_Message_Suppression_Attack_high_status.yml
+未打标
+
+88/241
+./security_rules/data/osa_rules/00954_Unexpected_Application.yml
+['query-unclear']
+未打标
+
+89/241
+./security_rules/data/osa_rules/00808_IP_Scan_(ICMP).yml
+未打标
+
+90/241
+./security_rules/data/osa_rules/08011_Successful_User_Privilege_Gain.yml
+未打标
+
+91/241
+./security_rules/data/osa_rules/05050_Treck_device_has_been_detected_(Potential_Ripple20_Vulnerability).yml
+未打标
+
+92/241
+./security_rules/data/osa_rules/08005_Information_Leak.yml
+未打标
+
+93/241
+./security_rules/data/osa_rules/00941_System_Aduit_Policy_Changed_on_Windows.yml
+未打标
+
+94/241
+./security_rules/data/osa_rules/05040_S7Comm_PLC_Read_Var.yml
+未打标
+
+95/241
+./security_rules/data/osa_rules/00862_PN_DCP_Overflow.yml
+['attack.ics.T0826', 'attack.ics.T0814']
+tags of security rules: T0826, T0814
+keywords: host, traffic, dst, dcp, pn, frame, buffer, network, prompt, event, overflow, src, monitor
+top 10 of match results: T1029, T0842, T1612, T1020.001, T1498.001, T1410, T1205.001, T1141, T1567, T1048.003
+[['host', 'traffic', 'network', 'monitor'], ['traffic', 'network', 'monitor'], ['host', 'traffic', 'network', 'monitor'], ['host', 'traffic', 'network', 'monitor'], ['host', 'traffic', 'network', 'monitor'], ['traffic', 'network'], ['host', 'traffic', 'network', 'monitor'], ['prompt'], ['host', 'traffic', 'network', 'monitor'], ['host', 'traffic', 'network', 'monitor']]
+
+
+96/241
+./security_rules/data/osa_rules/00960_Unauthorized_account_used_on_Windows.yml
+未打标
+
+97/241
+./security_rules/data/osa_rules/00945_Application_Log_Cleared_on_Windows.yml
+未打标
+
+98/241
+./security_rules/data/osa_rules/00867_Teardrop.yml
+未打标
+
+99/241
+./security_rules/data/osa_rules/00874_HTTP_connect.yml
+未打标
+
+100/241
+./security_rules/data/osa_rules/05006_PN_DCP_get_function.yml
+未打标
+
+101/241
+./security_rules/data/osa_rules/01515_Pass_the_Hash_Activity_2.yml
+未打标
+
+102/241
+./security_rules/data/osa_rules/05077_DNP_3_0_Write_Outstation_Command.yml
+未打标
+
+103/241
+./security_rules/data/osa_rules/00851_Expired_Certificate.yml
+未打标
+
+104/241
+./security_rules/data/osa_rules/05086_FTP_Bruteforcing.yml
+未打标
+
+105/241
+./security_rules/data/osa_rules/00934_Firewall_Rule_Added_on_Windows.yml
+['operation.local', 'attack.enterprise.T1599']
+tags of security rules: T1599
+keywords: list, host, firewal, rule, chang, datasrcip, add, event, prompt, monitor, behavior, window, except, oper
+top 10 of match results: T1562.007, T1562.004, T1010, T1070.007, T1136.001, T1136.002, T1063, T1562, T1547.008, T1518
+[['firewal', 'rule', 'chang', 'event', 'monitor', 'window'], ['firewal', 'rule', 'chang', 'event', 'monitor', 'window'], ['list', 'event', 'monitor', 'behavior', 'window', 'oper'], ['host', 'firewal', 'rule', 'chang', 'monitor', 'behavior', 'window', 'oper'], ['add', 'event', 'monitor', 'window'], ['add', 'event', 'monitor', 'window'], ['list', 'firewal', 'rule', 'behavior', 'window'], ['host', 'firewal', 'rule', 'chang', 'event', 'monitor', 'behavior', 'window', 'except'], ['chang', 'add', 'event', 'monitor', 'window', 'oper'], ['list', 'firewal', 'rule', 'monitor', 'behavior']]
+
+
+106/241
+./security_rules/data/osa_rules/00894_SMB_Windows_Logon_Failure.yml
+未打标
+
+107/241
+./security_rules/data/osa_rules/08020_A_TCP_connection_was_detected.yml
+未打标
+
+108/241
+./security_rules/data/osa_rules/05091_IEC_60870_5_104_Active_Probe_of_IEC104_Devices.yml
+未打标
+
+109/241
+./security_rules/data/osa_rules/05094_IEC_60870_5_104_MiTM_for_Hijack_the_Communication.yml
+未打标
+
+110/241
+./security_rules/data/osa_rules/01510_Successful_Overpass_the_Hash_Attempt.yml
+未打标
+
+111/241
+./security_rules/data/osa_rules/00897_SMBv1_EternalBlue_Recon.yml
+['attack.enterprise.T1588.006']
+tags of security rules: T1588.006
+keywords: host, attack, recon, dst, vulner, network, prompt, event, src, monitor, scan, behavior, window, eternalblu, smbv1
+top 10 of match results: T1423, T1595.002, T0841, T1588.006, T1046, T1070.001, T1010, T1595.001, T1021.006, T1546.003
+[['host', 'vulner', 'network', 'scan'], ['host', 'attack', 'vulner', 'network', 'monitor', 'scan'], ['attack', 'vulner', 'network', 'scan'], ['attack', 'vulner', 'monitor', 'behavior'], ['host', 'vulner', 'network', 'event', 'monitor', 'scan', 'behavior'], ['attack', 'event', 'monitor', 'window'], ['network', 'event', 'monitor', 'behavior', 'window'], ['host', 'attack', 'network', 'monitor', 'scan'], ['host', 'attack', 'network', 'event', 'monitor', 'behavior', 'window'], ['host', 'attack', 'event', 'monitor', 'window']]
+pass
+
+
+112/241
+./security_rules/data/osa_rules/00901_Windows_Logout.yml
+未打标
+
+113/241
+./security_rules/data/osa_rules/05081_DNP_3_0_Outstation_Application_Termination.yml
+未打标
+
+114/241
+./security_rules/data/osa_rules/00820_SYN_flood.yml
+['attack.impact', 'attack.enterprise.T1499', 'attack.ics.T0814']
+tags of security rules: T1499, T0814
+keywords: packet, type, request, ddo, host, traffic, attack, devic, port, caus, server, servic, network, launch, src, target, half, aim, connect, flood, resourc, denial, syn, machin
+top 10 of match results: T1498.001, T1499.003, T1499.001, T1464, T1499.002, T1205.001, T1498, T1498.002, T1499, T1584.005
+[['packet', 'ddo', 'host', 'traffic', 'attack', 'caus', 'servic', 'network', 'target', 'flood', 'resourc', 'denial'], ['packet', 'type', 'request', 'host', 'traffic', 'attack', 'caus', 'server', 'servic', 'network', 'target', 'connect', 'flood', 'resourc', 'denial'], ['packet', 'request', 'host', 'traffic', 'attack', 'caus', 'server', 'servic', 'network', 'launch', 'target', 'connect', 'flood', 'resourc', 'denial', 'syn'], ['attack', 'devic', 'servic', 'network', 'target', 'resourc', 'denial'], ['packet', 'type', 'request', 'host', 'traffic', 'attack', 'caus', 'server', 'servic', 'network', 'target', 'connect', 'flood', 'resourc', 'denial'], ['packet', 'host', 'traffic', 'devic', 'port', 'server', 'network', 'connect'], ['ddo', 'host', 'traffic', 'attack', 'devic', 'caus', 'server', 'servic', 'network', 'target', 'connect', 'resourc', 'denial'], ['packet', 'type', 'request', 'host', 'traffic', 'attack', 'caus', 'server', 'servic', 'network', 'target', 'flood', 'denial'], ['packet', 'type', 'request', 'ddo', 'host', 'traffic', 'attack', 'devic', 'caus', 'server', 'servic', 'network', 'target', 'connect', 'resourc', 'denial'], ['ddo', 'attack', 'server', 'servic', 'network', 'target', 'denial']]
+pass
+
+
+115/241
+./security_rules/data/osa_rules/00958_USB_Device_disconnected.yml
+未打标
+
+116/241
+./security_rules/data/osa_rules/05051_Vulnerability_Scan_Ripple20_Vulnerability.yml
+未打标
+
+117/241
+./security_rules/data/osa_rules/00879_S7Comm_Get_block_info.yml
+未打标
+
+118/241
+./security_rules/data/osa_rules/00877_S7Comm_Get_PLC_status_START.yml
+未打标
+
+119/241
+./security_rules/data/osa_rules/00217_High_network_load.yml
+未打标
+
+120/241
+./security_rules/data/osa_rules/08025_Detection_of_a_non_standard_protocol_or_event.yml
+未打标
+
+121/241
+./security_rules/data/osa_rules/00844_PCAnywhere.yml
+未打标
+
+122/241
+./security_rules/data/osa_rules/00841_WAN_Traffic_PPTP.yml
+未打标
+
+123/241
+./security_rules/data/osa_rules/08040_Successful_Credential_Theft_Detected.yml
+未打标
+
+124/241
+./security_rules/data/osa_rules/00931_Privileged_service_was_called_on_Windows.yml
+未打标
+
+125/241
+./security_rules/data/osa_rules/05106_S7comm_Remove_Diagnose_Data.yml
+未打标
+
+126/241
+./security_rules/data/osa_rules/00815_Port_Scan_(Fast).yml
+['attack.discovery', 'attack.enterprise.T1046', 'attack.ics.T0846']
+tags of security rules: T1046, T0846
+keywords: method, firewal, access, place, strength, fast, fingerprint, sender, listen, host, attack, dst, inform, reconnaiss, know, port, system, someon, techniqu, function, server, network, point, src, knock, target, destin, comput, sourc, scan, break, door, secur, send, presenc, devic, test, tool
+top 10 of match results: T1205.001, T0841, T1423, T1596.005, T1104, T1120, T1114.002, T1590.006, T1100, T1596.004
+[['method', 'firewal', 'listen', 'host', 'port', 'system', 'techniqu', 'server', 'network', 'knock', 'send', 'devic'], ['firewal', 'attack', 'inform', 'port', 'system', 'techniqu', 'network', 'target', 'scan', 'devic', 'test', 'tool'], ['method', 'access', 'host', 'inform', 'port', 'techniqu', 'network', 'scan', 'devic'], ['access', 'attack', 'inform', 'reconnaiss', 'port', 'techniqu', 'server', 'target', 'sourc', 'scan', 'tool'], ['access', 'host', 'attack', 'inform', 'system', 'techniqu', 'function', 'server', 'network', 'point', 'send', 'tool'], ['inform', 'system', 'function', 'network', 'comput', 'devic'], ['access', 'host', 'attack', 'inform', 'server', 'network', 'target', 'send', 'tool'], ['firewal', 'access', 'host', 'attack', 'inform', 'reconnaiss', 'system', 'techniqu', 'network', 'target', 'scan', 'secur'], ['method', 'access', 'place', 'host', 'attack', 'system', 'techniqu', 'function', 'server', 'network'], ['access', 'host', 'attack', 'inform', 'reconnaiss', 'techniqu', 'server', 'network', 'target', 'sourc', 'scan', 'tool']]
+
+
+127/241
+./security_rules/data/osa_rules/08019_A_system_call_was_detected.yml
+未打标
+
+128/241
+./security_rules/data/osa_rules/00889_SMBv1_DoublePulsar_Recon.yml
+['attack.enterprise.T1588.006']
+tags of security rules: T1588.006
+keywords: host, attack, recon, dst, vulner, network, prompt, event, src, monitor, scan, window, smbv1, doubleplusar
+top 10 of match results: T1423, T1595.002, T0841, T1070.001, T1588.006, T1595.001, T1046, T1546.003, T1612, T1405
+[['host', 'vulner', 'network', 'scan'], ['host', 'attack', 'vulner', 'network', 'monitor', 'scan'], ['attack', 'vulner', 'network', 'scan'], ['attack', 'event', 'monitor', 'window'], ['attack', 'vulner', 'monitor'], ['host', 'attack', 'network', 'monitor', 'scan'], ['host', 'vulner', 'network', 'event', 'monitor', 'scan'], ['host', 'attack', 'event', 'monitor', 'window'], ['host', 'attack', 'network', 'monitor'], ['attack', 'vulner']]
+pass
+
+
+129/241
+./security_rules/data/osa_rules/05082_DNP_3_0_Configuration_Capture_Interception.yml
+未打标
+
+130/241
+./security_rules/data/osa_rules/00850_Expiring_Certificate.yml
+未打标
+
+131/241
+./security_rules/data/osa_rules/00900_Successful_Windows_login.yml
+未打标
+
+132/241
+./security_rules/data/osa_rules/01002_WannaCry_Behavior.yml
+['malware.host', 'attack.ics.T0826', 'attack.enterprise.T1486', 'query_unclear']
+tags of security rules: T0826, T1486
+keywords: leak, run, call, eternalblu, host, attack, patch, encrypt, ransomwar, state, cyberattack, month, window, organ, microsoft, system, cryptocurr, nsa, group, releas, agenc, payment, datasrcip, target, shadow, behavior, comput, broker, bitcoin, life, malwar, wannacri, develop, data, secur, indic, cryptoworm, ransom, end
+top 10 of match results: T0872, T1027.005, T1614.001, T1510, T1446, T1641.001, T1588.001, T1069.001, T1601.002, T1588.003
+[['host', 'attack', 'window', 'system', 'malwar', 'data', 'indic'], ['system', 'target', 'malwar', 'secur', 'indic'], ['call', 'host', 'attack', 'ransomwar', 'window', 'system', 'agenc', 'target', 'behavior', 'malwar', 'develop', 'data'], ['run', 'attack', 'cryptocurr', 'releas', 'target', 'behavior', 'bitcoin'], ['payment', 'malwar', 'ransom'], ['run', 'attack', 'system', 'cryptocurr', 'releas', 'target', 'behavior', 'bitcoin', 'data'], ['organ', 'group', 'target', 'behavior', 'malwar', 'develop', 'data'], ['call', 'attack', 'window', 'system', 'group'], ['attack', 'patch', 'encrypt', 'system', 'behavior', 'secur'], ['attack', 'organ', 'target', 'behavior', 'malwar', 'develop', 'secur']]
+
+
+133/241
+./security_rules/data/osa_rules/08014_Decode_of_an_RPC_Query.yml
+未打标
+
+134/241
+./security_rules/data/osa_rules/00866_Smurf.yml
+未打标
+
+135/241
+./security_rules/data/osa_rules/00930_Privilege_Removed_on_Windows.yml
+未打标
+
+136/241
+./security_rules/data/osa_rules/05102_S7comm_Clear_Password.yml
+未打标
+
+137/241
+./security_rules/data/osa_rules/01517_Potential_RDP_Exploit_CVE_2019_0708.yml
+未打标
+
+138/241
+./security_rules/data/osa_rules/08001_Not_Suspicious_Traffic.yml
+未打标
+
+139/241
+./security_rules/data/osa_rules/08009_Attempted_User_Privilege_Gain.yml
+未打标
+
+140/241
+./security_rules/data/osa_rules/01529_LSASS_Access_Detected_via_Attack_Surface_Reduction.yml
+未打标
+
+141/241
+./security_rules/data/osa_rules/00848_HTTP_plaintext_password.yml
+['attack.enterprise.T1040', 'attack.ics.T0842']
+tags of security rules: T1040, T0842
+keywords: http, host, traffic, password, dst, network, find, event, prompt, account, src, monitor, plaintext, target, commun
+top 10 of match results: T0842, T1110.002, T1573.001, T1612, T1104, T1110.003, T1029, T1136, T1552, T1041
+[['traffic', 'network', 'monitor', 'target', 'commun'], ['http', 'password', 'network', 'account', 'monitor', 'plaintext', 'target'], ['traffic', 'monitor', 'plaintext', 'commun'], ['http', 'host', 'traffic', 'network', 'monitor', 'commun'], ['http', 'host', 'network', 'monitor', 'commun'], ['http', 'password', 'network', 'event', 'account', 'monitor', 'target'], ['http', 'host', 'traffic', 'network', 'monitor'], ['network', 'event', 'account', 'monitor'], ['http', 'password', 'network', 'find', 'account', 'monitor', 'plaintext'], ['host', 'traffic', 'network', 'monitor', 'commun']]
+pass
+
+
+142/241
+./security_rules/data/osa_rules/01525_Unauthorized_System_Time_Modification.yml
+未打标
+
+143/241
+./security_rules/data/osa_rules/01516_Suspicious_Windows_ANONYMOUS_LOGON_Local_Account_Created.yml
+未打标
+
+144/241
+./security_rules/data/osa_rules/00917_Windows_Workstation_was_Unlocked.yml
+未打标
+
+145/241
+./security_rules/data/osa_rules/00812_DNS.yml
+未打标
+
+146/241
+./security_rules/data/osa_rules/01003_WannaCry_Registry.yml
+['malware.host', 'attack.enterprise.T1112', 'query_unclear']
+tags of security rules: T1112
+keywords: leak, item, run, call, eternalblu, host, attack, patch, encrypt, ransomwar, state, cyberattack, month, window, organ, microsoft, system, cryptocurr, nsa, group, releas, agenc, payment, registri, datasrcip, target, shadow, comput, broker, bitcoin, life, malwar, wannacri, develop, data, secur, indic, cryptoworm, ransom, end
+top 10 of match results: T0872, T1614.001, T1027.005, T1012, T1510, T1101, T1446, T1555.001, T1070.009, T1069.001
+[['host', 'attack', 'window', 'system', 'registri', 'malwar', 'data', 'indic'], ['call', 'host', 'attack', 'ransomwar', 'window', 'system', 'agenc', 'registri', 'target', 'malwar', 'develop', 'data'], ['system', 'target', 'malwar', 'secur', 'indic'], ['call', 'attack', 'window', 'system', 'registri', 'target', 'secur'], ['run', 'attack', 'cryptocurr', 'releas', 'target', 'bitcoin'], ['call', 'encrypt', 'window', 'system', 'registri', 'secur'], ['payment', 'malwar', 'ransom'], ['item', 'call', 'host', 'system', 'payment', 'data', 'secur'], ['host', 'attack', 'window', 'system', 'group', 'registri', 'malwar'], ['call', 'attack', 'window', 'system', 'group']]
+
+
+147/241
+./security_rules/data/osa_rules/05022_Vulnerability_Scan_CVE_2019_0708_Scan.yml
+['attack.enterprise.T1595.002']
+tags of security rules: T1595.002
+keywords: craft, request, host, attack, use, cve, system, user, help, rdp, vulner, servic, network, signatur, code, src, target, behavior, scan, execut, indic, desktop
+top 10 of match results: T1027.005, T1021.001, T1423, T0841, T1066, T1027.001, T0823, T1046, T1595.002, T1588.006
+[['use', 'system', 'network', 'signatur', 'target', 'scan', 'indic'], ['attack', 'use', 'system', 'user', 'rdp', 'servic', 'network', 'code', 'behavior', 'desktop'], ['host', 'vulner', 'servic', 'network', 'scan'], ['attack', 'use', 'system', 'vulner', 'servic', 'network', 'target', 'scan'], ['attack', 'use', 'system', 'signatur', 'target', 'indic'], ['use', 'system', 'servic', 'network', 'signatur', 'behavior', 'scan', 'indic'], ['host', 'attack', 'use', 'system', 'user', 'rdp', 'servic', 'target', 'behavior', 'execut'], ['host', 'use', 'system', 'vulner', 'servic', 'network', 'code', 'target', 'behavior', 'scan'], ['host', 'attack', 'use', 'vulner', 'network', 'target', 'scan', 'execut'], ['attack', 'use', 'system', 'vulner', 'target', 'behavior']]
+pass
+
+
+148/241
+./security_rules/data/osa_rules/05110_S7comm_Activate_PLC_Module.yml
+未打标
+
+149/241
+./security_rules/data/osa_rules/00903_Software_Uninstall_on_Windows.yml
+未打标
+
+150/241
+./security_rules/data/osa_rules/08033_Potential_Corporate_Privacy_Violation.yml
+未打标
+
+151/241
+./security_rules/data/osa_rules/00925_RDP_on_Windows.yml
+未打标
+
+152/241
+./security_rules/data/osa_rules/00209_Asset_disconnected.yml
+未打标
+
+153/241
+./security_rules/data/osa_rules/08012_Attempted_Administrator_Privilege_Gain.yml
+未打标
+
+154/241
+./security_rules/data/osa_rules/00858_PN_DCP_Reset_factory_setting.yml
+['attack.ics.T0858', 'attack.ics.T0826', 'attack.ics.T0827']
+tags of security rules: T0858, T0826, T0827
+keywords: host, set, dcp, pn, network, prompt, reset, event, src, profinet, monitor, factori, risk, oper
+top 10 of match results: T1401, T1626.001, T1069, T1602.002, T1451, T1623.001, T1612, T1542.004, T1046, T1514
+[['reset', 'factori'], ['reset', 'factori'], ['set', 'network', 'event', 'monitor', 'oper'], ['host', 'network', 'reset', 'monitor', 'oper'], ['network', 'reset', 'oper'], ['set', 'prompt', 'oper'], ['host', 'network', 'monitor'], ['network', 'reset', 'monitor', 'oper'], ['host', 'network', 'event', 'monitor', 'oper'], ['prompt', 'oper']]
+
+
+155/241
+./security_rules/data/osa_rules/00956_Frequent_logins_on_Windows.yml
+未打标
+
+156/241
+./security_rules/data/osa_rules/00864_ARP_flooding.yml
+['attack.enterprise.T1498.001', 'attack.ics.T0814']
+tags of security rules: T1498.001, T0814
+keywords: packet, broadcast, mac, ip, arp, request, host, attack, cach, know, commun, system, result, affect, network, launch, record, comput, entri, smac, keep, resolv, flood, send, repli, address
+top 10 of match results: T1557.002, T0848, T1612, T1481.001, T1016, T1018, T0842, T1595.001, T1205.001, T1557.003
+[['broadcast', 'mac', 'ip', 'arp', 'request', 'attack', 'cach', 'commun', 'network', 'resolv', 'repli', 'address'], ['mac', 'arp', 'attack', 'know', 'commun', 'system', 'affect', 'network', 'comput', 'send', 'address'], ['ip', 'request', 'host', 'attack', 'commun', 'network', 'send'], ['ip', 'host', 'network', 'resolv', 'address'], ['mac', 'ip', 'arp', 'attack', 'system', 'network', 'address'], ['ip', 'arp', 'host', 'attack', 'cach', 'system', 'network', 'entri', 'address'], ['packet', 'arp', 'commun', 'system', 'network', 'comput'], ['ip', 'request', 'host', 'attack', 'commun', 'network', 'address'], ['packet', 'host', 'commun', 'system', 'network', 'send'], ['broadcast', 'ip', 'request', 'host', 'attack', 'commun', 'system', 'network', 'comput', 'flood', 'send', 'address']]
+
+
+157/241
+./security_rules/data/osa_rules/08035_Targeted_Malicious_Activity_was_Detected.yml
+未打标
+
+158/241
+./security_rules/data/osa_rules/08010_Unsuccessful_User_Privilege_Gain.yml
+未打标
+
+159/241
+./security_rules/data/osa_rules/00843_TeamViewer.yml
+未打标
+
+160/241
+./security_rules/data/osa_rules/00943_Network_Share_Access_on_Windows.yml
+未打标
+
+161/241
+./security_rules/data/osa_rules/01503_Audit_CVE_Event.yml
+未打标
+
+162/241
+./security_rules/data/osa_rules/05088_RDP_Bruteforcing.yml
+未打标
+
+163/241
+./security_rules/data/osa_rules/00849_Self_Signed_Certificate.yml
+未打标
+
+164/241
+./security_rules/data/osa_rules/00883_MODBUS_Function_Code_Scan.yml
+未打标
+
+165/241
+./security_rules/data/osa_rules/00865_Ping_of_Death.yml
+未打标
+
+166/241
+./security_rules/data/osa_rules/08013_Successful_Administrator_Privilege_Gain.yml
+未打标
+
+167/241
+./security_rules/data/osa_rules/05074_DNP_3_0_DNP3_Port_DoS_Flooding.yml
+未打标
+
+168/241
+./security_rules/data/osa_rules/05108_S7comm_Setup_Communication.yml
+未打标
+
+169/241
+./security_rules/data/osa_rules/00892_COTP_S7Comm_illegal_field_value.yml
+['attack.ics.T0814', 'attack.ics.T0855']
+tags of security rules: T0814, T0855
+keywords: host, traffic, attack, packet, dst, valu, network, cotp, field, event, src, prompt, monitor, s7comm
+top 10 of match results: T0885, T1071.001, T1071.002, T0842, T1048.003, T1071.003, T1090.004, T1020.001, T1029, T1205.001
+[['host', 'traffic', 'packet', 'network', 's7comm'], ['traffic', 'packet', 'network', 'field', 'monitor'], ['traffic', 'packet', 'network', 'field', 'monitor'], ['traffic', 'packet', 'network', 'monitor'], ['host', 'traffic', 'packet', 'network', 'field', 'monitor'], ['traffic', 'packet', 'network', 'field', 'monitor'], ['host', 'traffic', 'packet', 'network', 'field', 'monitor'], ['host', 'traffic', 'attack', 'packet', 'network', 'monitor'], ['host', 'traffic', 'attack', 'network', 'monitor'], ['host', 'traffic', 'packet', 'network', 'monitor']]
+
+
+170/241
+./security_rules/data/osa_rules/08028_Web_Application_Attack.yml
+未打标
+
+171/241
+./security_rules/data/osa_rules/08017_A_suspicious_filename_was_detected.yml
+未打标
+
+172/241
+./security_rules/data/osa_rules/05109_S7comm_Delete_PLC_Module.yml
+未打标
+
+173/241
+./security_rules/data/osa_rules/05064_IEC_61850_Goose_DoS_Attack_Flooding.yml
+未打标
+
+174/241
+./security_rules/data/osa_rules/08034_Attempt_to_login_by_a_default_username_and_password.yml
+未打标
+
+175/241
+./security_rules/data/osa_rules/08042_Crypto_Currency_Mining_Activity_Detected.yml
+未打标
+
+176/241
+./security_rules/data/osa_rules/01001_WannaCry_Process.yml
+['malware.host', 'attack.ics.T0826', 'attack.enterprise.T1486', 'query_unclear']
+tags of security rules: T0826, T1486
+keywords: leak, run, call, eternalblu, host, attack, patch, encrypt, process, ransomwar, state, cyberattack, month, window, organ, microsoft, system, cryptocurr, nsa, group, releas, agenc, payment, datasrcip, target, shadow, comput, broker, bitcoin, life, malwar, wannacri, develop, data, secur, indic, cryptoworm, ransom, end
+top 10 of match results: T0872, T1027.005, T1614.001, T0801, T1510, T1069.001, T1446, T1177, T1641.001, T1631.001
+[['host', 'attack', 'process', 'window', 'system', 'malwar', 'data', 'indic'], ['system', 'target', 'malwar', 'secur', 'indic'], ['call', 'host', 'attack', 'process', 'ransomwar', 'window', 'system', 'agenc', 'target', 'malwar', 'develop', 'data'], ['process', 'state', 'window', 'data'], ['run', 'attack', 'cryptocurr', 'releas', 'target', 'bitcoin'], ['call', 'attack', 'process', 'window', 'system', 'group'], ['payment', 'malwar', 'ransom'], ['run', 'attack', 'process', 'window', 'microsoft', 'target', 'comput', 'secur'], ['run', 'attack', 'process', 'system', 'cryptocurr', 'releas', 'target', 'bitcoin', 'data'], ['run', 'call', 'process', 'system', 'target', 'data', 'secur']]
+
+
+177/241
+./security_rules/data/osa_rules/05092_IEC_60870_5_104_MiTM_Attack_for_Faked_IEC104_Slaves_or_Masters.yml
+未打标
+
+178/241
+./security_rules/data/osa_rules/08031_Generic_ICMP_event.yml
+未打标
+
+179/241
+./security_rules/data/osa_rules/05070_DNP_3_0_Length_Overflow_or_Illegitimate.yml
+未打标
+
+180/241
+./security_rules/data/osa_rules/08006_Large_Scale_Information_Leak.yml
+未打标
+
+181/241
+./security_rules/data/osa_rules/01520_LSASS_Access_from_Non_System_Account.yml
+未打标
+
+182/241
+./security_rules/data/osa_rules/00202_Parameter_change.yml
+未打标
+
+183/241
+./security_rules/data/osa_rules/01518_AD_Privileged_Users_or_Groups_Reconnaissance.yml
+未打标
+
+184/241
+./security_rules/data/osa_rules/08030_Misc_Attack.yml
+未打标
+
+185/241
+./security_rules/data/osa_rules/00869_UDP_flooding.yml
+['attack.enterprise.T1499', 'attack.enterprise.T1498.001', 'attack.ics.T0814']
+tags of security rules: T1499, T1498.001, T0814
+keywords: packet, firewal, type, exhaust, host, datagram, attack, traffic, number, process, abil, user, server, servic, result, network, launch, src, target, aim, respond, flood, send, protocol, denial, devic, udp
+top 10 of match results: T1499.001, T1464, T1499.003, T1499.002, T1205.001, T1498.001, T1095, T1498.002, T0885, T0841
+[['packet', 'exhaust', 'host', 'attack', 'traffic', 'number', 'process', 'abil', 'server', 'servic', 'network', 'launch', 'target', 'flood', 'send', 'protocol', 'denial'], ['exhaust', 'attack', 'user', 'servic', 'network', 'target', 'denial', 'devic'], ['packet', 'type', 'exhaust', 'host', 'attack', 'traffic', 'process', 'server', 'servic', 'network', 'target', 'flood', 'protocol', 'denial'], ['packet', 'type', 'exhaust', 'host', 'attack', 'traffic', 'number', 'process', 'server', 'servic', 'network', 'target', 'flood', 'protocol', 'denial'], ['packet', 'firewal', 'host', 'traffic', 'server', 'network', 'send', 'protocol', 'devic'], ['packet', 'host', 'attack', 'traffic', 'process', 'servic', 'network', 'target', 'flood', 'protocol', 'denial'], ['packet', 'host', 'datagram', 'traffic', 'process', 'user', 'server', 'network', 'protocol', 'udp'], ['packet', 'type', 'host', 'attack', 'traffic', 'process', 'server', 'servic', 'network', 'target', 'respond', 'flood', 'send', 'protocol', 'denial'], ['packet', 'firewal', 'host', 'traffic', 'process', 'network', 'protocol', 'udp'], ['firewal', 'type', 'attack', 'number', 'process', 'servic', 'network', 'target', 'devic']]
+pass
+
+
+186/241
+./security_rules/data/osa_rules/05100_S7comm_Read_Variable_Table.yml
+未打标
+
+187/241
+./security_rules/data/osa_rules/05033_S7Comm_Firmware_Upgrade.yml
+未打标
+
+188/241
+./security_rules/data/osa_rules/01524_New_or_Renamed_User_Account_with_in_Attribute_SamAccountName_.yml
+未打标
+
+189/241
+./security_rules/data/osa_rules/00842_Unexpected_IP.yml
+未打标
+
+190/241
+./security_rules/data/osa_rules/05025_Vulnerability_Scan_Bluekeep_Recon.yml
+未打标
+
+191/241
+./security_rules/data/osa_rules/00847_FTP_plaintext_password.yml
+['attack.enterprise.T1040', 'attack.ics.T0842']
+tags of security rules: T1040, T0842
+keywords: host, traffic, password, dst, network, find, event, prompt, account, src, monitor, plaintext, target, commun, ftp
+top 10 of match results: T0842, T1573.001, T1048.003, T1110.003, T1110.002, T1571, T1105, T1612, T1136, T1041
+[['traffic', 'network', 'monitor', 'target', 'commun'], ['traffic', 'monitor', 'plaintext', 'commun'], ['host', 'traffic', 'network', 'monitor', 'commun', 'ftp'], ['password', 'network', 'event', 'account', 'monitor', 'target', 'ftp'], ['password', 'network', 'account', 'monitor', 'plaintext', 'target'], ['network', 'monitor', 'commun', 'ftp'], ['host', 'traffic', 'network', 'monitor', 'commun', 'ftp'], ['host', 'traffic', 'network', 'monitor', 'commun'], ['network', 'event', 'account', 'monitor'], ['host', 'traffic', 'network', 'monitor', 'commun']]
+pass
+
+
+192/241
+./security_rules/data/osa_rules/00807_Download_executable.yml
+未打标
+
+193/241
+./security_rules/data/osa_rules/00921_Lock_Out_on_Windows.yml
+未打标
+
+194/241
+./security_rules/data/osa_rules/05073_DNP_3_0_Unavailable_Function_Response.yml
+未打标
+
+195/241
+./security_rules/data/osa_rules/00857_Detected_By_Empty_Session_Key.yml
+未打标
+
+196/241
+./security_rules/data/osa_rules/05008_PN_DCP_hello_function.yml
+未打标
+
+197/241
+./security_rules/data/osa_rules/00846_Telnet_plaintext_password.yml
+['attack.enterprise.T1040', 'attack.ics.T0842']
+tags of security rules: T1040, T0842
+keywords: host, traffic, password, dst, vulner, telnet, network, find, event, prompt, account, src, monitor, plaintext, target, commun
+top 10 of match results: T0842, T1588.006, T1573.001, T1463, T1110.003, T1110.002, T1595.002, T0885, T1612, T1136
+[['traffic', 'telnet', 'network', 'monitor', 'target', 'commun'], ['vulner', 'find', 'monitor', 'target'], ['traffic', 'monitor', 'plaintext', 'commun'], ['traffic', 'vulner', 'network', 'commun'], ['password', 'telnet', 'network', 'event', 'account', 'monitor', 'target'], ['password', 'network', 'account', 'monitor', 'plaintext', 'target'], ['host', 'traffic', 'vulner', 'network', 'monitor', 'target', 'commun'], ['host', 'traffic', 'telnet', 'network', 'commun'], ['host', 'traffic', 'network', 'monitor', 'commun'], ['network', 'event', 'account', 'monitor']]
+pass
+
+
+198/241
+./security_rules/data/osa_rules/05107_S7comm_Read_Diagnose_Data.yml
+未打标
+
+199/241
+./security_rules/data/osa_rules/00890_SMBv1_DoublePulsar_Exists.yml
+['attack.ics.T0866', 'attack.enterprise.T1210']
+tags of security rules: T0866, T1210
+keywords: host, exist, vulner, network, prompt, event, src, monitor, window, smbv1, doubleplusar
+top 10 of match results: T1588.006, T0889, T1070.001, T1423, T1010, T1546.003, T1084, T1046, T0866, T1595.002
+[['exist', 'vulner', 'monitor'], ['host', 'exist', 'vulner', 'network', 'event', 'monitor'], ['event', 'monitor', 'window'], ['host', 'vulner', 'network'], ['network', 'event', 'monitor', 'window'], ['host', 'event', 'monitor', 'window'], ['event', 'window'], ['host', 'vulner', 'network', 'event', 'monitor'], ['vulner', 'network', 'smbv1'], ['host', 'vulner', 'network', 'monitor']]
+pass
+
+
+200/241
+./security_rules/data/osa_rules/01519_QuarksPwDump_Clearing_Access_History.yml
+未打标
+
+201/241
+./security_rules/data/osa_rules/05090_IEC_60870_5_104_MiTM_Attack_for_Modification_Injection_Command_CoT.yml
+未打标
+
+202/241
+./security_rules/data/osa_rules/01504_Secure_Deletion_with_SDelete.yml
+未打标
+
+203/241
+./security_rules/data/osa_rules/05020_Vulnerability_Scan_SIP_Access.yml
+['attack.enterprise.T1595.002']
+tags of security rules: T1595.002
+keywords: access, messag, session, time, initi, video, host, voic, use, user, help, vulner, applic, signal, network, src, target, behavior, scan, indic, protocol
+top 10 of match results: T1123, T1037, T1027.005, T1423, T1037.003, T1595.002, T1506, T1095, T0819, T1491
+[['video', 'voic', 'use', 'applic'], ['access', 'time', 'initi', 'use', 'user'], ['use', 'network', 'target', 'scan', 'indic'], ['access', 'host', 'vulner', 'network', 'scan'], ['access', 'initi', 'use', 'user', 'network'], ['access', 'host', 'use', 'vulner', 'applic', 'network', 'target', 'scan', 'protocol'], ['access', 'session', 'time', 'use', 'user', 'applic', 'target', 'protocol'], ['messag', 'session', 'host', 'use', 'user', 'applic', 'network', 'protocol'], ['access', 'user', 'vulner', 'applic', 'network', 'target', 'scan', 'protocol'], ['access', 'messag', 'use', 'user', 'applic', 'network', 'indic', 'protocol']]
+pass
+
+
+204/241
+./security_rules/data/osa_rules/08000_ET_Emergingthreats_intelligence.yml
+未打标
+
+205/241
+./security_rules/data/osa_rules/01508_Eventlog_Cleared.yml
+未打标
+
+206/241
+./security_rules/data/osa_rules/08008_Denial_of_Service.yml
+未打标
+
+207/241
+./security_rules/data/osa_rules/00859_HTTP.yml
+未打标
+
+208/241
+./security_rules/data/osa_rules/00853_Insecure_SSL_TLS_Version.yml
+['attack.enterprise.T1573']
+tags of security rules: T1573
+keywords: host, vulner, ssl, network, prompt, use, event, src, version, tl
+top 10 of match results: T1001.003, T1463, T1481.003, T1481, T1595.002, T1048.002, T1102, T1102.003, T1030, T0841
+[['ssl', 'network', 'use', 'tl'], ['vulner', 'ssl', 'network', 'tl'], ['host', 'ssl', 'network', 'use', 'tl'], ['host', 'ssl', 'network', 'use', 'tl'], ['host', 'vulner', 'network', 'use', 'version'], ['host', 'ssl', 'network', 'use', 'tl'], ['host', 'ssl', 'network', 'use', 'tl'], ['host', 'ssl', 'network', 'use', 'tl'], ['host', 'ssl', 'network', 'use', 'tl'], ['vulner', 'network', 'use', 'version']]
+
+
+209/241
+./security_rules/data/osa_rules/08032_Inappropriate_Content_was_Detected.yml
+未打标
+
+210/241
+./security_rules/data/osa_rules/05023_Vulnerability_Scan_OS_Fingerprint_Scan_over_RDP.yml
+['attack.enterprise.T1595.002']
+tags of security rules: T1595.002
+keywords: check, interfac, fingerprint, purpos, host, client, inform, microsoft, user, help, rdp, server, vulner, softwar, network, signatur, src, target, behavior, comput, scan, connect, indic, protocol, desktop
+top 10 of match results: T1021.001, T1554, T1027.005, T1423, T1070.007, T1036.001, T1195.001, T1595.002, T1588.006, T1114.002
+[['interfac', 'user', 'rdp', 'network', 'behavior', 'comput', 'connect', 'protocol', 'desktop'], ['check', 'host', 'client', 'user', 'server', 'softwar', 'signatur', 'target'], ['softwar', 'network', 'signatur', 'target', 'scan', 'indic'], ['host', 'inform', 'vulner', 'softwar', 'network', 'scan', 'connect'], ['host', 'client', 'inform', 'microsoft', 'user', 'rdp', 'server', 'softwar', 'network', 'behavior', 'connect', 'indic'], ['check', 'inform', 'user', 'softwar', 'signatur'], ['check', 'purpos', 'user', 'softwar', 'signatur', 'target', 'scan'], ['host', 'inform', 'server', 'vulner', 'softwar', 'network', 'target', 'scan', 'connect', 'protocol'], ['inform', 'vulner', 'softwar', 'target', 'behavior', 'comput'], ['host', 'inform', 'user', 'server', 'softwar', 'network', 'target', 'connect']]
+pass
+
+
+211/241
+./security_rules/data/osa_rules/08038_Domain_Observed_Used_for_C2_Detected.yml
+未打标
+
+212/241
+./security_rules/data/osa_rules/05021_Vulnerability_Scan_Nessus_RDP_SSH_Access.yml
+['attack.enterprise.T1595.002']
+tags of security rules: T1595.002
+keywords: access, command, interfac, login, line, shell, purpos, host, client, microsoft, ssh, user, help, rdp, server, vulner, servic, softwar, network, applic, src, target, behavior, comput, scan, execut, nessu, connect, indic, protocol, desktop
+top 10 of match results: T1021.001, T1071, T1554, T1100, T0823, T1423, T0807, T1070.007, T1505.003, T1595.002
+[['access', 'interfac', 'login', 'user', 'rdp', 'servic', 'network', 'behavior', 'comput', 'connect', 'protocol', 'desktop'], ['command', 'line', 'client', 'ssh', 'rdp', 'server', 'network', 'applic', 'execut', 'connect', 'protocol'], ['access', 'host', 'client', 'ssh', 'user', 'server', 'servic', 'softwar', 'applic', 'target'], ['access', 'command', 'interfac', 'line', 'shell', 'host', 'client', 'server', 'network'], ['access', 'command', 'interfac', 'login', 'host', 'user', 'rdp', 'servic', 'applic', 'target', 'behavior', 'comput', 'execut', 'connect', 'protocol'], ['access', 'host', 'vulner', 'servic', 'softwar', 'network', 'scan', 'connect'], ['command', 'interfac', 'line', 'shell', 'purpos', 'ssh', 'user', 'rdp', 'servic', 'softwar', 'network', 'applic', 'comput', 'execut'], ['access', 'command', 'login', 'host', 'client', 'microsoft', 'user', 'rdp', 'server', 'servic', 'softwar', 'network', 'behavior', 'connect', 'indic'], ['access', 'command', 'interfac', 'line', 'shell', 'host', 'client', 'server', 'softwar', 'network', 'applic', 'execut', 'connect', 'protocol'], ['access', 'command', 'line', 'host', 'server', 'vulner', 'softwar', 'network', 'applic', 'target', 'scan', 'execut', 'connect', 'protocol']]
+pass
+
+
+213/241
+./security_rules/data/osa_rules/00944_System_Log_Cleared_on_Windows.yml
+未打标
+
+214/241
+./security_rules/data/osa_rules/08044_Basic_Protocol_Command_Decode.yml
+未打标
+
+215/241
+./security_rules/data/osa_rules/00886_Baidu_Bing_Google_(Search_Engine).yml
+['attack.ics.T0883']
+tags of security rules: T0883
+keywords: host, access, network, search, event, bing, src, prompt, monitor, commun, engin, googl, baidu
+top 10 of match results: T1114.002, T1593.002, T1104, T1011.001, T1102.003, T1567.002, T1463, T1555, T0818, T1612
+[['host', 'access', 'network', 'search', 'monitor', 'googl'], ['access', 'network', 'search', 'engin', 'googl'], ['host', 'access', 'network', 'monitor', 'commun'], ['host', 'access', 'network', 'monitor', 'commun'], ['host', 'network', 'monitor', 'commun', 'googl'], ['host', 'access', 'network', 'monitor', 'commun', 'googl'], ['network', 'commun', 'googl'], ['access', 'search', 'monitor'], ['access', 'network', 'engin'], ['host', 'network', 'monitor', 'commun']]
+
+
+216/241
+./security_rules/data/osa_rules/08022_A_client_was_using_an_unusual_port.yml
+未打标
+
+217/241
+./security_rules/data/osa_rules/00933_Firewall_Rule_Changed_on_Windows.yml
+['operation.local', 'attack.enterprise.T1599']
+tags of security rules: T1599
+keywords: list, host, firewal, rule, chang, datasrcip, prompt, event, monitor, behavior, window, except, oper
+top 10 of match results: T1562.007, T1562.004, T1010, T1070.007, T1063, T1562, T1518, T1518.001, T1070.001, T1054
+[['firewal', 'rule', 'chang', 'event', 'monitor', 'window'], ['firewal', 'rule', 'chang', 'event', 'monitor', 'window'], ['list', 'event', 'monitor', 'behavior', 'window', 'oper'], ['host', 'firewal', 'rule', 'chang', 'monitor', 'behavior', 'window', 'oper'], ['list', 'firewal', 'rule', 'behavior', 'window'], ['host', 'firewal', 'rule', 'chang', 'event', 'monitor', 'behavior', 'window', 'except'], ['list', 'firewal', 'rule', 'monitor', 'behavior'], ['list', 'firewal', 'rule', 'monitor', 'behavior'], ['event', 'monitor', 'window'], ['host', 'firewal', 'rule', 'event', 'window']]
+
+
+218/241
+./security_rules/data/osa_rules/00876_S7Comm_PLC_warm_STOP.yml
+['attack.ics.T0858', 'attack.ics.T0816', 'query-unclear']
+tags of security rules: T0858, T0816
+keywords: host, plc, dst, network, prompt, event, stop, src, s7comm, oper
+top 10 of match results: T0885, T0881, T0835, T1514, T0877, T1046, T1141, T0868, T0845, T1489
+[['host', 'network', 's7comm'], ['stop'], ['plc'], ['prompt', 'oper'], ['plc'], ['host', 'network', 'event', 'oper'], ['prompt'], ['plc', 'network', 'stop', 'oper'], ['plc', 'network', 'oper'], ['stop']]
+
+
+219/241
+./security_rules/data/osa_rules/01506_Addition_of_SID_History_to_Active_Directory_Object.yml
+未打标
+
+220/241
+./security_rules/data/osa_rules/00915_Change_User_on_Windows.yml
+未打标
+
+221/241
+./security_rules/data/osa_rules/01505_AD_User_Enumeration.yml
+未打标
+
+222/241
+./security_rules/data/osa_rules/08002_Unknown_Traffic.yml
+未打标
+
+223/241
+./security_rules/data/osa_rules/00918_Admin_Login_on_Windows.yml
+未打标
+
+224/241
+./security_rules/data/osa_rules/08004_Attempted_Information_Leak.yml
+未打标
+
+225/241
+./security_rules/data/osa_rules/01511_Vulnerable_Netlogon_Secure_Channel_Connection_Allowed.yml
+未打标
+
+226/241
+./security_rules/data/osa_rules/01528_Backup_Catalog_Deleted.yml
+未打标
+
+227/241
+./security_rules/data/osa_rules/05103_S7comm_Read_Clock.yml
+未打标
+
+228/241
+./security_rules/data/osa_rules/05085_SSH_Bruteforcing.yml
+未打标
+
+229/241
+./security_rules/data/osa_rules/00904_User_account_created_on_Windows.yml
+未打标
+
+230/241
+./security_rules/data/osa_rules/05002_OMS_Download_PLC_hardware_configuration.yml
+['attack.ics.T0843']
+tags of security rules: T0843
+keywords: host, plc, dst, om, network, download, event, prompt, src, configur, hardwar, oper
+top 10 of match results: T1195.003, T1612, T1602.002, T0843, T1610, T0870, T1474.002, T1602, T0873, T1200
+[['network', 'hardwar'], ['host', 'network', 'download'], ['host', 'network', 'configur', 'oper'], ['download', 'configur'], ['host', 'network', 'download', 'configur'], ['plc', 'download'], ['network', 'hardwar'], ['host', 'network', 'configur'], ['plc', 'download', 'configur'], ['network', 'event', 'configur', 'hardwar']]
+pass
+
+
+231/241
+./security_rules/data/osa_rules/05075_DNP_3_0_Fragmented_Message_Interruption.yml
+未打标
+
+232/241
+./security_rules/data/osa_rules/00927_Account_Disabled_on_Windows.yml
+未打标
+
+233/241
+./security_rules/data/osa_rules/00871_SNMP_query_flooding.yml
+['attack.enterprise.T1499', 'attack.enterprise.T1498.001', 'attack.ics.T0814']
+tags of security rules: T1499, T1498.001, T0814
+keywords: packet, run, ip, request, queri, host, attack, spoof, use, snmp, amplif, network, launch, src, target, respons, internet, carri, flood, send, devic, udp
+top 10 of match results: T1498.002, T1602.001, T0885, T1016.001, T1498.001, T1602.002, T1595.001, T1612, T1499.001, T1205.001
+[['packet', 'ip', 'request', 'host', 'attack', 'spoof', 'use', 'amplif', 'network', 'target', 'respons', 'flood', 'send'], ['packet', 'run', 'request', 'queri', 'host', 'attack', 'use', 'snmp', 'network', 'target', 'send', 'devic'], ['packet', 'ip', 'host', 'use', 'snmp', 'network', 'udp'], ['request', 'attack', 'use', 'respons', 'internet'], ['packet', 'host', 'attack', 'use', 'network', 'target', 'respons', 'internet', 'flood'], ['packet', 'queri', 'host', 'attack', 'use', 'snmp', 'network', 'target', 'send', 'devic'], ['ip', 'request', 'host', 'attack', 'use', 'network', 'target', 'respons'], ['ip', 'request', 'host', 'attack', 'network', 'send'], ['packet', 'request', 'host', 'attack', 'use', 'network', 'launch', 'target', 'respons', 'flood', 'send'], ['packet', 'host', 'use', 'network', 'send', 'devic']]
+pass
+
+
+234/241
+./security_rules/data/osa_rules/00852_HeartBleed.yml
+['attack.enterprise.T1119', 'attack.ics.T0802']
+tags of security rules: T1119, T0802
+keywords: host, attack, heartble, vulner, ssl, network, prompt, use, event, src, target, openssl, scan
+top 10 of match results: T1423, T0841, T1595.002, T1588.006, T1595.001, T1046, T1463, T1027.005, T1596, T1428
+[['host', 'vulner', 'network', 'scan'], ['attack', 'vulner', 'network', 'use', 'target', 'scan'], ['host', 'attack', 'vulner', 'network', 'use', 'target', 'scan'], ['attack', 'vulner', 'use', 'target'], ['host', 'attack', 'network', 'use', 'target', 'scan'], ['host', 'vulner', 'network', 'use', 'event', 'target', 'scan'], ['attack', 'vulner', 'ssl', 'network'], ['network', 'use', 'event', 'target', 'scan'], ['attack', 'ssl', 'network', 'use', 'target', 'scan'], ['attack', 'vulner', 'network', 'use', 'target', 'scan']]
+
+
+235/241
+./security_rules/data/osa_rules/00873_HTTP_half_connected_(post_slow).yml
+未打标
+
+236/241
+./security_rules/data/osa_rules/08029_Misc_activity.yml
+未打标
+
+237/241
+./security_rules/data/osa_rules/01530_DHCP_Server_Error_Failed_Loading_the_CallOut_DLL.yml
+未打标
+
+238/241
+./security_rules/data/osa_rules/00882_Enumerate_Redpoint_NSE_Request_CPU_Function_Read_SZL_attempt.yml
+['attack.ics.T0846', 'attack.ics.T0888']
+tags of security rules: T0846, T0888
+keywords: nse, plc, redpoint, request, host, cpu, dst, inform, attempt, user, help, s7, function, szl, network, src, target, behavior, siemen, scan, read, devic
+top 10 of match results: T1633.001, T0841, T0845, T1423, T1120, T0877, T0835, T0871, T1083, T1595.001
+[['host', 'cpu', 'function', 'network', 'behavior', 'read', 'devic'], ['plc', 'inform', 'attempt', 'network', 'target', 'scan', 'devic'], ['plc', 'inform', 'attempt', 'user', 'function', 'network', 'target', 'read', 'devic'], ['host', 'inform', 'attempt', 'network', 'scan', 'devic'], ['inform', 'attempt', 'function', 'network', 'devic'], ['plc', 'inform', 'user', 'scan', 'devic'], ['plc', 'user', 'function', 'scan', 'devic'], ['attempt', 'user', 'function', 'behavior', 'devic'], ['host', 'inform', 'attempt', 'user', 'network', 'target', 'behavior', 'devic'], ['request', 'host', 'inform', 'network', 'target', 'scan']]
+
+
+239/241
+./security_rules/data/osa_rules/05061_IEC_61850_Goose_Message_Suppression_Attack_high_retransmission.yml
+未打标
+
+240/241
+./security_rules/data/osa_rules/00884_PN_DCP_scan_network.yml
+['attack.ics.T0846', 'attack.ics.T0888']
+tags of security rules: T0846, T0888
+keywords: list, name, dcp, mac, type, ip, subnet, host, use, inform, function, way, servic, network, launch, mask, scan, router, smac, pn, find, profinet, vendor, address, devic, configur, oper, tool
+top 10 of match results: T0841, T0846, T1423, T1590.005, T0864, T1595.001, T1160, T1016, T1159, T1018
+[['name', 'type', 'ip', 'use', 'inform', 'servic', 'network', 'scan', 'devic', 'tool'], ['list', 'ip', 'host', 'use', 'function', 'network', 'scan', 'vendor', 'address', 'devic', 'tool'], ['list', 'host', 'inform', 'servic', 'network', 'scan', 'devic'], ['ip', 'host', 'use', 'inform', 'way', 'servic', 'scan', 'address'], ['mac', 'ip', 'function', 'way', 'network', 'launch', 'vendor', 'address', 'devic', 'configur'], ['ip', 'host', 'use', 'inform', 'servic', 'network', 'scan', 'address'], ['list', 'name', 'mac', 'use', 'servic', 'launch', 'find', 'configur'], ['mac', 'ip', 'use', 'inform', 'function', 'network', 'address', 'devic', 'configur'], ['list', 'name', 'mac', 'use', 'launch', 'find', 'configur'], ['list', 'ip', 'host', 'use', 'inform', 'function', 'network', 'scan', 'address', 'devic', 'tool']]
+pass
+
+
+241/241
+./security_rules/data/osa_rules/00201_Asset_connected.yml
+未打标
+
+all tests: 241
+actual tests: 241
+tag tests: 46
+pass: 21
+ratio: 0.45652173913043476
+run time: 1209.503706584s ≈ 00:20:09
