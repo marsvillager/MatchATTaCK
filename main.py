@@ -12,7 +12,8 @@ from prompt.english_reverse_dictionary import score
 from security_rules.process.process_data import process
 from tools.config import Config
 from tools.evaluation import test_all
-from tools.rank import show_tf_idf
+from tools.log import Logger
+from tools.rank import show_result
 
 
 def parse_arguments():
@@ -27,16 +28,17 @@ def parse_arguments():
     # note: Corresponding lemma tools used in Security Rules do not supply api
     #       (location: function stemmer in ./tools/transform.py)
 
-    parser.add_argument('-t', '--tf_idf', action='store', default=None, help='Match single security rule by TF-IDF.')
+    parser.add_argument('-s', '--search_engine', action='store', default=None,
+                        help='Match single security rule by search_engine.')
     # e.g.'Config.SECURITY_RULES_PATH + "/sample/" + "15022_LoginLogoutAtUnusualTime.yml"'
     #     './security_rules/data/sample/15022_LoginLogoutAtUnusualTime.yml'
-    parser.add_argument('-tn', '--tf_idf_number', action='store', default=10,
-                        help='Show the first few results ranked depends on TF-IDF.')
-    parser.add_argument('-tt', '--tf_idf_test', action='store', default=None,
+    parser.add_argument('-sn', '--search_engine_number', action='store', default=10,
+                        help='Show the first few results ranked depends on search_engine.')
+    parser.add_argument('-st', '--search_engine_test', action='store', default=None,
                         help='Test all files in directory of input.')
     # e.g.'Config.SECURITY_RULES_PATH + "/fy22_deliverable/rules/"'
     #     './security_rules/data/fy22_deliverable/rules/'
-    parser.add_argument('-ttn', '--tf_idf_test_number', action='store', default=10,
+    parser.add_argument('-stn', '--search_engine_test_number', action='store', default=10,
                         help='The number is used as a baseline to determine whether the Security Rule passes the test,'
                              'eg. tags in top 10 will be considered PASS the test.')
 
@@ -95,23 +97,33 @@ def check_arguments(args):
         else:
             format_list: pd.DataFrame = pd.read_csv(args.attack)
 
-    if args.tf_idf:
-        if not os.path.exists(args.tf_idf):
+    if args.search_engine:
+        if not os.path.exists(args.search_engine):
             sys.exit('Error: Security Rule file does not exist.')
         else:
-            keywords: set[str] = process(args.tf_idf, args.lemma)
-            show_tf_idf(keywords, format_list, int(args.tf_idf_number))
+            # save results
+            sys.stdout = Logger("./test_result/search_engine_single.txt")
 
-    if args.tf_idf_test:
-        if not os.path.exists(args.tf_idf_test):
+            keywords: set[str] = process(args.search_engine, args.lemma)
+            show_result(keywords, format_list, int(args.search_engine_number))
+
+    if args.search_engine_test:
+        if not os.path.exists(args.search_engine_test):
             sys.exit('Error: Directory does not exist.')
         else:
-            test_all(args.tf_idf_test, 'tf-idf', format_list, 1, int(args.tf_idf_test_number), args.lemma)
+            # save results
+            sys.stdout = Logger("./test_result/search_engine_all.txt")
+
+            test_all(args.search_engine_test, 'search_engine', format_list, 1,
+                     int(args.search_engine_test_number), args.lemma)
 
     if args.doc2vec:
         if not os.path.exists(args.doc2vec):
             sys.exit('Error: Security Rule file does not exist.')
         else:
+            # save results
+            sys.stdout = Logger("./test_result/doc2vec_single.txt")
+
             all_docs: list = build_document()
             models: list[gensim.models.doc2vec.Doc2Vec] = train_model(all_docs)
             keywords: set[str] = process(args.doc2vec, False)  # lemma == False
@@ -121,6 +133,9 @@ def check_arguments(args):
         if not os.path.exists(args.doc2vec_test):
             sys.exit('Error: Directory does not exist.')
         else:
+            # save results
+            sys.stdout = Logger("./test_result/doc2vec_all.txt")
+
             test_all(args.doc2vec_test, 'doc2vec', format_list, int(args.doc2vec_test_model),
                      int(args.doc2vec_test_number), False)  # lemma == False
 
