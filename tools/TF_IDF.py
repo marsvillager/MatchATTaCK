@@ -6,13 +6,14 @@ class TfIdf:
     """
     TF-IDF（term frequency–inverse document frequency）: a Digest Algorithm. 评估出一个单词的重要性即信息量
     Tex formula:
-        TF(a,w)=\frac{count(a,w)}{count(a,*)}
-        - count(a, w)：单词w在攻击手段a中出现的次数
-        - count(a, *)：攻击手段a的总词数
+        TF(a_i,w_j)=\frac{count(a_i,w_j)}{limit(count(a_i,*))}
+        - count(a_i, w_j)：单词 w_j 在攻击手段 a_i 中出现的次数
+        - count(a_i, *)：攻击手段 a_i 的总词数
+        - limit：总词数小于某阈值时将强制调节为该阈值
 
-        IDF(a)=log\frac{N+1}{N(a)+1} + 1
-        - N：语料库中的文档总数
-        - N(a)：单词w出现在多少种攻击手段中
+        IDF(a_i)=log\frac{N+1}{N(w_j)+1} + 1
+        - N：攻击手段总数
+        - N(w_j)：单词 w_j 出现在多少种攻击手段中
     """
     def __init__(self):
         self.words = list[str]
