@@ -47,8 +47,8 @@ def test_all(filedir: str, method: str, format_list: pd.DataFrame, model: int, n
         print(file)
 
         pairs: dict = load_file(file)
-        # if pairs['tags'] is None or pairs['tags'] == '':
-        if 'description' not in pairs or pairs['tags'] is None or pairs['tags'] == '':
+        # if 'description' not in pairs or pairs['tags'] is None or pairs['tags'] == '':
+        if pairs['tags'] is None or pairs['tags'] == '':
             print("未打标\n")
             continue
 
