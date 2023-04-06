@@ -37,3 +37,6 @@ class Config:
     ADJUST_TF = 70
 
     PROMPT_RESOURCE_PATH = BASE_DIR + "/prompt/resources/"
+
+    # score = x * (TF(a, w) \ IDF(a)) + y * link, x + y = 1
+    SCORE = 0.97

@@ -6,7 +6,7 @@ import sys
 
 from security_rules.process.process_data import process, load_file
 from tools.doc2vec import build_document, find_closest_documents, train_model
-from tools.rank import tf_idf
+from tools.rank import se_result
 
 
 def test_all(filedir: str, method: str, format_list: pd.DataFrame, model: int, num: int, lemma: bool) -> None:
@@ -14,13 +14,13 @@ def test_all(filedir: str, method: str, format_list: pd.DataFrame, model: int, n
     Test all files.
 
     :param filedir: directory of security file
-    :param method: tf-idf or doc2vec
+    :param method: search_engine or doc2vec
     :param num: baseline
     :param lemma: word ==> lemma if True, stay the same if False
     :return: None
     """
-    if method != 'tf-idf' and method != 'doc2vec':
-        sys.exit('Error: Please confirm the way to evaluate and choose "tf-idf" or "doc2vec".')
+    if method != 'search_engine' and method != 'doc2vec':
+        sys.exit('Error: Please confirm the way to evaluate and choose "search_engine" or "doc2vec".')
 
     if method == 'doc2vec':
         all_docs: list = build_document()
@@ -66,11 +66,11 @@ def test_all(filedir: str, method: str, format_list: pd.DataFrame, model: int, n
         print("keywords: " + ", ".join(keywords))
 
         # match
-        if method == 'tf-idf':
-            tf_idf_rank: list[tuple] = tf_idf(keywords, format_list)
-            rank_list: list[tuple] = [tag[0] for tag in tf_idf_rank[0: num]]
+        if method == 'search_engine':
+            search_engine_rank: list[tuple] = se_result(keywords, format_list)
+            rank_list: list[tuple] = [tag[0] for tag in search_engine_rank[0: num]]
             print("top " + str(num) + " of match results: " + ", ".join(rank_list))
-            print([tag[1][1] for tag in tf_idf_rank[0: num]])
+            print([tag[1][1] for tag in search_engine_rank[0: num]])
         elif method == 'doc2vec':
             doc2vec_rank: list[str] = find_closest_documents(models, all_docs, list(keywords), num)[model_name]
             rank_list: list[str] = [tag[0] for tag in doc2vec_rank]
