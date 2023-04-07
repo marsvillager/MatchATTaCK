@@ -5,10 +5,17 @@
 
 # Preparing
 
-- 去除拉取 mitre att&ck 数据时的 VCS root mapping（PyCharm ==> Settings ==> Version Control ==> Directory Mappings）or `./idea/vcs.xml` 中去除不相关的 `<mapping>` 标签
-- 需另外在 [Google Drive](https://drive.google.com/drive/folders/1e-rdHZCyjCW1VsrJu8dNkWWFELc7J9g1?usp=sharing) 下载 3 个过大的文件：`./prompt/model/en.model`, `./prompt/data/data_train.json`, `./prompt/data/vec_inuse.json`
-- `pip install -r requirement.txt`
+- 若要使用 prompt 功能需另外在 [Google Drive](https://drive.google.com/drive/folders/1e-rdHZCyjCW1VsrJu8dNkWWFELc7J9g1?usp=sharing) 下载 3 个过大的文件：`./prompt/model/en.model`, `./prompt/data/data_train.json`, `./prompt/data/vec_inuse.json`
+- Create a virtual environment:
+  - macOS and Linux: `python3 -m venv env`
+  - Windows: `py -m venv env`
+- Activate the virtual environment:
+  - macOS and Linux: `source env/bin/activate`
+  - Windows: `env/Scripts/activate.bat`
+- Install requirement packages: `pip3 install -r requirements.txt`
 - Update: `python main.py -u`
+  - 除非对数据源有了更新，不然是开箱即用的，`./mitre_attack/data/` 目录下的 csv 表就是已经处理好的数据
+- 去除拉取 mitre att&ck 数据时的 VCS root mapping（PyCharm ==> Settings ==> Version Control ==> Directory Mappings）or `./idea/vcs.xml` 中去除不相关的 `<mapping>` 标签
 
 # Usage
 
@@ -199,4 +206,17 @@ If you want to use this code to archieve self-defined data, more preparatory wor
     - ```python
       st = StanfordPOSTagger(Config.POS_TAGGER_PATH, path_to_jar=Config.STANFORD_POSTAGGER_JAR_PATH, java_options="-Xmx8G")
       ```
+
+- call function ` format_data`
+
+  - ```python
+    from package import format_data
+    
+    format_list: pd.DataFrame = format_data(False)  # lemma if True
+    format_list.to_csv(Config.OUTPUT_CSV + "mitre_data(full).csv", sep=',', index=False, header=True)
+    ```
+
+# Prompt(TODO)
+
+https://github.com/thunlp/WantWords
 
