@@ -1,4 +1,5 @@
 import glob
+import sys
 
 from stix2 import Filter
 from package import get_data, datacomponents_detecting_technique
@@ -6,9 +7,14 @@ from security_rules.process.process_data import load_file
 from tools.config import Config
 
 
-def test_deprecated_id(filedir: str):
-    deprecated_path: str = '../data/include_deprecated/deprecated_list.txt'
-    with open(deprecated_path) as f:
+def test_deprecated_id(filedir: str) -> None:
+    """
+    Test if deprecated id in security rules.
+
+    :param filedir: directory of security rules
+    :return: warning
+    """
+    with open(Config.DEPRECATED_LIST) as f:
         deprecated_list: str = f.read()
 
     id_file: str = filedir + '*.yml'
@@ -30,7 +36,7 @@ def test_deprecated_id(filedir: str):
 
         for tag in tag_list:
             if tag in deprecated_list:
-                print("warning")
+                sys.exit('Error: Use deprecated attack-pattern ' + tag + '.')
 
 
 if __name__ == '__main__':

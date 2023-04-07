@@ -28,6 +28,8 @@ class Config:
 
     POS_TAGGER_PATH: str = STANFORD_POSTAGGER + "/models/english-bidirectional-distsim.tagger"
 
+    DEPRECATED_LIST: str = BASE_DIR + "/mitre_attack/data/include_deprecated/deprecated_list.txt"
+
     MODE_en = "rsl"  # Multi-channel Reverse Dictionary Model, four channels: basic, root-affix, sememe, lexname
 
     NUM_RESPONSE = 500

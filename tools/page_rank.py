@@ -30,6 +30,9 @@ def build_matrix(format_list: pd.DataFrame) -> np.ndarray:
     :param format_list: processed data of mitre att&ck data
     :return: adjacent matrix of mitre att&ck
     """
+    with open(Config.DEPRECATED_LIST) as f:
+        deprecated_list: str = f.read().lower()
+
     n: int = format_list.shape[0]
 
     ids: dict = {}
@@ -44,7 +47,8 @@ def build_matrix(format_list: pd.DataFrame) -> np.ndarray:
                      str(format_list.loc[i, 'detects'])
         out_links: list = find_all(pattern, words)
         for out_link in out_links:
-            matrix[i, ids[out_link]] = 1
+            if out_link not in deprecated_list:  # deprecated item will not be considered
+                matrix[i, ids[out_link]] = 1
 
     # Find the indices of non-zero elements
     # row_indices, col_indices = np.nonzero(matrix)
