@@ -37,6 +37,9 @@ def format_data(lemma: bool) -> pd.DataFrame:
 
     format_list: list = []
     for technique in techniques:
+        if 'x_mitre_deprecated' in technique and technique['x_mitre_deprecated'] is True:
+            break
+
         name: set[str] = is_lemma(technique["name"], lemma)
 
         description: str = ''
