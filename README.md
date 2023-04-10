@@ -16,6 +16,9 @@
 - Update: `python main.py -u`
   - 除非对数据源有了更新，不然是开箱即用的，`./mitre_attack/data/` 目录下的 csv 表就是已经处理好的数据
 - 去除拉取 mitre att&ck 数据时的 VCS root mapping（PyCharm ==> Settings ==> Version Control ==> Directory Mappings）or `./idea/vcs.xml` 中去除不相关的 `<mapping>` 标签
+- 注：由于规则文件中不带 `description` 字段匹配率更高，所以默认不使用该字段；如果需要增加该字段或者规则文件中的其它字段，则需要完成以下步骤
+  -  `./tools/config.py` 中修改 `SECURITY_RULES_PROP` （注释的代码）
+  -  `./tools.evaluation` 中修改未达标的条件（注释的代码）
 
 # Usage
 
@@ -73,7 +76,12 @@ optional arguments:
     ![image-20230317093847609](https://github.com/marsvillager/pictures_for_markdown/raw/main/image-20230406095810451.png)
   - *Doc2vec*   `python main.py [-dt directory] [-dtn number] [-dtm model]`
   
-    ![image-20230317093912052](https://github.com/marsvillager/pictures_for_markdown/raw/main/image-20230317093912052.png))
+    ![image-20230317093912052](https://github.com/marsvillager/pictures_for_markdown/raw/main/image-20230317093912052.png)
+  
+- 结果保存在 `./test_results/` 文件夹下
+  
+  - 单项结果（-s）：`search_engine_single.txt`
+  - 多项结果（-st）：`search_engine_all.txt`
   
 - **Prompt**  `python main.py [-p description]`
 
